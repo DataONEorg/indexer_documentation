@@ -1,0 +1,709 @@
+'''
+Index_processor bean to rst generator.
+
+'''
+
+import logging
+import argparse
+import os
+import codecs
+from lxml import etree
+from jinja2 import Environment, PackageLoader
+
+NAMESPACES = {'b':'http://www.springframework.org/schema/beans',
+              'c': 'http://www.springframework.org/schema/context',
+              'p': 'http://www.springframework.org/schema/p',
+              }
+
+def strToBool(s):
+  s = s.lower().strip()
+  if s == '0':
+    return False
+  if s in ['yes','true','ok','yep','1']:
+    return True
+  return False
+
+
+def xpstrval(ele, xp, default=''):
+  try:
+    res = ele.xpath(xp, namespaces=NAMESPACES)[0]
+    return res
+  except IndexError as e:
+    logging.debug( e )
+  return default
+
+
+def xpboolval(ele, xp, default=False):
+  try:
+    res = ele.xpath(xp, namespaces=NAMESPACES)[0]
+    return strToBool(res)
+  except IndexError as e:
+    logging.debug( e )
+  return default
+
+
+def getAttrib(ele, name, default=None):
+  try:
+    return ele.attrib[name]
+  except KeyError:
+    pass
+  return default
+
+def U1(s):
+  return u"=" * len(s)
+
+def U2(s):
+  return u"-" * len(s)
+
+def U3(s):
+  return u"~" * len(s)
+
+def wrapXPath(original, width=80, ind1=0, ind2=0, prefix=''):
+  """ word wrapping function.
+      string: the string to wrap
+      width: the column number to wrap at
+      prefix: prefix each line with this string (goes before any indentation)
+      ind1: number of characters to indent the first line
+      ind2: number of characters to indent the rest of the lines
+  """
+  xp = original
+  wrap_chars=['/',' ',')',']','|','[','=']
+  xp = prefix + ind1 * " " + xp
+  newstring = ""
+  while len(xp) > width:
+    # find position of nearest whitespace char to the left of "width"
+    marker = width - 1
+    while not xp[marker] in wrap_chars:
+      marker = marker - 1
+      if marker < 5:
+        return original
+    # remove line from original string and add it to the new string
+    newline = xp[0:marker+1] + "\n"
+    newstring = newstring + newline
+    xp = prefix + ind2 * " " + xp[marker + 1:]
+  return newstring + xp
+
+
+def classnameLink(cname):
+  parts = cname.split(".")
+  res = parts[-1]
+  return res
+
+
+#=======================================================================================================================
+class B_Bean(object):
+
+  def __init__(self):
+    self._L = logging.getLogger(self.__class__.__name__)
+    self.p = {'bid':'',
+              'cname':''}
+
+
+  def load(self, ele, container):
+    '''
+    Load the properties of this bean
+    :param ele:
+    :return:
+    '''
+    self.p['cname'] = getAttrib(ele, "class", '')
+    self.p['bid'] = getAttrib(ele, "id", '')
+
+
+  def __repr__(self):
+    lines = ["{0}:".format(self.__class__.__name__),
+             ]
+    for k in self.p:
+      lines.append(u"  {0} : {1}".format(k, self.p[k]))
+    return u"\n".join(lines)
+
+
+  def toText(self, resolver=None, indent=0):
+    return repr(self)
+
+
+#--
+class B_BeanXPath(B_Bean):
+
+  def __init__(self):
+    super(B_BeanXPath, self).__init__()
+    self.p['xpath'] = ''
+
+
+  def load(self, ele, container):
+    super(B_BeanXPath, self).load(ele, container)
+    self.p['xpath'] = ele.xpath("b:constructor-arg[@name='xpath']/@value", namespaces=NAMESPACES)
+
+
+
+#--
+class B_SolrField(B_BeanXPath):
+
+  def __init__(self):
+    super(B_SolrField, self).__init__()
+    self.p['field_name'] = []
+    self.p['converter'] = ''
+    self.p['xpath'] = ''
+    self.p['multivalue'] = False
+    self.p['dedupe'] = False
+
+
+  def load(self, ele, container):
+    super(B_SolrField, self).load(ele, container)
+    self.p['field_name'] = [xpstrval(ele, "b:constructor-arg[@name='name']/@value"), ]
+    self.p['multivalue'] = xpboolval(ele, "b:property[@name='multivalue']/@value")
+    self.p['dedupe'] = xpboolval(ele, "b:property[@name='dedupe']/@value")
+    self.p['converter'] = xpstrval(ele, "b:property[@name='converter']/@ref")
+    self.p['xpath'] = xpstrval(ele, "b:constructor-arg[@name='xpath']/@value")
+    if self.p['bid'] == '':
+      #If there's no ID, then it is an anonymous bean contained by some parent
+      #query is something like "../../.."
+      pele = ele.xpath("../../..")
+      if len(pele) > 0:
+        self.p['bid'] = u"{0}.{1}".format(pele[0].attrib['id'], self.p['field_name'])
+
+
+  def toText(self, resolver=None, indent=0):
+    res = repr(self)
+    if resolver is None:
+      return res
+    if self.p['converter'] != '':
+      bean = resolver.getBean(self.p['converter'])
+      if not bean is None:
+        res += "\n"
+        res += bean.toText(resolver=resolver, indent=indent+2)
+    return res
+
+
+#--
+class B_RootElement(B_Bean):
+
+  def load(self, ele, container):
+    super(B_RootElement, self).load(ele, container)
+
+
+#--
+class B_LeafElement(B_Bean):
+
+  def load(self, ele, container):
+    super(B_LeafElement, self).load(ele, container)
+
+
+#--
+class B_CommonRootSolrField(B_SolrField):
+
+  def load(self, ele, container):
+    super(B_CommonRootSolrField, self).load(ele, container)
+    self.p['root-ref'] = xpstrval(ele, './@p:root-ref')
+
+
+#--
+class B_ResolveSolrField(B_Bean):
+  '''
+  "https://" + ROUTER_HOST_NAME + "/cn/v1/resolve/";
+  '''
+
+  def __init__(self):
+    super(B_ResolveSolrField, self).__init__()
+
+
+  def load(self, ele, container):
+    super(B_ResolveSolrField, self).load(ele, container)
+    self.p['field_name'] = ['fileID', ]
+    if self.p['bid'] == '':
+      # If there's no ID, then it is an anonymous bean contained by some parent
+      # query is something like "../../.."
+      pele = ele.xpath("../../..")
+      if len(pele) > 0:
+        self.p['bid'] = u"{0}.{1}".format(pele[0].attrib['id'], self.p['field_name'])
+
+
+#--
+class B_MergeSolrField(B_Bean):
+
+  def load(self, ele, container):
+    super(B_MergeSolrField, self).load(ele, container)
+
+
+#--
+class B_FullTextSolrField(B_SolrField):
+
+  def load(self, ele, container):
+    super(B_FullTextSolrField, self).load(ele, container)
+
+
+#--
+class B_AggregateSolrField(B_Bean):
+
+  def load(self, ele, container):
+    super(B_AggregateSolrField, self).load(ele, container)
+
+
+#--
+class B_DublinCoreSpatialBoxBoundingCoordinatesSolrField(B_SolrField):
+
+  def load(self, ele, container):
+    super(B_DublinCoreSpatialBoxBoundingCoordinatesSolrField, self).load(ele, container)
+    self.p['field_name'] = ['northBoundCoord', 'southBoundCoord', 'eastBoundCoord', 'westBoundCoord']
+
+
+#--
+class B_DublinCoreSpatialBoxGeohashSolrField(B_SolrField):
+
+  def load(self, ele, container):
+    super(B_DublinCoreSpatialBoxGeohashSolrField, self).load(ele, container)
+    self.p['field_name'] = ['geohash_1','geohash_2','geohash_3','geohash_4','geohash_5',
+                            'geohash_6','geohash_7','geohash_8','geohash_9']
+
+#--
+class B_DataCiteSpatialBoxBoundingCoordinatesSolrField(B_SolrField):
+
+  def load(self, ele, container):
+    super(B_DataCiteSpatialBoxBoundingCoordinatesSolrField, self).load(ele, container)
+
+
+#--
+class B_DataCiteSpatialBoxGeohashSolrField(B_SolrField):
+
+  def load(self, ele, container):
+    super(B_DataCiteSpatialBoxGeohashSolrField, self).load(ele, container)
+
+
+#--
+class B_SolrIndexService(B_Bean):
+
+  def __init__(self):
+    super(B_SolrIndexService, self).__init__()
+    self.p['subprocessors'] = []
+    self.p['systemMetadataProcessor'] = ''
+
+  def load(self, ele, container):
+    super(B_SolrIndexService, self).load(ele, container)
+    self.p['systemMetadataProcessor'] = xpstrval(ele, "b:property[@name='systemMetadataProcessor']/@ref")
+    bids = ele.xpath("b:property[@name='subprocessors']/b:list/b:ref", namespaces=NAMESPACES)
+    self.p['subprocessors'] = []
+    for bid in bids:
+      self.p['subprocessors'].append( bid.attrib['bean'])
+
+
+  def toText(self, resolver=None, indent=0):
+    res = repr(self)
+    if resolver is None:
+      return res
+    for bid in self.p['beans']:
+      bean = resolver.getBean(bid)
+      res += "\n"
+      if not bean is None:
+        res += bean.toText(resolver=resolver, indent=indent+2)
+      else:
+        res += "ERROR: could not resolve '{0}'".format(bid)
+    return res
+
+
+#--
+class B_BaseXPathDocumentSubprocessor( B_Bean ):
+  def __init__(self):
+    super(B_BaseXPathDocumentSubprocessor, self).__init__()
+    self.p['namespaces'] = ''
+    self.p['fieldList'] = []
+
+
+  def load(self, ele, container):
+    super(B_BaseXPathDocumentSubprocessor, self).load(ele, container)
+    #Bean ID for XMLNameSpace Config
+    self.p['namespaces'] = xpstrval(ele, "b:property[@name='xmlNamespaceConfig']/@ref")
+    #List of fields processed by this processor
+    fields = ele.xpath("b:property[@name='fieldList']/b:list/b:bean", namespaces=NAMESPACES)
+    for field in fields:
+      res = container.beanLoaderFactory(field)
+      self.p['fieldList'].append(res.p['bid'])
+
+
+
+  def toText(self, resolver=None, indent=0):
+    res = repr(self)
+    if resolver is None:
+      return res
+    fields = resolver.getBean(self.p['field_list'])
+    if fields is None:
+      return res
+    res += "\n"
+    res += fields.toText(resolver=resolver, indent=indent+2)
+    for subproc in self.p['subprocessors']:
+      bean = resolver.getBean(subproc)
+      if not bean is None:
+        res += "\n"
+        res += bean.toText(resolver=resolver, indent=indent+2)
+    return res
+
+
+#--
+class B_XPathDocumentParser( B_BaseXPathDocumentSubprocessor ):
+  pass
+
+#--
+class B_ScienceMetadataDocumentSubprocessor(B_Bean):
+
+  def __init__(self):
+    super(B_ScienceMetadataDocumentSubprocessor, self).__init__()
+    self.p['matchDocuments'] = []
+    self.p['fields'] = []
+
+
+  def load(self, ele, container):
+    super(B_ScienceMetadataDocumentSubprocessor, self).load(ele, container)
+    self.p['matchDocuments'] = []
+    matchdocs = ele.xpath("b:property[@name='matchDocuments']/b:list/b:value", namespaces=NAMESPACES)
+    for matchdoc in matchdocs:
+      self.p['matchDocuments'].append(matchdoc.text)
+    self.p['fields'] = []
+    fields = ele.xpath("b:property[@name='fieldList']/b:list/b:ref", namespaces=NAMESPACES)
+    for field in fields:
+      self.p['fields'].append(field.attrib['bean'])
+
+
+  def toText(self, resolver=None, indent=0):
+    res = repr(self)
+    if resolver is None:
+      return res
+    for field in self.p['fields']:
+      bean = resolver.getBean(field)
+      if not bean is None:
+        res += "\n"
+        res += bean.toText(resolver=resolver, indent=indent + 2)
+    return res
+
+
+#--
+class B_ResourceMapSubprocessor(B_Bean):
+
+  def __init__(self):
+    super(B_ResourceMapSubprocessor, self).__init__()
+
+
+  def load(self, ele, container):
+    super(B_ResourceMapSubprocessor, self).load(ele, container)
+
+
+#--
+class B_XMLNamespace(B_Bean):
+  def __init__(self):
+    super(B_XMLNamespace, self).__init__()
+
+
+  def load(self, ele, container):
+    super(B_XMLNamespace, self).load(ele, container)
+    self.p['namespace'] = xpstrval(ele, "b:constructor-arg[@name='namespace']/@value", '')
+    self.p['prefix'] = xpstrval(ele, "b:constructor-arg[@name='prefix']/@value", '')
+
+
+#--
+class B_XMLNamespaceConfig(B_Bean):
+
+  def __init__(self):
+    super(B_XMLNamespaceConfig, self).__init__()
+
+  def load(self, ele, container):
+    super(B_XMLNamespaceConfig, self).load(ele, container)
+    self.p['namespaces'] = []
+    namespaces = ele.xpath("b:constructor-arg[@name='namespaceList']/b:list/b:bean", namespaces=NAMESPACES)
+    for ns in namespaces:
+      #cname = ns.attrib["class"]
+      entry = container.beanLoaderFactory(ns)
+      self.p['namespaces'].append(entry)
+
+
+#--
+class B_BaseDocumentDeleteSubprocessor( B_Bean ):
+  pass
+
+
+#--
+class B_AnnotatorSubprocessor( B_Bean ):
+  pass
+
+
+#--
+class B_BaseReprocessSubprocessor(B_Bean):
+  pass
+
+
+#--
+class B_SparqlField(B_Bean):
+  pass
+
+
+#--
+class B_RdfXmlSubprocessor(B_Bean):
+  pass
+
+
+#--
+class B_TemporalPeriodSolrField( B_SolrField ):
+
+  def __init__(self):
+    super(B_TemporalPeriodSolrField, self).__init__()
+    self.p['field_name'] = ['beginDate', 'endDate']
+
+
+  def load(self, ele, container):
+    super(B_TemporalPeriodSolrField, self).load(ele, container)
+    self.p['field_name'] = ['beginDate', 'endDate']
+
+
+
+#--
+class B_SolrDateConverter(B_Bean):
+  pass
+
+#--
+class B_FgdcDateConverter(B_Bean):
+  pass
+
+#--
+class B_SolrLatitudeConverter(B_Bean):
+  pass
+
+#--
+class B_SolrLongitudeConverter(B_Bean):
+  pass
+
+#--
+class B_BooleanMatchConverter(B_Bean):
+  pass
+
+#--
+class B_FormatIdToFormatTypeConverter(B_Bean):
+  pass
+
+#--
+class B_GeohashConverter(B_Bean):
+
+  def load(self, ele, container):
+    super(B_GeohashConverter, self).load(ele, container)
+    self.p['length'] = xpstrval(ele, "b:property[@name='length']/@value", '')
+
+#--
+class B_MemberNodeServiceRegistrationTypeConverter( B_Bean ):
+  pass
+
+
+#--
+class B_MemberNodeServiceRegistrationTypeDocumentService(B_Bean):
+  pass
+
+
+#=======================================================================================================================
+
+class IndexProcessorDocument(object):
+
+  def __init__(self):
+    self._L = logging.getLogger(self.__class__.__name__)
+
+
+#=======================================================================================================================
+
+class IndexProcessorDocuments(object):
+
+  def __init__(self):
+    self._L = logging.getLogger(self.__class__.__name__)
+    self.documents = {}
+    self.beans = []
+    self.solr_fields = []
+    self.parsers = []
+
+
+  def getBean(self, bid):
+    for b in self.beans:
+      if b.p['bid'] == bid:
+        return b
+    return None
+
+
+  def getClassInstances(self, class_name):
+    res = []
+    for bean in self.beans:
+      if bean.p['cname'] == class_name:
+        res.append(bean)
+    return res
+
+
+  def beanLoaderFactory(self, bean):
+    cname = bean.attrib["class"]
+    class_name = "B_{0}".format(cname.split(".")[-1])
+    logging.info("Loading: %s", class_name)
+    try:
+      instance = globals()[class_name]()
+      instance.load(bean, self)
+      self.beans.append(instance)
+      return instance
+    except KeyError as e:
+      pass
+
+    logging.error("Unknown class name: %s", class_name)
+    raise ValueError("No handler for class: {0}".format(cname))
+    return None
+
+
+  def load(self, fname):
+    '''
+    Load beans from xml document fname.
+
+    :param fname:
+    :return:
+    '''
+    doc = etree.parse( fname )
+    beans = doc.xpath("//b:bean", namespaces=NAMESPACES)
+    for bean in beans:
+      b = self.beanLoaderFactory( bean )
+      self.beans.append( b )
+
+
+  def loadBeans(self, context_path):
+    #Load the various bean definitions
+    context_doc = os.path.join(context_path, 'index-context-file-includes.xml')
+    context = etree.parse(context_doc)
+    documents = context.xpath("//b:import", namespaces=NAMESPACES)
+    for document in documents:
+      fname = os.path.basename(document.attrib['resource'])
+      if not fname.startswith("classpath:"):
+        self.load( os.path.join(context_path, fname))
+
+
+  def loadConverters(self, context_path):
+    converter_context_doc = os.path.join(context_path, 'index-parser-context.xml')
+    converter_context = etree.parse(converter_context_doc)
+    converters = converter_context.xpath("//b:bean[contains(@class,'indexer.convert')]", namespaces=NAMESPACES)
+    for converter in converters:
+      b = self.beanLoaderFactory(converter)
+      if not b is None:
+        self.beans.append(b)
+
+
+  def loadParsers(self, context_path):
+    parser_context_doc = os.path.join(context_path, 'index-parser-context.xml')
+    parser_context = etree.parse(parser_context_doc)
+    documents = parser_context.xpath("//b:bean[@id='solrIndexService']", namespaces=NAMESPACES)
+    for document in documents:
+      doc_parser = self.beanLoaderFactory( document )
+      self.parsers.append(doc_parser)
+    #now the namespaces
+    documents = parser_context.xpath("//b:bean[@id='xmlNamespaceConfig']", namespaces=NAMESPACES)
+    for document in documents:
+      nsc = self.beanLoaderFactory( document )
+      self.beans.append( nsc )
+
+
+  def loadSolrSchemaFields(self, context_path):
+    doc = os.path.join(context_path, 'index-solr-schema.xml')
+    doctree = etree.parse(doc)
+    fields = doctree.xpath("//field")
+    self.solr_fields = []
+    for field in fields:
+      f = {'name': getAttrib(field, 'name', ''),
+           'type': getAttrib(field, 'type', ''),
+           'indexed':strToBool(getAttrib(field, 'indexed', 'false')),
+           'stored':strToBool(getAttrib(field, 'stored', 'false')),
+           'multiValued':strToBool(getAttrib(field, 'multiValued', 'false')),
+           }
+      self.solr_fields.append(f)
+
+
+  def loadContext(self, context_path):
+    self.loadSolrSchemaFields(context_path)
+    self.loadBeans(context_path)
+    self.loadConverters(context_path)
+    self.loadParsers(context_path)
+
+
+
+  def toText(self, dest_folder=None):
+    if not os.path.exists(dest_folder):
+      self._L.info("Creating folder for generated content: %s", dest_folder)
+      os.makedirs(dest_folder)
+    env = Environment(loader=PackageLoader('idxprocdoc', 'templates'))
+    env.filters['U1'] = U1
+    env.filters['U2'] = U2
+    env.filters['U3'] = U3
+    env.filters['wrapXPath'] = wrapXPath
+    env.filters['classnameLink'] = classnameLink
+
+    tnames = ['solr_schema.rst',
+              'namespaces.rst',
+              'parsers.rst',
+              'subprocessor.rst',
+              ]
+    templates = {}
+    for tname in tnames:
+      templates[tname] = {'template': env.get_template(tname),
+                          'dest': os.path.join(dest_folder, tname)}
+
+    with codecs.open(templates['solr_schema.rst']['dest'], mode='wb', encoding='utf-8') as f_dest:
+      f_dest.write( templates['solr_schema.rst']['template'].render(fields = self.solr_fields) )
+
+    with codecs.open(templates['namespaces.rst']['dest'], mode='wb', encoding='utf-8') as f_dest:
+      namespaces = self.getClassInstances('org.dataone.cn.indexer.XMLNamespaceConfig')
+      f_dest.write( templates['namespaces.rst']['template'].render(namespaces=namespaces) )
+
+
+    t_name = 'parsers.rst'
+    t_parsers = env.get_template(t_name)
+    fn_dest = os.path.join(dest_folder, t_name)
+    with codecs.open( fn_dest, mode='wb', encoding='utf-8') as f_dest:
+      parsers = self.getClassInstances('org.dataone.cn.indexer.parser.ScienceMetadataDocumentSubprocessor')
+    for parser in self.parsers:
+      sysm_proc = self.getBean( parser.p['systemMetadataProcessor'])
+      print sysm_proc
+      print "==="
+      print parser
+      for subproc in parser.p['subprocessors']:
+        subproc_instance = self.getBean(subproc)
+        if subproc_instance.p.has_key('fields'):
+          fields = {}
+          for field in subproc_instance.p['fields']:
+            fields[field] = self.getBean(field)
+          dest = os.path.join(dest_folder, subproc + ".rst")
+          with codecs.open(dest, mode='wb', encoding='utf-8') as f_dest:
+            f_dest.write( templates['subprocessor.rst']['template'].render( sp=subproc_instance, fields=fields ))
+        print "=============="
+        print subproc_instance
+
+
+
+    #for bean in self.beans:
+    #  print bean.p['bid']
+    #return
+    #for parser in self.parsers:
+    #  print parser.toText(resolver=self)
+
+
+
+#=======================================================================================================================
+
+
+def main():
+  parser = argparse.ArgumentParser(description='Generate Solr index mapping documents.')
+  parser.add_argument('-l', '--log_level',
+                      action='count',
+                      default=0,
+                      help='Set logging level, multiples for more detailed.')
+  parser.add_argument('-s', '--source',
+                      default=".",
+                      help="Folder from which to read bean definition files")
+  parser.add_argument('-d', '--dest',
+                      default=".",
+                      help="Folder that will contain generate docs")
+
+  args = parser.parse_args()
+  # Setup logging verbosity
+  levels = [logging.WARNING, logging.INFO, logging.DEBUG]
+  level = levels[min(len(levels) - 1, args.log_level)]
+  logging.basicConfig(level=level,
+                      format="%(asctime)s %(levelname)s %(message)s")
+  beans = IndexProcessorDocuments()
+  beans.loadContext( args.source )
+
+  beans.toText(dest_folder=args.dest)
+
+
+if __name__ == "__main__":
+  main()
