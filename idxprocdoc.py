@@ -7,6 +7,7 @@ import logging
 import argparse
 import os
 import codecs
+import yaml
 from lxml import etree
 from jinja2 import Environment, PackageLoader
 
@@ -14,6 +15,15 @@ NAMESPACES = {'b':'http://www.springframework.org/schema/beans',
               'c': 'http://www.springframework.org/schema/context',
               'p': 'http://www.springframework.org/schema/p',
               }
+
+SOLR_DESCRIPTIONS = {} #Dictionary of solr field - description
+
+
+def loadIndexFieldDescriptions(fn_src):
+  global SOLR_DESCRIPTIONS
+  with codecs.open(fn_src, encoding='utf-8') as f:
+    SOLR_DESCRIPTIONS = yaml.load(f)
+
 
 def strToBool(s):
   s = s.lower().strip()
@@ -88,6 +98,20 @@ def classnameLink(cname):
   parts = cname.split(".")
   res = parts[-1]
   return res
+
+def attrList(names, module="Index", delim=","):
+  res = []
+  for name in names:
+    res.append(":attr:`{0}.{1}`".format(module, name))
+  return delim.join(res)
+
+
+def solrFieldDescription(field):
+  try:
+    return SOLR_DESCRIPTIONS[field]
+  except:
+    pass
+  return ''
 
 
 #=======================================================================================================================
@@ -626,6 +650,8 @@ class IndexProcessorDocuments(object):
     env.filters['U3'] = U3
     env.filters['wrapXPath'] = wrapXPath
     env.filters['classnameLink'] = classnameLink
+    env.filters['attrList'] = attrList
+    env.filters['solrFieldDescription'] = solrFieldDescription
 
     tnames = ['solr_schema.rst',
               'namespaces.rst',
@@ -692,6 +718,9 @@ def main():
   parser.add_argument('-d', '--dest',
                       default=".",
                       help="Folder that will contain generate docs")
+  parser.add_argument('-f', '--solrdescr',
+                      default="solr_field_descriptions.yaml",
+                      help="YAML file of solr field: description")
 
   args = parser.parse_args()
   # Setup logging verbosity
@@ -699,6 +728,7 @@ def main():
   level = levels[min(len(levels) - 1, args.log_level)]
   logging.basicConfig(level=level,
                       format="%(asctime)s %(levelname)s %(message)s")
+  loadIndexFieldDescriptions(args.solrdescr)
   beans = IndexProcessorDocuments()
   beans.loadContext( args.source )
 

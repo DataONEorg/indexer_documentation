@@ -1,3 +1,7 @@
+.. module:: Index
+
+.. currentmodule:: Index
+
 Solr Fields Defined
 ===================
 
@@ -5,725 +9,870 @@ A list of the fields defined in the solr search index used by the Coordinating N
 
 .. list-table::
    :header-rows: 1
+   :widths: 3, 2, 1, 1, 1, 10
 
    * - Field
      - Type
      - MV
      - Store
      - Index
-   * - _version_
+     - Description
+   * - .. attribute:: _version_
      - long
      - False
      - True
      - True
-   * - _root_
+     - 
+   * - .. attribute:: _root_
      - string
      - False
      - False
      - True
-   * - id
+     - 
+   * - .. attribute:: id
      - string
      - False
      - True
      - True
-   * - seriesId
+     - The identifier of the object being indexed.
+   * - .. attribute:: seriesId
      - string
      - False
      - True
      - True
-   * - fileName
+     - 
+   * - .. attribute:: fileName
      - string
      - False
      - True
      - True
-   * - mediaType
+     - 
+   * - .. attribute:: mediaType
      - string
      - False
      - True
      - True
-   * - mediaTypeProperty
+     - 
+   * - .. attribute:: mediaTypeProperty
      - string
      - True
      - True
      - True
-   * - formatId
-     - string
-     - False
-     - True
-     - True
-   * - formatType
+     - 
+   * - .. attribute:: formatId
      - string
      - False
      - True
      - True
-   * - size
+     - The format identifier indicating the type of content this record refers to.
+   * - .. attribute:: formatType
+     - string
+     - False
+     - True
+     - True
+     - 
+   * - .. attribute:: size
      - tlong
      - False
      - True
      - True
-   * - checksum
+     - The size of the object, in bytes.
+   * - .. attribute:: checksum
      - string
      - False
      - True
      - False
-   * - checksumAlgorithm
+     - The checksum for the object
+   * - .. attribute:: checksumAlgorithm
      - string
      - False
      - True
      - False
-   * - dateUploaded
+     - Algorithm used for generating the object checksum
+   * - .. attribute:: dateUploaded
      - tdate
      - False
      - True
      - True
-   * - dateModified
+     - The date and time when the object was uploaded to the Member Node.
+   * - .. attribute:: dateModified
      - tdate
      - False
      - True
      - True
-   * - submitter
+     - The date and time when the object system metadata was last updated.
+   * - .. attribute:: submitter
      - string
      - False
      - True
      - True
-   * - rightsHolder
+     - The :term:`Subject` name of the original submitter of the content to DataONE.
+   * - .. attribute:: rightsHolder
      - string
      - False
      - True
      - True
-   * - authoritativeMN
+     - The :term:`Subject` that acts as the rights holder for the object.
+   * - .. attribute:: authoritativeMN
      - string
      - False
      - True
      - True
-   * - replicationAllowed
+     - The node Id of the authoritative Member Node for the object.
+   * - .. attribute:: replicationAllowed
      - boolean
      - False
      - True
      - False
-   * - numberReplicas
+     - True if this object can be replicated.
+   * - .. attribute:: numberReplicas
      - int
      - False
      - True
      - False
-   * - preferredReplicationMN
+     - Requested number of replicas for the object
+   * - .. attribute:: preferredReplicationMN
      - string
      - True
      - True
      - False
-   * - blockedReplicationMN
+     - A list of member node identifiers that are preferred replication targets for this object.
+   * - .. attribute:: blockedReplicationMN
      - string
      - True
      - True
      - False
-   * - replicaMN
+     - A multi-valued field that contains the node Ids of member nodes that are blocked from holding replicas of this object.
+   * - .. attribute:: replicaMN
      - string
      - True
      - True
      - True
-   * - replicaVerifiedDate
+     - One or more node Ids holding copies of the object.
+   * - .. attribute:: replicaVerifiedDate
      - tdate
      - True
      - True
      - False
-   * - datasource
+     - 
+   * - .. attribute:: datasource
      - string
      - False
      - True
      - True
-   * - obsoletes
+     - The node Id of the member node that originally contributed the content.
+   * - .. attribute:: obsoletes
      - string
      - False
      - True
      - True
-   * - obsoletedBy
+     - If set, indicates the object that this record obsoletes.
+   * - .. attribute:: obsoletedBy
      - string
      - False
      - True
      - True
-   * - resourceMap
+     - 
+   * - .. attribute:: resourceMap
      - string
      - True
      - True
      - True
-   * - documents
+     - List of resource map PIDs that reference this PID.
+   * - .. attribute:: documents
      - string
      - True
      - True
      - True
-   * - isDocumentedBy
+     - Lists all PIDs that this object describes. Obtained by parsing all resource maps in which this object is referenced. Not set for data or resource map objects.
+   * - .. attribute:: isDocumentedBy
      - string
      - True
      - True
      - True
-   * - readPermission
+     - Lists all PIDs that describe this object. Obtained by parsing all resource maps in which this object is referenced.
+   * - .. attribute:: readPermission
      - string
      - True
      - True
      - True
-   * - writePermission
+     - List of subjects (groups and individuals) that have read permission on PID.
+   * - .. attribute:: writePermission
      - string
      - True
      - True
      - True
-   * - changePermission
+     - List of subjects (groups and individuals) that have write permission on PID.
+   * - .. attribute:: changePermission
      - string
      - True
      - True
      - True
-   * - isPublic
+     - List of subjects (groups and individuals) that have change permission on PID.
+   * - .. attribute:: isPublic
      - boolean
      - False
      - True
      - True
-   * - author
+     - Set to True if the DataONE :term:`public user` is present in the list of subjects with readPermission on PID.
+   * - .. attribute:: author
      - string
      - False
      - True
      - True
-   * - authorSurName
+     - Principle Investigator (PI) / Author as listed in the metadata document.
+   * - .. attribute:: authorSurName
      - string
      - False
      - True
      - True
-   * - authorGivenName
+     - 
+   * - .. attribute:: authorGivenName
      - string
      - False
      - True
      - True
-   * - authorSurNameSort
+     - 
+   * - .. attribute:: authorSurNameSort
      - alphaOnlySort
      - False
      - True
      - True
-   * - authorGivenNameSort
+     - 
+   * - .. attribute:: authorGivenNameSort
      - alphaOnlySort
      - False
      - True
      - True
-   * - authorLastName
+     - 
+   * - .. attribute:: authorLastName
      - string
      - True
      - True
      - True
-   * - abstract
+     - The LAST name(s) of the author(s)
+   * - .. attribute:: abstract
      - text_general
      - False
      - True
      - True
-   * - keywords
+     - The full text of the abstract as provided in the science metadata document.
+   * - .. attribute:: keywords
      - string
      - True
      - True
      - True
-   * - keyConcept
+     - Keywords recorded in the science metadata document. These may be controlled by the generator of the metadata or by the metadata standard of the document, but are effectively uncontrolled within the  DataONE context.
+   * - .. attribute:: keyConcept
      - string
      - True
      - True
      - True
-   * - southBoundCoord
+     - Terms drawn from a controlled vocabulary of concepts that are applicable to the content described by the metadata document.
+   * - .. attribute:: southBoundCoord
      - tfloat
      - False
      - True
      - True
-   * - northBoundCoord
+     - Southern most latitude of the spatial extent, in decimal degrees, WGS84
+   * - .. attribute:: northBoundCoord
      - tfloat
      - False
      - True
      - True
-   * - westBoundCoord
+     - Northern most latitude of the spatial extent, in decimal degrees, WGS84
+   * - .. attribute:: westBoundCoord
      - tfloat
      - False
      - True
      - True
-   * - eastBoundCoord
+     - Western most longitude of the spatial extent, in decimal degrees, WGS84
+   * - .. attribute:: eastBoundCoord
      - tfloat
      - False
      - True
      - True
-   * - namedLocation
+     - Eastern most longitude of the spatial extent, in decimal degrees, WGS84
+   * - .. attribute:: namedLocation
      - string
      - True
      - True
      - True
-   * - beginDate
+     - The name of the location(s) relevant to the content described by the metadata document.
+   * - .. attribute:: beginDate
      - tdate
      - False
      - True
      - True
-   * - endDate
+     - The starting date of the temporal range of the content described by the metadata document.
+   * - .. attribute:: endDate
      - tdate
      - False
      - True
      - True
-   * - title
+     - The ending date of the temporal range of the content described by the metadata document.
+   * - .. attribute:: title
      - text_general
      - False
      - True
      - True
-   * - scientificName
+     - Title of the dataset as recorded in the science metadata.
+   * - .. attribute:: scientificName
      - string
      - True
      - True
      - True
-   * - relatedOrganizations
+     - Taxonomic scientific name(s) at the most precise level available for the organisms of relevance to the dataset
+   * - .. attribute:: relatedOrganizations
      - string
      - True
      - True
      - True
-   * - datePublished
+     - Organizations that played an indirect role in the development of the data set and metadata that should be cited or mentioned as contributing to the development of the data or metadata.
+   * - .. attribute:: datePublished
      - tdate
      - False
      - True
      - True
-   * - pubDate
+     - 
+   * - .. attribute:: pubDate
      - tdate
      - False
      - True
      - True
-   * - investigator
+     - Publication date for the dataset (this may or may not be coincident with when the content is added to DataONE).
+   * - .. attribute:: investigator
      - string
      - True
      - True
      - True
-   * - investigatorText
+     - Name of the investigator(s) responsible for developing the dataset and associated content.
+   * - .. attribute:: investigatorText
      - text_general
      - True
      - False
      - True
-   * - ogcUrl
+     - Copy from :attr:`~Index.investigator`
+   * - .. attribute:: ogcUrl
      - text_general
      - False
      - True
      - False
-   * - identifier
+     - URL for Open Geospatial Web service if available.
+   * - .. attribute:: identifier
      - text_general
      - False
      - True
      - True
-   * - LTERSite
+     - Copy from :attr:`~Index.id`
+   * - .. attribute:: LTERSite
      - string
      - False
      - True
      - True
-   * - origin
+     - Data provider organization  identifier, for sources within the LTER network.
+   * - .. attribute:: origin
      - string
      - True
      - True
      - True
-   * - originText
+     - Investigator or Investigator organization name.
+   * - .. attribute:: originText
      - text_general
      - True
      - False
      - True
-   * - titlestr
+     - Copy from :attr:`~Index.origin`
+   * - .. attribute:: titlestr
      - string
      - False
      - False
      - True
-   * - geoform
+     - Copy from :attr:`~Index.title`
+   * - .. attribute:: geoform
      - string
      - False
      - True
      - True
-   * - presentationCat
+     - The name of the general form in which the item's geospatial data is presented
+   * - .. attribute:: presentationCat
      - string
      - False
      - True
      - True
-   * - purpose
+     - Type of data being preserved (maps, text, etc.)
+   * - .. attribute:: purpose
      - text_general
      - False
      - True
      - True
-   * - updateDate
+     - The "Purpose" describes the "why" aspects of the data set (For example, why was the data set created?).
+   * - .. attribute:: updateDate
      - tdate
      - False
      - True
      - True
-   * - edition
+     - Copy from :attr:`~Index.dateuploaded`
+   * - .. attribute:: edition
      - text_general
      - False
      - True
      - True
-   * - dataUrl
+     - The version or edition number of the item described.
+   * - .. attribute:: dataUrl
      - string
      - False
      - True
      - False
-   * - originator
+     - The URL that can be used to resolve the location of the object given its PID.
+   * - .. attribute:: originator
      - string
      - True
      - True
      - True
-   * - originatorText
+     - Investigator or Investigator organization name. Derived by normalizing origin.
+   * - .. attribute:: originatorText
      - text_general
      - True
      - False
      - True
-   * - family
+     - Copy from :attr:`~Index.originator`
+   * - .. attribute:: family
      - string
      - True
      - True
      - True
-   * - species
+     - Taxonomic family name(s)
+   * - .. attribute:: species
      - string
      - True
      - True
      - True
-   * - genus
+     - Taxonomic species name(s)
+   * - .. attribute:: genus
      - string
      - True
      - True
      - True
-   * - kingdom
+     - Taxonomic genus name(s)
+   * - .. attribute:: kingdom
      - string
      - True
      - True
      - True
-   * - phylum
+     - Taxonomic kingdom(s)
+   * - .. attribute:: phylum
      - string
      - True
      - True
      - True
-   * - order
+     - Taxonomic phylum (or division) name(s)
+   * - .. attribute:: order
      - string
      - True
      - True
      - True
-   * - class
+     - Taxonomic order name(s)
+   * - .. attribute:: class
      - string
      - True
      - True
      - True
-   * - attributeName
+     - Taxonomic class name(s)
+   * - .. attribute:: attributeName
      - string
      - True
      - True
      - True
-   * - attributeLabel
+     - 
+   * - .. attribute:: attributeLabel
      - string
      - True
      - True
      - True
-   * - attributeDescription
+     - 
+   * - .. attribute:: attributeDescription
      - text_general
      - True
      - True
      - True
-   * - attributeUnit
+     - 
+   * - .. attribute:: attributeUnit
      - string
      - True
      - True
      - True
-   * - attribute
+     - 
+   * - .. attribute:: attribute
      - text_general
      - True
      - True
      - True
-   * - webUrl
+     - 
+   * - .. attribute:: webUrl
      - string
      - True
      - True
      - False
-   * - contactOrganization
+     - Link to the investigator's  web-site.
+   * - .. attribute:: contactOrganization
      - string
      - True
      - True
      - True
-   * - contactOrganizationText
+     - Name of the organization to contact for more information about the dataset
+   * - .. attribute:: contactOrganizationText
      - text_general
      - True
      - False
      - True
-   * - keywordsText
+     - Copy from :attr:`~SearchMetadata.contactOrganization`
+   * - .. attribute:: keywordsText
      - text_general
      - True
      - False
      - True
-   * - placeKey
+     - Copy from :attr:`~Index.keywords`
+   * - .. attribute:: placeKey
      - text_general
      - True
      - True
      - True
-   * - noBoundingBox
+     - A place name keyword, assigned by the metadata creator. It is one keyword from the thesaurus named in <placekt>
+   * - .. attribute:: noBoundingBox
      - string
      - False
      - True
      - True
-   * - isSpatial
+     - Set to "Y" if there is no bounding box information available (i.e., the east, west, north, south most coordinates)
+   * - .. attribute:: isSpatial
      - string
      - False
      - True
      - True
-   * - decade
+     - Set to "Y" for records that contain spatial information
+   * - .. attribute:: decade
      - string
      - False
      - True
      - True
-   * - gcmdKeyword
+     - The latest decade that is covered by the dataset, expressed in the form "1999-2009"
+   * - .. attribute:: gcmdKeyword
      - text_general
      - True
      - True
      - True
-   * - project
+     - Keywords drawn from the GCMD controlled vocabulary
+   * - .. attribute:: project
      - string
      - False
      - True
      - True
-   * - projectText
+     - The authorized name of a research effort for which data is collected. This name is often reduced to a convenient abbreviation or acronym. All investigators involved in a project should use a common, agreed-upon name.
+   * - .. attribute:: projectText
      - text_general
      - False
      - False
      - True
-   * - site
+     - Copy from :attr:`~Index.project`
+   * - .. attribute:: site
      - string
      - True
      - True
      - True
-   * - siteText
+     - The name or description of the physical location where the data were collected
+   * - .. attribute:: siteText
      - text_general
      - True
      - False
      - True
-   * - parameter
+     - Copy from :attr:`~Index.site`
+   * - .. attribute:: parameter
      - string
      - True
      - True
      - True
-   * - parameterText
+     - A characteristic, or variable, that is measured or derived as part of data-collection activities.
+   * - .. attribute:: parameterText
      - text_general
      - True
      - False
      - True
-   * - sensor
+     - Copy from :attr:`~Index.parameter`
+   * - .. attribute:: sensor
      - string
      - True
      - True
      - True
-   * - sensorText
+     - Also called "instrument." A device that is used for collecting data for a data set.
+   * - .. attribute:: sensorText
      - text_general
      - True
      - False
      - True
-   * - source
+     - Copy from :attr:`~Index.sensor`
+   * - .. attribute:: source
      - string
      - True
      - True
      - True
-   * - sourceText
+     - Also called "platform." The mechanism used to support the sensor or instrument that gathers data
+   * - .. attribute:: sourceText
      - text_general
      - True
      - False
      - True
-   * - term
+     - Copy from :attr:`~Index.source`
+   * - .. attribute:: term
      - string
      - True
      - True
      - True
-   * - termText
+     - A secondary subject area within which parameters can be categorized. Approved terms include "agricultural chemicals" and "atmospheric chemistry," among many others. When entering a term in the LandVal Metadata Editor, users should select a standard expression from the pick list for terms if at all possible.
+   * - .. attribute:: termText
      - text_general
      - True
      - False
      - True
-   * - topic
+     - Copy from :attr:`~Index.term`
+   * - .. attribute:: topic
      - string
      - True
      - True
      - True
-   * - topicText
+     - The most general subject area within which a parameter is categorized. Approved topics include "agriculture," "atmosphere," and "hydrosphere," among others.
+   * - .. attribute:: topicText
      - text_general
      - True
      - False
      - True
-   * - fileID
+     - Copy from :attr:`~Index.topic`
+   * - .. attribute:: fileID
      - string
      - False
      - True
      - True
-   * - text
+     - Contains the :func:`CNRead.resolve` URL for the object ONLY if the object is a science metadata object.
+   * - .. attribute:: text
      - text_en_splitting
      - False
      - True
      - True
-   * - geohash_1
+     - contactOrganization, datasource, decade, features, fileID, fullText, gcmdKeyword, geoform, id, includes, investigator, keywords, LTERSite, manu, name, origin, originator, parameter, placeKey, presentationCat, project, purpose, sensor, site, source, term, title, topic
+   * - .. attribute:: geohash_1
      - text_general
      - True
      - True
      - True
-   * - geohash_2
+     - An encoded string that represents the geographic coordinates of the centroid of a spatial extent. This can be used for searching and plotting.
+   * - .. attribute:: geohash_2
      - text_general
      - True
      - True
      - True
-   * - geohash_3
+     - An encoded string that represents the geographic coordinates of the centroid of a spatial extent. This can be used for searching and plotting.
+   * - .. attribute:: geohash_3
      - text_general
      - True
      - True
      - True
-   * - geohash_4
+     - An encoded string that represents the geographic coordinates of the centroid of a spatial extent. This can be used for searching and plotting.
+   * - .. attribute:: geohash_4
      - text_general
      - True
      - True
      - True
-   * - geohash_5
+     - An encoded string that represents the geographic coordinates of the centroid of a spatial extent. This can be used for searching and plotting.
+   * - .. attribute:: geohash_5
      - text_general
      - True
      - True
      - True
-   * - geohash_6
+     - An encoded string that represents the geographic coordinates of the centroid of a spatial extent. This can be used for searching and plotting.
+   * - .. attribute:: geohash_6
      - text_general
      - True
      - True
      - True
-   * - geohash_7
+     - An encoded string that represents the geographic coordinates of the centroid of a spatial extent. This can be used for searching and plotting.
+   * - .. attribute:: geohash_7
      - text_general
      - True
      - True
      - True
-   * - geohash_8
+     - An encoded string that represents the geographic coordinates of the centroid of a spatial extent. This can be used for searching and plotting.
+   * - .. attribute:: geohash_8
      - text_general
      - True
      - True
      - True
-   * - geohash_9
+     - An encoded string that represents the geographic coordinates of the centroid of a spatial extent. This can be used for searching and plotting.
+   * - .. attribute:: geohash_9
      - text_general
      - True
      - True
      - True
-   * - prov_wasDerivedFrom
+     - An encoded string that represents the geographic coordinates of the centroid of a spatial extent. This can be used for searching and plotting.
+   * - .. attribute:: prov_wasDerivedFrom
      - string
      - True
      - True
      - True
-   * - prov_wasInformedBy
+     - 
+   * - .. attribute:: prov_wasInformedBy
      - string
      - True
      - True
      - True
-   * - prov_used
+     - 
+   * - .. attribute:: prov_used
      - string
      - True
      - True
      - True
-   * - prov_generated
+     - 
+   * - .. attribute:: prov_generated
      - string
      - True
      - True
      - True
-   * - prov_generatedByProgram
+     - 
+   * - .. attribute:: prov_generatedByProgram
      - string
      - True
      - True
      - True
-   * - prov_generatedByExecution
+     - 
+   * - .. attribute:: prov_generatedByExecution
      - string
      - True
      - True
      - True
-   * - prov_generatedByUser
+     - 
+   * - .. attribute:: prov_generatedByUser
      - string
      - True
      - True
      - True
-   * - prov_usedByProgram
+     - 
+   * - .. attribute:: prov_usedByProgram
      - string
      - True
      - True
      - True
-   * - prov_usedByExecution
+     - 
+   * - .. attribute:: prov_usedByExecution
      - string
      - True
      - True
      - True
-   * - prov_usedByUser
+     - 
+   * - .. attribute:: prov_usedByUser
      - string
      - True
      - True
      - True
-   * - prov_wasExecutedByExecution
+     - 
+   * - .. attribute:: prov_wasExecutedByExecution
      - string
      - True
      - True
      - True
-   * - prov_wasExecutedByUser
+     - 
+   * - .. attribute:: prov_wasExecutedByUser
      - string
      - True
      - True
      - True
-   * - prov_hasSources
+     - 
+   * - .. attribute:: prov_hasSources
      - string
      - True
      - True
      - True
-   * - prov_hasDerivations
+     - 
+   * - .. attribute:: prov_hasDerivations
      - string
      - True
      - True
      - True
-   * - prov_instanceOfClass
+     - 
+   * - .. attribute:: prov_instanceOfClass
      - string
      - True
      - True
      - True
-   * - sem_annotation
+     - 
+   * - .. attribute:: sem_annotation
      - string
      - True
      - True
      - True
-   * - sem_annotated_by
+     - 
+   * - .. attribute:: sem_annotated_by
      - string
      - True
      - True
      - True
-   * - sem_annotates
+     - 
+   * - .. attribute:: sem_annotates
      - string
      - True
      - True
      - True
-   * - sem_comment
+     - 
+   * - .. attribute:: sem_comment
      - string
      - True
      - True
      - True
-   * - isService
+     - 
+   * - .. attribute:: isService
      - boolean
      - False
      - True
      - True
-   * - serviceCoupling
+     - 
+   * - .. attribute:: serviceCoupling
      - string
      - False
      - True
      - True
-   * - serviceTitle
+     - 
+   * - .. attribute:: serviceTitle
      - text_general
      - False
      - True
      - True
-   * - serviceDescription
+     - 
+   * - .. attribute:: serviceDescription
      - text_general
      - False
      - True
      - True
-   * - serviceType
+     - 
+   * - .. attribute:: serviceType
      - string
      - True
      - True
      - True
-   * - serviceEndpoint
+     - 
+   * - .. attribute:: serviceEndpoint
      - string
      - True
      - True
      - True
-   * - serviceInput
+     - 
+   * - .. attribute:: serviceInput
      - string
      - True
      - True
      - True
-   * - serviceOutput
+     - 
+   * - .. attribute:: serviceOutput
      - string
      - True
      - True
      - True
+     - 
 

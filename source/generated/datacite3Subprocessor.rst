@@ -23,7 +23,7 @@ Fields
     - Dedupe
     - XPath
 
-  * - author (datacite.author, SolrField)
+  * - :attr:`Index.author` (datacite.author, SolrField)
     - False
     - False
     - ::
@@ -33,7 +33,7 @@ Fields
 
 
 
-  * - authorLastName (datacite.author_lname, SolrField)
+  * - :attr:`Index.authorLastName` (datacite.author_lname, SolrField)
     - False
     - False
     - ::
@@ -43,7 +43,7 @@ Fields
 
 
 
-  * - authorSurName (datacite.authorSurName, SolrField)
+  * - :attr:`Index.authorSurName` (datacite.authorSurName, SolrField)
     - False
     - False
     - ::
@@ -53,7 +53,7 @@ Fields
 
 
 
-  * - authorSurNameSort (datacite.authorSurNameSort, SolrField)
+  * - :attr:`Index.authorSurNameSort` (datacite.authorSurNameSort, SolrField)
     - False
     - False
     - ::
@@ -63,7 +63,7 @@ Fields
 
 
 
-  * - authorGivenName (datacite.authorGivenName, SolrField)
+  * - :attr:`Index.authorGivenName` (datacite.authorGivenName, SolrField)
     - False
     - False
     - ::
@@ -73,7 +73,7 @@ Fields
 
 
 
-  * - authorGivenNameSort (datacite.authorGivenNameSort, SolrField)
+  * - :attr:`Index.authorGivenNameSort` (datacite.authorGivenNameSort, SolrField)
     - False
     - False
     - ::
@@ -83,7 +83,7 @@ Fields
 
 
 
-  * - abstract (datacite.abstract, SolrField)
+  * - :attr:`Index.abstract` (datacite.abstract, SolrField)
     - False
     - False
     - ::
@@ -94,7 +94,7 @@ Fields
 
 
 
-  * - title (datacite.title, SolrField)
+  * - :attr:`Index.title` (datacite.title, SolrField)
     - False
     - False
     - ::
@@ -104,7 +104,7 @@ Fields
 
 
 
-  * - pubDate (datacite.pubDate, SolrField)
+  * - :attr:`Index.pubDate` (datacite.pubDate, SolrField)
     - False
     - False
     - ::
@@ -113,7 +113,7 @@ Fields
 
 
 
-  * - keywords (datacite.keywords, SolrField)
+  * - :attr:`Index.keywords` (datacite.keywords, SolrField)
     - True
     - True
     - ::
@@ -122,7 +122,7 @@ Fields
 
 
 
-  * - beginDate (datacite.beginDate, SolrField)
+  * - :attr:`Index.beginDate` (datacite.beginDate, SolrField)
     - False
     - False
     - ::
@@ -132,7 +132,7 @@ Fields
 
 
 
-  * - endDate (datacite.endDate, SolrField)
+  * - :attr:`Index.endDate` (datacite.endDate, SolrField)
     - False
     - False
     - ::
@@ -142,7 +142,7 @@ Fields
 
 
 
-  * - origin (datacite.origin, SolrField)
+  * - :attr:`Index.origin` (datacite.origin, SolrField)
     - True
     - True
     - ::
@@ -152,7 +152,7 @@ Fields
 
 
 
-  * - investigator (datacite.investigator, SolrField)
+  * - :attr:`Index.investigator` (datacite.investigator, SolrField)
     - True
     - True
     - ::
@@ -165,7 +165,7 @@ Fields
 
 
 
-  * - contactOrganization (datacite.contactOrganization, SolrField)
+  * - :attr:`Index.contactOrganization` (datacite.contactOrganization, SolrField)
     - True
     - True
     - ::
@@ -177,7 +177,7 @@ Fields
 
 
 
-  * - site (datacite.site, SolrField)
+  * - :attr:`Index.site` (datacite.site, SolrField)
     - True
     - True
     - ::
@@ -188,7 +188,7 @@ Fields
 
 
 
-  * -  (datacite.boxSpatialBoundCoordinates, DataCiteSpatialBoxBoundingCoordinatesSolrField)
+  * - :attr:`Index.` (datacite.boxSpatialBoundCoordinates, DataCiteSpatialBoxBoundingCoordinatesSolrField)
     - False
     - False
     - ::
@@ -197,7 +197,7 @@ Fields
 
 
 
-  * -  (datacite.boxSpatialGeohash, DataCiteSpatialBoxGeohashSolrField)
+  * - :attr:`Index.` (datacite.boxSpatialGeohash, DataCiteSpatialBoxGeohashSolrField)
     - False
     - False
     - ::
@@ -206,13 +206,13 @@ Fields
 
 
 
-  * - fileID (datacite.fileID, ResolveSolrField)
+  * - :attr:`Index.fileID` (datacite.fileID, ResolveSolrField)
     - 
     - 
     - 
 
 
-  * - text (datacite.fullText, FullTextSolrField)
+  * - :attr:`Index.text` (datacite.fullText, FullTextSolrField)
     - False
     - False
     - ::

@@ -21,7 +21,7 @@ Fields
     - Dedupe
     - XPath
 
-  * - abstract (dc.abstract, SolrField)
+  * - :attr:`Index.abstract` (dc.abstract, SolrField)
     - False
     - False
     - ::
@@ -30,7 +30,7 @@ Fields
 
 
 
-  * - author (dc.author, SolrField)
+  * - :attr:`Index.author` (dc.author, SolrField)
     - False
     - False
     - ::
@@ -39,7 +39,7 @@ Fields
 
 
 
-  * - authorSurName (dc.authorSurName, SolrField)
+  * - :attr:`Index.authorSurName` (dc.authorSurName, SolrField)
     - False
     - False
     - ::
@@ -48,7 +48,7 @@ Fields
 
 
 
-  * - authorSurNameSort (dc.authorSurNameSort, SolrField)
+  * - :attr:`Index.authorSurNameSort` (dc.authorSurNameSort, SolrField)
     - False
     - False
     - ::
@@ -57,7 +57,7 @@ Fields
 
 
 
-  * - contactOrganization (dc.contactOrganization, SolrField)
+  * - :attr:`Index.contactOrganization` (dc.contactOrganization, SolrField)
     - True
     - True
     - ::
@@ -66,7 +66,7 @@ Fields
 
 
 
-  * - investigator (dc.investigator, SolrField)
+  * - :attr:`Index.investigator` (dc.investigator, SolrField)
     - True
     - True
     - ::
@@ -75,7 +75,7 @@ Fields
 
 
 
-  * - origin (dc.origin, SolrField)
+  * - :attr:`Index.origin` (dc.origin, SolrField)
     - True
     - True
     - ::
@@ -84,7 +84,7 @@ Fields
 
 
 
-  * - pubDate (dc.pubDate, SolrField)
+  * - :attr:`Index.pubDate` (dc.pubDate, SolrField)
     - False
     - False
     - ::
@@ -93,7 +93,7 @@ Fields
 
 
 
-  * - title (dc.title, SolrField)
+  * - :attr:`Index.title` (dc.title, SolrField)
     - False
     - False
     - ::
@@ -102,7 +102,7 @@ Fields
 
 
 
-  * - keywords (dc.keywords, SolrField)
+  * - :attr:`Index.keywords` (dc.keywords, SolrField)
     - True
     - False
     - ::
@@ -111,7 +111,7 @@ Fields
 
 
 
-  * - beginDate (dc.beginDate, SolrField)
+  * - :attr:`Index.beginDate` (dc.beginDate, SolrField)
     - False
     - False
     - ::
@@ -122,7 +122,7 @@ Fields
 
 
 
-  * - endDate (dc.endDate, SolrField)
+  * - :attr:`Index.endDate` (dc.endDate, SolrField)
     - False
     - False
     - ::
@@ -133,7 +133,7 @@ Fields
 
 
 
-  * - site (dc.site, SolrField)
+  * - :attr:`Index.site` (dc.site, SolrField)
     - True
     - True
     - ::
@@ -144,7 +144,7 @@ Fields
 
 
 
-  * - northBoundCoord, southBoundCoord, eastBoundCoord, westBoundCoord (dc.boxSpatialBoundCoordinates, DublinCoreSpatialBoxBoundingCoordinatesSolrField)
+  * - :attr:`Index.northBoundCoord`,:attr:`Index.southBoundCoord`,:attr:`Index.eastBoundCoord`,:attr:`Index.westBoundCoord` (dc.boxSpatialBoundCoordinates, DublinCoreSpatialBoxBoundingCoordinatesSolrField)
     - False
     - False
     - ::
@@ -154,7 +154,7 @@ Fields
 
 
 
-  * - geohash_1, geohash_2, geohash_3, geohash_4, geohash_5, geohash_6, geohash_7, geohash_8, geohash_9 (dc.boxSpatialGeohash, DublinCoreSpatialBoxGeohashSolrField)
+  * - :attr:`Index.geohash_1`,:attr:`Index.geohash_2`,:attr:`Index.geohash_3`,:attr:`Index.geohash_4`,:attr:`Index.geohash_5`,:attr:`Index.geohash_6`,:attr:`Index.geohash_7`,:attr:`Index.geohash_8`,:attr:`Index.geohash_9` (dc.boxSpatialGeohash, DublinCoreSpatialBoxGeohashSolrField)
     - False
     - False
     - ::
@@ -164,13 +164,13 @@ Fields
 
 
 
-  * - fileID (dc.fileID, ResolveSolrField)
+  * - :attr:`Index.fileID` (dc.fileID, ResolveSolrField)
     - 
     - 
     - 
 
 
-  * - text (dc.fullText, FullTextSolrField)
+  * - :attr:`Index.text` (dc.fullText, FullTextSolrField)
     - False
     - False
     - ::

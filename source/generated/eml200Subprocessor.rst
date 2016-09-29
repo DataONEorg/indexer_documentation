@@ -27,7 +27,7 @@ Fields
     - 
 
 
-  * - keywords (eml.keywords, SolrField)
+  * - :attr:`Index.keywords` (eml.keywords, SolrField)
     - True
     - True
     - ::
@@ -36,7 +36,7 @@ Fields
 
 
 
-  * - title (eml.title, SolrField)
+  * - :attr:`Index.title` (eml.title, SolrField)
     - False
     - False
     - ::
@@ -45,7 +45,7 @@ Fields
 
 
 
-  * - project (eml.project, SolrField)
+  * - :attr:`Index.project` (eml.project, SolrField)
     - False
     - False
     - ::
@@ -54,7 +54,7 @@ Fields
 
 
 
-  * - southBoundCoord (eml.southBoundCoord, SolrField)
+  * - :attr:`Index.southBoundCoord` (eml.southBoundCoord, SolrField)
     - False
     - False
     - ::
@@ -64,7 +64,7 @@ Fields
 
 
 
-  * - northBoundCoord (eml.northBoundCoord, SolrField)
+  * - :attr:`Index.northBoundCoord` (eml.northBoundCoord, SolrField)
     - False
     - False
     - ::
@@ -74,7 +74,7 @@ Fields
 
 
 
-  * - westBoundCoord (eml.westBoundCoord, SolrField)
+  * - :attr:`Index.westBoundCoord` (eml.westBoundCoord, SolrField)
     - False
     - False
     - ::
@@ -84,7 +84,7 @@ Fields
 
 
 
-  * - eastBoundCoord (eml.eastBoundCoord, SolrField)
+  * - :attr:`Index.eastBoundCoord` (eml.eastBoundCoord, SolrField)
     - False
     - False
     - ::
@@ -94,7 +94,7 @@ Fields
 
 
 
-  * - site (eml.site, SolrField)
+  * - :attr:`Index.site` (eml.site, SolrField)
     - True
     - False
     - ::
@@ -104,7 +104,7 @@ Fields
 
 
 
-  * - beginDate (eml.beginDate, SolrField)
+  * - :attr:`Index.beginDate` (eml.beginDate, SolrField)
     - False
     - False
     - ::
@@ -115,7 +115,7 @@ Fields
 
 
 
-  * - endDate (eml.endDate, SolrField)
+  * - :attr:`Index.endDate` (eml.endDate, SolrField)
     - False
     - False
     - ::
@@ -126,7 +126,7 @@ Fields
 
 
 
-  * - pubDate (eml.pubDate, SolrField)
+  * - :attr:`Index.pubDate` (eml.pubDate, SolrField)
     - False
     - False
     - ::
@@ -135,7 +135,7 @@ Fields
 
 
 
-  * - author (eml.author, CommonRootSolrField)
+  * - :attr:`Index.author` (eml.author, CommonRootSolrField)
     - False
     - False
     - ::
@@ -144,7 +144,7 @@ Fields
 
 
 
-  * - authorLastName (eml.author_lname, SolrField)
+  * - :attr:`Index.authorLastName` (eml.author_lname, SolrField)
     - True
     - False
     - ::
@@ -153,7 +153,7 @@ Fields
 
 
 
-  * - authorGivenName (eml.authorGivenName, SolrField)
+  * - :attr:`Index.authorGivenName` (eml.authorGivenName, SolrField)
     - False
     - False
     - ::
@@ -162,7 +162,7 @@ Fields
 
 
 
-  * - authorSurName (eml.authorSurName, SolrField)
+  * - :attr:`Index.authorSurName` (eml.authorSurName, SolrField)
     - False
     - False
     - ::
@@ -171,7 +171,7 @@ Fields
 
 
 
-  * - authorGivenNameSort (eml.authorGivenNameSort, SolrField)
+  * - :attr:`Index.authorGivenNameSort` (eml.authorGivenNameSort, SolrField)
     - False
     - False
     - ::
@@ -180,7 +180,7 @@ Fields
 
 
 
-  * - authorSurNameSort (eml.authorSurNameSort, SolrField)
+  * - :attr:`Index.authorSurNameSort` (eml.authorSurNameSort, SolrField)
     - False
     - False
     - ::
@@ -189,7 +189,7 @@ Fields
 
 
 
-  * - investigator (eml.investigator, SolrField)
+  * - :attr:`Index.investigator` (eml.investigator, SolrField)
     - True
     - False
     - ::
@@ -198,7 +198,7 @@ Fields
 
 
 
-  * - origin (eml.origin, CommonRootSolrField)
+  * - :attr:`Index.origin` (eml.origin, CommonRootSolrField)
     - False
     - False
     - ::
@@ -207,7 +207,7 @@ Fields
 
 
 
-  * - contactOrganization (eml.contactOrganization, SolrField)
+  * - :attr:`Index.contactOrganization` (eml.contactOrganization, SolrField)
     - True
     - True
     - ::
@@ -216,7 +216,7 @@ Fields
 
 
 
-  * - genus (eml.genus, SolrField)
+  * - :attr:`Index.genus` (eml.genus, SolrField)
     - True
     - True
     - ::
@@ -226,7 +226,7 @@ Fields
 
 
 
-  * - species (eml.species, SolrField)
+  * - :attr:`Index.species` (eml.species, SolrField)
     - True
     - True
     - ::
@@ -236,7 +236,7 @@ Fields
 
 
 
-  * - kingdom (eml.kingdom, SolrField)
+  * - :attr:`Index.kingdom` (eml.kingdom, SolrField)
     - True
     - True
     - ::
@@ -246,7 +246,7 @@ Fields
 
 
 
-  * - order (eml.order, SolrField)
+  * - :attr:`Index.order` (eml.order, SolrField)
     - True
     - True
     - ::
@@ -256,7 +256,7 @@ Fields
 
 
 
-  * - phylum (eml.phylum, SolrField)
+  * - :attr:`Index.phylum` (eml.phylum, SolrField)
     - True
     - True
     - ::
@@ -267,7 +267,7 @@ Fields
 
 
 
-  * - family (eml.family, SolrField)
+  * - :attr:`Index.family` (eml.family, SolrField)
     - True
     - True
     - ::
@@ -277,7 +277,7 @@ Fields
 
 
 
-  * - class (eml.class, SolrField)
+  * - :attr:`Index.class` (eml.class, SolrField)
     - True
     - True
     - ::
@@ -287,7 +287,7 @@ Fields
 
 
 
-  * - scientificName (eml.scientificName, CommonRootSolrField)
+  * - :attr:`Index.scientificName` (eml.scientificName, CommonRootSolrField)
     - False
     - False
     - ::
@@ -296,7 +296,7 @@ Fields
 
 
 
-  * - attributeName (eml.attributeName, SolrField)
+  * - :attr:`Index.attributeName` (eml.attributeName, SolrField)
     - True
     - False
     - ::
@@ -305,7 +305,7 @@ Fields
 
 
 
-  * - attributeLabel (eml.attributeLabel, SolrField)
+  * - :attr:`Index.attributeLabel` (eml.attributeLabel, SolrField)
     - True
     - False
     - ::
@@ -314,7 +314,7 @@ Fields
 
 
 
-  * - attributeDescription (eml.attributeDescription, SolrField)
+  * - :attr:`Index.attributeDescription` (eml.attributeDescription, SolrField)
     - True
     - False
     - ::
@@ -324,7 +324,7 @@ Fields
 
 
 
-  * - attributeUnit (eml.attributeUnit, SolrField)
+  * - :attr:`Index.attributeUnit` (eml.attributeUnit, SolrField)
     - True
     - False
     - ::
@@ -334,7 +334,7 @@ Fields
 
 
 
-  * - attribute (eml.attributeText, CommonRootSolrField)
+  * - :attr:`Index.attribute` (eml.attributeText, CommonRootSolrField)
     - False
     - False
     - ::
@@ -343,7 +343,7 @@ Fields
 
 
 
-  * - fileID (eml.fileID, ResolveSolrField)
+  * - :attr:`Index.fileID` (eml.fileID, ResolveSolrField)
     - 
     - 
     - 
@@ -355,7 +355,7 @@ Fields
     - 
 
 
-  * - geohash_1 (eml.geohash1, CommonRootSolrField)
+  * - :attr:`Index.geohash_1` (eml.geohash1, CommonRootSolrField)
     - False
     - False
     - ::
@@ -364,7 +364,7 @@ Fields
 
 
 
-  * - geohash_2 (eml.geohash2, CommonRootSolrField)
+  * - :attr:`Index.geohash_2` (eml.geohash2, CommonRootSolrField)
     - False
     - False
     - ::
@@ -373,7 +373,7 @@ Fields
 
 
 
-  * - geohash_3 (eml.geohash3, CommonRootSolrField)
+  * - :attr:`Index.geohash_3` (eml.geohash3, CommonRootSolrField)
     - False
     - False
     - ::
@@ -382,7 +382,7 @@ Fields
 
 
 
-  * - geohash_4 (eml.geohash4, CommonRootSolrField)
+  * - :attr:`Index.geohash_4` (eml.geohash4, CommonRootSolrField)
     - False
     - False
     - ::
@@ -391,7 +391,7 @@ Fields
 
 
 
-  * - geohash_5 (eml.geohash5, CommonRootSolrField)
+  * - :attr:`Index.geohash_5` (eml.geohash5, CommonRootSolrField)
     - False
     - False
     - ::
@@ -400,7 +400,7 @@ Fields
 
 
 
-  * - geohash_6 (eml.geohash6, CommonRootSolrField)
+  * - :attr:`Index.geohash_6` (eml.geohash6, CommonRootSolrField)
     - False
     - False
     - ::
@@ -409,7 +409,7 @@ Fields
 
 
 
-  * - geohash_7 (eml.geohash7, CommonRootSolrField)
+  * - :attr:`Index.geohash_7` (eml.geohash7, CommonRootSolrField)
     - False
     - False
     - ::
@@ -418,7 +418,7 @@ Fields
 
 
 
-  * - geohash_8 (eml.geohash8, CommonRootSolrField)
+  * - :attr:`Index.geohash_8` (eml.geohash8, CommonRootSolrField)
     - False
     - False
     - ::
@@ -427,7 +427,7 @@ Fields
 
 
 
-  * - geohash_9 (eml.geohash9, CommonRootSolrField)
+  * - :attr:`Index.geohash_9` (eml.geohash9, CommonRootSolrField)
     - False
     - False
     - ::
@@ -436,7 +436,7 @@ Fields
 
 
 
-  * - isService (eml.isService, SolrField)
+  * - :attr:`Index.isService` (eml.isService, SolrField)
     - False
     - False
     - ::
@@ -445,7 +445,7 @@ Fields
 
 
 
-  * - serviceTitle (eml.serviceTitle, SolrField)
+  * - :attr:`Index.serviceTitle` (eml.serviceTitle, SolrField)
     - False
     - False
     - ::
@@ -454,7 +454,7 @@ Fields
 
 
 
-  * - serviceDescription (eml.serviceDescription, SolrField)
+  * - :attr:`Index.serviceDescription` (eml.serviceDescription, SolrField)
     - False
     - False
     - ::
@@ -463,7 +463,7 @@ Fields
 
 
 
-  * - serviceEndpoint (eml.serviceEndpoint, SolrField)
+  * - :attr:`Index.serviceEndpoint` (eml.serviceEndpoint, SolrField)
     - True
     - False
     - ::

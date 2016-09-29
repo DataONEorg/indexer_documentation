@@ -27,7 +27,7 @@ Fields
     - 
 
 
-  * - beginDate (fgdc.beginDate, SolrField)
+  * - :attr:`Index.beginDate` (fgdc.beginDate, SolrField)
     - False
     - False
     - ::
@@ -37,7 +37,7 @@ Fields
 
 
 
-  * - contactOrganization (fgdc.contactOrganization, SolrField)
+  * - :attr:`Index.contactOrganization` (fgdc.contactOrganization, SolrField)
     - True
     - True
     - ::
@@ -49,7 +49,7 @@ Fields
 
 
 
-  * - eastBoundCoord (fgdc.eastBoundCoord, SolrField)
+  * - :attr:`Index.eastBoundCoord` (fgdc.eastBoundCoord, SolrField)
     - False
     - False
     - ::
@@ -59,7 +59,7 @@ Fields
 
 
 
-  * - westBoundCoord (fgdc.westBoundCoord, SolrField)
+  * - :attr:`Index.westBoundCoord` (fgdc.westBoundCoord, SolrField)
     - False
     - False
     - ::
@@ -69,7 +69,7 @@ Fields
 
 
 
-  * - northBoundCoord (fgdc.northBoundCoord, SolrField)
+  * - :attr:`Index.northBoundCoord` (fgdc.northBoundCoord, SolrField)
     - False
     - False
     - ::
@@ -79,7 +79,7 @@ Fields
 
 
 
-  * - southBoundCoord (fgdc.southBoundCoord, SolrField)
+  * - :attr:`Index.southBoundCoord` (fgdc.southBoundCoord, SolrField)
     - False
     - False
     - ::
@@ -89,7 +89,7 @@ Fields
 
 
 
-  * - edition (fgdc.edition, SolrField)
+  * - :attr:`Index.edition` (fgdc.edition, SolrField)
     - False
     - False
     - ::
@@ -98,7 +98,7 @@ Fields
 
 
 
-  * - endDate (fgdc.endDate, SolrField)
+  * - :attr:`Index.endDate` (fgdc.endDate, SolrField)
     - False
     - False
     - ::
@@ -108,7 +108,7 @@ Fields
 
 
 
-  * - gcmdKeyword (fgdc.gcmdKeyword, SolrField)
+  * - :attr:`Index.gcmdKeyword` (fgdc.gcmdKeyword, SolrField)
     - True
     - False
     - ::
@@ -118,7 +118,7 @@ Fields
 
 
 
-  * - keywords (fgdc.keywords, SolrField)
+  * - :attr:`Index.keywords` (fgdc.keywords, SolrField)
     - True
     - True
     - ::
@@ -129,7 +129,7 @@ Fields
 
 
 
-  * - geoform (fgdc.geoform, SolrField)
+  * - :attr:`Index.geoform` (fgdc.geoform, SolrField)
     - False
     - False
     - ::
@@ -139,7 +139,7 @@ Fields
 
 
 
-  * - genus (fgdc.genus, SolrField)
+  * - :attr:`Index.genus` (fgdc.genus, SolrField)
     - True
     - False
     - ::
@@ -148,7 +148,7 @@ Fields
 
 
 
-  * - kingdom (fgdc.kingdom, SolrField)
+  * - :attr:`Index.kingdom` (fgdc.kingdom, SolrField)
     - True
     - False
     - ::
@@ -157,7 +157,7 @@ Fields
 
 
 
-  * - order (fgdc.order, SolrField)
+  * - :attr:`Index.order` (fgdc.order, SolrField)
     - True
     - False
     - ::
@@ -166,7 +166,7 @@ Fields
 
 
 
-  * - phylum (fgdc.phylum, SolrField)
+  * - :attr:`Index.phylum` (fgdc.phylum, SolrField)
     - True
     - False
     - ::
@@ -176,7 +176,7 @@ Fields
 
 
 
-  * - species (fgdc.species, SolrField)
+  * - :attr:`Index.species` (fgdc.species, SolrField)
     - True
     - False
     - ::
@@ -185,7 +185,7 @@ Fields
 
 
 
-  * - family (fgdc.family, SolrField)
+  * - :attr:`Index.family` (fgdc.family, SolrField)
     - True
     - False
     - ::
@@ -194,7 +194,7 @@ Fields
 
 
 
-  * - class (fgdc.class, SolrField)
+  * - :attr:`Index.class` (fgdc.class, SolrField)
     - True
     - False
     - ::
@@ -203,7 +203,7 @@ Fields
 
 
 
-  * - scientificName (fgdc.scientificName, CommonRootSolrField)
+  * - :attr:`Index.scientificName` (fgdc.scientificName, CommonRootSolrField)
     - False
     - False
     - ::
@@ -212,7 +212,7 @@ Fields
 
 
 
-  * - origin (fgdc.origin, SolrField)
+  * - :attr:`Index.origin` (fgdc.origin, SolrField)
     - True
     - False
     - ::
@@ -222,7 +222,7 @@ Fields
 
 
 
-  * - placeKey (fgdc.placeKey, SolrField)
+  * - :attr:`Index.placeKey` (fgdc.placeKey, SolrField)
     - True
     - False
     - ::
@@ -232,7 +232,7 @@ Fields
 
 
 
-  * - pubDate (fgdc.pubDate, SolrField)
+  * - :attr:`Index.pubDate` (fgdc.pubDate, SolrField)
     - False
     - False
     - ::
@@ -248,7 +248,7 @@ Fields
     - 
 
 
-  * - title (fgdc.title, SolrField)
+  * - :attr:`Index.title` (fgdc.title, SolrField)
     - False
     - False
     - ::
@@ -258,7 +258,7 @@ Fields
 
 
 
-  * - webUrl (fgdc.web_url, SolrField)
+  * - :attr:`Index.webUrl` (fgdc.web_url, SolrField)
     - True
     - False
     - ::
@@ -268,7 +268,7 @@ Fields
 
 
 
-  * - fileID (fgdc.fileID, ResolveSolrField)
+  * - :attr:`Index.fileID` (fgdc.fileID, ResolveSolrField)
     - 
     - 
     - 
@@ -280,7 +280,7 @@ Fields
     - 
 
 
-  * - presentationCat (fgdc.presentationCat, SolrField)
+  * - :attr:`Index.presentationCat` (fgdc.presentationCat, SolrField)
     - False
     - False
     - ::
@@ -290,7 +290,7 @@ Fields
 
 
 
-  * - author (fgdc.author, SolrField)
+  * - :attr:`Index.author` (fgdc.author, SolrField)
     - False
     - False
     - ::
@@ -300,7 +300,7 @@ Fields
 
 
 
-  * - authorSurName (fgdc.authorSurName, SolrField)
+  * - :attr:`Index.authorSurName` (fgdc.authorSurName, SolrField)
     - False
     - False
     - ::
@@ -310,7 +310,7 @@ Fields
 
 
 
-  * - authorSurNameSort (fgdc.authorSurNameSort, SolrField)
+  * - :attr:`Index.authorSurNameSort` (fgdc.authorSurNameSort, SolrField)
     - False
     - False
     - ::
@@ -320,7 +320,7 @@ Fields
 
 
 
-  * - investigator (fgdc.investigator, SolrField)
+  * - :attr:`Index.investigator` (fgdc.investigator, SolrField)
     - True
     - False
     - ::
@@ -330,7 +330,7 @@ Fields
 
 
 
-  * - site (fgdc.site, SolrField)
+  * - :attr:`Index.site` (fgdc.site, SolrField)
     - True
     - False
     - ::
@@ -339,7 +339,7 @@ Fields
 
 
 
-  * - attributeName (fgdc.attributeName, SolrField)
+  * - :attr:`Index.attributeName` (fgdc.attributeName, SolrField)
     - True
     - False
     - ::
@@ -348,7 +348,7 @@ Fields
 
 
 
-  * - attributeLabel (fgdc.attributeLabel, SolrField)
+  * - :attr:`Index.attributeLabel` (fgdc.attributeLabel, SolrField)
     - True
     - False
     - ::
@@ -357,7 +357,7 @@ Fields
 
 
 
-  * - attributeDescription (fgdc.attributeDescription, SolrField)
+  * - :attr:`Index.attributeDescription` (fgdc.attributeDescription, SolrField)
     - True
     - False
     - ::
@@ -366,7 +366,7 @@ Fields
 
 
 
-  * - attributeUnit (fgdc.attributeUnit, SolrField)
+  * - :attr:`Index.attributeUnit` (fgdc.attributeUnit, SolrField)
     - True
     - False
     - ::
@@ -376,7 +376,7 @@ Fields
 
 
 
-  * - attribute (fgdc.attributeText, CommonRootSolrField)
+  * - :attr:`Index.attribute` (fgdc.attributeText, CommonRootSolrField)
     - False
     - False
     - ::
@@ -385,7 +385,7 @@ Fields
 
 
 
-  * - geohash_1 (fgdc.geohash1, CommonRootSolrField)
+  * - :attr:`Index.geohash_1` (fgdc.geohash1, CommonRootSolrField)
     - False
     - False
     - ::
@@ -394,7 +394,7 @@ Fields
 
 
 
-  * - geohash_2 (fgdc.geohash2, CommonRootSolrField)
+  * - :attr:`Index.geohash_2` (fgdc.geohash2, CommonRootSolrField)
     - False
     - False
     - ::
@@ -403,7 +403,7 @@ Fields
 
 
 
-  * - geohash_3 (fgdc.geohash3, CommonRootSolrField)
+  * - :attr:`Index.geohash_3` (fgdc.geohash3, CommonRootSolrField)
     - False
     - False
     - ::
@@ -412,7 +412,7 @@ Fields
 
 
 
-  * - geohash_4 (fgdc.geohash4, CommonRootSolrField)
+  * - :attr:`Index.geohash_4` (fgdc.geohash4, CommonRootSolrField)
     - False
     - False
     - ::
@@ -421,7 +421,7 @@ Fields
 
 
 
-  * - geohash_5 (fgdc.geohash5, CommonRootSolrField)
+  * - :attr:`Index.geohash_5` (fgdc.geohash5, CommonRootSolrField)
     - False
     - False
     - ::
@@ -430,7 +430,7 @@ Fields
 
 
 
-  * - geohash_6 (fgdc.geohash6, CommonRootSolrField)
+  * - :attr:`Index.geohash_6` (fgdc.geohash6, CommonRootSolrField)
     - False
     - False
     - ::
@@ -439,7 +439,7 @@ Fields
 
 
 
-  * - geohash_7 (fgdc.geohash7, CommonRootSolrField)
+  * - :attr:`Index.geohash_7` (fgdc.geohash7, CommonRootSolrField)
     - False
     - False
     - ::
@@ -448,7 +448,7 @@ Fields
 
 
 
-  * - geohash_8 (fgdc.geohash8, CommonRootSolrField)
+  * - :attr:`Index.geohash_8` (fgdc.geohash8, CommonRootSolrField)
     - False
     - False
     - ::
@@ -457,7 +457,7 @@ Fields
 
 
 
-  * - geohash_9 (fgdc.geohash9, CommonRootSolrField)
+  * - :attr:`Index.geohash_9` (fgdc.geohash9, CommonRootSolrField)
     - False
     - False
     - ::

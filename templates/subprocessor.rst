@@ -21,7 +21,7 @@ Fields
     - Dedupe
     - XPath
 {% for fld in sp.p['fields'] %}
-  * - {{ fields[fld].p['field_name']|join(', ') }} ({{fld}}, {{fields[fld].p['cname']|classnameLink}})
+  * - {{ fields[fld].p['field_name']|attrList }} ({{fld}}, {{fields[fld].p['cname']|classnameLink}})
     - {{ fields[fld].p['multivalue'] }}
     - {{ fields[fld].p['dedupe'] }}
     - {% if fields[fld].p['xpath'] is defined %}::

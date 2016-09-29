@@ -21,7 +21,7 @@ Fields
     - Dedupe
     - XPath
 
-  * - abstract (dryad.abstract, SolrField)
+  * - :attr:`Index.abstract` (dryad.abstract, SolrField)
     - False
     - False
     - ::
@@ -30,7 +30,7 @@ Fields
 
 
 
-  * - author (dryad.author, SolrField)
+  * - :attr:`Index.author` (dryad.author, SolrField)
     - False
     - False
     - ::
@@ -39,7 +39,7 @@ Fields
 
 
 
-  * - authorSurName (dryad.authorSurName, SolrField)
+  * - :attr:`Index.authorSurName` (dryad.authorSurName, SolrField)
     - False
     - False
     - ::
@@ -48,7 +48,7 @@ Fields
 
 
 
-  * - authorSurNameSort (dryad.authorSurNameSort, SolrField)
+  * - :attr:`Index.authorSurNameSort` (dryad.authorSurNameSort, SolrField)
     - False
     - False
     - ::
@@ -57,7 +57,7 @@ Fields
 
 
 
-  * - authorGivenName (dryad.authorGivenName, SolrField)
+  * - :attr:`Index.authorGivenName` (dryad.authorGivenName, SolrField)
     - False
     - False
     - ::
@@ -66,7 +66,7 @@ Fields
 
 
 
-  * - authorGivenNameSort (dryad.authorGivenNameSort, SolrField)
+  * - :attr:`Index.authorGivenNameSort` (dryad.authorGivenNameSort, SolrField)
     - False
     - False
     - ::
@@ -75,7 +75,7 @@ Fields
 
 
 
-  * - investigator (dryad.investigator, SolrField)
+  * - :attr:`Index.investigator` (dryad.investigator, SolrField)
     - True
     - True
     - ::
@@ -84,7 +84,7 @@ Fields
 
 
 
-  * - keywords (dryad.keywords, SolrField)
+  * - :attr:`Index.keywords` (dryad.keywords, SolrField)
     - True
     - False
     - ::
@@ -93,7 +93,7 @@ Fields
 
 
 
-  * - origin (dryad.origin, SolrField)
+  * - :attr:`Index.origin` (dryad.origin, SolrField)
     - True
     - True
     - ::
@@ -102,7 +102,7 @@ Fields
 
 
 
-  * - pubDate (dryad.pubDate, SolrField)
+  * - :attr:`Index.pubDate` (dryad.pubDate, SolrField)
     - False
     - False
     - ::
@@ -111,7 +111,7 @@ Fields
 
 
 
-  * - site (dryad.site, SolrField)
+  * - :attr:`Index.site` (dryad.site, SolrField)
     - True
     - False
     - ::
@@ -120,7 +120,7 @@ Fields
 
 
 
-  * - title (dryad.title, SolrField)
+  * - :attr:`Index.title` (dryad.title, SolrField)
     - False
     - False
     - ::
@@ -129,7 +129,7 @@ Fields
 
 
 
-  * - scientificName (dryad.scientificName, SolrField)
+  * - :attr:`Index.scientificName` (dryad.scientificName, SolrField)
     - True
     - False
     - ::
@@ -138,13 +138,13 @@ Fields
 
 
 
-  * - fileID (dryad.fileID, ResolveSolrField)
+  * - :attr:`Index.fileID` (dryad.fileID, ResolveSolrField)
     - 
     - 
     - 
 
 
-  * - text (dryad.fullText, FullTextSolrField)
+  * - :attr:`Index.text` (dryad.fullText, FullTextSolrField)
     - False
     - False
     - ::

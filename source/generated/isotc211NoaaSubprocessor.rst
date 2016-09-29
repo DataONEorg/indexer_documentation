@@ -21,7 +21,7 @@ Fields
     - Dedupe
     - XPath
 
-  * - abstract (isotc.abstract, SolrField)
+  * - :attr:`Index.abstract` (isotc.abstract, SolrField)
     - False
     - False
     - ::
@@ -31,7 +31,7 @@ Fields
 
 
 
-  * - author (isotc.author, SolrField)
+  * - :attr:`Index.author` (isotc.author, SolrField)
     - False
     - False
     - ::
@@ -43,7 +43,7 @@ Fields
 
 
 
-  * - authorSurName (isotc.authorSurName, SolrField)
+  * - :attr:`Index.authorSurName` (isotc.authorSurName, SolrField)
     - False
     - False
     - ::
@@ -55,7 +55,7 @@ Fields
 
 
 
-  * - authorSurNameSort (isotc.authorSurNameSort, SolrField)
+  * - :attr:`Index.authorSurNameSort` (isotc.authorSurNameSort, SolrField)
     - False
     - False
     - ::
@@ -67,7 +67,7 @@ Fields
 
 
 
-  * - contactOrganization (isotc.contactOrganization, SolrField)
+  * - :attr:`Index.contactOrganization` (isotc.contactOrganization, SolrField)
     - False
     - False
     - ::
@@ -77,7 +77,7 @@ Fields
 
 
 
-  * - origin (isotc.origin, SolrField)
+  * - :attr:`Index.origin` (isotc.origin, SolrField)
     - True
     - True
     - ::
@@ -98,7 +98,7 @@ Fields
 
 
 
-  * - investigator (isotc.investigator, SolrField)
+  * - :attr:`Index.investigator` (isotc.investigator, SolrField)
     - True
     - True
     - ::
@@ -110,7 +110,7 @@ Fields
 
 
 
-  * - pubDate (isotc.pubDate, SolrField)
+  * - :attr:`Index.pubDate` (isotc.pubDate, SolrField)
     - False
     - False
     - ::
@@ -120,7 +120,7 @@ Fields
 
 
 
-  * - beginDate (isotc.beginDate, SolrField)
+  * - :attr:`Index.beginDate` (isotc.beginDate, SolrField)
     - False
     - False
     - ::
@@ -133,7 +133,7 @@ Fields
 
 
 
-  * - endDate (isotc.endDate, SolrField)
+  * - :attr:`Index.endDate` (isotc.endDate, SolrField)
     - False
     - False
     - ::
@@ -145,7 +145,7 @@ Fields
 
 
 
-  * - title (isotc.title, SolrField)
+  * - :attr:`Index.title` (isotc.title, SolrField)
     - False
     - False
     - ::
@@ -159,7 +159,7 @@ Fields
 
 
 
-  * - keywords (isotc.keywords, SolrField)
+  * - :attr:`Index.keywords` (isotc.keywords, SolrField)
     - True
     - False
     - ::
@@ -173,7 +173,7 @@ Fields
 
 
 
-  * - eastBoundCoord (isotc.eastBoundCoord, SolrField)
+  * - :attr:`Index.eastBoundCoord` (isotc.eastBoundCoord, SolrField)
     - False
     - False
     - ::
@@ -185,7 +185,7 @@ Fields
 
 
 
-  * - westBoundCoord (isotc.westBoundCoord, SolrField)
+  * - :attr:`Index.westBoundCoord` (isotc.westBoundCoord, SolrField)
     - False
     - False
     - ::
@@ -197,7 +197,7 @@ Fields
 
 
 
-  * - southBoundCoord (isotc.southBoundCoord, SolrField)
+  * - :attr:`Index.southBoundCoord` (isotc.southBoundCoord, SolrField)
     - False
     - False
     - ::
@@ -209,7 +209,7 @@ Fields
 
 
 
-  * - northBoundCoord (isotc.northBoundCoord, SolrField)
+  * - :attr:`Index.northBoundCoord` (isotc.northBoundCoord, SolrField)
     - False
     - False
     - ::
@@ -221,7 +221,7 @@ Fields
 
 
 
-  * - geohash_9 (isotc.geohash9, CommonRootSolrField)
+  * - :attr:`Index.geohash_9` (isotc.geohash9, CommonRootSolrField)
     - False
     - False
     - ::
@@ -230,7 +230,7 @@ Fields
 
 
 
-  * - geohash_1 (isotc.geohash1, CommonRootSolrField)
+  * - :attr:`Index.geohash_1` (isotc.geohash1, CommonRootSolrField)
     - False
     - False
     - ::
@@ -239,7 +239,7 @@ Fields
 
 
 
-  * - geohash_2 (isotc.geohash2, CommonRootSolrField)
+  * - :attr:`Index.geohash_2` (isotc.geohash2, CommonRootSolrField)
     - False
     - False
     - ::
@@ -248,7 +248,7 @@ Fields
 
 
 
-  * - geohash_3 (isotc.geohash3, CommonRootSolrField)
+  * - :attr:`Index.geohash_3` (isotc.geohash3, CommonRootSolrField)
     - False
     - False
     - ::
@@ -257,7 +257,7 @@ Fields
 
 
 
-  * - geohash_4 (isotc.geohash4, CommonRootSolrField)
+  * - :attr:`Index.geohash_4` (isotc.geohash4, CommonRootSolrField)
     - False
     - False
     - ::
@@ -266,7 +266,7 @@ Fields
 
 
 
-  * - geohash_5 (isotc.geohash5, CommonRootSolrField)
+  * - :attr:`Index.geohash_5` (isotc.geohash5, CommonRootSolrField)
     - False
     - False
     - ::
@@ -275,7 +275,7 @@ Fields
 
 
 
-  * - geohash_6 (isotc.geohash6, CommonRootSolrField)
+  * - :attr:`Index.geohash_6` (isotc.geohash6, CommonRootSolrField)
     - False
     - False
     - ::
@@ -284,7 +284,7 @@ Fields
 
 
 
-  * - geohash_7 (isotc.geohash7, CommonRootSolrField)
+  * - :attr:`Index.geohash_7` (isotc.geohash7, CommonRootSolrField)
     - False
     - False
     - ::
@@ -293,7 +293,7 @@ Fields
 
 
 
-  * - geohash_8 (isotc.geohash8, CommonRootSolrField)
+  * - :attr:`Index.geohash_8` (isotc.geohash8, CommonRootSolrField)
     - False
     - False
     - ::
@@ -302,7 +302,7 @@ Fields
 
 
 
-  * - isService (isotc.isService, SolrField)
+  * - :attr:`Index.isService` (isotc.isService, SolrField)
     - False
     - False
     - ::
@@ -312,7 +312,7 @@ Fields
 
 
 
-  * - serviceCoupling (isotc.serviceCoupling, SolrField)
+  * - :attr:`Index.serviceCoupling` (isotc.serviceCoupling, SolrField)
     - False
     - False
     - ::
@@ -335,7 +335,7 @@ Fields
 
 
 
-  * - serviceTitle (isotc.serviceTitle, SolrField)
+  * - :attr:`Index.serviceTitle` (isotc.serviceTitle, SolrField)
     - False
     - False
     - ::
@@ -351,7 +351,7 @@ Fields
 
 
 
-  * - serviceDescription (isotc.serviceDescription, SolrField)
+  * - :attr:`Index.serviceDescription` (isotc.serviceDescription, SolrField)
     - False
     - False
     - ::
@@ -366,7 +366,7 @@ Fields
 
 
 
-  * - serviceType (isotc.serviceType, SolrField)
+  * - :attr:`Index.serviceType` (isotc.serviceType, SolrField)
     - True
     - False
     - ::
@@ -376,7 +376,7 @@ Fields
 
 
 
-  * - serviceEndpoint (isotc.serviceEndpoint, SolrField)
+  * - :attr:`Index.serviceEndpoint` (isotc.serviceEndpoint, SolrField)
     - True
     - False
     - ::
@@ -387,7 +387,7 @@ Fields
 
 
 
-  * - serviceInput (isotc.serviceInput, SolrField)
+  * - :attr:`Index.serviceInput` (isotc.serviceInput, SolrField)
     - True
     - False
     - ::
@@ -396,7 +396,7 @@ Fields
 
 
 
-  * - serviceOutput (isotc.serviceOutput, SolrField)
+  * - :attr:`Index.serviceOutput` (isotc.serviceOutput, SolrField)
     - True
     - False
     - ::
@@ -406,7 +406,7 @@ Fields
 
 
 
-  * - serviceType (isotc.distribServiceType, SolrField)
+  * - :attr:`Index.serviceType` (isotc.distribServiceType, SolrField)
     - True
     - False
     - ::
@@ -419,7 +419,7 @@ Fields
 
 
 
-  * - serviceEndpoint (isotc.distribServiceEndpoint, SolrField)
+  * - :attr:`Index.serviceEndpoint` (isotc.distribServiceEndpoint, SolrField)
     - True
     - False
     - ::
@@ -435,7 +435,7 @@ Fields
 
 
 
-  * - serviceInput (isotc.distribServiceInput, SolrField)
+  * - :attr:`Index.serviceInput` (isotc.distribServiceInput, SolrField)
     - True
     - False
     - ::
@@ -446,7 +446,7 @@ Fields
 
 
 
-  * - serviceOutput (isotc.distribServiceOutput, SolrField)
+  * - :attr:`Index.serviceOutput` (isotc.distribServiceOutput, SolrField)
     - True
     - False
     - ::
@@ -457,13 +457,13 @@ Fields
 
 
 
-  * - fileID (isotc.fileID, ResolveSolrField)
+  * - :attr:`Index.fileID` (isotc.fileID, ResolveSolrField)
     - 
     - 
     - 
 
 
-  * - text (isotc.fullText, FullTextSolrField)
+  * - :attr:`Index.text` (isotc.fullText, FullTextSolrField)
     - False
     - False
     - ::
