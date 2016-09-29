@@ -9,7 +9,7 @@ DataONE Content Indexer Documentation
 .. Note::
 
    This documentation is under active development. Current release
-   documentation for indexing is available in the `Architecture Documentation <apidocs>`_.
+   documentation for indexing is available in the `Architecture Documentation`_.
 
 Contents:
 
@@ -31,6 +31,6 @@ Indices and tables
 
 Source for these documents and the generator is held in GitHub_.
 
-.. _apidocs: https://purl.dataone.org/architecture/design/SearchMetadata.html
+.. _Architecture Documentation: https://purl.dataone.org/architecture/design/SearchMetadata.html
 
 .. _GitHub: https://github.com/DataONEorg/indexer_documentation
