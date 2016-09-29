@@ -664,7 +664,8 @@ class IndexProcessorDocuments(object):
                           'dest': os.path.join(dest_folder, tname)}
 
     with codecs.open(templates['solr_schema.rst']['dest'], mode='wb', encoding='utf-8') as f_dest:
-      f_dest.write( templates['solr_schema.rst']['template'].render(fields = self.solr_fields) )
+      sorted_solr_fields = sorted(self.solr_fields, key=lambda k: k['name'].lower())
+      f_dest.write( templates['solr_schema.rst']['template'].render(fields = sorted_solr_fields) )
 
     with codecs.open(templates['namespaces.rst']['dest'], mode='wb', encoding='utf-8') as f_dest:
       namespaces = self.getClassInstances('org.dataone.cn.indexer.XMLNamespaceConfig')
