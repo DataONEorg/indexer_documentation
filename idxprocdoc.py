@@ -688,7 +688,7 @@ class IndexProcessorDocuments(object):
           fields = {}
           for field in subproc_instance.p['fields']:
             fields[field] = self.getBean(field)
-          dest = os.path.join(dest_folder, subproc + ".rst")
+          dest = os.path.join(dest_folder, "proc_" + subproc + ".rst")
           with codecs.open(dest, mode='wb', encoding='utf-8') as f_dest:
             f_dest.write( templates['subprocessor.rst']['template'].render( sp=subproc_instance, fields=fields ))
         print "=============="
