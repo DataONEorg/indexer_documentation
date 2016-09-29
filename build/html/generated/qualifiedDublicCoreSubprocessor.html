@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>qualifiedDublicCoreSubprocessor &mdash; DataONE Content Indexer 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="DataONE Content Indexer 1.0.0 documentation" href="../index.html" />
+    <link rel="next" title="Solr Fields Defined" href="solr_schema.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="parsers.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="solr_schema.html" title="Solr Fields Defined"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="parsers.html" title="&lt;no title&gt;"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">DataONE Content Indexer 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="qualifieddubliccoresubprocessor">
+<h1>qualifiedDublicCoreSubprocessor<a class="headerlink" href="#qualifieddubliccoresubprocessor" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="format-ids-processed">
+<h2>Format IDs Processed<a class="headerlink" href="#format-ids-processed" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://dublincore.org/schemas/xmls/qdc/2008/02/11/qualifieddc.xsd">http://dublincore.org/schemas/xmls/qdc/2008/02/11/qualifieddc.xsd</a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="6%" />
+<col width="6%" />
+<col width="59%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Solr Field</th>
+<th class="head">Multi</th>
+<th class="head">Dedupe</th>
+<th class="head">XPath</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>abstract (dc.abstract, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//*</span><span class="p">[</span><span class="n">local</span><span class="o">-</span><span class="n">name</span><span class="p">()</span> <span class="o">=</span> <span class="s1">&#39;abstract&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>author (dc.author, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//*</span><span class="p">[</span><span class="n">local</span><span class="o">-</span><span class="n">name</span><span class="p">()</span> <span class="o">=</span> <span class="s1">&#39;creator&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>authorSurName (dc.authorSurName, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//*</span><span class="p">[</span><span class="n">local</span><span class="o">-</span><span class="n">name</span><span class="p">()</span> <span class="o">=</span> <span class="s1">&#39;creator&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>authorSurNameSort (dc.authorSurNameSort, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//*</span><span class="p">[</span><span class="n">local</span><span class="o">-</span><span class="n">name</span><span class="p">()</span> <span class="o">=</span> <span class="s1">&#39;creator&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>contactOrganization (dc.contactOrganization, SolrField)</td>
+<td>True</td>
+<td>True</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//*</span><span class="p">[</span><span class="n">local</span><span class="o">-</span><span class="n">name</span><span class="p">()</span> <span class="o">=</span> <span class="s1">&#39;creator&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>investigator (dc.investigator, SolrField)</td>
+<td>True</td>
+<td>True</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//*</span><span class="p">[</span><span class="n">local</span><span class="o">-</span><span class="n">name</span><span class="p">()</span> <span class="o">=</span> <span class="s1">&#39;creator&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>origin (dc.origin, SolrField)</td>
+<td>True</td>
+<td>True</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//*</span><span class="p">[</span><span class="n">local</span><span class="o">-</span><span class="n">name</span><span class="p">()</span> <span class="o">=</span> <span class="s1">&#39;creator&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>pubDate (dc.pubDate, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//*</span><span class="p">[</span><span class="n">local</span><span class="o">-</span><span class="n">name</span><span class="p">()</span> <span class="o">=</span> <span class="s1">&#39;dateSubmitted&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>title (dc.title, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">//*</span><span class="p">[</span><span class="n">local</span><span class="o">-</span><span class="n">name</span><span class="p">()</span> <span class="o">=</span> <span class="s1">&#39;title&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">())[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>keywords (dc.keywords, SolrField)</td>
+<td>True</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//*</span><span class="p">[</span><span class="n">local</span><span class="o">-</span><span class="n">name</span><span class="p">()</span> <span class="o">=</span> <span class="s1">&#39;subject&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>beginDate (dc.beginDate, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//*</span><span class="p">[</span><span class="n">local</span><span class="o">-</span><span class="n">name</span><span class="p">()</span> <span class="o">=</span> <span class="s1">&#39;temporal&#39;</span><span class="p">][</span><span class="ow">not</span><span class="p">(</span><span class="nd">@xsi</span><span class="p">:</span><span class="nb">type</span><span class="o">=</span>
+<span class="s1">&#39;dcterms:Period&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span><span class="p">(</span><span class="nd">@xsi</span><span class="p">:</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;dc:Period&#39;</span><span class="p">)</span>
+<span class="ow">and</span> <span class="ow">not</span><span class="p">(</span><span class="nd">@xsi</span><span class="p">:</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;Period&#39;</span><span class="p">)]</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>endDate (dc.endDate, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//*</span><span class="p">[</span><span class="n">local</span><span class="o">-</span><span class="n">name</span><span class="p">()</span> <span class="o">=</span> <span class="s1">&#39;temporal&#39;</span><span class="p">][</span><span class="ow">not</span><span class="p">(</span><span class="nd">@xsi</span><span class="p">:</span><span class="nb">type</span><span class="o">=</span>
+<span class="s1">&#39;dcterms:Period&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span><span class="p">(</span><span class="nd">@xsi</span><span class="p">:</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;dc:Period&#39;</span><span class="p">)</span>
+<span class="ow">and</span> <span class="ow">not</span><span class="p">(</span><span class="nd">@xsi</span><span class="p">:</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;Period&#39;</span><span class="p">)]</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>site (dc.site, SolrField)</td>
+<td>True</td>
+<td>True</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//*</span><span class="p">[</span><span class="n">local</span><span class="o">-</span><span class="n">name</span><span class="p">()</span> <span class="o">=</span> <span class="s1">&#39;spatial&#39;</span><span class="p">][</span><span class="ow">not</span><span class="p">(</span><span class="nd">@xsi</span><span class="p">:</span><span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;dcterms:Box&#39;</span><span class="p">)</span>
+ <span class="ow">and</span> <span class="ow">not</span><span class="p">(</span><span class="nd">@xsi</span><span class="p">:</span><span class="nb">type</span> <span class="o">=</span> <span class="s1">&#39;dc:Box&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span><span class="p">(</span><span class="nd">@xsi</span><span class="p">:</span><span class="nb">type</span> <span class="o">=</span>
+<span class="s1">&#39;Box&#39;</span><span class="p">)]</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>northBoundCoord, southBoundCoord, eastBoundCoord, westBoundCoord (dc.boxSpatialBoundCoordinates, DublinCoreSpatialBoxBoundingCoordinatesSolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//*</span><span class="p">[</span><span class="n">local</span><span class="o">-</span><span class="n">name</span><span class="p">()</span> <span class="o">=</span> <span class="s1">&#39;spatial&#39;</span><span class="p">][</span><span class="nd">@xsi</span><span class="p">:</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;dcterms:Box&#39;</span> <span class="ow">or</span>
+<span class="nd">@xsi</span><span class="p">:</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;dc:Box&#39;</span> <span class="ow">or</span> <span class="nd">@xsi</span><span class="p">:</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;Box&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>geohash_1, geohash_2, geohash_3, geohash_4, geohash_5, geohash_6, geohash_7, geohash_8, geohash_9 (dc.boxSpatialGeohash, DublinCoreSpatialBoxGeohashSolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//*</span><span class="p">[</span><span class="n">local</span><span class="o">-</span><span class="n">name</span><span class="p">()</span> <span class="o">=</span> <span class="s1">&#39;spatial&#39;</span><span class="p">][</span><span class="nd">@xsi</span><span class="p">:</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;dcterms:Box&#39;</span> <span class="ow">or</span>
+<span class="nd">@xsi</span><span class="p">:</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;dc:Box&#39;</span> <span class="ow">or</span> <span class="nd">@xsi</span><span class="p">:</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;Box&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>fileID (dc.fileID, ResolveSolrField)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>text (dc.fullText, FullTextSolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//*/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">qualifiedDublicCoreSubprocessor</a><ul>
+<li><a class="reference internal" href="#format-ids-processed">Format IDs Processed</a></li>
+<li><a class="reference internal" href="#fields">Fields</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="parsers.html"
+                        title="previous chapter">&lt;no title&gt;</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="solr_schema.html"
+                        title="next chapter">Solr Fields Defined</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/qualifiedDublicCoreSubprocessor.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="solr_schema.html" title="Solr Fields Defined"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="parsers.html" title="&lt;no title&gt;"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">DataONE Content Indexer 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, DataONE.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+    </div>
+  </body>
+</html>

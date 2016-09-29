@@ -1,0 +1,509 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>eml201Subprocessor &mdash; DataONE Content Indexer 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="DataONE Content Indexer 1.0.0 documentation" href="../index.html" />
+    <link rel="next" title="eml210Subprocessor" href="eml210Subprocessor.html" />
+    <link rel="prev" title="eml200Subprocessor" href="eml200Subprocessor.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="eml210Subprocessor.html" title="eml210Subprocessor"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="eml200Subprocessor.html" title="eml200Subprocessor"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">DataONE Content Indexer 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="eml201subprocessor">
+<h1>eml201Subprocessor<a class="headerlink" href="#eml201subprocessor" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="format-ids-processed">
+<h2>Format IDs Processed<a class="headerlink" href="#format-ids-processed" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>eml://ecoinformatics.org/eml-2.0.1</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="6%" />
+<col width="6%" />
+<col width="59%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Solr Field</th>
+<th class="head">Multi</th>
+<th class="head">Dedupe</th>
+<th class="head">XPath</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>(eml.abstract, MergeSolrField)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>keywords (eml.keywords, SolrField)</td>
+<td>True</td>
+<td>True</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">dataset</span><span class="o">/</span><span class="n">keywordSet</span><span class="o">/</span><span class="n">keyword</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>title (eml.title, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">dataset</span><span class="o">/</span><span class="n">title</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>project (eml.project, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">dataset</span><span class="o">/</span><span class="n">project</span><span class="o">/</span><span class="n">title</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>southBoundCoord (eml.southBoundCoord, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">dataset</span><span class="o">/</span><span class="n">coverage</span><span class="o">/</span><span class="n">geographicCoverage</span><span class="o">/</span><span class="n">boundingCoordinates</span><span class="o">/</span>
+<span class="n">southBoundingCoordinate</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>northBoundCoord (eml.northBoundCoord, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">dataset</span><span class="o">/</span><span class="n">coverage</span><span class="o">/</span><span class="n">geographicCoverage</span><span class="o">/</span><span class="n">boundingCoordinates</span><span class="o">/</span>
+<span class="n">northBoundingCoordinate</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>westBoundCoord (eml.westBoundCoord, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">dataset</span><span class="o">/</span><span class="n">coverage</span><span class="o">/</span><span class="n">geographicCoverage</span><span class="o">/</span><span class="n">boundingCoordinates</span><span class="o">/</span>
+<span class="n">westBoundingCoordinate</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>eastBoundCoord (eml.eastBoundCoord, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">dataset</span><span class="o">/</span><span class="n">coverage</span><span class="o">/</span><span class="n">geographicCoverage</span><span class="o">/</span><span class="n">boundingCoordinates</span><span class="o">/</span>
+<span class="n">eastBoundingCoordinate</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>site (eml.site, SolrField)</td>
+<td>True</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">dataset</span><span class="o">/</span><span class="n">coverage</span><span class="o">/</span><span class="n">geographicCoverage</span><span class="o">/</span><span class="n">geographicDescription</span><span class="o">/</span>
+<span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>beginDate (eml.beginDate, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">dataset</span><span class="o">/</span><span class="n">coverage</span><span class="o">/</span><span class="n">temporalCoverage</span><span class="o">/</span><span class="n">rangeOfDates</span><span class="o">/</span><span class="n">beginDate</span><span class="o">/</span>
+<span class="n">calendarDate</span><span class="o">/</span><span class="n">text</span><span class="p">()</span> <span class="o">|</span> <span class="o">//</span><span class="n">dataset</span><span class="o">/</span><span class="n">coverage</span><span class="o">/</span>
+<span class="n">temporalCoverage</span><span class="o">/</span><span class="n">singleDateTime</span><span class="o">/</span><span class="n">calendarDate</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>endDate (eml.endDate, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">dataset</span><span class="o">/</span><span class="n">coverage</span><span class="o">/</span><span class="n">temporalCoverage</span><span class="o">/</span><span class="n">rangeOfDates</span><span class="o">/</span><span class="n">endDate</span><span class="o">/</span>
+<span class="n">calendarDate</span><span class="o">/</span><span class="n">text</span><span class="p">()</span> <span class="o">|</span> <span class="o">//</span><span class="n">dataset</span><span class="o">/</span><span class="n">coverage</span><span class="o">/</span>
+<span class="n">temporalCoverage</span><span class="o">/</span><span class="n">singleDateTime</span><span class="o">/</span><span class="n">calendarDate</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>pubDate (eml.pubDate, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">dataset</span><span class="o">/</span><span class="n">pubDate</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>author (eml.author, CommonRootSolrField)</td>
+<td>False</td>
+<td>False</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>authorGivenName (eml.authorGivenName, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">dataset</span><span class="o">/</span><span class="n">creator</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">individualName</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">givenName</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>authorSurName (eml.authorSurName, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">dataset</span><span class="o">/</span><span class="n">creator</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">individualName</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">surName</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>authorGivenNameSort (eml.authorGivenNameSort, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">dataset</span><span class="o">/</span><span class="n">creator</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">individualName</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">givenName</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>authorSurNameSort (eml.authorSurNameSort, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">dataset</span><span class="o">/</span><span class="n">creator</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">individualName</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">surName</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>authorLastName (eml.author_lname, SolrField)</td>
+<td>True</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">dataset</span><span class="o">/</span><span class="n">creator</span><span class="o">/</span><span class="n">individualName</span><span class="o">/</span><span class="n">surName</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>investigator (eml.investigator, SolrField)</td>
+<td>True</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">dataset</span><span class="o">/</span><span class="n">creator</span><span class="o">/</span><span class="n">individualName</span><span class="o">/</span><span class="n">surName</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>origin (eml.origin, CommonRootSolrField)</td>
+<td>False</td>
+<td>False</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>contactOrganization (eml.contactOrganization, SolrField)</td>
+<td>True</td>
+<td>True</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">dataset</span><span class="o">/</span><span class="n">creator</span><span class="o">/</span><span class="n">organizationName</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>genus (eml.genus, SolrField)</td>
+<td>True</td>
+<td>True</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">taxonomicClassification</span><span class="o">/</span><span class="n">taxonRankValue</span><span class="p">[</span><span class="o">../</span><span class="n">taxonRankName</span><span class="o">=</span>
+<span class="s2">&quot;Genus&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>species (eml.species, SolrField)</td>
+<td>True</td>
+<td>True</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">taxonomicClassification</span><span class="o">/</span><span class="n">taxonRankValue</span><span class="p">[</span><span class="o">../</span><span class="n">taxonRankName</span><span class="o">=</span>
+<span class="s2">&quot;Species&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>kingdom (eml.kingdom, SolrField)</td>
+<td>True</td>
+<td>True</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">taxonomicClassification</span><span class="o">/</span><span class="n">taxonRankValue</span><span class="p">[</span><span class="o">../</span><span class="n">taxonRankName</span><span class="o">=</span>
+<span class="s2">&quot;Kingdom&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>order (eml.order, SolrField)</td>
+<td>True</td>
+<td>True</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">taxonomicClassification</span><span class="o">/</span><span class="n">taxonRankValue</span><span class="p">[</span><span class="o">../</span><span class="n">taxonRankName</span><span class="o">=</span>
+<span class="s2">&quot;Order&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>phylum (eml.phylum, SolrField)</td>
+<td>True</td>
+<td>True</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">taxonomicClassification</span><span class="o">/</span><span class="n">taxonRankValue</span><span class="p">[</span><span class="o">../</span><span class="n">taxonRankName</span><span class="o">=</span>
+<span class="s2">&quot;Phylum&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">()</span> <span class="o">|</span> <span class="o">//</span><span class="n">taxonomicClassification</span><span class="o">/</span>
+<span class="n">taxonRankValue</span><span class="p">[</span><span class="o">../</span><span class="n">taxonRankName</span><span class="o">=</span><span class="s2">&quot;Division&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>family (eml.family, SolrField)</td>
+<td>True</td>
+<td>True</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">taxonomicClassification</span><span class="o">/</span><span class="n">taxonRankValue</span><span class="p">[</span><span class="o">../</span><span class="n">taxonRankName</span><span class="o">=</span>
+<span class="s2">&quot;Family&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>class (eml.class, SolrField)</td>
+<td>True</td>
+<td>True</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">taxonomicClassification</span><span class="o">/</span><span class="n">taxonRankValue</span><span class="p">[</span><span class="o">../</span><span class="n">taxonRankName</span><span class="o">=</span>
+<span class="s2">&quot;Class&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>scientificName (eml.scientificName, CommonRootSolrField)</td>
+<td>False</td>
+<td>False</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>attributeName (eml.attributeName, SolrField)</td>
+<td>True</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">dataTable</span><span class="o">/</span><span class="n">attributeList</span><span class="o">/</span><span class="n">attribute</span><span class="o">/</span><span class="n">attributeName</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>attributeLabel (eml.attributeLabel, SolrField)</td>
+<td>True</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">dataTable</span><span class="o">/</span><span class="n">attributeList</span><span class="o">/</span><span class="n">attribute</span><span class="o">/</span><span class="n">attributeLabel</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>attributeDescription (eml.attributeDescription, SolrField)</td>
+<td>True</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">dataTable</span><span class="o">/</span><span class="n">attributeList</span><span class="o">/</span><span class="n">attribute</span><span class="o">/</span><span class="n">attributeDefinition</span><span class="o">/</span>
+<span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>attributeUnit (eml.attributeUnit, SolrField)</td>
+<td>True</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">dataTable</span><span class="o">//</span><span class="n">standardUnit</span><span class="o">/</span><span class="n">text</span><span class="p">()</span> <span class="o">|</span> <span class="o">//</span><span class="n">dataTable</span><span class="o">//</span><span class="n">customUnit</span><span class="o">/</span>
+<span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>attribute (eml.attributeText, CommonRootSolrField)</td>
+<td>False</td>
+<td>False</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>fileID (eml.fileID, ResolveSolrField)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>(eml.fullText, AggregateSolrField)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>geohash_1 (eml.geohash1, CommonRootSolrField)</td>
+<td>False</td>
+<td>False</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>geohash_2 (eml.geohash2, CommonRootSolrField)</td>
+<td>False</td>
+<td>False</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>geohash_3 (eml.geohash3, CommonRootSolrField)</td>
+<td>False</td>
+<td>False</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>geohash_4 (eml.geohash4, CommonRootSolrField)</td>
+<td>False</td>
+<td>False</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>geohash_5 (eml.geohash5, CommonRootSolrField)</td>
+<td>False</td>
+<td>False</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>geohash_6 (eml.geohash6, CommonRootSolrField)</td>
+<td>False</td>
+<td>False</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>geohash_7 (eml.geohash7, CommonRootSolrField)</td>
+<td>False</td>
+<td>False</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>geohash_8 (eml.geohash8, CommonRootSolrField)</td>
+<td>False</td>
+<td>False</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>geohash_9 (eml.geohash9, CommonRootSolrField)</td>
+<td>False</td>
+<td>False</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>isService (eml.isService, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="n">boolean</span><span class="p">(</span><span class="o">//</span><span class="n">software</span><span class="o">/</span><span class="n">implementation</span><span class="o">/</span><span class="n">distribution</span><span class="o">/</span><span class="n">online</span><span class="o">/</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>serviceTitle (eml.serviceTitle, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">software</span><span class="o">/</span><span class="n">title</span><span class="o">//</span><span class="n">text</span><span class="p">()[</span><span class="n">normalize</span><span class="o">-</span><span class="n">space</span><span class="p">()]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>serviceDescription (eml.serviceDescription, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">software</span><span class="o">/</span><span class="n">abstract</span><span class="o">//</span><span class="n">text</span><span class="p">()[</span><span class="n">normalize</span><span class="o">-</span><span class="n">space</span><span class="p">()]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>serviceEndpoint (eml.serviceEndpoint, SolrField)</td>
+<td>True</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">software</span><span class="o">/</span><span class="n">implementation</span><span class="o">/</span><span class="n">distribution</span><span class="o">/</span><span class="n">online</span><span class="o">/</span><span class="n">url</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">eml201Subprocessor</a><ul>
+<li><a class="reference internal" href="#format-ids-processed">Format IDs Processed</a></li>
+<li><a class="reference internal" href="#fields">Fields</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="eml200Subprocessor.html"
+                        title="previous chapter">eml200Subprocessor</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="eml210Subprocessor.html"
+                        title="next chapter">eml210Subprocessor</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/eml201Subprocessor.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="eml210Subprocessor.html" title="eml210Subprocessor"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="eml200Subprocessor.html" title="eml200Subprocessor"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">DataONE Content Indexer 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, DataONE.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+    </div>
+  </body>
+</html>

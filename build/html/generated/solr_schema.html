@@ -1,0 +1,977 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Solr Fields Defined &mdash; DataONE Content Indexer 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="DataONE Content Indexer 1.0.0 documentation" href="../index.html" />
+    <link rel="prev" title="qualifiedDublicCoreSubprocessor" href="qualifiedDublicCoreSubprocessor.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="qualifiedDublicCoreSubprocessor.html" title="qualifiedDublicCoreSubprocessor"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">DataONE Content Indexer 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="solr-fields-defined">
+<h1>Solr Fields Defined<a class="headerlink" href="#solr-fields-defined" title="Permalink to this headline">¶</a></h1>
+<p>A list of the fields defined in the solr search index used by the Coordinating Nodes.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Type</th>
+<th class="head">MV</th>
+<th class="head">Store</th>
+<th class="head">Index</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>_version_</td>
+<td>long</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>_root_</td>
+<td>string</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>id</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>seriesId</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>fileName</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>mediaType</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>mediaTypeProperty</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>formatId</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>formatType</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>size</td>
+<td>tlong</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>checksum</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>checksumAlgorithm</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>dateUploaded</td>
+<td>tdate</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>dateModified</td>
+<td>tdate</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>submitter</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>rightsHolder</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>authoritativeMN</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>replicationAllowed</td>
+<td>boolean</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>numberReplicas</td>
+<td>int</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>preferredReplicationMN</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>blockedReplicationMN</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>replicaMN</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>replicaVerifiedDate</td>
+<td>tdate</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>datasource</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>obsoletes</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>obsoletedBy</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>resourceMap</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>documents</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>isDocumentedBy</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>readPermission</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>writePermission</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>changePermission</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>isPublic</td>
+<td>boolean</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>author</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>authorSurName</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>authorGivenName</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>authorSurNameSort</td>
+<td>alphaOnlySort</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>authorGivenNameSort</td>
+<td>alphaOnlySort</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>authorLastName</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>abstract</td>
+<td>text_general</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>keywords</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>keyConcept</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>southBoundCoord</td>
+<td>tfloat</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>northBoundCoord</td>
+<td>tfloat</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>westBoundCoord</td>
+<td>tfloat</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>eastBoundCoord</td>
+<td>tfloat</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>namedLocation</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>beginDate</td>
+<td>tdate</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>endDate</td>
+<td>tdate</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>title</td>
+<td>text_general</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>scientificName</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>relatedOrganizations</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>datePublished</td>
+<td>tdate</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>pubDate</td>
+<td>tdate</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>investigator</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>investigatorText</td>
+<td>text_general</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>ogcUrl</td>
+<td>text_general</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>identifier</td>
+<td>text_general</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>LTERSite</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>origin</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>originText</td>
+<td>text_general</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>titlestr</td>
+<td>string</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>geoform</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>presentationCat</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>purpose</td>
+<td>text_general</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>updateDate</td>
+<td>tdate</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>edition</td>
+<td>text_general</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>dataUrl</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>originator</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>originatorText</td>
+<td>text_general</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>family</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>species</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>genus</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>kingdom</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>phylum</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>order</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>class</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>attributeName</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>attributeLabel</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>attributeDescription</td>
+<td>text_general</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>attributeUnit</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>attribute</td>
+<td>text_general</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>webUrl</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>contactOrganization</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>contactOrganizationText</td>
+<td>text_general</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>keywordsText</td>
+<td>text_general</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>placeKey</td>
+<td>text_general</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>noBoundingBox</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>isSpatial</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>decade</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>gcmdKeyword</td>
+<td>text_general</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>project</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>projectText</td>
+<td>text_general</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>site</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>siteText</td>
+<td>text_general</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>parameter</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>parameterText</td>
+<td>text_general</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>sensor</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>sensorText</td>
+<td>text_general</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>source</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>sourceText</td>
+<td>text_general</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>term</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>termText</td>
+<td>text_general</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>topic</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>topicText</td>
+<td>text_general</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>fileID</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>text</td>
+<td>text_en_splitting</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>geohash_1</td>
+<td>text_general</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>geohash_2</td>
+<td>text_general</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>geohash_3</td>
+<td>text_general</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>geohash_4</td>
+<td>text_general</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>geohash_5</td>
+<td>text_general</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>geohash_6</td>
+<td>text_general</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>geohash_7</td>
+<td>text_general</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>geohash_8</td>
+<td>text_general</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>geohash_9</td>
+<td>text_general</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>prov_wasDerivedFrom</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>prov_wasInformedBy</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>prov_used</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>prov_generated</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>prov_generatedByProgram</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>prov_generatedByExecution</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>prov_generatedByUser</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>prov_usedByProgram</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>prov_usedByExecution</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>prov_usedByUser</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>prov_wasExecutedByExecution</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>prov_wasExecutedByUser</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>prov_hasSources</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>prov_hasDerivations</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>prov_instanceOfClass</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>sem_annotation</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>sem_annotated_by</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>sem_annotates</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>sem_comment</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>isService</td>
+<td>boolean</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>serviceCoupling</td>
+<td>string</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>serviceTitle</td>
+<td>text_general</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>serviceDescription</td>
+<td>text_general</td>
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>serviceType</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>serviceEndpoint</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>serviceInput</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>serviceOutput</td>
+<td>string</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="qualifiedDublicCoreSubprocessor.html"
+                        title="previous chapter">qualifiedDublicCoreSubprocessor</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/solr_schema.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="qualifiedDublicCoreSubprocessor.html" title="qualifiedDublicCoreSubprocessor"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">DataONE Content Indexer 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, DataONE.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+    </div>
+  </body>
+</html>

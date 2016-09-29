@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>datacite3Subprocessor &mdash; DataONE Content Indexer 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="DataONE Content Indexer 1.0.0 documentation" href="../index.html" />
+    <link rel="next" title="dryad30Subprocessor" href="dryad30Subprocessor.html" />
+    <link rel="prev" title="Welcome to DataONE Content Indexer’s documentation!" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="dryad30Subprocessor.html" title="dryad30Subprocessor"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to DataONE Content Indexer’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">DataONE Content Indexer 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="datacite3subprocessor">
+<h1>datacite3Subprocessor<a class="headerlink" href="#datacite3subprocessor" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="format-ids-processed">
+<h2>Format IDs Processed<a class="headerlink" href="#format-ids-processed" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://datacite.org/schema/kernel-3.1">http://datacite.org/schema/kernel-3.1</a></li>
+<li><a class="reference external" href="http://datacite.org/schema/kernel-3.0">http://datacite.org/schema/kernel-3.0</a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="6%" />
+<col width="6%" />
+<col width="59%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Solr Field</th>
+<th class="head">Multi</th>
+<th class="head">Dedupe</th>
+<th class="head">XPath</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>author (datacite.author, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">resource</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">creators</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">creator</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span>
+<span class="n">datacite</span><span class="p">:</span><span class="n">creatorName</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">())[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>authorLastName (datacite.author_lname, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">resource</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">creators</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">creator</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span>
+<span class="n">datacite</span><span class="p">:</span><span class="n">creatorName</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">())[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>authorSurName (datacite.authorSurName, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">resource</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">creators</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">creator</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span>
+<span class="n">datacite</span><span class="p">:</span><span class="n">creatorName</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">())[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>authorSurNameSort (datacite.authorSurNameSort, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">resource</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">creators</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">creator</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span>
+<span class="n">datacite</span><span class="p">:</span><span class="n">creatorName</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">())[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>authorGivenName (datacite.authorGivenName, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">resource</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">creators</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">creator</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span>
+<span class="n">datacite</span><span class="p">:</span><span class="n">creatorName</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">())[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>authorGivenNameSort (datacite.authorGivenNameSort, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">resource</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">creators</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">creator</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span>
+<span class="n">datacite</span><span class="p">:</span><span class="n">creatorName</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">())[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>abstract (datacite.abstract, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">resource</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">descriptions</span><span class="o">/</span>
+<span class="n">datacite</span><span class="p">:</span><span class="n">description</span><span class="p">[</span><span class="nd">@descriptionType</span><span class="o">=</span><span class="s1">&#39;Abstract&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="o">/</span><span class="n">text</span><span class="p">())[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>title (datacite.title, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">resource</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">titles</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">title</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+<span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>pubDate (datacite.pubDate, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">resource</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">publicationYear</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">())[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>keywords (datacite.keywords, SolrField)</td>
+<td>True</td>
+<td>True</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">resource</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">subjects</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">subject</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>beginDate (datacite.beginDate, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">resource</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">dates</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">date</span><span class="p">[</span><span class="nd">@dateType</span><span class="o">=</span>
+<span class="s1">&#39;Collected&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">())[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>endDate (datacite.endDate, SolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">resource</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">dates</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">date</span><span class="p">[</span><span class="nd">@dateType</span><span class="o">=</span>
+<span class="s1">&#39;Collected&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">text</span><span class="p">())[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>origin (datacite.origin, SolrField)</td>
+<td>True</td>
+<td>True</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">resource</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">creators</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">creator</span><span class="o">/</span>
+<span class="n">datacite</span><span class="p">:</span><span class="n">creatorName</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>investigator (datacite.investigator, SolrField)</td>
+<td>True</td>
+<td>True</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">resource</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">creators</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">creator</span><span class="o">/</span>
+<span class="n">datacite</span><span class="p">:</span><span class="n">creatorName</span><span class="o">/</span><span class="n">text</span><span class="p">()</span> <span class="o">|</span> <span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">resource</span><span class="o">/</span>
+<span class="n">datacite</span><span class="p">:</span><span class="n">contributors</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">contributor</span><span class="p">[</span>
+<span class="nd">@contributorType</span><span class="o">=</span><span class="s1">&#39;DataCollector&#39;</span><span class="p">]</span><span class="o">/</span>
+<span class="n">datacite</span><span class="p">:</span><span class="n">contributorName</span><span class="o">/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>contactOrganization (datacite.contactOrganization, SolrField)</td>
+<td>True</td>
+<td>True</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">resource</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">contributors</span><span class="o">/</span>
+<span class="n">datacite</span><span class="p">:</span><span class="n">contributor</span><span class="p">[</span><span class="nd">@contributorType</span><span class="o">=</span>
+<span class="s1">&#39;HostingInstitution&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">contributorName</span><span class="o">/</span>
+<span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>site (datacite.site, SolrField)</td>
+<td>True</td>
+<td>True</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">resource</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">geoLocations</span><span class="o">/</span>
+<span class="n">datacite</span><span class="p">:</span><span class="n">geoLocation</span><span class="o">/</span><span class="n">datacite</span><span class="p">:</span><span class="n">geoLocationPlace</span><span class="o">/</span>
+<span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>(datacite.boxSpatialBoundCoordinates, DataCiteSpatialBoxBoundingCoordinatesSolrField)</td>
+<td>False</td>
+<td>False</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>(datacite.boxSpatialGeohash, DataCiteSpatialBoxGeohashSolrField)</td>
+<td>False</td>
+<td>False</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>fileID (datacite.fileID, ResolveSolrField)</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>text (datacite.fullText, FullTextSolrField)</td>
+<td>False</td>
+<td>False</td>
+<td><div class="first last highlight-default"><div class="highlight"><pre><span></span><span class="o">//*/</span><span class="n">text</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">datacite3Subprocessor</a><ul>
+<li><a class="reference internal" href="#format-ids-processed">Format IDs Processed</a></li>
+<li><a class="reference internal" href="#fields">Fields</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../index.html"
+                        title="previous chapter">Welcome to DataONE Content Indexer&#8217;s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="dryad30Subprocessor.html"
+                        title="next chapter">dryad30Subprocessor</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/datacite3Subprocessor.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="dryad30Subprocessor.html" title="dryad30Subprocessor"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to DataONE Content Indexer’s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">DataONE Content Indexer 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, DataONE.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+    </div>
+  </body>
+</html>
