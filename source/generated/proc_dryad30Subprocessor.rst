@@ -31,6 +31,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dryad.abstract`_
 
+
   * - :attr:`Index.author`
     - False
     - False
@@ -40,6 +41,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dryad.author`_
+
 
   * - :attr:`Index.authorSurName`
     - False
@@ -51,6 +53,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dryad.authorSurName`_
 
+
   * - :attr:`Index.authorSurNameSort`
     - False
     - False
@@ -60,6 +63,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dryad.authorSurNameSort`_
+
 
   * - :attr:`Index.authorGivenName`
     - False
@@ -71,6 +75,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dryad.authorGivenName`_
 
+
   * - :attr:`Index.authorGivenNameSort`
     - False
     - False
@@ -80,6 +85,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dryad.authorGivenNameSort`_
+
 
   * - :attr:`Index.investigator`
     - True
@@ -91,6 +97,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dryad.investigator`_
 
+
   * - :attr:`Index.keywords`
     - True
     - False
@@ -100,6 +107,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dryad.keywords`_
+
 
   * - :attr:`Index.origin`
     - True
@@ -111,6 +119,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dryad.origin`_
 
+
   * - :attr:`Index.pubDate`
     - False
     - False
@@ -120,6 +129,8 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dryad.pubDate`_
+      | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
+
 
   * - :attr:`Index.site`
     - True
@@ -131,6 +142,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dryad.site`_
 
+
   * - :attr:`Index.title`
     - False
     - False
@@ -140,6 +152,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dryad.title`_
+
 
   * - :attr:`Index.scientificName`
     - True
@@ -151,12 +164,15 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dryad.scientificName`_
 
+
   * - :attr:`Index.fileID`
     - 
     - 
     - 
       | Processor: `ResolveSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/ResolveSolrField.java>`_
       | Configuration: `dryad.fileID`_
+      | Converter: 
+
 
   * - :attr:`Index.text`
     - False
@@ -167,6 +183,7 @@ Fields
 
       | Processor: `FullTextSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/FullTextSolrField.java>`_
       | Configuration: `dryad.fullText`_
+
 
 
 Bean Configurations

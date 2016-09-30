@@ -95,6 +95,8 @@ def wrapXPath(original, width=80, ind1=0, ind2=0, prefix=''):
 
 
 def classnameLink(cname):
+  if cname is None or cname == '':
+    return ''
   parts = cname.split(".")
   res = parts[-1]
   url = "https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/"
@@ -123,7 +125,6 @@ def solrFieldDescription(field):
 
 def svnRepoLink(target):
   return "https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/" + target
-
 
 
 #=======================================================================================================================
@@ -227,11 +228,21 @@ class B_LeafElement(B_Bean):
 
 
 #--
-class B_CommonRootSolrField(B_SolrField):
+class B_CommonRootSolrField(B_Bean):
 
   def load(self, ele, container):
     super(B_CommonRootSolrField, self).load(ele, container)
     self.p['root-ref'] = xpstrval(ele, './@p:root-ref')
+    self.p['field_name'] = [xpstrval(ele, "b:constructor-arg[@name='name']/@value"), ]
+    self.p['multivalue'] = xpboolval(ele, "b:property[@name='multivalue']/@value")
+    self.p['converter'] = xpstrval(ele, "b:property[@name='converter']/@ref")
+    if self.p['bid'] == '':
+      # If there's no ID, then it is an anonymous bean contained by some parent
+      # query is something like "../../.."
+      pele = ele.xpath("../../..")
+      if len(pele) > 0:
+        self.p['bid'] = u"{0}.{1}".format(pele[0].attrib['id'], self.p['field_name'][0])
+
 
 
 #--
@@ -270,10 +281,12 @@ class B_FullTextSolrField(B_SolrField):
 
 
 #--
-class B_AggregateSolrField(B_SolrField):
+class B_AggregateSolrField(B_Bean):
 
   def load(self, ele, container):
     super(B_AggregateSolrField, self).load(ele, container)
+    self.p['field_name'] = [xpstrval(ele, "b:property[@name='name']/@value"), ]
+
 
 
 #--
@@ -654,6 +667,13 @@ class IndexProcessorDocuments(object):
     self.loadParsers(context_path)
 
 
+  def getConverterInfo(self, bid):
+    print "looking up converter: %s" % bid
+    bean = self.getBean(bid)
+    if bean is None:
+      return ''
+    return bean.p['cname']
+
 
   def toText(self, dest_folder=None):
     if not os.path.exists(dest_folder):
@@ -668,6 +688,7 @@ class IndexProcessorDocuments(object):
     env.filters['attrList'] = attrList
     env.filters['solrFieldDescription'] = solrFieldDescription
     env.filters['svnRepoLink'] = svnRepoLink
+    env.filters['getConverterInfo'] = self.getConverterInfo
 
     tnames = ['solr_schema.rst',
               'namespaces.rst',
@@ -682,11 +703,11 @@ class IndexProcessorDocuments(object):
 
     with codecs.open(templates['solr_schema.rst']['dest'], mode='wb', encoding='utf-8') as f_dest:
       sorted_solr_fields = sorted(self.solr_fields, key=lambda k: k['name'].lower())
-      f_dest.write( templates['solr_schema.rst']['template'].render(fields = sorted_solr_fields) )
+      f_dest.write( templates['solr_schema.rst']['template'].render(resolver=self, fields = sorted_solr_fields) )
 
     with codecs.open(templates['namespaces.rst']['dest'], mode='wb', encoding='utf-8') as f_dest:
       namespaces = self.getClassInstances('org.dataone.cn.indexer.XMLNamespaceConfig')
-      f_dest.write( templates['namespaces.rst']['template'].render(namespaces=namespaces) )
+      f_dest.write( templates['namespaces.rst']['template'].render(esolver=self, namespaces=namespaces) )
 
     t_name = 'parsers.rst'
     t_parsers = env.get_template(t_name)
@@ -698,13 +719,10 @@ class IndexProcessorDocuments(object):
       print sysm_proc
       fields = {}
       for field in sysm_proc.p['fieldList']:
-        print "Loading {0}".format(field)
-        b = self.getBean(field)
-        print b
-        fields[field] = b
+        fields[field] = self.getBean(field)
       dest = os.path.join(dest_folder, "system_metadata.rst")
       with codecs.open(dest, mode='wb', encoding='utf-8') as f_dest:
-        f_dest.write(templates['system_metadata.rst']['template'].render(sp=sysm_proc, fields=fields))
+        f_dest.write(templates['system_metadata.rst']['template'].render(resolver=self, sp=sysm_proc, fields=fields))
       for subproc in parser.p['subprocessors']:
         subproc_instance = self.getBean(subproc)
         if subproc_instance.p.has_key('fields'):
@@ -713,7 +731,7 @@ class IndexProcessorDocuments(object):
             fields[field] = self.getBean(field)
           dest = os.path.join(dest_folder, "proc_" + subproc + ".rst")
           with codecs.open(dest, mode='wb', encoding='utf-8') as f_dest:
-            f_dest.write( templates['subprocessor.rst']['template'].render( sp=subproc_instance, fields=fields ))
+            f_dest.write( templates['subprocessor.rst']['template'].render(resolver=self, sp=subproc_instance, fields=fields ))
         #print "=============="
         #print subproc_instance
 

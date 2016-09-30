@@ -32,6 +32,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.abstract`_
 
+
   * - :attr:`Index.author`
     - False
     - False
@@ -44,6 +45,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.author`_
+
 
   * - :attr:`Index.authorSurName`
     - False
@@ -58,6 +60,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.authorSurName`_
 
+
   * - :attr:`Index.authorSurNameSort`
     - False
     - False
@@ -71,6 +74,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.authorSurNameSort`_
 
+
   * - :attr:`Index.contactOrganization`
     - False
     - False
@@ -81,6 +85,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.contactOrganization`_
+
 
   * - :attr:`Index.origin`
     - True
@@ -104,6 +109,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.origin`_
 
+
   * - :attr:`Index.investigator`
     - True
     - True
@@ -117,6 +123,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.investigator`_
 
+
   * - :attr:`Index.pubDate`
     - False
     - False
@@ -127,6 +134,8 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.pubDate`_
+      | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
+
 
   * - :attr:`Index.beginDate`
     - False
@@ -141,6 +150,8 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.beginDate`_
+      | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
+
 
   * - :attr:`Index.endDate`
     - False
@@ -154,6 +165,8 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.endDate`_
+      | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
+
 
   * - :attr:`Index.title`
     - False
@@ -170,6 +183,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.title`_
 
+
   * - :attr:`Index.keywords`
     - True
     - False
@@ -185,6 +199,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.keywords`_
 
+
   * - :attr:`Index.eastBoundCoord`
     - False
     - False
@@ -197,6 +212,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.eastBoundCoord`_
+
 
   * - :attr:`Index.westBoundCoord`
     - False
@@ -211,6 +227,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.westBoundCoord`_
 
+
   * - :attr:`Index.southBoundCoord`
     - False
     - False
@@ -223,6 +240,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.southBoundCoord`_
+
 
   * - :attr:`Index.northBoundCoord`
     - False
@@ -237,95 +255,87 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.northBoundCoord`_
 
+
   * - :attr:`Index.geohash_9`
     - False
-    - False
-    - ::
-
-        
-
+    - 
+    - 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash9`_
+      | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
+
 
   * - :attr:`Index.geohash_1`
     - False
-    - False
-    - ::
-
-        
-
+    - 
+    - 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash1`_
+      | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
+
 
   * - :attr:`Index.geohash_2`
     - False
-    - False
-    - ::
-
-        
-
+    - 
+    - 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash2`_
+      | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
+
 
   * - :attr:`Index.geohash_3`
     - False
-    - False
-    - ::
-
-        
-
+    - 
+    - 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash3`_
+      | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
+
 
   * - :attr:`Index.geohash_4`
     - False
-    - False
-    - ::
-
-        
-
+    - 
+    - 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash4`_
+      | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
+
 
   * - :attr:`Index.geohash_5`
     - False
-    - False
-    - ::
-
-        
-
+    - 
+    - 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash5`_
+      | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
+
 
   * - :attr:`Index.geohash_6`
     - False
-    - False
-    - ::
-
-        
-
+    - 
+    - 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash6`_
+      | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
+
 
   * - :attr:`Index.geohash_7`
     - False
-    - False
-    - ::
-
-        
-
+    - 
+    - 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash7`_
+      | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
+
 
   * - :attr:`Index.geohash_8`
     - False
-    - False
-    - ::
-
-        
-
+    - 
+    - 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash8`_
+      | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
+
 
   * - :attr:`Index.isService`
     - False
@@ -337,6 +347,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.isService`_
+
 
   * - :attr:`Index.serviceCoupling`
     - False
@@ -362,6 +373,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.serviceCoupling`_
 
+
   * - :attr:`Index.serviceTitle`
     - False
     - False
@@ -379,6 +391,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.serviceTitle`_
 
+
   * - :attr:`Index.serviceDescription`
     - False
     - False
@@ -395,6 +408,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.serviceDescription`_
 
+
   * - :attr:`Index.serviceType`
     - True
     - False
@@ -405,6 +419,8 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.serviceType`_
+      | Converter: `MemberNodeServiceRegistrationTypeConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/MemberNodeServiceRegistrationTypeConverter.java>`_
+
 
   * - :attr:`Index.serviceEndpoint`
     - True
@@ -418,6 +434,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.serviceEndpoint`_
 
+
   * - :attr:`Index.serviceInput`
     - True
     - False
@@ -427,6 +444,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.serviceInput`_
+
 
   * - :attr:`Index.serviceOutput`
     - True
@@ -438,6 +456,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.serviceOutput`_
+
 
   * - :attr:`Index.serviceType`
     - True
@@ -452,6 +471,8 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.distribServiceType`_
+      | Converter: `MemberNodeServiceRegistrationTypeConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/MemberNodeServiceRegistrationTypeConverter.java>`_
+
 
   * - :attr:`Index.serviceEndpoint`
     - True
@@ -470,6 +491,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.distribServiceEndpoint`_
 
+
   * - :attr:`Index.serviceInput`
     - True
     - False
@@ -481,6 +503,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.distribServiceInput`_
+
 
   * - :attr:`Index.serviceOutput`
     - True
@@ -494,12 +517,15 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.distribServiceOutput`_
 
+
   * - :attr:`Index.fileID`
     - 
     - 
     - 
       | Processor: `ResolveSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/ResolveSolrField.java>`_
       | Configuration: `isotc.fileID`_
+      | Converter: 
+
 
   * - :attr:`Index.text`
     - False
@@ -510,6 +536,7 @@ Fields
 
       | Processor: `FullTextSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/FullTextSolrField.java>`_
       | Configuration: `isotc.fullText`_
+
 
 
 Bean Configurations

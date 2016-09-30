@@ -31,6 +31,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.abstract`_
 
+
   * - :attr:`Index.author`
     - False
     - False
@@ -40,6 +41,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.author`_
+
 
   * - :attr:`Index.authorSurName`
     - False
@@ -51,6 +53,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.authorSurName`_
 
+
   * - :attr:`Index.authorSurNameSort`
     - False
     - False
@@ -60,6 +63,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.authorSurNameSort`_
+
 
   * - :attr:`Index.contactOrganization`
     - True
@@ -71,6 +75,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.contactOrganization`_
 
+
   * - :attr:`Index.investigator`
     - True
     - True
@@ -80,6 +85,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.investigator`_
+
 
   * - :attr:`Index.origin`
     - True
@@ -91,6 +97,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.origin`_
 
+
   * - :attr:`Index.pubDate`
     - False
     - False
@@ -100,6 +107,8 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.pubDate`_
+      | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
+
 
   * - :attr:`Index.title`
     - False
@@ -111,6 +120,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.title`_
 
+
   * - :attr:`Index.keywords`
     - True
     - False
@@ -120,6 +130,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.keywords`_
+
 
   * - :attr:`Index.beginDate`
     - False
@@ -132,6 +143,8 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.beginDate`_
+      | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
+
 
   * - :attr:`Index.endDate`
     - False
@@ -144,6 +157,8 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.endDate`_
+      | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
+
 
   * - :attr:`Index.site`
     - True
@@ -157,6 +172,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.site`_
 
+
   * - :attr:`Index.northBoundCoord`,:attr:`Index.southBoundCoord`,:attr:`Index.eastBoundCoord`,:attr:`Index.westBoundCoord`
     - False
     - False
@@ -167,6 +183,7 @@ Fields
 
       | Processor: `DublinCoreSpatialBoxBoundingCoordinatesSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/DublinCoreSpatialBoxBoundingCoordinatesSolrField.java>`_
       | Configuration: `dc.boxSpatialBoundCoordinates`_
+
 
   * - :attr:`Index.geohash_1`,:attr:`Index.geohash_2`,:attr:`Index.geohash_3`,:attr:`Index.geohash_4`,:attr:`Index.geohash_5`,:attr:`Index.geohash_6`,:attr:`Index.geohash_7`,:attr:`Index.geohash_8`,:attr:`Index.geohash_9`
     - False
@@ -179,12 +196,15 @@ Fields
       | Processor: `DublinCoreSpatialBoxGeohashSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/DublinCoreSpatialBoxGeohashSolrField.java>`_
       | Configuration: `dc.boxSpatialGeohash`_
 
+
   * - :attr:`Index.fileID`
     - 
     - 
     - 
       | Processor: `ResolveSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/ResolveSolrField.java>`_
       | Configuration: `dc.fileID`_
+      | Converter: 
+
 
   * - :attr:`Index.text`
     - False
@@ -195,6 +215,7 @@ Fields
 
       | Processor: `FullTextSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/FullTextSolrField.java>`_
       | Configuration: `dc.fullText`_
+
 
 
 Bean Configurations

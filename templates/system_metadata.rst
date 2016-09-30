@@ -23,7 +23,7 @@ Fields
 {% else %}{% endif %}
       | Processor: {{fields[fld].p['cname']|classnameLink}}
       | Configuration: `{{fld}}`_
-{% if fields[fld].p['converter'] != '' %}      | {{fields[fld].p['converter']}}
+{% if fields[fld].p['converter'] != '' %}      | Converter: {{fields[fld].p['converter']|getConverterInfo|classnameLink }}
 {% endif %}
 {% endfor %}
 

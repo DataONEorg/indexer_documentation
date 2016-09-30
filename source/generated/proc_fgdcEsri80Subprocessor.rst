@@ -32,6 +32,7 @@ Fields
       | Processor: `MergeSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/MergeSolrField.java>`_
       | Configuration: `fgdc.abstract`_
 
+
   * - :attr:`Index.beginDate`
     - False
     - False
@@ -42,6 +43,8 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.beginDate`_
+      | Converter: `FgdcDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/FgdcDateConverter.java>`_
+
 
   * - :attr:`Index.contactOrganization`
     - True
@@ -56,6 +59,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.contactOrganization`_
 
+
   * - :attr:`Index.eastBoundCoord`
     - False
     - False
@@ -66,6 +70,8 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.eastBoundCoord`_
+      | Converter: `SolrLongitudeConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrLongitudeConverter.java>`_
+
 
   * - :attr:`Index.westBoundCoord`
     - False
@@ -77,6 +83,8 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.westBoundCoord`_
+      | Converter: `SolrLongitudeConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrLongitudeConverter.java>`_
+
 
   * - :attr:`Index.northBoundCoord`
     - False
@@ -88,6 +96,8 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.northBoundCoord`_
+      | Converter: `SolrLongitudeConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrLongitudeConverter.java>`_
+
 
   * - :attr:`Index.southBoundCoord`
     - False
@@ -99,6 +109,8 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.southBoundCoord`_
+      | Converter: `SolrLongitudeConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrLongitudeConverter.java>`_
+
 
   * - :attr:`Index.edition`
     - False
@@ -110,6 +122,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.edition`_
 
+
   * - :attr:`Index.endDate`
     - False
     - False
@@ -120,6 +133,8 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.endDate`_
+      | Converter: `FgdcDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/FgdcDateConverter.java>`_
+
 
   * - :attr:`Index.gcmdKeyword`
     - True
@@ -131,6 +146,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.gcmdKeyword`_
+
 
   * - :attr:`Index.keywords`
     - True
@@ -144,6 +160,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.keywords`_
 
+
   * - :attr:`Index.geoform`
     - False
     - False
@@ -155,6 +172,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.geoform`_
 
+
   * - :attr:`Index.genus`
     - True
     - False
@@ -164,6 +182,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.genus`_
+
 
   * - :attr:`Index.kingdom`
     - True
@@ -175,6 +194,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.kingdom`_
 
+
   * - :attr:`Index.order`
     - True
     - False
@@ -184,6 +204,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.order`_
+
 
   * - :attr:`Index.phylum`
     - True
@@ -196,6 +217,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.phylum`_
 
+
   * - :attr:`Index.species`
     - True
     - False
@@ -205,6 +227,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.species`_
+
 
   * - :attr:`Index.family`
     - True
@@ -216,6 +239,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.family`_
 
+
   * - :attr:`Index.class`
     - True
     - False
@@ -225,6 +249,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.class`_
+
 
   * - :attr:`Index.origin`
     - True
@@ -237,15 +262,14 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.origin`_
 
+
   * - :attr:`Index.scientificName`
     - False
-    - False
-    - ::
-
-        
-
+    - 
+    - 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `fgdc.scientificName`_
+
 
   * - :attr:`Index.placeKey`
     - True
@@ -258,6 +282,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.placeKey`_
 
+
   * - :attr:`Index.pubDate`
     - False
     - False
@@ -268,6 +293,8 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.pubDate`_
+      | Converter: `FgdcDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/FgdcDateConverter.java>`_
+
 
   * - :attr:`Index.purpose`
     - False
@@ -280,6 +307,7 @@ Fields
       | Processor: `MergeSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/MergeSolrField.java>`_
       | Configuration: `fgdc.purpose`_
 
+
   * - :attr:`Index.title`
     - False
     - False
@@ -290,6 +318,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.title`_
+
 
   * - :attr:`Index.webUrl`
     - True
@@ -302,22 +331,24 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.web_url`_
 
+
   * - :attr:`Index.fileID`
     - 
     - 
     - 
       | Processor: `ResolveSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/ResolveSolrField.java>`_
       | Configuration: `fgdc.fileID`_
+      | Converter: 
 
-  * - 
-    - False
-    - False
-    - ::
 
-        
-
+  * - :attr:`Index.text`
+    - 
+    - 
+    - 
       | Processor: `AggregateSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/AggregateSolrField.java>`_
       | Configuration: `fgdc.fullText`_
+      | Converter: 
+
 
   * - :attr:`Index.presentationCat`
     - False
@@ -330,6 +361,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.presentationCat`_
 
+
   * - :attr:`Index.author`
     - False
     - False
@@ -340,6 +372,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.author`_
+
 
   * - :attr:`Index.authorSurName`
     - False
@@ -352,6 +385,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.authorSurName`_
 
+
   * - :attr:`Index.authorSurNameSort`
     - False
     - False
@@ -362,6 +396,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.authorSurNameSort`_
+
 
   * - :attr:`Index.investigator`
     - True
@@ -374,6 +409,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.investigator`_
 
+
   * - :attr:`Index.site`
     - True
     - False
@@ -383,6 +419,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.site`_
+
 
   * - :attr:`Index.attributeName`
     - True
@@ -394,6 +431,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.attributeName`_
 
+
   * - :attr:`Index.attributeLabel`
     - True
     - False
@@ -404,6 +442,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.attributeLabel`_
 
+
   * - :attr:`Index.attributeDescription`
     - True
     - False
@@ -413,6 +452,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.attributeDescription`_
+
 
   * - :attr:`Index.attributeUnit`
     - True
@@ -425,105 +465,95 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `fgdc.attributeUnit`_
 
+
   * - :attr:`Index.attribute`
     - False
-    - False
-    - ::
-
-        
-
+    - 
+    - 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `fgdc.attributeText`_
 
+
   * - :attr:`Index.geohash_1`
     - False
-    - False
-    - ::
-
-        
-
+    - 
+    - 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `fgdc.geohash1`_
+      | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
+
 
   * - :attr:`Index.geohash_2`
     - False
-    - False
-    - ::
-
-        
-
+    - 
+    - 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `fgdc.geohash2`_
+      | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
+
 
   * - :attr:`Index.geohash_3`
     - False
-    - False
-    - ::
-
-        
-
+    - 
+    - 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `fgdc.geohash3`_
+      | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
+
 
   * - :attr:`Index.geohash_4`
     - False
-    - False
-    - ::
-
-        
-
+    - 
+    - 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `fgdc.geohash4`_
+      | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
+
 
   * - :attr:`Index.geohash_5`
     - False
-    - False
-    - ::
-
-        
-
+    - 
+    - 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `fgdc.geohash5`_
+      | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
+
 
   * - :attr:`Index.geohash_6`
     - False
-    - False
-    - ::
-
-        
-
+    - 
+    - 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `fgdc.geohash6`_
+      | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
+
 
   * - :attr:`Index.geohash_7`
     - False
-    - False
-    - ::
-
-        
-
+    - 
+    - 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `fgdc.geohash7`_
+      | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
+
 
   * - :attr:`Index.geohash_8`
     - False
-    - False
-    - ::
-
-        
-
+    - 
+    - 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `fgdc.geohash8`_
+      | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
+
 
   * - :attr:`Index.geohash_9`
     - False
-    - False
-    - ::
-
-        
-
+    - 
+    - 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `fgdc.geohash9`_
+      | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
+
 
 
 Bean Configurations

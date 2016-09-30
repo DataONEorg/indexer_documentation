@@ -34,6 +34,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `datacite.author`_
 
+
   * - :attr:`Index.authorLastName`
     - False
     - False
@@ -44,6 +45,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `datacite.author_lname`_
+
 
   * - :attr:`Index.authorSurName`
     - False
@@ -56,6 +58,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `datacite.authorSurName`_
 
+
   * - :attr:`Index.authorSurNameSort`
     - False
     - False
@@ -66,6 +69,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `datacite.authorSurNameSort`_
+
 
   * - :attr:`Index.authorGivenName`
     - False
@@ -78,6 +82,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `datacite.authorGivenName`_
 
+
   * - :attr:`Index.authorGivenNameSort`
     - False
     - False
@@ -88,6 +93,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `datacite.authorGivenNameSort`_
+
 
   * - :attr:`Index.abstract`
     - False
@@ -101,6 +107,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `datacite.abstract`_
 
+
   * - :attr:`Index.title`
     - False
     - False
@@ -112,6 +119,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `datacite.title`_
 
+
   * - :attr:`Index.pubDate`
     - False
     - False
@@ -121,6 +129,8 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `datacite.pubDate`_
+      | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
+
 
   * - :attr:`Index.keywords`
     - True
@@ -132,6 +142,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `datacite.keywords`_
 
+
   * - :attr:`Index.beginDate`
     - False
     - False
@@ -142,6 +153,8 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `datacite.beginDate`_
+      | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
+
 
   * - :attr:`Index.endDate`
     - False
@@ -153,6 +166,8 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `datacite.endDate`_
+      | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
+
 
   * - :attr:`Index.origin`
     - True
@@ -164,6 +179,7 @@ Fields
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `datacite.origin`_
+
 
   * - :attr:`Index.investigator`
     - True
@@ -179,6 +195,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `datacite.investigator`_
 
+
   * - :attr:`Index.contactOrganization`
     - True
     - True
@@ -192,6 +209,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `datacite.contactOrganization`_
 
+
   * - :attr:`Index.site`
     - True
     - True
@@ -204,6 +222,7 @@ Fields
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `datacite.site`_
 
+
   * - 
     - False
     - False
@@ -213,6 +232,7 @@ Fields
 
       | Processor: `DataCiteSpatialBoxBoundingCoordinatesSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/DataCiteSpatialBoxBoundingCoordinatesSolrField.java>`_
       | Configuration: `datacite.boxSpatialBoundCoordinates`_
+
 
   * - 
     - False
@@ -224,12 +244,15 @@ Fields
       | Processor: `DataCiteSpatialBoxGeohashSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/DataCiteSpatialBoxGeohashSolrField.java>`_
       | Configuration: `datacite.boxSpatialGeohash`_
 
+
   * - :attr:`Index.fileID`
     - 
     - 
     - 
       | Processor: `ResolveSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/ResolveSolrField.java>`_
       | Configuration: `datacite.fileID`_
+      | Converter: 
+
 
   * - :attr:`Index.text`
     - False
@@ -240,6 +263,7 @@ Fields
 
       | Processor: `FullTextSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/FullTextSolrField.java>`_
       | Configuration: `datacite.fullText`_
+
 
 
 Bean Configurations
