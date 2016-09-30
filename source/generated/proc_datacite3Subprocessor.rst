@@ -23,7 +23,7 @@ Fields
     - Dedupe
     - XPath
 
-  * - :attr:`Index.author` (datacite.author, SolrField)
+  * - :attr:`Index.author`
     - False
     - False
     - ::
@@ -31,9 +31,10 @@ Fields
         (/datacite:resource/datacite:creators/datacite:creator[1]/
         datacite:creatorName[1]/text())[1]
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `datacite.author`_
 
-
-  * - :attr:`Index.authorLastName` (datacite.author_lname, SolrField)
+  * - :attr:`Index.authorLastName`
     - False
     - False
     - ::
@@ -41,9 +42,10 @@ Fields
         (/datacite:resource/datacite:creators/datacite:creator[1]/
         datacite:creatorName[1]/text())[1]
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `datacite.author_lname`_
 
-
-  * - :attr:`Index.authorSurName` (datacite.authorSurName, SolrField)
+  * - :attr:`Index.authorSurName`
     - False
     - False
     - ::
@@ -51,9 +53,10 @@ Fields
         (/datacite:resource/datacite:creators/datacite:creator[1]/
         datacite:creatorName[1]/text())[1]
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `datacite.authorSurName`_
 
-
-  * - :attr:`Index.authorSurNameSort` (datacite.authorSurNameSort, SolrField)
+  * - :attr:`Index.authorSurNameSort`
     - False
     - False
     - ::
@@ -61,9 +64,10 @@ Fields
         (/datacite:resource/datacite:creators/datacite:creator[1]/
         datacite:creatorName[1]/text())[1]
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `datacite.authorSurNameSort`_
 
-
-  * - :attr:`Index.authorGivenName` (datacite.authorGivenName, SolrField)
+  * - :attr:`Index.authorGivenName`
     - False
     - False
     - ::
@@ -71,9 +75,10 @@ Fields
         (/datacite:resource/datacite:creators/datacite:creator[1]/
         datacite:creatorName[1]/text())[1]
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `datacite.authorGivenName`_
 
-
-  * - :attr:`Index.authorGivenNameSort` (datacite.authorGivenNameSort, SolrField)
+  * - :attr:`Index.authorGivenNameSort`
     - False
     - False
     - ::
@@ -81,9 +86,10 @@ Fields
         (/datacite:resource/datacite:creators/datacite:creator[1]/
         datacite:creatorName[1]/text())[1]
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `datacite.authorGivenNameSort`_
 
-
-  * - :attr:`Index.abstract` (datacite.abstract, SolrField)
+  * - :attr:`Index.abstract`
     - False
     - False
     - ::
@@ -92,9 +98,10 @@ Fields
         datacite:description[@descriptionType='Abstract'][1]
         /text())[1]
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `datacite.abstract`_
 
-
-  * - :attr:`Index.title` (datacite.title, SolrField)
+  * - :attr:`Index.title`
     - False
     - False
     - ::
@@ -102,27 +109,30 @@ Fields
         (/datacite:resource/datacite:titles/datacite:title[1]/text()
         )[1]
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `datacite.title`_
 
-
-  * - :attr:`Index.pubDate` (datacite.pubDate, SolrField)
+  * - :attr:`Index.pubDate`
     - False
     - False
     - ::
 
         (/datacite:resource/datacite:publicationYear[1]/text())[1]
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `datacite.pubDate`_
 
-
-  * - :attr:`Index.keywords` (datacite.keywords, SolrField)
+  * - :attr:`Index.keywords`
     - True
     - True
     - ::
 
         /datacite:resource/datacite:subjects/datacite:subject/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `datacite.keywords`_
 
-
-  * - :attr:`Index.beginDate` (datacite.beginDate, SolrField)
+  * - :attr:`Index.beginDate`
     - False
     - False
     - ::
@@ -130,9 +140,10 @@ Fields
         (/datacite:resource/datacite:dates/datacite:date[@dateType=
         'Collected'][1]/text())[1]
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `datacite.beginDate`_
 
-
-  * - :attr:`Index.endDate` (datacite.endDate, SolrField)
+  * - :attr:`Index.endDate`
     - False
     - False
     - ::
@@ -140,9 +151,10 @@ Fields
         (/datacite:resource/datacite:dates/datacite:date[@dateType=
         'Collected'][1]/text())[1]
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `datacite.endDate`_
 
-
-  * - :attr:`Index.origin` (datacite.origin, SolrField)
+  * - :attr:`Index.origin`
     - True
     - True
     - ::
@@ -150,9 +162,10 @@ Fields
         /datacite:resource/datacite:creators/datacite:creator/
         datacite:creatorName/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `datacite.origin`_
 
-
-  * - :attr:`Index.investigator` (datacite.investigator, SolrField)
+  * - :attr:`Index.investigator`
     - True
     - True
     - ::
@@ -163,9 +176,10 @@ Fields
         @contributorType='DataCollector']/
         datacite:contributorName/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `datacite.investigator`_
 
-
-  * - :attr:`Index.contactOrganization` (datacite.contactOrganization, SolrField)
+  * - :attr:`Index.contactOrganization`
     - True
     - True
     - ::
@@ -175,9 +189,10 @@ Fields
         'HostingInstitution']/datacite:contributorName/
         text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `datacite.contactOrganization`_
 
-
-  * - :attr:`Index.site` (datacite.site, SolrField)
+  * - :attr:`Index.site`
     - True
     - True
     - ::
@@ -186,37 +201,376 @@ Fields
         datacite:geoLocation/datacite:geoLocationPlace/
         text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `datacite.site`_
 
-
-  * - :attr:`Index.` (datacite.boxSpatialBoundCoordinates, DataCiteSpatialBoxBoundingCoordinatesSolrField)
+  * - 
     - False
     - False
     - ::
 
         
 
+      | Processor: `DataCiteSpatialBoxBoundingCoordinatesSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/DataCiteSpatialBoxBoundingCoordinatesSolrField.java>`_
+      | Configuration: `datacite.boxSpatialBoundCoordinates`_
 
-
-  * - :attr:`Index.` (datacite.boxSpatialGeohash, DataCiteSpatialBoxGeohashSolrField)
+  * - 
     - False
     - False
     - ::
 
         
 
+      | Processor: `DataCiteSpatialBoxGeohashSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/DataCiteSpatialBoxGeohashSolrField.java>`_
+      | Configuration: `datacite.boxSpatialGeohash`_
 
-
-  * - :attr:`Index.fileID` (datacite.fileID, ResolveSolrField)
+  * - :attr:`Index.fileID`
     - 
     - 
     - 
+      | Processor: `ResolveSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/ResolveSolrField.java>`_
+      | Configuration: `datacite.fileID`_
 
-
-  * - :attr:`Index.text` (datacite.fullText, FullTextSolrField)
+  * - :attr:`Index.text`
     - False
     - False
     - ::
 
         //*/text()
+
+      | Processor: `FullTextSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/FullTextSolrField.java>`_
+      | Configuration: `datacite.fullText`_
+
+
+Bean Configurations
+-------------------
+
+
+datacite.author
+~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.author" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="author"/>
+		<constructor-arg name="xpath" value="(/datacite:resource/datacite:creators/datacite:creator[1]/datacite:creatorName[1]/text())[1]"/>
+	</bean>
+
+	
+
+
+
+
+datacite.author_lname
+~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.author_lname" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorLastName"/>
+		<constructor-arg name="xpath" value="(/datacite:resource/datacite:creators/datacite:creator[1]/datacite:creatorName[1]/text())[1]"/>
+		<property name="substringBefore" value="true"/>
+		<property name="splitOnString" value=","/>
+	</bean>
+	
+	
+
+
+
+
+datacite.authorSurName
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.authorSurName" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorSurName"/>
+		<constructor-arg name="xpath" value="(/datacite:resource/datacite:creators/datacite:creator[1]/datacite:creatorName[1]/text())[1]"/>
+		<property name="substringBefore" value="true"/>
+		<property name="splitOnString" value=","/>
+	</bean>
+	
+	
+
+
+
+
+datacite.authorSurNameSort
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.authorSurNameSort" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorSurNameSort"/>
+		<constructor-arg name="xpath" value="(/datacite:resource/datacite:creators/datacite:creator[1]/datacite:creatorName[1]/text())[1]"/>
+		<property name="substringBefore" value="true"/>
+		<property name="splitOnString" value=","/>
+	</bean>	
+	
+	
+
+
+
+
+datacite.authorGivenName
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.authorGivenName" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorGivenName"/>
+		<constructor-arg name="xpath" value="(/datacite:resource/datacite:creators/datacite:creator[1]/datacite:creatorName[1]/text())[1]"/>
+		<property name="substringAfter" value="true"/>
+		<property name="splitOnString" value=","/>
+	</bean>
+	
+	
+
+
+
+
+datacite.authorGivenNameSort
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.authorGivenNameSort" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorGivenNameSort"/>
+		<constructor-arg name="xpath" value="(/datacite:resource/datacite:creators/datacite:creator[1]/datacite:creatorName[1]/text())[1]"/>
+		<property name="substringAfter" value="true"/>
+		<property name="splitOnString" value=","/>
+	</bean>	
+	
+	
+
+
+
+
+datacite.abstract
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.abstract" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="abstract"/>
+		<constructor-arg name="xpath" value="(/datacite:resource/datacite:descriptions/datacite:description[@descriptionType='Abstract'][1]/text())[1]"/>
+		<property name="multivalue" value="false"/>
+	  	<property name="dedupe" value="false"/>
+	</bean>
+	
+	
+
+
+
+
+datacite.title
+~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.title" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="title"/>
+		<constructor-arg name="xpath" value="(/datacite:resource/datacite:titles/datacite:title[1]/text())[1]"/>
+	</bean>
+
+	
+
+
+
+
+datacite.pubDate
+~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.pubDate" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="pubDate"/>
+		<constructor-arg name="xpath" value="(/datacite:resource/datacite:publicationYear[1]/text())[1]"/>
+		<property name="converter" ref="dateConverter"/>
+	</bean>
+	
+	
+
+
+
+
+datacite.keywords
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.keywords" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="keywords"/>
+		<constructor-arg name="xpath" value="/datacite:resource/datacite:subjects/datacite:subject/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+
+	
+
+
+
+
+datacite.beginDate
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.beginDate" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="beginDate"/>
+		<constructor-arg name="xpath" value="(/datacite:resource/datacite:dates/datacite:date[@dateType='Collected'][1]/text())[1]"/>
+		<property name="substringBefore" value="true"/>
+		<property name="splitOnString" value="/"/>
+		<property name="converter" ref="dateConverter"/>
+	</bean>	
+	
+	
+
+
+
+
+datacite.endDate
+~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.endDate" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="endDate"/>
+		<constructor-arg name="xpath" value="(/datacite:resource/datacite:dates/datacite:date[@dateType='Collected'][1]/text())[1]"/>
+		<property name="substringAfter" value="true"/>
+		<property name="splitOnString" value="/"/>
+		<property name="converter" ref="dateConverter"/>
+	</bean>
+
+	
+
+
+
+
+datacite.origin
+~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.origin" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="origin"/>
+		<constructor-arg name="xpath" value="/datacite:resource/datacite:creators/datacite:creator/datacite:creatorName/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+	
+	
+
+
+
+
+datacite.investigator
+~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.investigator" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="investigator"/>
+		<constructor-arg name="xpath" value="/datacite:resource/datacite:creators/datacite:creator/datacite:creatorName/text() | /datacite:resource/datacite:contributors/datacite:contributor[@contributorType='DataCollector']/datacite:contributorName/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+	
+	
+
+
+
+
+datacite.contactOrganization
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.contactOrganization" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="contactOrganization"/>
+		<constructor-arg name="xpath" value="/datacite:resource/datacite:contributors/datacite:contributor[@contributorType='HostingInstitution']/datacite:contributorName/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+	
+	
+
+
+
+
+datacite.site
+~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.site" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="site"/>
+		<constructor-arg name="xpath" value="/datacite:resource/datacite:geoLocations/datacite:geoLocation/datacite:geoLocationPlace/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+	
+	
+
+
+
+
+datacite.boxSpatialBoundCoordinates
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.boxSpatialBoundCoordinates" class="org.dataone.cn.indexer.parser.DataCiteSpatialBoxBoundingCoordinatesSolrField">
+		<property name="pointXPath" value="(/datacite:resource/datacite:geoLocations/datacite:geoLocation/datacite:geoLocationPoint[1]/text())[1]"/>
+		<property name="boxXPath" value="(/datacite:resource/datacite:geoLocations/datacite:geoLocation/datacite:geoLocationBox[1]/text())[1]"/>
+	</bean>
+
+	
+
+
+
+
+datacite.boxSpatialGeohash
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.boxSpatialGeohash" class="org.dataone.cn.indexer.parser.DataCiteSpatialBoxGeohashSolrField">
+		<property name="pointXPath" value="(/datacite:resource/datacite:geoLocations/datacite:geoLocation/datacite:geoLocationPoint[1]/text())[1]"/>
+		<property name="boxXPath" value="(/datacite:resource/datacite:geoLocations/datacite:geoLocation/datacite:geoLocationBox[1]/text())[1]"/>
+	</bean>
+
+	
+
+
+
+
+datacite.fileID
+~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.fileID" class="org.dataone.cn.indexer.parser.ResolveSolrField">
+		<constructor-arg name="name" value="fileID"/>
+	</bean>
+	
+	
+
+
+
+
+datacite.fullText
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.fullText" class="org.dataone.cn.indexer.parser.FullTextSolrField">
+		<constructor-arg name="name" value="text"/>
+		<constructor-arg name="xpath" value="//*/text()"/>
+		<property name="combineNodes" value="true"/>
+	</bean>		
+
+
+
 
 

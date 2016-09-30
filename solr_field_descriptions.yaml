@@ -1,7 +1,23 @@
+###
+# This YAML file is used to add descriptions to the solr fields in the indexer_documentation
+# Fields are alphabetically sorted when rendered in the documentation.
+# When editing, please be sure that correct YAML syntax is used.
+# After editing, it is necessary to regenerate sources, for example::
+#   make generate html
+###
 LTERSite: Data provider organization  identifier, for sources within the LTER network.
 abstract: The full text of the abstract as provided in the science metadata document.
+attribute:
+attributeDescription:
+attributeLabel:
+attributeName:
+attributeUnit:
 author: Principle Investigator (PI) / Author as listed in the metadata document.
+authorGivenName:
+authorGivenNameSort:
 authorLastName: The LAST name(s) of the author(s)
+authorSurName:
+authorSurNameSort:
 authoritativeMN: The node Id of the authoritative Member Node for the object.
 beginDate: The starting date of the temporal range of the content described by the
   metadata document.
@@ -14,10 +30,11 @@ checksumAlgorithm: Algorithm used for generating the object checksum
 class: Taxonomic class name(s)
 contactOrganization: Name of the organization to contact for more information about
   the dataset
-contactOrganizationText: Copy from :attr:`~SearchMetadata.contactOrganization`
+contactOrganizationText: Copy from :attr:`~Index.contactOrganization`
 dataUrl: The URL that can be used to resolve the location of the object given its
   PID.
 datasource: The node Id of the member node that originally contributed the content.
+datePublished:
 dateModified: The date and time when the object system metadata was last updated.
 dateUploaded: The date and time when the object was uploaded to the Member Node.
 decade: The latest decade that is covered by the dataset, expressed in the form "1999-2009"
@@ -31,8 +48,10 @@ endDate: The ending date of the temporal range of the content described by the m
 family: Taxonomic family name(s)
 fileID: Contains the :func:`CNRead.resolve` URL for the object ONLY if the object
   is a science metadata object.
+fileName:
 formatId: The format identifier indicating the type of content this record refers
   to.
+formatType:
 fullText: Full text of the metadata record, used to support full text searches
 gcmdKeyword: Keywords drawn from the GCMD controlled vocabulary
 genus: Taxonomic genus name(s)
@@ -64,6 +83,7 @@ isDocumentedBy: Lists all PIDs that describe this object. Obtained by parsing al
   resource maps in which this object is referenced.
 isPublic: Set to True if the DataONE :term:`public user` is present in the list of
   subjects with readPermission on PID.
+isService:
 isSpatial: Set to "Y" for records that contain spatial information
 keyConcept: Terms drawn from a controlled vocabulary of concepts that are applicable
   to the content described by the metadata document.
@@ -72,6 +92,8 @@ keywords: Keywords recorded in the science metadata document. These may be contr
   are effectively uncontrolled within the  DataONE context.
 keywordsText: Copy from :attr:`~Index.keywords`
 kingdom: Taxonomic kingdom(s)
+mediaType:
+mediaTypeProperty:
 namedLocation: The name of the location(s) relevant to the content described by the
   metadata document.
 noBoundingBox: Set to "Y" if there is no bounding box information available (i.e.,
@@ -79,6 +101,7 @@ noBoundingBox: Set to "Y" if there is no bounding box information available (i.e
 northBoundCoord: Northern most latitude of the spatial extent, in decimal degrees,
   WGS84
 numberReplicas: Requested number of replicas for the object
+obsoletedBy:
 obsoletes: If set, indicates the object that this record obsoletes.
 ogcUrl: URL for Open Geospatial Web service if available.
 order: Taxonomic order name(s)
@@ -100,6 +123,21 @@ project: The authorized name of a research effort for which data is collected. T
   name is often reduced to a convenient abbreviation or acronym. All investigators
   involved in a project should use a common, agreed-upon name.
 projectText: Copy from :attr:`~Index.project`
+prov_generated:
+prov_generatedByExecution:
+prov_generatedByProgram:
+prov_generatedByUser:
+prov_hasDerivations:
+prov_hasSources:
+prov_instanceOfClass:
+prov_used:
+prov_usedByExecution:
+prov_usedByProgram:
+prov_usedByUser:
+prov_wasDerivedFrom:
+prov_wasExecutedByExecution:
+prov_wasExecutedByUser:
+prov_wasInformedBy:
 pubDate: Publication date for the dataset (this may or may not be coincident with
   when the content is added to DataONE).
 purpose: The "Purpose" describes the "why" aspects of the data set (For example, why
@@ -111,13 +149,26 @@ relatedOrganizations: Organizations that played an indirect role in the developm
   the development of the data or metadata.
 replicaMN: One or more node Ids holding copies of the object.
 replicationAllowed: True if this object can be replicated.
+replicaVerifiedDate:
 resourceMap: List of resource map PIDs that reference this PID.
 rightsHolder: The :term:`Subject` that acts as the rights holder for the object.
 scientificName: Taxonomic scientific name(s) at the most precise level available for
   the organisms of relevance to the dataset
+sem_annotated_by:
+sem_annotates:
+sem_annotation:
+sem_comment:
 sensor: Also called "instrument." A device that is used for collecting data for a
   data set.
 sensorText: Copy from :attr:`~Index.sensor`
+seriesId:
+serviceCoupling:
+serviceDescription:
+serviceEndpoint:
+serviceInput:
+serviceOutput:
+serviceTitle:
+serviceType:
 site: The name or description of the physical location where the data were collected
 siteText: Copy from :attr:`~Index.site`
 size: The size of the object, in bytes.
@@ -150,4 +201,5 @@ westBoundCoord: Western most longitude of the spatial extent, in decimal degrees
   WGS84
 writePermission: List of subjects (groups and individuals) that have write permission
   on PID.
-
+_root_: Used internally by Solr index.
+_version_: Used internally bu Solr index.

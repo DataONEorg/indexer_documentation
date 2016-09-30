@@ -1,11 +1,27 @@
+{#
+This Jinja2 template is used by the generator to create the solr field list
+restructured text document.
+#}
 .. module:: Index
 
 .. currentmodule:: Index
 
-Solr Fields Defined
-===================
+Solr Index Fields
+=================
 
 A list of the fields defined in the solr search index used by the Coordinating Nodes.
+
+These fields are populated by the index processor using values drawn from
+:class:`API:Types.SystemMetadata`, :term:`Science Metadata`, and :term:`Resource Map`
+documents.
+
+.. note:: For Editors
+
+   Definitions are drawn from the `solr configuration file`_ and descriptions for each
+   field are contained in a separate `YAML formatted text file`_. After editing
+   descriptions, the document source must be regenerated and committed to GitHub for
+   the public facing documentation to be updated.
+
 
 .. list-table::
    :header-rows: 1
@@ -25,3 +41,6 @@ A list of the fields defined in the solr search index used by the Coordinating N
      - {{fld.name|solrFieldDescription}}
 {% endfor %}
 
+
+.. _solr configuration file: {{"resources/index-solr-schema.xml"|svnRepoLink}}
+.. _YAML formatted text file: https://github.com/DataONEorg/indexer_documentation/blob/master/solr_field_descriptions.yaml

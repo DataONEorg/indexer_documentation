@@ -97,21 +97,33 @@ def wrapXPath(original, width=80, ind1=0, ind2=0, prefix=''):
 def classnameLink(cname):
   parts = cname.split(".")
   res = parts[-1]
-  return res
+  url = "https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/"
+  url += "/".join(parts) + ".java"
+  return "`{0} <{1}>`_".format(res, url)
+
 
 def attrList(names, module="Index", delim=","):
   res = []
   for name in names:
-    res.append(":attr:`{0}.{1}`".format(module, name))
+    if name != '':
+      res.append(":attr:`{0}.{1}`".format(module, name))
   return delim.join(res)
 
 
 def solrFieldDescription(field):
   try:
-    return SOLR_DESCRIPTIONS[field]
+    res = SOLR_DESCRIPTIONS[field]
+    if res is None:
+      return ''
+    return res
   except:
     pass
   return ''
+
+
+def svnRepoLink(target):
+  return "https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/" + target
+
 
 
 #=======================================================================================================================
@@ -120,7 +132,8 @@ class B_Bean(object):
   def __init__(self):
     self._L = logging.getLogger(self.__class__.__name__)
     self.p = {'bid':'',
-              'cname':''}
+              'cname':'',
+              'xml':''}
 
 
   def load(self, ele, container):
@@ -131,6 +144,7 @@ class B_Bean(object):
     '''
     self.p['cname'] = getAttrib(ele, "class", '')
     self.p['bid'] = getAttrib(ele, "id", '')
+    self.p['xml'] = etree.tostring(ele, pretty_print=True)
 
 
   def __repr__(self):
@@ -242,7 +256,7 @@ class B_ResolveSolrField(B_Bean):
 
 
 #--
-class B_MergeSolrField(B_Bean):
+class B_MergeSolrField(B_SolrField):
 
   def load(self, ele, container):
     super(B_MergeSolrField, self).load(ele, container)
@@ -256,7 +270,7 @@ class B_FullTextSolrField(B_SolrField):
 
 
 #--
-class B_AggregateSolrField(B_Bean):
+class B_AggregateSolrField(B_SolrField):
 
   def load(self, ele, container):
     super(B_AggregateSolrField, self).load(ele, container)
@@ -652,6 +666,7 @@ class IndexProcessorDocuments(object):
     env.filters['classnameLink'] = classnameLink
     env.filters['attrList'] = attrList
     env.filters['solrFieldDescription'] = solrFieldDescription
+    env.filters['svnRepoLink'] = svnRepoLink
 
     tnames = ['solr_schema.rst',
               'namespaces.rst',

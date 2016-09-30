@@ -21,40 +21,47 @@ Fields
     - Dedupe
     - XPath
 
-  * -  (eml.abstract, MergeSolrField)
-    - 
-    - 
-    - 
+  * - :attr:`Index.abstract`
+    - False
+    - False
+    - ::
 
+        //dataset/abstract/descendant::text()
 
-  * - :attr:`Index.keywords` (eml.keywords, SolrField)
+      | Processor: `MergeSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/MergeSolrField.java>`_
+      | Configuration: `eml.abstract`_
+
+  * - :attr:`Index.keywords`
     - True
     - True
     - ::
 
         //dataset/keywordSet/keyword/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.keywords`_
 
-
-  * - :attr:`Index.title` (eml.title, SolrField)
+  * - :attr:`Index.title`
     - False
     - False
     - ::
 
         //dataset/title/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.title`_
 
-
-  * - :attr:`Index.project` (eml.project, SolrField)
+  * - :attr:`Index.project`
     - False
     - False
     - ::
 
         //dataset/project/title/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.project`_
 
-
-  * - :attr:`Index.southBoundCoord` (eml.southBoundCoord, SolrField)
+  * - :attr:`Index.southBoundCoord`
     - False
     - False
     - ::
@@ -62,9 +69,10 @@ Fields
         //dataset/coverage/geographicCoverage/boundingCoordinates/
         southBoundingCoordinate/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.southBoundCoord`_
 
-
-  * - :attr:`Index.northBoundCoord` (eml.northBoundCoord, SolrField)
+  * - :attr:`Index.northBoundCoord`
     - False
     - False
     - ::
@@ -72,9 +80,10 @@ Fields
         //dataset/coverage/geographicCoverage/boundingCoordinates/
         northBoundingCoordinate/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.northBoundCoord`_
 
-
-  * - :attr:`Index.westBoundCoord` (eml.westBoundCoord, SolrField)
+  * - :attr:`Index.westBoundCoord`
     - False
     - False
     - ::
@@ -82,9 +91,10 @@ Fields
         //dataset/coverage/geographicCoverage/boundingCoordinates/
         westBoundingCoordinate/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.westBoundCoord`_
 
-
-  * - :attr:`Index.eastBoundCoord` (eml.eastBoundCoord, SolrField)
+  * - :attr:`Index.eastBoundCoord`
     - False
     - False
     - ::
@@ -92,9 +102,10 @@ Fields
         //dataset/coverage/geographicCoverage/boundingCoordinates/
         eastBoundingCoordinate/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.eastBoundCoord`_
 
-
-  * - :attr:`Index.site` (eml.site, SolrField)
+  * - :attr:`Index.site`
     - True
     - False
     - ::
@@ -102,9 +113,10 @@ Fields
         //dataset/coverage/geographicCoverage/geographicDescription/
         text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.site`_
 
-
-  * - :attr:`Index.beginDate` (eml.beginDate, SolrField)
+  * - :attr:`Index.beginDate`
     - False
     - False
     - ::
@@ -113,9 +125,10 @@ Fields
         calendarDate/text() | //dataset/coverage/
         temporalCoverage/singleDateTime/calendarDate/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.beginDate`_
 
-
-  * - :attr:`Index.endDate` (eml.endDate, SolrField)
+  * - :attr:`Index.endDate`
     - False
     - False
     - ::
@@ -124,99 +137,110 @@ Fields
         calendarDate/text() | //dataset/coverage/
         temporalCoverage/singleDateTime/calendarDate/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.endDate`_
 
-
-  * - :attr:`Index.pubDate` (eml.pubDate, SolrField)
+  * - :attr:`Index.pubDate`
     - False
     - False
     - ::
 
         //dataset/pubDate/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.pubDate`_
 
-
-  * - :attr:`Index.author` (eml.author, CommonRootSolrField)
+  * - :attr:`Index.author`
     - False
     - False
     - ::
 
         
 
+      | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
+      | Configuration: `eml.author`_
 
-
-  * - :attr:`Index.authorLastName` (eml.author_lname, SolrField)
+  * - :attr:`Index.authorLastName`
     - True
     - False
     - ::
 
         //dataset/creator/individualName/surName/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.author_lname`_
 
-
-  * - :attr:`Index.authorGivenName` (eml.authorGivenName, SolrField)
+  * - :attr:`Index.authorGivenName`
     - False
     - False
     - ::
 
         //dataset/creator[1]/individualName[1]/givenName/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.authorGivenName`_
 
-
-  * - :attr:`Index.authorSurName` (eml.authorSurName, SolrField)
+  * - :attr:`Index.authorSurName`
     - False
     - False
     - ::
 
         //dataset/creator[1]/individualName[1]/surName/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.authorSurName`_
 
-
-  * - :attr:`Index.authorGivenNameSort` (eml.authorGivenNameSort, SolrField)
+  * - :attr:`Index.authorGivenNameSort`
     - False
     - False
     - ::
 
         //dataset/creator[1]/individualName[1]/givenName/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.authorGivenNameSort`_
 
-
-  * - :attr:`Index.authorSurNameSort` (eml.authorSurNameSort, SolrField)
+  * - :attr:`Index.authorSurNameSort`
     - False
     - False
     - ::
 
         //dataset/creator[1]/individualName[1]/surName/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.authorSurNameSort`_
 
-
-  * - :attr:`Index.investigator` (eml.investigator, SolrField)
+  * - :attr:`Index.investigator`
     - True
     - False
     - ::
 
         //dataset/creator/individualName/surName/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.investigator`_
 
-
-  * - :attr:`Index.origin` (eml.origin, CommonRootSolrField)
+  * - :attr:`Index.origin`
     - False
     - False
     - ::
 
         
 
+      | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
+      | Configuration: `eml.origin`_
 
-
-  * - :attr:`Index.contactOrganization` (eml.contactOrganization, SolrField)
+  * - :attr:`Index.contactOrganization`
     - True
     - True
     - ::
 
         //dataset/creator/organizationName/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.contactOrganization`_
 
-
-  * - :attr:`Index.genus` (eml.genus, SolrField)
+  * - :attr:`Index.genus`
     - True
     - True
     - ::
@@ -224,9 +248,10 @@ Fields
         //taxonomicClassification/taxonRankValue[../taxonRankName=
         "Genus"]/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.genus`_
 
-
-  * - :attr:`Index.species` (eml.species, SolrField)
+  * - :attr:`Index.species`
     - True
     - True
     - ::
@@ -234,9 +259,10 @@ Fields
         //taxonomicClassification/taxonRankValue[../taxonRankName=
         "Species"]/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.species`_
 
-
-  * - :attr:`Index.kingdom` (eml.kingdom, SolrField)
+  * - :attr:`Index.kingdom`
     - True
     - True
     - ::
@@ -244,9 +270,10 @@ Fields
         //taxonomicClassification/taxonRankValue[../taxonRankName=
         "Kingdom"]/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.kingdom`_
 
-
-  * - :attr:`Index.order` (eml.order, SolrField)
+  * - :attr:`Index.order`
     - True
     - True
     - ::
@@ -254,9 +281,10 @@ Fields
         //taxonomicClassification/taxonRankValue[../taxonRankName=
         "Order"]/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.order`_
 
-
-  * - :attr:`Index.phylum` (eml.phylum, SolrField)
+  * - :attr:`Index.phylum`
     - True
     - True
     - ::
@@ -265,9 +293,10 @@ Fields
         "Phylum"]/text() | //taxonomicClassification/
         taxonRankValue[../taxonRankName="Division"]/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.phylum`_
 
-
-  * - :attr:`Index.family` (eml.family, SolrField)
+  * - :attr:`Index.family`
     - True
     - True
     - ::
@@ -275,9 +304,10 @@ Fields
         //taxonomicClassification/taxonRankValue[../taxonRankName=
         "Family"]/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.family`_
 
-
-  * - :attr:`Index.class` (eml.class, SolrField)
+  * - :attr:`Index.class`
     - True
     - True
     - ::
@@ -285,36 +315,40 @@ Fields
         //taxonomicClassification/taxonRankValue[../taxonRankName=
         "Class"]/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.class`_
 
-
-  * - :attr:`Index.scientificName` (eml.scientificName, CommonRootSolrField)
+  * - :attr:`Index.scientificName`
     - False
     - False
     - ::
 
         
 
+      | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
+      | Configuration: `eml.scientificName`_
 
-
-  * - :attr:`Index.attributeName` (eml.attributeName, SolrField)
+  * - :attr:`Index.attributeName`
     - True
     - False
     - ::
 
         //dataTable/attributeList/attribute/attributeName/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.attributeName`_
 
-
-  * - :attr:`Index.attributeLabel` (eml.attributeLabel, SolrField)
+  * - :attr:`Index.attributeLabel`
     - True
     - False
     - ::
 
         //dataTable/attributeList/attribute/attributeLabel/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.attributeLabel`_
 
-
-  * - :attr:`Index.attributeDescription` (eml.attributeDescription, SolrField)
+  * - :attr:`Index.attributeDescription`
     - True
     - False
     - ::
@@ -322,9 +356,10 @@ Fields
         //dataTable/attributeList/attribute/attributeDefinition/
         text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.attributeDescription`_
 
-
-  * - :attr:`Index.attributeUnit` (eml.attributeUnit, SolrField)
+  * - :attr:`Index.attributeUnit`
     - True
     - False
     - ::
@@ -332,142 +367,960 @@ Fields
         //dataTable//standardUnit/text() | //dataTable//customUnit/
         text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.attributeUnit`_
 
-
-  * - :attr:`Index.attribute` (eml.attributeText, CommonRootSolrField)
+  * - :attr:`Index.attribute`
     - False
     - False
     - ::
 
         
 
+      | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
+      | Configuration: `eml.attributeText`_
 
-
-  * - :attr:`Index.fileID` (eml.fileID, ResolveSolrField)
+  * - :attr:`Index.fileID`
     - 
     - 
     - 
+      | Processor: `ResolveSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/ResolveSolrField.java>`_
+      | Configuration: `eml.fileID`_
 
-
-  * -  (eml.fullText, AggregateSolrField)
-    - 
-    - 
-    - 
-
-
-  * - :attr:`Index.geohash_1` (eml.geohash1, CommonRootSolrField)
+  * - 
     - False
     - False
     - ::
 
         
 
+      | Processor: `AggregateSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/AggregateSolrField.java>`_
+      | Configuration: `eml.fullText`_
 
-
-  * - :attr:`Index.geohash_2` (eml.geohash2, CommonRootSolrField)
+  * - :attr:`Index.geohash_1`
     - False
     - False
     - ::
 
         
 
+      | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
+      | Configuration: `eml.geohash1`_
 
-
-  * - :attr:`Index.geohash_3` (eml.geohash3, CommonRootSolrField)
+  * - :attr:`Index.geohash_2`
     - False
     - False
     - ::
 
         
 
+      | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
+      | Configuration: `eml.geohash2`_
 
-
-  * - :attr:`Index.geohash_4` (eml.geohash4, CommonRootSolrField)
+  * - :attr:`Index.geohash_3`
     - False
     - False
     - ::
 
         
 
+      | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
+      | Configuration: `eml.geohash3`_
 
-
-  * - :attr:`Index.geohash_5` (eml.geohash5, CommonRootSolrField)
+  * - :attr:`Index.geohash_4`
     - False
     - False
     - ::
 
         
 
+      | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
+      | Configuration: `eml.geohash4`_
 
-
-  * - :attr:`Index.geohash_6` (eml.geohash6, CommonRootSolrField)
+  * - :attr:`Index.geohash_5`
     - False
     - False
     - ::
 
         
 
+      | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
+      | Configuration: `eml.geohash5`_
 
-
-  * - :attr:`Index.geohash_7` (eml.geohash7, CommonRootSolrField)
+  * - :attr:`Index.geohash_6`
     - False
     - False
     - ::
 
         
 
+      | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
+      | Configuration: `eml.geohash6`_
 
-
-  * - :attr:`Index.geohash_8` (eml.geohash8, CommonRootSolrField)
+  * - :attr:`Index.geohash_7`
     - False
     - False
     - ::
 
         
 
+      | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
+      | Configuration: `eml.geohash7`_
 
-
-  * - :attr:`Index.geohash_9` (eml.geohash9, CommonRootSolrField)
+  * - :attr:`Index.geohash_8`
     - False
     - False
     - ::
 
         
 
+      | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
+      | Configuration: `eml.geohash8`_
 
+  * - :attr:`Index.geohash_9`
+    - False
+    - False
+    - ::
 
-  * - :attr:`Index.isService` (eml.isService, SolrField)
+        
+
+      | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
+      | Configuration: `eml.geohash9`_
+
+  * - :attr:`Index.isService`
     - False
     - False
     - ::
 
         boolean(//software/implementation/distribution/online/url)
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.isService`_
 
-
-  * - :attr:`Index.serviceTitle` (eml.serviceTitle, SolrField)
+  * - :attr:`Index.serviceTitle`
     - False
     - False
     - ::
 
         //software/title//text()[normalize-space()]
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.serviceTitle`_
 
-
-  * - :attr:`Index.serviceDescription` (eml.serviceDescription, SolrField)
+  * - :attr:`Index.serviceDescription`
     - False
     - False
     - ::
 
         //software/abstract//text()[normalize-space()]
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.serviceDescription`_
 
-
-  * - :attr:`Index.serviceEndpoint` (eml.serviceEndpoint, SolrField)
+  * - :attr:`Index.serviceEndpoint`
     - True
     - False
     - ::
 
         //software/implementation/distribution/online/url/text()
+
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.serviceEndpoint`_
+
+
+Bean Configurations
+-------------------
+
+
+eml.abstract
+~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.abstract" class="org.dataone.cn.indexer.parser.MergeSolrField">
+	  <constructor-arg name="name" value="abstract"/>
+	  <constructor-arg name="xpath" value="//dataset/abstract/descendant::text()"/>
+	  <constructor-arg name="delimiter" value=" "/>
+	  <property name="multivalue" value="false"/>
+	  <property name="dedupe" value="false"/>
+	</bean>
+
+	
+
+
+
+
+eml.keywords
+~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.keywords" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="keywords"/>
+		<constructor-arg name="xpath" value="//dataset/keywordSet/keyword/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+
+	
+
+
+
+
+eml.title
+~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.title" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="title"/>
+		<constructor-arg name="xpath" value="//dataset/title/text()"/>
+		<property name="multivalue" value="false"/>
+	</bean>
+	
+	
+
+
+
+
+eml.project
+~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.project" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="project"/>
+		<constructor-arg name="xpath" value="//dataset/project/title/text()"/>
+		<property name="multivalue" value="false"/>
+	</bean>	
+
+	
+
+
+
+
+eml.southBoundCoord
+~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.southBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="southBoundCoord"/>
+		<constructor-arg name="xpath" value="//dataset/coverage/geographicCoverage/boundingCoordinates/southBoundingCoordinate/text()"/>
+		<property name="multivalue" value="false"/>
+		<property name="converter" ref="solrLatitudeConverter"/>
+	</bean>
+
+	
+
+
+
+
+eml.northBoundCoord
+~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.northBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="northBoundCoord"/>
+		<constructor-arg name="xpath" value="//dataset/coverage/geographicCoverage/boundingCoordinates/northBoundingCoordinate/text()"/>
+		<property name="multivalue" value="false"/>
+		<property name="converter" ref="solrLatitudeConverter"/>
+	</bean>
+
+	
+
+
+
+
+eml.westBoundCoord
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.westBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="westBoundCoord"/>
+		<constructor-arg name="xpath" value="//dataset/coverage/geographicCoverage/boundingCoordinates/westBoundingCoordinate/text()"/>
+		<property name="multivalue" value="false"/>
+		<property name="converter" ref="solrLongitudeConverter"/>
+	</bean>
+
+	
+
+
+
+
+eml.eastBoundCoord
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.eastBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="eastBoundCoord"/>
+		<constructor-arg name="xpath" value="//dataset/coverage/geographicCoverage/boundingCoordinates/eastBoundingCoordinate/text()"/>
+		<property name="multivalue" value="false"/>
+		<property name="converter" ref="solrLongitudeConverter"/>
+	</bean>
+		
+	
+
+
+
+
+eml.site
+~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.site" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="site"/>
+		<constructor-arg name="xpath" value="//dataset/coverage/geographicCoverage/geographicDescription/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+	
+	
+
+
+
+
+eml.beginDate
+~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.beginDate" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="beginDate"/>
+		<constructor-arg name="xpath" value="//dataset/coverage/temporalCoverage/rangeOfDates/beginDate/calendarDate/text() | //dataset/coverage/temporalCoverage/singleDateTime/calendarDate/text()"/>
+		<property name="multivalue" value="false"/>
+		<property name="converter" ref="dateConverter"/>
+	</bean>
+
+	
+
+
+
+
+eml.endDate
+~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.endDate" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="endDate"/>
+		<constructor-arg name="xpath" value="//dataset/coverage/temporalCoverage/rangeOfDates/endDate/calendarDate/text() | //dataset/coverage/temporalCoverage/singleDateTime/calendarDate/text()"/>
+		<property name="multivalue" value="false"/>
+		<property name="converter" ref="dateConverter"/>
+	</bean>
+	
+	
+
+
+
+
+eml.pubDate
+~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.pubDate" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="pubDate"/>
+		<constructor-arg name="xpath" value="//dataset/pubDate/text()"/>
+		<property name="multivalue" value="false"/>
+		<property name="converter" ref="dateConverter"/>
+	</bean>
+
+	
+
+
+
+
+eml.author
+~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.author" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="eml.authorNameRoot">
+			<constructor-arg name="name" value="author"/>
+	</bean>
+	
+	
+
+
+
+
+eml.author_lname
+~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.author_lname" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorLastName"/>
+		<constructor-arg name="xpath" value="//dataset/creator/individualName/surName/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+	
+	
+
+
+
+
+eml.authorGivenName
+~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.authorGivenName" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorGivenName"/>
+		<constructor-arg name="xpath" value="//dataset/creator[1]/individualName[1]/givenName/text()"/>
+	</bean>
+
+	
+
+
+
+
+eml.authorSurName
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.authorSurName" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorSurName"/>
+		<constructor-arg name="xpath" value="//dataset/creator[1]/individualName[1]/surName/text()"/>
+	</bean>
+	
+	
+
+
+
+
+eml.authorGivenNameSort
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.authorGivenNameSort" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorGivenNameSort"/>
+		<constructor-arg name="xpath" value="//dataset/creator[1]/individualName[1]/givenName/text()"/>
+	</bean>
+
+	
+
+
+
+
+eml.authorSurNameSort
+~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.authorSurNameSort" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorSurNameSort"/>
+		<constructor-arg name="xpath" value="//dataset/creator[1]/individualName[1]/surName/text()"/>
+	</bean>
+	
+	
+
+
+
+
+eml.investigator
+~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.investigator" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="investigator"/>
+		<constructor-arg name="xpath" value="//dataset/creator/individualName/surName/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+	
+	
+
+
+
+
+eml.origin
+~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.origin" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.originRoot">
+		<constructor-arg name="name" value="origin"/>
+	</bean>
+	
+	
+
+
+
+
+eml.contactOrganization
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.contactOrganization" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="contactOrganization"/>
+		<constructor-arg name="xpath" value="//dataset/creator/organizationName/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+	
+	
+
+
+
+
+eml.genus
+~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.genus" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="genus"/>
+		<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Genus&quot;]/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+
+	
+
+
+
+
+eml.species
+~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.species" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="species"/>
+		<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Species&quot;]/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+
+	
+
+
+
+
+eml.kingdom
+~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.kingdom" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="kingdom"/>
+		<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Kingdom&quot;]/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+
+	
+
+
+
+
+eml.order
+~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.order" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="order"/>
+		<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Order&quot;]/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+
+	
+
+
+
+
+eml.phylum
+~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.phylum" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="phylum"/>
+		<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Phylum&quot;]/text() | //taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Division&quot;]/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+		
+	
+
+
+
+
+eml.family
+~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.family" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="family"/>
+		<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Family&quot;]/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+
+	
+
+
+
+
+eml.class
+~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.class" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="class"/>
+		<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Class&quot;]/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+	
+	
+	
+
+
+
+
+eml.scientificName
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.scientificName" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.scientificNameRoot">
+			<constructor-arg name="name" value="scientificName"/>
+	</bean>
+	
+	
+
+
+
+
+eml.attributeName
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.attributeName" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="attributeName"/>
+		<constructor-arg name="xpath" value="//dataTable/attributeList/attribute/attributeName/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="false"/>
+	</bean>
+	
+	
+
+
+
+
+eml.attributeLabel
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.attributeLabel" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="attributeLabel"/>
+		<constructor-arg name="xpath" value="//dataTable/attributeList/attribute/attributeLabel/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="false"/>
+	</bean>
+	
+	
+
+
+
+
+eml.attributeDescription
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.attributeDescription" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="attributeDescription"/>
+		<constructor-arg name="xpath" value="//dataTable/attributeList/attribute/attributeDefinition/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="false"/>
+	</bean>
+	
+	
+
+
+
+
+eml.attributeUnit
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.attributeUnit" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="attributeUnit"/>
+		<constructor-arg name="xpath" value="//dataTable//standardUnit/text() | //dataTable//customUnit/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="false"/>
+	</bean>
+
+	
+
+
+
+
+eml.attributeText
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.attributeText" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.attributeTextRoot">
+			<constructor-arg name="name" value="attribute"/>
+	</bean>
+	
+	
+
+
+
+
+eml.fileID
+~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.fileID" class="org.dataone.cn.indexer.parser.ResolveSolrField">
+		<constructor-arg name="name" value="fileID"/>
+	</bean>
+	
+	
+
+
+
+
+eml.fullText
+~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.fullText" class="org.dataone.cn.indexer.parser.AggregateSolrField">
+		<property name="name" value="text"/>
+		<property name="solrFields">
+	   		<list>
+	       		<ref bean="eml.text"/>
+	       		<ref bean="eml.attributeName.noDupe"/>
+	       		<ref bean="eml.attributeLabel.noDupe"/>
+	       		<ref bean="eml.attributeDescription.noDupe"/>
+	       		<ref bean="eml.attributeUnit.noDupe"/>
+	      	</list>
+	  	</property>
+	</bean>
+	
+	
+
+
+
+
+eml.geohash1
+~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash1" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">
+		<constructor-arg name="name" value="geohash_1"/>
+		<property name="converter" ref="geohashConverter_1"/>
+	</bean>
+	
+	
+
+
+
+
+eml.geohash2
+~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash2" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">
+		<constructor-arg name="name" value="geohash_2"/>
+		<property name="converter" ref="geohashConverter_2"/>
+	</bean>
+	
+		
+
+
+
+
+eml.geohash3
+~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash3" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">
+		<constructor-arg name="name" value="geohash_3"/>
+		<property name="converter" ref="geohashConverter_3"/>
+	</bean>
+	
+		
+
+
+
+
+eml.geohash4
+~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash4" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">
+		<constructor-arg name="name" value="geohash_4"/>
+		<property name="converter" ref="geohashConverter_4"/>
+	</bean>
+	
+		
+
+
+
+
+eml.geohash5
+~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash5" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">
+		<constructor-arg name="name" value="geohash_5"/>
+		<property name="converter" ref="geohashConverter_5"/>
+	</bean>
+	
+		
+
+
+
+
+eml.geohash6
+~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash6" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">
+		<constructor-arg name="name" value="geohash_6"/>
+		<property name="converter" ref="geohashConverter_6"/>
+	</bean>
+	
+		
+
+
+
+
+eml.geohash7
+~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash7" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">
+		<constructor-arg name="name" value="geohash_7"/>
+		<property name="converter" ref="geohashConverter_7"/>
+	</bean>
+	
+		
+
+
+
+
+eml.geohash8
+~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash8" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">
+		<constructor-arg name="name" value="geohash_8"/>
+		<property name="converter" ref="geohashConverter_8"/>
+	</bean>
+	
+		
+
+
+
+
+eml.geohash9
+~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash9" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">
+		<constructor-arg name="name" value="geohash_9"/>
+		<property name="converter" ref="geohashConverter_9"/>
+	</bean>
+
+	
+
+
+
+
+eml.isService
+~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.isService" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="isService"/>
+		<constructor-arg name="xpath" value="boolean(//software/implementation/distribution/online/url)"/>
+	</bean>
+	
+	
+
+
+
+
+eml.serviceTitle
+~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.serviceTitle" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="serviceTitle"/>
+		<constructor-arg name="xpath" value="//software/title//text()[normalize-space()]"/>
+		<property name="combineNodes" value="true"/>
+		<property name="combineDelimiter" value=":"/>
+	</bean>
+	
+	
+
+
+
+
+eml.serviceDescription
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.serviceDescription" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="serviceDescription"/>
+		<constructor-arg name="xpath" value="//software/abstract//text()[normalize-space()]"/>
+		<property name="combineNodes" value="true"/>
+		<property name="combineDelimiter" value=":"/>
+	</bean>	
+
+	
+
+
+
+
+eml.serviceEndpoint
+~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.serviceEndpoint" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="serviceEndpoint"/>
+		<constructor-arg name="xpath" value="//software/implementation/distribution/online/url/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>	
+	
+	
+
+
 
 

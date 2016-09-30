@@ -1,11 +1,24 @@
+
 .. module:: Index
 
 .. currentmodule:: Index
 
-Solr Fields Defined
-===================
+Solr Index Fields
+=================
 
 A list of the fields defined in the solr search index used by the Coordinating Nodes.
+
+These fields are populated by the index processor using values drawn from
+:class:`API:Types.SystemMetadata`, :term:`Science Metadata`, and :term:`Resource Map`
+documents.
+
+.. note:: For Editors
+
+   Definitions are drawn from the `solr configuration file`_ and descriptions for each
+   field are contained in a separate `YAML formatted text file`_. After editing
+   descriptions, the document source must be regenerated and committed to GitHub for
+   the public facing documentation to be updated.
+
 
 .. list-table::
    :header-rows: 1
@@ -22,13 +35,13 @@ A list of the fields defined in the solr search index used by the Coordinating N
      - False
      - False
      - True
-     - 
+     - Used internally by Solr index.
    * - .. attribute:: _version_
      - long
      - False
      - True
      - True
-     - 
+     - Used internally bu Solr index.
    * - .. attribute:: abstract
      - text_general
      - False
@@ -154,7 +167,7 @@ A list of the fields defined in the solr search index used by the Coordinating N
      - True
      - False
      - True
-     - Copy from :attr:`~SearchMetadata.contactOrganization`
+     - Copy from :attr:`~Index.contactOrganization`
    * - .. attribute:: datasource
      - string
      - False
@@ -876,3 +889,7 @@ A list of the fields defined in the solr search index used by the Coordinating N
      - True
      - List of subjects (groups and individuals) that have write permission on PID.
 
+
+
+.. _solr configuration file: https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/resources/index-solr-schema.xml
+.. _YAML formatted text file: https://github.com/DataONEorg/indexer_documentation/blob/master/solr_field_descriptions.yaml

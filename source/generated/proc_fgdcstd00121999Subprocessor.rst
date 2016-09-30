@@ -21,13 +21,18 @@ Fields
     - Dedupe
     - XPath
 
-  * -  (fgdc.abstract, MergeSolrField)
-    - 
-    - 
-    - 
+  * - :attr:`Index.abstract`
+    - False
+    - False
+    - ::
 
+        /*[local-name() = 'metadata']/idinfo/descript/abstract/
+        descendant::text()
 
-  * - :attr:`Index.beginDate` (fgdc.beginDate, SolrField)
+      | Processor: `MergeSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/MergeSolrField.java>`_
+      | Configuration: `fgdc.abstract`_
+
+  * - :attr:`Index.beginDate`
     - False
     - False
     - ::
@@ -35,9 +40,10 @@ Fields
         /*[local-name() = 'metadata']/idinfo/timeperd/timeinfo/
         rngdates/begdate/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.beginDate`_
 
-
-  * - :attr:`Index.contactOrganization` (fgdc.contactOrganization, SolrField)
+  * - :attr:`Index.contactOrganization`
     - True
     - True
     - ::
@@ -47,9 +53,10 @@ Fields
         'metadata']/distinfo/distrib/cntinfo/cntorgp/cntorg/
         text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.contactOrganization`_
 
-
-  * - :attr:`Index.eastBoundCoord` (fgdc.eastBoundCoord, SolrField)
+  * - :attr:`Index.eastBoundCoord`
     - False
     - False
     - ::
@@ -57,9 +64,10 @@ Fields
         /*[local-name() = 'metadata']/idinfo/spdom/bounding/eastbc/
         text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.eastBoundCoord`_
 
-
-  * - :attr:`Index.westBoundCoord` (fgdc.westBoundCoord, SolrField)
+  * - :attr:`Index.westBoundCoord`
     - False
     - False
     - ::
@@ -67,9 +75,10 @@ Fields
         /*[local-name() = 'metadata']/idinfo/spdom/bounding/westbc/
         text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.westBoundCoord`_
 
-
-  * - :attr:`Index.northBoundCoord` (fgdc.northBoundCoord, SolrField)
+  * - :attr:`Index.northBoundCoord`
     - False
     - False
     - ::
@@ -77,9 +86,10 @@ Fields
         /*[local-name() = 'metadata']/idinfo/spdom/bounding/northbc/
         text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.northBoundCoord`_
 
-
-  * - :attr:`Index.southBoundCoord` (fgdc.southBoundCoord, SolrField)
+  * - :attr:`Index.southBoundCoord`
     - False
     - False
     - ::
@@ -87,18 +97,20 @@ Fields
         /*[local-name() = 'metadata']/idinfo/spdom/bounding/southbc/
         text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.southBoundCoord`_
 
-
-  * - :attr:`Index.edition` (fgdc.edition, SolrField)
+  * - :attr:`Index.edition`
     - False
     - False
     - ::
 
         /*[local-name() = 'metadata']/idinfo/citeinfo/edition/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.edition`_
 
-
-  * - :attr:`Index.endDate` (fgdc.endDate, SolrField)
+  * - :attr:`Index.endDate`
     - False
     - False
     - ::
@@ -106,9 +118,10 @@ Fields
         /*[local-name() = 'metadata']/idinfo/timeperd/timeinfo/
         rngdates/enddate/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.endDate`_
 
-
-  * - :attr:`Index.gcmdKeyword` (fgdc.gcmdKeyword, SolrField)
+  * - :attr:`Index.gcmdKeyword`
     - True
     - False
     - ::
@@ -116,9 +129,10 @@ Fields
         /*[local-name() = 'metadata']/idinfo/keywords/theme[themekt=
         'GCMD Science Keywords']/themekey/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.gcmdKeyword`_
 
-
-  * - :attr:`Index.keywords` (fgdc.keywords, SolrField)
+  * - :attr:`Index.keywords`
     - True
     - True
     - ::
@@ -127,9 +141,10 @@ Fields
         themekey/text() | /*[local-name() = 'metadata']/
         idinfo/keywords/place/placekey/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.keywords`_
 
-
-  * - :attr:`Index.geoform` (fgdc.geoform, SolrField)
+  * - :attr:`Index.geoform`
     - False
     - False
     - ::
@@ -137,36 +152,40 @@ Fields
         /*[local-name() = 'metadata']/idinfo/citation/citeinfo/
         geoform/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.geoform`_
 
-
-  * - :attr:`Index.genus` (fgdc.genus, SolrField)
+  * - :attr:`Index.genus`
     - True
     - False
     - ::
 
         //taxoncl/taxonrv[../taxonrn="Genus"]/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.genus`_
 
-
-  * - :attr:`Index.kingdom` (fgdc.kingdom, SolrField)
+  * - :attr:`Index.kingdom`
     - True
     - False
     - ::
 
         //taxoncl/taxonrv[../taxonrn="Kingdom"]/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.kingdom`_
 
-
-  * - :attr:`Index.order` (fgdc.order, SolrField)
+  * - :attr:`Index.order`
     - True
     - False
     - ::
 
         //taxoncl/taxonrv[../taxonrn="Order"]/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.order`_
 
-
-  * - :attr:`Index.phylum` (fgdc.phylum, SolrField)
+  * - :attr:`Index.phylum`
     - True
     - False
     - ::
@@ -174,45 +193,50 @@ Fields
         //taxoncl/taxonrv[../taxonrn="Phylum"]/text() | //taxoncl/
         taxonrv[../taxonrn="Division"]/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.phylum`_
 
-
-  * - :attr:`Index.species` (fgdc.species, SolrField)
+  * - :attr:`Index.species`
     - True
     - False
     - ::
 
         //taxoncl/taxonrv[../taxonrn="Species"]/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.species`_
 
-
-  * - :attr:`Index.family` (fgdc.family, SolrField)
+  * - :attr:`Index.family`
     - True
     - False
     - ::
 
         //taxoncl/taxonrv[../taxonrn="Family"]/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.family`_
 
-
-  * - :attr:`Index.class` (fgdc.class, SolrField)
+  * - :attr:`Index.class`
     - True
     - False
     - ::
 
         //taxoncl/taxonrv[../taxonrn="Class"]/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.class`_
 
-
-  * - :attr:`Index.scientificName` (fgdc.scientificName, CommonRootSolrField)
+  * - :attr:`Index.scientificName`
     - False
     - False
     - ::
 
         
 
+      | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
+      | Configuration: `fgdc.scientificName`_
 
-
-  * - :attr:`Index.origin` (fgdc.origin, SolrField)
+  * - :attr:`Index.origin`
     - True
     - False
     - ::
@@ -220,9 +244,10 @@ Fields
         /*[local-name() = 'metadata']/idinfo/citation/citeinfo/
         origin/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.origin`_
 
-
-  * - :attr:`Index.placeKey` (fgdc.placeKey, SolrField)
+  * - :attr:`Index.placeKey`
     - True
     - False
     - ::
@@ -230,9 +255,10 @@ Fields
         /*[local-name() = 'metadata']/idinfo/keywords/place/
         placekey/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.placeKey`_
 
-
-  * - :attr:`Index.pubDate` (fgdc.pubDate, SolrField)
+  * - :attr:`Index.pubDate`
     - False
     - False
     - ::
@@ -240,15 +266,21 @@ Fields
         /*[local-name() = 'metadata']/idinfo/citation/citeinfo/
         pubdate/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.pubDate`_
 
+  * - :attr:`Index.purpose`
+    - False
+    - False
+    - ::
 
-  * -  (fgdc.purpose, MergeSolrField)
-    - 
-    - 
-    - 
+        /*[local-name() = 'metadata']/idinfo/descript/purpose/
+        descendant::text()
 
+      | Processor: `MergeSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/MergeSolrField.java>`_
+      | Configuration: `fgdc.purpose`_
 
-  * - :attr:`Index.title` (fgdc.title, SolrField)
+  * - :attr:`Index.title`
     - False
     - False
     - ::
@@ -256,9 +288,10 @@ Fields
         /*[local-name() = 'metadata']/idinfo/citation/citeinfo/
         title/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.title`_
 
-
-  * - :attr:`Index.webUrl` (fgdc.web_url, SolrField)
+  * - :attr:`Index.webUrl`
     - True
     - False
     - ::
@@ -266,21 +299,27 @@ Fields
         /*[local-name() = 'metadata']/idinfo/citation/citeinfo/
         onlink/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.web_url`_
 
-
-  * - :attr:`Index.fileID` (fgdc.fileID, ResolveSolrField)
+  * - :attr:`Index.fileID`
     - 
     - 
     - 
+      | Processor: `ResolveSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/ResolveSolrField.java>`_
+      | Configuration: `fgdc.fileID`_
 
+  * - 
+    - False
+    - False
+    - ::
 
-  * -  (fgdc.fullText, AggregateSolrField)
-    - 
-    - 
-    - 
+        
 
+      | Processor: `AggregateSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/AggregateSolrField.java>`_
+      | Configuration: `fgdc.fullText`_
 
-  * - :attr:`Index.presentationCat` (fgdc.presentationCat, SolrField)
+  * - :attr:`Index.presentationCat`
     - False
     - False
     - ::
@@ -288,9 +327,10 @@ Fields
         /*[local-name() = 'metadata']/idinfo/citation/citeinfo/
         geoform/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.presentationCat`_
 
-
-  * - :attr:`Index.author` (fgdc.author, SolrField)
+  * - :attr:`Index.author`
     - False
     - False
     - ::
@@ -298,9 +338,10 @@ Fields
         /*[local-name() = 'metadata']/idinfo/citation/citeinfo/
         origin/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.author`_
 
-
-  * - :attr:`Index.authorSurName` (fgdc.authorSurName, SolrField)
+  * - :attr:`Index.authorSurName`
     - False
     - False
     - ::
@@ -308,9 +349,10 @@ Fields
         /*[local-name() = 'metadata']/idinfo/citation/citeinfo/
         origin[1]/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.authorSurName`_
 
-
-  * - :attr:`Index.authorSurNameSort` (fgdc.authorSurNameSort, SolrField)
+  * - :attr:`Index.authorSurNameSort`
     - False
     - False
     - ::
@@ -318,9 +360,10 @@ Fields
         /*[local-name() = 'metadata']/idinfo/citation/citeinfo/
         origin[1]/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.authorSurNameSort`_
 
-
-  * - :attr:`Index.investigator` (fgdc.investigator, SolrField)
+  * - :attr:`Index.investigator`
     - True
     - False
     - ::
@@ -328,45 +371,50 @@ Fields
         /*[local-name() = 'metadata']/idinfo/citation/citeinfo/
         origin/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.investigator`_
 
-
-  * - :attr:`Index.site` (fgdc.site, SolrField)
+  * - :attr:`Index.site`
     - True
     - False
     - ::
 
         /*[local-name() = 'metadata']/idinfo/spdom/descgeog/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.site`_
 
-
-  * - :attr:`Index.attributeName` (fgdc.attributeName, SolrField)
+  * - :attr:`Index.attributeName`
     - True
     - False
     - ::
 
         //attr/attrlabl/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.attributeName`_
 
-
-  * - :attr:`Index.attributeLabel` (fgdc.attributeLabel, SolrField)
+  * - :attr:`Index.attributeLabel`
     - True
     - False
     - ::
 
         //attr/attalias/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.attributeLabel`_
 
-
-  * - :attr:`Index.attributeDescription` (fgdc.attributeDescription, SolrField)
+  * - :attr:`Index.attributeDescription`
     - True
     - False
     - ::
 
         //attr/attrdef/text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.attributeDescription`_
 
-
-  * - :attr:`Index.attributeUnit` (fgdc.attributeUnit, SolrField)
+  * - :attr:`Index.attributeUnit`
     - True
     - False
     - ::
@@ -374,94 +422,888 @@ Fields
         //attr/attrdomv//attrunit/text() | //attr//attrdomv//edomv/
         text()
 
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `fgdc.attributeUnit`_
 
-
-  * - :attr:`Index.attribute` (fgdc.attributeText, CommonRootSolrField)
+  * - :attr:`Index.attribute`
     - False
     - False
     - ::
 
         
 
+      | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
+      | Configuration: `fgdc.attributeText`_
 
-
-  * - :attr:`Index.geohash_1` (fgdc.geohash1, CommonRootSolrField)
+  * - :attr:`Index.geohash_1`
     - False
     - False
     - ::
 
         
 
+      | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
+      | Configuration: `fgdc.geohash1`_
 
-
-  * - :attr:`Index.geohash_2` (fgdc.geohash2, CommonRootSolrField)
+  * - :attr:`Index.geohash_2`
     - False
     - False
     - ::
 
         
 
+      | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
+      | Configuration: `fgdc.geohash2`_
 
-
-  * - :attr:`Index.geohash_3` (fgdc.geohash3, CommonRootSolrField)
+  * - :attr:`Index.geohash_3`
     - False
     - False
     - ::
 
         
 
+      | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
+      | Configuration: `fgdc.geohash3`_
 
-
-  * - :attr:`Index.geohash_4` (fgdc.geohash4, CommonRootSolrField)
+  * - :attr:`Index.geohash_4`
     - False
     - False
     - ::
 
         
 
+      | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
+      | Configuration: `fgdc.geohash4`_
 
-
-  * - :attr:`Index.geohash_5` (fgdc.geohash5, CommonRootSolrField)
+  * - :attr:`Index.geohash_5`
     - False
     - False
     - ::
 
         
 
+      | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
+      | Configuration: `fgdc.geohash5`_
 
-
-  * - :attr:`Index.geohash_6` (fgdc.geohash6, CommonRootSolrField)
+  * - :attr:`Index.geohash_6`
     - False
     - False
     - ::
 
         
 
+      | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
+      | Configuration: `fgdc.geohash6`_
 
-
-  * - :attr:`Index.geohash_7` (fgdc.geohash7, CommonRootSolrField)
+  * - :attr:`Index.geohash_7`
     - False
     - False
     - ::
 
         
 
+      | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
+      | Configuration: `fgdc.geohash7`_
 
-
-  * - :attr:`Index.geohash_8` (fgdc.geohash8, CommonRootSolrField)
+  * - :attr:`Index.geohash_8`
     - False
     - False
     - ::
 
         
 
+      | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
+      | Configuration: `fgdc.geohash8`_
 
-
-  * - :attr:`Index.geohash_9` (fgdc.geohash9, CommonRootSolrField)
+  * - :attr:`Index.geohash_9`
     - False
     - False
     - ::
 
         
+
+      | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
+      | Configuration: `fgdc.geohash9`_
+
+
+Bean Configurations
+-------------------
+
+
+fgdc.abstract
+~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.abstract" class="org.dataone.cn.indexer.parser.MergeSolrField">
+	  <constructor-arg name="name" value="abstract"/>
+	  <constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/descript/abstract/descendant::text()"/>
+	  <constructor-arg name="delimiter" value=" "/>
+	  <property name="multivalue" value="false"/>
+	  <property name="dedupe" value="false"/>
+	</bean>
+	
+	
+
+
+
+
+fgdc.beginDate
+~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.beginDate" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="beginDate"/>
+		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/timeperd/timeinfo/rngdates/begdate/text()"/>
+		<property name="multivalue" value="false"/>
+		<property name="converter" ref="fgdcDateConverter"/>
+	</bean>
+	
+	
+
+
+
+
+fgdc.contactOrganization
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.contactOrganization" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="contactOrganization"/>
+		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/distinfo/distrib/cntinfo/cntperp/cntorg/text() | /*[local-name() = 'metadata']/distinfo/distrib/cntinfo/cntorgp/cntorg/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>	
+
+	
+
+
+
+
+fgdc.eastBoundCoord
+~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.eastBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="eastBoundCoord"/>
+		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/spdom/bounding/eastbc/text()"/>
+		<property name="multivalue" value="false"/>
+		<property name="converter" ref="solrLongitudeConverter"/>
+	</bean>
+	
+	
+
+
+
+
+fgdc.westBoundCoord
+~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.westBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="westBoundCoord"/>
+		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/spdom/bounding/westbc/text()"/>
+		<property name="multivalue" value="false"/>
+		<property name="converter" ref="solrLongitudeConverter"/>
+	</bean>		
+	
+		
+
+
+
+
+fgdc.northBoundCoord
+~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.northBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="northBoundCoord"/>
+		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/spdom/bounding/northbc/text()"/>
+		<property name="multivalue" value="false"/>
+		<property name="converter" ref="solrLongitudeConverter"/>
+	</bean>	
+	
+	
+
+
+
+
+fgdc.southBoundCoord
+~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.southBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="southBoundCoord"/>
+		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/spdom/bounding/southbc/text()"/>
+		<property name="multivalue" value="false"/>
+		<property name="converter" ref="solrLongitudeConverter"/>
+	</bean>	
+	
+	
+
+
+
+
+fgdc.edition
+~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.edition" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="edition"/>
+		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/citeinfo/edition/text()"/>
+		<property name="multivalue" value="false"/>
+	</bean>	
+
+	
+
+
+
+
+fgdc.endDate
+~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.endDate" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="endDate"/>
+		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/timeperd/timeinfo/rngdates/enddate/text()"/>
+		<property name="multivalue" value="false"/>
+		<property name="converter" ref="fgdcDateConverter"/>
+	</bean>
+
+	
+
+
+
+
+fgdc.gcmdKeyword
+~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.gcmdKeyword" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="gcmdKeyword"/>
+		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/keywords/theme[themekt='GCMD Science Keywords']/themekey/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+ 	
+	
+
+
+
+
+fgdc.keywords
+~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.keywords" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="keywords"/>
+		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/keywords/theme/themekey/text() | /*[local-name() = 'metadata']/idinfo/keywords/place/placekey/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+		<property name="disallowedValues">
+			<list>
+				<value>none</value>
+			</list>
+		</property>
+	</bean>
+
+	
+
+
+
+
+fgdc.geoform
+~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geoform" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="geoform"/>
+		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/citation/citeinfo/geoform/text()"/>
+		<property name="multivalue" value="false"/>
+	</bean>	
+	
+	
+
+
+
+
+fgdc.genus
+~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.genus" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="genus"/>
+		<constructor-arg name="xpath" value="//taxoncl/taxonrv[../taxonrn=&quot;Genus&quot;]/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>		
+	
+	
+
+
+
+
+fgdc.kingdom
+~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.kingdom" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="kingdom"/>
+		<constructor-arg name="xpath" value="//taxoncl/taxonrv[../taxonrn=&quot;Kingdom&quot;]/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>	
+	
+	
+
+
+
+
+fgdc.order
+~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.order" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="order"/>
+		<constructor-arg name="xpath" value="//taxoncl/taxonrv[../taxonrn=&quot;Order&quot;]/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+	
+	
+
+
+
+
+fgdc.phylum
+~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.phylum" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="phylum"/>
+		<constructor-arg name="xpath" value="//taxoncl/taxonrv[../taxonrn=&quot;Phylum&quot;]/text() | //taxoncl/taxonrv[../taxonrn=&quot;Division&quot;]/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+	
+	
+
+
+
+
+fgdc.species
+~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.species" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="species"/>
+		<constructor-arg name="xpath" value="//taxoncl/taxonrv[../taxonrn=&quot;Species&quot;]/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+	
+	
+
+
+
+
+fgdc.family
+~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.family" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="family"/>
+		<constructor-arg name="xpath" value="//taxoncl/taxonrv[../taxonrn=&quot;Family&quot;]/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+	
+	
+
+
+
+
+fgdc.class
+~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.class" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="class"/>
+		<constructor-arg name="xpath" value="//taxoncl/taxonrv[../taxonrn=&quot;Class&quot;]/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+	
+	
+
+
+
+
+fgdc.scientificName
+~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.scientificName" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="fgdc.scientificNameRoot">
+			<constructor-arg name="name" value="scientificName"/>
+	</bean>
+	
+	
+
+
+
+
+fgdc.origin
+~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.origin" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="origin"/>
+		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/citation/citeinfo/origin/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+	
+	
+
+
+
+
+fgdc.placeKey
+~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.placeKey" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="placeKey"/>
+		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/keywords/place/placekey/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+	
+	
+
+
+
+
+fgdc.pubDate
+~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.pubDate" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="pubDate"/>
+		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/citation/citeinfo/pubdate/text()"/>
+		<property name="multivalue" value="false"/>
+		<property name="converter" ref="fgdcDateConverter"/>
+	</bean>
+	
+	
+
+
+
+
+fgdc.purpose
+~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.purpose" class="org.dataone.cn.indexer.parser.MergeSolrField">
+	  <constructor-arg name="name" value="purpose"/>
+	  <constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/descript/purpose/descendant::text()"/>
+	  <constructor-arg name="delimiter" value=" "/>
+	  <property name="multivalue" value="false"/>
+	  <property name="dedupe" value="false"/>
+	</bean>
+
+	
+
+
+
+
+fgdc.title
+~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.title" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="title"/>
+		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/citation/citeinfo/title/text()"/>
+		<property name="multivalue" value="false"/>
+	</bean>
+
+	
+
+
+
+
+fgdc.web_url
+~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.web_url" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="webUrl"/>
+		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/citation/citeinfo/onlink/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+	
+	
+
+
+
+
+fgdc.fileID
+~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.fileID" class="org.dataone.cn.indexer.parser.ResolveSolrField">
+		<constructor-arg name="name" value="fileID"/>
+	</bean>
+	
+	
+
+
+
+
+fgdc.fullText
+~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.fullText" class="org.dataone.cn.indexer.parser.AggregateSolrField">
+		<property name="name" value="text"/>
+		<property name="solrFields">
+	   		<list>
+	       		<ref bean="fgdc.text"/>
+	      	</list>
+	  	</property>
+	</bean>
+
+
+
+
+
+fgdc.presentationCat
+~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.presentationCat" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="presentationCat"/>
+		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/citation/citeinfo/geoform/text()"/>
+		<property name="multivalue" value="false"/>
+	</bean>
+	
+	
+
+
+
+
+fgdc.author
+~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.author" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="author"/>
+		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/citation/citeinfo/origin/text()"/>
+		<property name="multivalue" value="false"/>
+	</bean>
+
+	
+
+
+
+
+fgdc.authorSurName
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.authorSurName" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorSurName"/>
+		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/citation/citeinfo/origin[1]/text()"/>
+		<property name="multivalue" value="false"/>
+	</bean>
+
+	
+
+
+
+
+fgdc.authorSurNameSort
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.authorSurNameSort" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorSurNameSort"/>
+		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/citation/citeinfo/origin[1]/text()"/>
+		<property name="multivalue" value="false"/>
+	</bean>
+	
+	
+
+
+
+
+fgdc.investigator
+~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.investigator" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="investigator"/>
+		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/citation/citeinfo/origin/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+	
+	
+
+
+
+
+fgdc.site
+~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.site" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="site"/>
+		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/spdom/descgeog/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+	
+	
+
+
+
+
+fgdc.attributeName
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.attributeName" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="attributeName"/>
+		<constructor-arg name="xpath" value="//attr/attrlabl/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="false"/>
+	</bean>
+	
+	
+
+
+
+
+fgdc.attributeLabel
+~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.attributeLabel" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="attributeLabel"/>
+		<constructor-arg name="xpath" value="//attr/attalias/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="false"/>
+	</bean>
+	
+	
+
+
+
+
+fgdc.attributeDescription
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.attributeDescription" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="attributeDescription"/>
+		<constructor-arg name="xpath" value="//attr/attrdef/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="false"/>
+	</bean>
+	
+	
+
+
+
+
+fgdc.attributeUnit
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.attributeUnit" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="attributeUnit"/>
+		<constructor-arg name="xpath" value="//attr/attrdomv//attrunit/text() | //attr//attrdomv//edomv/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="false"/>
+	</bean>
+
+	
+
+
+
+
+fgdc.attributeText
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.attributeText" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="fgdc.attributeTextRoot">
+			<constructor-arg name="name" value="attribute"/>
+	</bean>
+	
+	
+
+
+
+
+fgdc.geohash1
+~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash1" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">
+		<constructor-arg name="name" value="geohash_1"/>
+		<property name="converter" ref="geohashConverter_1"/>
+	</bean>
+	
+	
+
+
+
+
+fgdc.geohash2
+~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash2" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">
+		<constructor-arg name="name" value="geohash_2"/>
+		<property name="converter" ref="geohashConverter_2"/>
+	</bean>
+	
+		
+
+
+
+
+fgdc.geohash3
+~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash3" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">
+		<constructor-arg name="name" value="geohash_3"/>
+		<property name="converter" ref="geohashConverter_3"/>
+	</bean>
+	
+		
+
+
+
+
+fgdc.geohash4
+~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash4" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">
+		<constructor-arg name="name" value="geohash_4"/>
+		<property name="converter" ref="geohashConverter_4"/>
+	</bean>
+	
+		
+
+
+
+
+fgdc.geohash5
+~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash5" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">
+		<constructor-arg name="name" value="geohash_5"/>
+		<property name="converter" ref="geohashConverter_5"/>
+	</bean>
+	
+		
+
+
+
+
+fgdc.geohash6
+~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash6" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">
+		<constructor-arg name="name" value="geohash_6"/>
+		<property name="converter" ref="geohashConverter_6"/>
+	</bean>
+	
+		
+
+
+
+
+fgdc.geohash7
+~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash7" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">
+		<constructor-arg name="name" value="geohash_7"/>
+		<property name="converter" ref="geohashConverter_7"/>
+	</bean>
+	
+		
+
+
+
+
+fgdc.geohash8
+~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash8" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">
+		<constructor-arg name="name" value="geohash_8"/>
+		<property name="converter" ref="geohashConverter_8"/>
+	</bean>
+	
+		
+
+
+
+
+fgdc.geohash9
+~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash9" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">
+		<constructor-arg name="name" value="geohash_9"/>
+		<property name="converter" ref="geohashConverter_9"/>
+	</bean>
+
+	
+
+
 
 
