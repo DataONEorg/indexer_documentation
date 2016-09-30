@@ -19,6 +19,7 @@ Contents:
 
    generated/solr_schema
    generated/namespaces
+   generated/system_metadata
    generated/proc_*
 
 

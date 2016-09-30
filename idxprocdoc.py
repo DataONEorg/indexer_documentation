@@ -197,7 +197,7 @@ class B_SolrField(B_BeanXPath):
       #query is something like "../../.."
       pele = ele.xpath("../../..")
       if len(pele) > 0:
-        self.p['bid'] = u"{0}.{1}".format(pele[0].attrib['id'], self.p['field_name'])
+        self.p['bid'] = u"{0}.{1}".format(pele[0].attrib['id'], self.p['field_name'][0])
 
 
   def toText(self, resolver=None, indent=0):
@@ -252,7 +252,7 @@ class B_ResolveSolrField(B_Bean):
       # query is something like "../../.."
       pele = ele.xpath("../../..")
       if len(pele) > 0:
-        self.p['bid'] = u"{0}.{1}".format(pele[0].attrib['id'], self.p['field_name'])
+        self.p['bid'] = u"{0}.{1}".format(pele[0].attrib['id'], self.p['field_name'][0])
 
 
 #--
@@ -353,6 +353,7 @@ class B_BaseXPathDocumentSubprocessor( B_Bean ):
     fields = ele.xpath("b:property[@name='fieldList']/b:list/b:bean", namespaces=NAMESPACES)
     for field in fields:
       res = container.beanLoaderFactory(field)
+      self._L.info("BID = %s", str(res.p['bid']))
       self.p['fieldList'].append(res.p['bid'])
 
 
@@ -672,6 +673,7 @@ class IndexProcessorDocuments(object):
               'namespaces.rst',
               'parsers.rst',
               'subprocessor.rst',
+              'system_metadata.rst',
               ]
     templates = {}
     for tname in tnames:
@@ -686,17 +688,23 @@ class IndexProcessorDocuments(object):
       namespaces = self.getClassInstances('org.dataone.cn.indexer.XMLNamespaceConfig')
       f_dest.write( templates['namespaces.rst']['template'].render(namespaces=namespaces) )
 
-
     t_name = 'parsers.rst'
     t_parsers = env.get_template(t_name)
     fn_dest = os.path.join(dest_folder, t_name)
     with codecs.open( fn_dest, mode='wb', encoding='utf-8') as f_dest:
       parsers = self.getClassInstances('org.dataone.cn.indexer.parser.ScienceMetadataDocumentSubprocessor')
     for parser in self.parsers:
-      sysm_proc = self.getBean( parser.p['systemMetadataProcessor'])
+      sysm_proc = self.getBean(parser.p['systemMetadataProcessor'])
       print sysm_proc
-      print "==="
-      print parser
+      fields = {}
+      for field in sysm_proc.p['fieldList']:
+        print "Loading {0}".format(field)
+        b = self.getBean(field)
+        print b
+        fields[field] = b
+      dest = os.path.join(dest_folder, "system_metadata.rst")
+      with codecs.open(dest, mode='wb', encoding='utf-8') as f_dest:
+        f_dest.write(templates['system_metadata.rst']['template'].render(sp=sysm_proc, fields=fields))
       for subproc in parser.p['subprocessors']:
         subproc_instance = self.getBean(subproc)
         if subproc_instance.p.has_key('fields'):
@@ -706,8 +714,8 @@ class IndexProcessorDocuments(object):
           dest = os.path.join(dest_folder, "proc_" + subproc + ".rst")
           with codecs.open(dest, mode='wb', encoding='utf-8') as f_dest:
             f_dest.write( templates['subprocessor.rst']['template'].render( sp=subproc_instance, fields=fields ))
-        print "=============="
-        print subproc_instance
+        #print "=============="
+        #print subproc_instance
 
 
 
@@ -726,7 +734,7 @@ def main():
   parser = argparse.ArgumentParser(description='Generate Solr index mapping documents.')
   parser.add_argument('-l', '--log_level',
                       action='count',
-                      default=0,
+                      default=1,
                       help='Set logging level, multiples for more detailed.')
   parser.add_argument('-s', '--source',
                       default=".",
