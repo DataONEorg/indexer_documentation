@@ -104,7 +104,7 @@ def classnameLink(cname):
   return "`{0} <{1}>`_".format(res, url)
 
 
-def attrList(names, module="Index", delim=","):
+def attrList(names, module="Index", delim=", "):
   res = []
   for name in names:
     if name != '':

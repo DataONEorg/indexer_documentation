@@ -160,7 +160,7 @@ Fields
       | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
 
 
-  * - :attr:`Index.beginDate`,:attr:`Index.endDate`
+  * - :attr:`Index.beginDate`, :attr:`Index.endDate`
     - False
     - False
     - ::
@@ -186,7 +186,7 @@ Fields
       | Configuration: `dc.site`_
 
 
-  * - :attr:`Index.northBoundCoord`,:attr:`Index.southBoundCoord`,:attr:`Index.eastBoundCoord`,:attr:`Index.westBoundCoord`
+  * - :attr:`Index.northBoundCoord`, :attr:`Index.southBoundCoord`, :attr:`Index.eastBoundCoord`, :attr:`Index.westBoundCoord`
     - False
     - False
     - ::
@@ -198,7 +198,7 @@ Fields
       | Configuration: `dc.boxSpatialBoundCoordinates`_
 
 
-  * - :attr:`Index.geohash_1`,:attr:`Index.geohash_2`,:attr:`Index.geohash_3`,:attr:`Index.geohash_4`,:attr:`Index.geohash_5`,:attr:`Index.geohash_6`,:attr:`Index.geohash_7`,:attr:`Index.geohash_8`,:attr:`Index.geohash_9`
+  * - :attr:`Index.geohash_1`, :attr:`Index.geohash_2`, :attr:`Index.geohash_3`, :attr:`Index.geohash_4`, :attr:`Index.geohash_5`, :attr:`Index.geohash_6`, :attr:`Index.geohash_7`, :attr:`Index.geohash_8`, :attr:`Index.geohash_9`
     - False
     - False
     - ::
