@@ -12,6 +12,7 @@ This parser processes the following DataONE format IDs:
     | formatId: ``{{ fid }}``
 {% endfor %}
 
+A full list of DataONE format IDs can be found at https://cn.dataone.org/cn/v2/formats/
 
 Fields
 ------
