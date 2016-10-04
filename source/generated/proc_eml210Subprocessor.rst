@@ -13,6 +13,7 @@ This parser processes the following DataONE format IDs:
     | formatId: ``eml://ecoinformatics.org/eml-2.1.0``
 
 
+A full list of DataONE format IDs can be found at https://cn.dataone.org/cn/v2/formats/
 
 Fields
 ------

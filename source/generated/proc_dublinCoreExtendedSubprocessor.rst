@@ -13,6 +13,7 @@ This parser processes the following DataONE format IDs:
     | formatId: ``http://ns.dataone.org/metadata/schema/onedcx/v1.0``
 
 
+A full list of DataONE format IDs can be found at https://cn.dataone.org/cn/v2/formats/
 
 Fields
 ------

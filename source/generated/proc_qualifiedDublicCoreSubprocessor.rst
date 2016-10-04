@@ -13,6 +13,7 @@ This parser processes the following DataONE format IDs:
     | formatId: ``http://dublincore.org/schemas/xmls/qdc/2008/02/11/qualifieddc.xsd``
 
 
+A full list of DataONE format IDs can be found at https://cn.dataone.org/cn/v2/formats/
 
 Fields
 ------
