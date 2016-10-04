@@ -1,16 +1,24 @@
-dublinCoreExtendedSubprocessor
-==============================
+Dublin Core, Extended
+=====================
+
+Describes parser configuration for: dublinCoreExtendedSubprocessor
 
 Format IDs Processed
 --------------------
 
+This parser processes the following DataONE format IDs:
 
-  * http://ns.dataone.org/metadata/schema/onedcx/v1.0
+
+  * | DataONE Dublin Core Extended v1.0
+    | formatId: ``http://ns.dataone.org/metadata/schema/onedcx/v1.0``
 
 
 
 Fields
 ------
+
+The following fields in the solr index are populated from values retrieved from this type of metadata document.
+Note that these are in addition to the information extracted from :doc:`system_metadata`.
 
 .. list-table::
   :header-rows: 1

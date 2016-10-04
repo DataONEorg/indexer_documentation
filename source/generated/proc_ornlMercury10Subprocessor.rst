@@ -1,16 +1,24 @@
-ornlMercury10Subprocessor
-=========================
+Mercury metadata
+================
+
+Describes parser configuration for: ornlMercury10Subprocessor
 
 Format IDs Processed
 --------------------
 
+This parser processes the following DataONE format IDs:
 
-  * http://purl.org/ornl/schema/mercury/terms/v1.0
+
+  * | Oak Ridge National Lab Mercury Metadata version 1.0
+    | formatId: ``http://purl.org/ornl/schema/mercury/terms/v1.0``
 
 
 
 Fields
 ------
+
+The following fields in the solr index are populated from values retrieved from this type of metadata document.
+Note that these are in addition to the information extracted from :doc:`system_metadata`.
 
 .. list-table::
   :header-rows: 1

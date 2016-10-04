@@ -1,0 +1,72 @@
+###
+# This YAML file is used to provide descrptions of the various processor and subprocessor beans.
+# Ideally, this information should be contained in the beans, and may be in the future,
+# but for now, here it is.
+#
+# Each entry is keyed by the bean id of the subprocssor.
+#
+# Each entry may contain .rst formatting.
+###
+datacite3Subprocessor:
+  name: DataCite 3
+  description: Used to extract indexed information from the DataCite formats.
+
+dryad30Subprocessor:
+  name: Dryad 3.0
+  description: Used to extract indexed information from the Dryad version 3.0 formats.
+
+dryad31Subprocessor:
+  name: Dryad 3.1
+  description: Used to extract indexed information from the Dryad version 3.1 formats.
+
+dublinCoreExtendedSubprocessor:
+  name: Dublin Core, Extended
+  description:
+
+eml200Subprocessor:
+  name: Ecological Markup Language, v2.0.0
+  description:
+
+eml201Subprocessor:
+  name: Ecological Markup Language, v2.0.1
+  description:
+
+eml210Subprocessor:
+  name: Ecological Markup Language, v2.1.0
+  description:
+
+eml211Subprocessor:
+  name: Ecological Markup Language, v2.1.1
+  description:
+
+fgdcEsri80Subprocessor:
+  name: FGDC ESRI Profile
+  description:
+
+fgdcstd00111999Subprocessor:
+  name: FGDC, v001.1-1999
+  description:
+
+fgdcstd0011998Subprocessor:
+  name: FGDC, v001-1998
+  description:
+
+fgdcstd00121999Subprocessor:
+  name: FGDC, v001.2-1999
+  description:
+
+isotc211NoaaSubprocessor:
+  name: ISO TC-211, NOAA Variant
+  description:
+
+isotc211Subprocessor:
+  name: ISO TC-211
+  description:
+
+ornlMercury10Subprocessor:
+  name: Mercury metadata
+  description:
+
+qualifiedDublicCoreSubprocessor:
+  name: Dublin Core, Qualified
+  description:

@@ -1,16 +1,24 @@
-isotc211NoaaSubprocessor
+ISO TC-211, NOAA Variant
 ========================
+
+Describes parser configuration for: isotc211NoaaSubprocessor
 
 Format IDs Processed
 --------------------
 
+This parser processes the following DataONE format IDs:
 
-  * http://www.isotc211.org/2005/gmd-noaa
+
+  * | NOAA Variant Geographic MetaData (GMD) Extensible Markup Language
+    | formatId: ``http://www.isotc211.org/2005/gmd-noaa``
 
 
 
 Fields
 ------
+
+The following fields in the solr index are populated from values retrieved from this type of metadata document.
+Note that these are in addition to the information extracted from :doc:`system_metadata`.
 
 .. list-table::
   :header-rows: 1

@@ -1,16 +1,24 @@
-fgdcstd0011998Subprocessor
-==========================
+FGDC, v001-1998
+===============
+
+Describes parser configuration for: fgdcstd0011998Subprocessor
 
 Format IDs Processed
 --------------------
 
+This parser processes the following DataONE format IDs:
 
-  * FGDC-STD-001-1998
+
+  * | Content Standard for Digital Geospatial Metadata, version 001-1998
+    | formatId: ``FGDC-STD-001-1998``
 
 
 
 Fields
 ------
+
+The following fields in the solr index are populated from values retrieved from this type of metadata document.
+Note that these are in addition to the information extracted from :doc:`system_metadata`.
 
 .. list-table::
   :header-rows: 1

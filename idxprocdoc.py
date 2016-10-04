@@ -8,6 +8,7 @@ import argparse
 import os
 import codecs
 import yaml
+from urllib2 import urlopen
 from lxml import etree
 from jinja2 import Environment, PackageLoader
 
@@ -16,13 +17,39 @@ NAMESPACES = {'b':'http://www.springframework.org/schema/beans',
               'p': 'http://www.springframework.org/schema/p',
               }
 
+# Provides information about subprocessors, indexed by subprocessor bean id, contains: {name, description}
+SUBPROCESSOR_INFO = {
+}
+
 SOLR_DESCRIPTIONS = {} #Dictionary of solr field - description
+
+FORMAT_IDS = {} # dictionary of formatid:{description, type}
 
 
 def loadIndexFieldDescriptions(fn_src):
   global SOLR_DESCRIPTIONS
+  logging.info("Loading field descriptions from %s", fn_src)
   with codecs.open(fn_src, encoding='utf-8') as f:
     SOLR_DESCRIPTIONS = yaml.load(f)
+
+
+def loadSubprocessorDescriptions(fn_src):
+  global SUBPROCESSOR_INFO
+  logging.info("Loading subprocessor descriptions from %s", fn_src)
+  with codecs.open(fn_src, encoding='utf-8') as f:
+    SUBPROCESSOR_INFO = yaml.load(f)
+
+
+def loadFormatIds(url="https://cn.dataone.org/cn/v2/formats/"):
+  global FORMAT_IDS
+  logging.info("Loading format IDs from %s", url)
+  formats = etree.parse(urlopen(url))
+  for format in formats.xpath("//objectFormat"):
+    formatid = format.xpath("formatId")[0].text
+    descr = format.xpath("formatName")[0].text
+    ftype = format.xpath("formatType")[0].text
+    FORMAT_IDS[formatid] = {'description': descr, 'type': ftype}
+
 
 
 def strToBool(s):
@@ -125,6 +152,7 @@ def solrFieldDescription(field):
 
 def svnRepoLink(target):
   return "https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/" + target
+
 
 
 #=======================================================================================================================
@@ -667,12 +695,30 @@ class IndexProcessorDocuments(object):
     self.loadParsers(context_path)
 
 
-  def getConverterInfo(self, bid):
+  def j_getConverterInfo(self, bid):
     print "looking up converter: %s" % bid
     bean = self.getBean(bid)
     if bean is None:
       return ''
     return bean.p['cname']
+
+
+  def j_describeFormatId(self, formatid):
+    formatid = formatid.strip()
+    try:
+      return FORMAT_IDS[formatid]['description']
+    except KeyError as e:
+      self._L.error("Unknown format ID: %s", formatid)
+    return "Unknown"
+
+
+  def j_subprocessorName(self, subproc_id):
+    res = subproc_id
+    try:
+      res = SUBPROCESSOR_INFO[subproc_id]['name']
+    except KeyError as e:
+      self._L.warn("No description available for subprocessor: %s", subproc_id)
+    return res + "\n" + "=" * len(res)
 
 
   def toText(self, dest_folder=None):
@@ -688,7 +734,9 @@ class IndexProcessorDocuments(object):
     env.filters['attrList'] = attrList
     env.filters['solrFieldDescription'] = solrFieldDescription
     env.filters['svnRepoLink'] = svnRepoLink
-    env.filters['getConverterInfo'] = self.getConverterInfo
+    env.filters['getConverterInfo'] = self.j_getConverterInfo
+    env.filters['describeFormatId'] = self.j_describeFormatId
+    env.filters['subprocessorName'] = self.j_subprocessorName
 
     tnames = ['solr_schema.rst',
               'namespaces.rst',
@@ -763,6 +811,10 @@ def main():
   parser.add_argument('-f', '--solrdescr',
                       default="solr_field_descriptions.yaml",
                       help="YAML file of solr field: description")
+  parser.add_argument('-pf', '--subprocdescr',
+                      default="subprocessor_descriptions.yaml",
+                      help="YAML file of subprocessor descriptions")
+
 
   args = parser.parse_args()
   # Setup logging verbosity
@@ -771,6 +823,8 @@ def main():
   logging.basicConfig(level=level,
                       format="%(asctime)s %(levelname)s %(message)s")
   loadIndexFieldDescriptions(args.solrdescr)
+  loadSubprocessorDescriptions(args.subprocdescr)
+  loadFormatIds()
   beans = IndexProcessorDocuments()
   beans.loadContext( args.source )
 

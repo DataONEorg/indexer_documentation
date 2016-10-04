@@ -1,16 +1,24 @@
-eml200Subprocessor
-==================
+Ecological Markup Language, v2.0.0
+==================================
+
+Describes parser configuration for: eml200Subprocessor
 
 Format IDs Processed
 --------------------
 
+This parser processes the following DataONE format IDs:
 
-  * eml://ecoinformatics.org/eml-2.0.0
+
+  * | Ecological Metadata Language, version 2.0.0
+    | formatId: ``eml://ecoinformatics.org/eml-2.0.0``
 
 
 
 Fields
 ------
+
+The following fields in the solr index are populated from values retrieved from this type of metadata document.
+Note that these are in addition to the information extracted from :doc:`system_metadata`.
 
 .. list-table::
   :header-rows: 1

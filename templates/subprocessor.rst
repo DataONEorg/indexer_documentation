@@ -1,16 +1,23 @@
-{{sp.p['bid']}}
-{{sp.p['bid']|U1}}
+{{ sp.p['bid']|subprocessorName}}
+
+Describes parser configuration for: {{sp.p['bid']}}
 
 Format IDs Processed
 --------------------
 
+This parser processes the following DataONE format IDs:
+
 {% for fid in sp.p['matchDocuments'] %}
-  * {{ fid }}
+  * | {{ fid|describeFormatId }}
+    | formatId: ``{{ fid }}``
 {% endfor %}
 
 
 Fields
 ------
+
+The following fields in the solr index are populated from values retrieved from this type of metadata document.
+Note that these are in addition to the information extracted from :doc:`system_metadata`.
 
 .. list-table::
   :header-rows: 1

@@ -1,16 +1,24 @@
-dryad30Subprocessor
-===================
+Dryad 3.0
+=========
+
+Describes parser configuration for: dryad30Subprocessor
 
 Format IDs Processed
 --------------------
 
+This parser processes the following DataONE format IDs:
 
-  * http://purl.org/dryad/terms/
+
+  * | Dryad Metadata Application Profile Version 3.0
+    | formatId: ``http://purl.org/dryad/terms/``
 
 
 
 Fields
 ------
+
+The following fields in the solr index are populated from values retrieved from this type of metadata document.
+Note that these are in addition to the information extracted from :doc:`system_metadata`.
 
 .. list-table::
   :header-rows: 1

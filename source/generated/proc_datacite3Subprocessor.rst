@@ -1,18 +1,27 @@
-datacite3Subprocessor
-=====================
+DataCite 3
+==========
+
+Describes parser configuration for: datacite3Subprocessor
 
 Format IDs Processed
 --------------------
 
+This parser processes the following DataONE format IDs:
 
-  * http://datacite.org/schema/kernel-3.1
 
-  * http://datacite.org/schema/kernel-3.0
+  * | DataCite Metadata Schema version 3.1
+    | formatId: ``http://datacite.org/schema/kernel-3.1``
+
+  * | DataCite Metadata Schema version 3.0
+    | formatId: ``http://datacite.org/schema/kernel-3.0``
 
 
 
 Fields
 ------
+
+The following fields in the solr index are populated from values retrieved from this type of metadata document.
+Note that these are in addition to the information extracted from :doc:`system_metadata`.
 
 .. list-table::
   :header-rows: 1

@@ -1,16 +1,24 @@
-fgdcstd00121999Subprocessor
-===========================
+FGDC, v001.2-1999
+=================
+
+Describes parser configuration for: fgdcstd00121999Subprocessor
 
 Format IDs Processed
 --------------------
 
+This parser processes the following DataONE format IDs:
 
-  * FGDC-STD-001.2-1999
+
+  * | Content Standard for Digital Geospatial Metadata, Metadata Profile for Shoreline Data, version 001.2-1999
+    | formatId: ``FGDC-STD-001.2-1999``
 
 
 
 Fields
 ------
+
+The following fields in the solr index are populated from values retrieved from this type of metadata document.
+Note that these are in addition to the information extracted from :doc:`system_metadata`.
 
 .. list-table::
   :header-rows: 1

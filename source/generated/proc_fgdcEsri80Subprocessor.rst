@@ -1,16 +1,24 @@
-fgdcEsri80Subprocessor
-======================
+FGDC ESRI Profile
+=================
+
+Describes parser configuration for: fgdcEsri80Subprocessor
 
 Format IDs Processed
 --------------------
 
+This parser processes the following DataONE format IDs:
 
-  * http://www.esri.com/metadata/esriprof80.dtd
+
+  * | ESRI Profile of the Content Standard for Digital Geospatial Metadata, March 2003
+    | formatId: ``http://www.esri.com/metadata/esriprof80.dtd``
 
 
 
 Fields
 ------
+
+The following fields in the solr index are populated from values retrieved from this type of metadata document.
+Note that these are in addition to the information extracted from :doc:`system_metadata`.
 
 .. list-table::
   :header-rows: 1

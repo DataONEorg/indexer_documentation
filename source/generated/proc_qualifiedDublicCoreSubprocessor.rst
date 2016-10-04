@@ -1,16 +1,24 @@
-qualifiedDublicCoreSubprocessor
-===============================
+Dublin Core, Qualified
+======================
+
+Describes parser configuration for: qualifiedDublicCoreSubprocessor
 
 Format IDs Processed
 --------------------
 
+This parser processes the following DataONE format IDs:
 
-  * http://dublincore.org/schemas/xmls/qdc/2008/02/11/qualifieddc.xsd
+
+  * | Unknown
+    | formatId: ``http://dublincore.org/schemas/xmls/qdc/2008/02/11/qualifieddc.xsd``
 
 
 
 Fields
 ------
+
+The following fields in the solr index are populated from values retrieved from this type of metadata document.
+Note that these are in addition to the information extracted from :doc:`system_metadata`.
 
 .. list-table::
   :header-rows: 1
