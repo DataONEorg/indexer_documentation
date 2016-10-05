@@ -27,14 +27,17 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - Solr Field
     - Multi
     - Dedupe
-    - XPath
+    - Source
 {% for fld in sp.p['fields'] %}
   * - {{ fields[fld].p['field_name']|attrList }}
     - {{ fields[fld].p['multivalue'] }}
     - {{ fields[fld].p['dedupe'] }}
-    - {% if fields[fld].p['xpath'] is defined %}::
+    - {% if 'xpath' in fields[fld].p %}::
 
         {{ fields[fld].p['xpath']|wrapXPath(60,0,8) }}
+{% elif 'query' in fields[fld].p %}::
+
+        {{ fields[fld].p['query']|sparqlTrim }}
 {% else %}{% endif %}
       | Processor: {{fields[fld].p['cname']|classnameLink}}
       | Configuration: `{{fld}}`_
@@ -52,7 +55,6 @@ Bean Configurations
 .. code-block:: xml
 
    {{fields[fld].p['xml']}}
-
 
 {% endfor %}
 

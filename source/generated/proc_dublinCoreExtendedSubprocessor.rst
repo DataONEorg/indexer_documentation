@@ -28,7 +28,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - Solr Field
     - Multi
     - Dedupe
-    - XPath
+    - Source
 
   * - :attr:`Index.abstract`
     - False
@@ -258,7 +258,6 @@ dc.abstract
 
 
 
-
 dc.author
 ~~~~~~~~~
 
@@ -270,7 +269,6 @@ dc.author
 	</bean>
 	
 	
-
 
 
 
@@ -289,7 +287,6 @@ dc.authorSurName
 
 
 
-
 dc.authorSurNameSort
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -302,7 +299,6 @@ dc.authorSurNameSort
 	</bean>
 	
 	
-
 
 
 
@@ -322,7 +318,6 @@ dc.contactOrganization
 
 
 
-
 dc.investigator
 ~~~~~~~~~~~~~~~
 
@@ -336,7 +331,6 @@ dc.investigator
 	</bean>
 	
 	
-
 
 
 
@@ -356,7 +350,6 @@ dc.origin
 
 
 
-
 dc.pubDate
 ~~~~~~~~~~
 
@@ -369,7 +362,6 @@ dc.pubDate
 	</bean>
 
 	
-
 
 
 
@@ -387,7 +379,6 @@ dc.title
 
 
 
-
 dc.keywords
 ~~~~~~~~~~~
 
@@ -400,7 +391,6 @@ dc.keywords
 	</bean>
 
 	
-
 
 
 
@@ -420,7 +410,6 @@ dc.beginDate
 
 
 
-
 dc.endDate
 ~~~~~~~~~~
 
@@ -437,7 +426,6 @@ dc.endDate
 
 
 
-
 dc.datePeriod
 ~~~~~~~~~~~~~
 
@@ -448,7 +436,6 @@ dc.datePeriod
 	</bean>
 	
  	
-
 
 
 
@@ -468,7 +455,6 @@ dc.site
 
 
 
-
 dc.boxSpatialBoundCoordinates
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -479,7 +465,6 @@ dc.boxSpatialBoundCoordinates
 	</bean>
 	
 	
-
 
 
 
@@ -496,7 +481,6 @@ dc.boxSpatialGeohash
 
 
 
-
 dc.fileID
 ~~~~~~~~~
 
@@ -510,7 +494,6 @@ dc.fileID
 
 
 
-
 dc.fullText
 ~~~~~~~~~~~
 
@@ -521,7 +504,6 @@ dc.fullText
 		<constructor-arg name="xpath" value="//*/text()"/>
 		<property name="combineNodes" value="true"/>
 	</bean>
-
 
 
 

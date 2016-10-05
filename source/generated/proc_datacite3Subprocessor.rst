@@ -31,7 +31,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - Solr Field
     - Multi
     - Dedupe
-    - XPath
+    - Source
 
   * - :attr:`Index.author`
     - False
@@ -294,7 +294,6 @@ datacite.author
 
 
 
-
 datacite.author_lname
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -308,7 +307,6 @@ datacite.author_lname
 	</bean>
 	
 	
-
 
 
 
@@ -328,7 +326,6 @@ datacite.authorSurName
 
 
 
-
 datacite.authorSurNameSort
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -342,7 +339,6 @@ datacite.authorSurNameSort
 	</bean>	
 	
 	
-
 
 
 
@@ -362,7 +358,6 @@ datacite.authorGivenName
 
 
 
-
 datacite.authorGivenNameSort
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -376,7 +371,6 @@ datacite.authorGivenNameSort
 	</bean>	
 	
 	
-
 
 
 
@@ -396,7 +390,6 @@ datacite.abstract
 
 
 
-
 datacite.title
 ~~~~~~~~~~~~~~
 
@@ -408,7 +401,6 @@ datacite.title
 	</bean>
 
 	
-
 
 
 
@@ -427,7 +419,6 @@ datacite.pubDate
 
 
 
-
 datacite.keywords
 ~~~~~~~~~~~~~~~~~
 
@@ -441,7 +432,6 @@ datacite.keywords
 	</bean>
 
 	
-
 
 
 
@@ -462,7 +452,6 @@ datacite.beginDate
 
 
 
-
 datacite.endDate
 ~~~~~~~~~~~~~~~~
 
@@ -477,7 +466,6 @@ datacite.endDate
 	</bean>
 
 	
-
 
 
 
@@ -497,7 +485,6 @@ datacite.origin
 
 
 
-
 datacite.investigator
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -511,7 +498,6 @@ datacite.investigator
 	</bean>
 	
 	
-
 
 
 
@@ -531,7 +517,6 @@ datacite.contactOrganization
 
 
 
-
 datacite.site
 ~~~~~~~~~~~~~
 
@@ -545,7 +530,6 @@ datacite.site
 	</bean>
 	
 	
-
 
 
 
@@ -563,7 +547,6 @@ datacite.boxSpatialBoundCoordinates
 
 
 
-
 datacite.boxSpatialGeohash
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -575,7 +558,6 @@ datacite.boxSpatialGeohash
 	</bean>
 
 	
-
 
 
 
@@ -592,7 +574,6 @@ datacite.fileID
 
 
 
-
 datacite.fullText
 ~~~~~~~~~~~~~~~~~
 
@@ -603,7 +584,6 @@ datacite.fullText
 		<constructor-arg name="xpath" value="//*/text()"/>
 		<property name="combineNodes" value="true"/>
 	</bean>		
-
 
 
 

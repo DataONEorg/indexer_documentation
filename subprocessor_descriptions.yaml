@@ -70,3 +70,11 @@ ornlMercury10Subprocessor:
 qualifiedDublicCoreSubprocessor:
   name: Dublin Core, Qualified
   description:
+
+annotatorSubprocessor:
+  name: Semantic Annotation from JSON
+  description:
+
+prov20150115RdfXmlSubprocessor:
+  name: Provenance
+  description:

@@ -28,7 +28,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - Solr Field
     - Multi
     - Dedupe
-    - XPath
+    - Source
 
   * - :attr:`Index.abstract`
     - False
@@ -566,7 +566,6 @@ isotc.abstract
 
 
 
-
 isotc.author
 ~~~~~~~~~~~~
 
@@ -578,7 +577,6 @@ isotc.author
 	</bean>
 
 	
-
 
 
 
@@ -597,7 +595,6 @@ isotc.authorSurName
 
 
 
-
 isotc.authorSurNameSort
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -613,7 +610,6 @@ isotc.authorSurNameSort
 
 
 
-
 isotc.contactOrganization
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -625,7 +621,6 @@ isotc.contactOrganization
 	</bean>
 	
 	
-
 
 
 
@@ -645,7 +640,6 @@ isotc.origin
 
 
 
-
 isotc.investigator
 ~~~~~~~~~~~~~~~~~~
 
@@ -659,7 +653,6 @@ isotc.investigator
 	</bean>
 	
 	
-
 
 
 
@@ -678,7 +671,6 @@ isotc.pubDate
 
 
 
-
 isotc.beginDate
 ~~~~~~~~~~~~~~~
 
@@ -691,7 +683,6 @@ isotc.beginDate
 	</bean>
 	
 	
-
 
 
 
@@ -710,7 +701,6 @@ isotc.endDate
 
 
 
-
 isotc.title
 ~~~~~~~~~~~
 
@@ -722,7 +712,6 @@ isotc.title
 	</bean>		
 	
 	
-
 
 
 
@@ -741,7 +730,6 @@ isotc.keywords
 
 
 
-
 isotc.eastBoundCoord
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -753,7 +741,6 @@ isotc.eastBoundCoord
 	</bean>	
 	
 	
-
 
 
 
@@ -771,7 +758,6 @@ isotc.westBoundCoord
 
 
 
-
 isotc.southBoundCoord
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -783,7 +769,6 @@ isotc.southBoundCoord
 	</bean>
 	
 	
-
 
 
 
@@ -801,7 +786,6 @@ isotc.northBoundCoord
 
 
 
-
 isotc.geohash9
 ~~~~~~~~~~~~~~
 
@@ -813,7 +797,6 @@ isotc.geohash9
 	</bean>
 		
 	
-
 
 
 
@@ -831,7 +814,6 @@ isotc.geohash1
 
 
 
-
 isotc.geohash2
 ~~~~~~~~~~~~~~
 
@@ -843,7 +825,6 @@ isotc.geohash2
 	</bean>
 	
 	
-
 
 
 
@@ -861,7 +842,6 @@ isotc.geohash3
 
 
 
-
 isotc.geohash4
 ~~~~~~~~~~~~~~
 
@@ -873,7 +853,6 @@ isotc.geohash4
 	</bean>
 
 	
-
 
 
 
@@ -891,7 +870,6 @@ isotc.geohash5
 
 
 
-
 isotc.geohash6
 ~~~~~~~~~~~~~~
 
@@ -903,7 +881,6 @@ isotc.geohash6
 	</bean>
 	
 	
-
 
 
 
@@ -921,7 +898,6 @@ isotc.geohash7
 
 
 
-
 isotc.geohash8
 ~~~~~~~~~~~~~~
 
@@ -933,7 +909,6 @@ isotc.geohash8
 	</bean>
 
 	
-
 
 
 
@@ -951,7 +926,6 @@ isotc.isService
 
 
 
-
 isotc.serviceCoupling
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -963,7 +937,6 @@ isotc.serviceCoupling
 	</bean>
 	
 	
-
 
 
 
@@ -983,7 +956,6 @@ isotc.serviceTitle
 
 
 
-
 isotc.serviceDescription
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -997,7 +969,6 @@ isotc.serviceDescription
 	</bean>	
 	
 	
-
 
 
 
@@ -1017,7 +988,6 @@ isotc.serviceType
 
 
 
-
 isotc.serviceEndpoint
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -1030,7 +1000,6 @@ isotc.serviceEndpoint
 	</bean>	
 
 	
-
 
 
 
@@ -1049,7 +1018,6 @@ isotc.serviceInput
 
 
 
-
 isotc.serviceOutput
 ~~~~~~~~~~~~~~~~~~~
 
@@ -1062,7 +1030,6 @@ isotc.serviceOutput
 	</bean>	
 	
 	
-
 
 
 
@@ -1082,7 +1049,6 @@ isotc.distribServiceType
 
 
 
-
 isotc.distribServiceEndpoint
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1095,7 +1061,6 @@ isotc.distribServiceEndpoint
 	</bean>	
 
 	
-
 
 
 
@@ -1114,7 +1079,6 @@ isotc.distribServiceInput
 
 
 
-
 isotc.distribServiceOutput
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1126,7 +1090,6 @@ isotc.distribServiceOutput
 		<property name="multivalue" value="true"/>
 	</bean>	
 	
-
 
 
 
@@ -1144,7 +1107,6 @@ isotc.fileID
 
 
 
-
 isotc.fullText
 ~~~~~~~~~~~~~~
 
@@ -1157,7 +1119,6 @@ isotc.fullText
 	</bean>
 	
 	
-
 
 
 

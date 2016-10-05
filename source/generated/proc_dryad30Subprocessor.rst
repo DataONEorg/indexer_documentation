@@ -28,7 +28,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - Solr Field
     - Multi
     - Dedupe
-    - XPath
+    - Source
 
   * - :attr:`Index.abstract`
     - False
@@ -213,7 +213,6 @@ dryad.abstract
 
 
 
-
 dryad.author
 ~~~~~~~~~~~~
 
@@ -225,7 +224,6 @@ dryad.author
 	</bean>
 	
 	
-
 
 
 
@@ -245,7 +243,6 @@ dryad.authorSurName
 
 
 
-
 dryad.authorSurNameSort
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -259,7 +256,6 @@ dryad.authorSurNameSort
 	</bean>	
 	
 	
-
 
 
 
@@ -279,7 +275,6 @@ dryad.authorGivenName
 
 
 
-
 dryad.authorGivenNameSort
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -293,7 +288,6 @@ dryad.authorGivenNameSort
 	</bean>	
 	
 	
-
 
 
 
@@ -313,7 +307,6 @@ dryad.investigator
 
 
 
-
 dryad.keywords
 ~~~~~~~~~~~~~~
 
@@ -326,7 +319,6 @@ dryad.keywords
 	</bean>
 	
 	
-
 
 
 
@@ -346,7 +338,6 @@ dryad.origin
 
 
 
-
 dryad.pubDate
 ~~~~~~~~~~~~~
 
@@ -359,7 +350,6 @@ dryad.pubDate
 	</bean>
 	
  	
-
 
 
 
@@ -378,7 +368,6 @@ dryad.site
 
 
 
-
 dryad.title
 ~~~~~~~~~~~
 
@@ -390,7 +379,6 @@ dryad.title
 	</bean>
  
  	
-
 
 
 
@@ -409,7 +397,6 @@ dryad.scientificName
 
 
 
-
 dryad.fileID
 ~~~~~~~~~~~~
 
@@ -420,7 +407,6 @@ dryad.fileID
 	</bean>
 	
 	
-
 
 
 
@@ -435,7 +421,6 @@ dryad.fullText
 		<property name="combineNodes" value="true"/>
 	</bean>
 	
-
 
 
 

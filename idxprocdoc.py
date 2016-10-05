@@ -8,6 +8,7 @@ import argparse
 import os
 import codecs
 import yaml
+import re
 from urllib2 import urlopen
 from lxml import etree
 from jinja2 import Environment, PackageLoader
@@ -498,7 +499,7 @@ class B_BaseDocumentDeleteSubprocessor( B_Bean ):
 
 
 #--
-class B_AnnotatorSubprocessor( B_Bean ):
+class B_AnnotatorSubprocessor( B_ScienceMetadataDocumentSubprocessor ):
   pass
 
 
@@ -509,12 +510,42 @@ class B_BaseReprocessSubprocessor(B_Bean):
 
 #--
 class B_SparqlField(B_Bean):
-  pass
+  def __init__(self):
+    super(B_SparqlField, self).__init__()
+    self.p['field_name'] = []
+    self.p['converter'] = ''
+    self.p['query'] = ''
+    self.p['multivalue'] = False
+    self.p['dedupe'] = False
+
+
+  def load(self, ele, container):
+    super(B_SparqlField, self).load(ele, container)
+    self.p['field_name'] = [xpstrval(ele, "b:constructor-arg[@name='name']/@value"), ]
+    self.p['multivalue'] = xpboolval(ele, "b:property[@name='multivalue']/@value")
+    self.p['dedupe'] = xpboolval(ele, "b:property[@name='dedupe']/@value")
+    self.p['converter'] = xpstrval(ele, "b:property[@name='converter']/@ref")
+    query = ele.xpath("b:constructor-arg[@name='query']/b:value", namespaces=NAMESPACES)
+    if len(query) > 0:
+      self.p['query'] = query[0].text
+    if self.p['bid'] == '':
+      #If there's no ID, then it is an anonymous bean contained by some parent
+      #query is something like "../../.."
+      pele = ele.xpath("../../..")
+      if len(pele) > 0:
+        self.p['bid'] = u"{0}.{1}".format(pele[0].attrib['id'], self.p['field_name'][0])
+
+
 
 
 #--
-class B_RdfXmlSubprocessor(B_Bean):
+class B_RdfXmlSubprocessor(B_ScienceMetadataDocumentSubprocessor):
   pass
+#  def __init__(self):
+#    super(B_RdfXmlSubprocessor, self).__init__()
+#    self.p['matchDocuments'] = []
+#    self.p['fields'] = []
+
 
 
 #--
@@ -631,11 +662,12 @@ class IndexProcessorDocuments(object):
     :param fname:
     :return:
     '''
-    doc = etree.parse( fname )
+    parser = etree.XMLParser(strip_cdata=False)
+    doc = etree.parse(fname, parser=parser)
     beans = doc.xpath("//b:bean", namespaces=NAMESPACES)
     for bean in beans:
       b = self.beanLoaderFactory( bean )
-      self.beans.append( b )
+      #self.beans.append( b )
 
 
   def loadBeans(self, context_path):
@@ -721,6 +753,19 @@ class IndexProcessorDocuments(object):
     return res + "\n" + "=" * len(res)
 
 
+  def j_sparqlTrim(self, sparql):
+    '''
+    Trim the name spaces from the provided sparql query.
+    :param sparql:
+    :return: trimmed text
+    '''
+    rg = re.compile("\n(\s*)SELECT")
+    selpos = rg.search(sparql)
+    if selpos is not None:
+      return sparql[selpos.start():]
+    return sparql
+
+
   def toText(self, dest_folder=None):
     if not os.path.exists(dest_folder):
       self._L.info("Creating folder for generated content: %s", dest_folder)
@@ -737,6 +782,7 @@ class IndexProcessorDocuments(object):
     env.filters['getConverterInfo'] = self.j_getConverterInfo
     env.filters['describeFormatId'] = self.j_describeFormatId
     env.filters['subprocessorName'] = self.j_subprocessorName
+    env.filters['sparqlTrim'] = self.j_sparqlTrim
 
     tnames = ['solr_schema.rst',
               'namespaces.rst',

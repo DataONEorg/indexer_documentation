@@ -28,7 +28,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - Solr Field
     - Multi
     - Dedupe
-    - XPath
+    - Source
 
   * - :attr:`Index.abstract`
     - False
@@ -583,7 +583,6 @@ eml.abstract
 
 
 
-
 eml.keywords
 ~~~~~~~~~~~~
 
@@ -597,7 +596,6 @@ eml.keywords
 	</bean>
 
 	
-
 
 
 
@@ -616,7 +614,6 @@ eml.title
 
 
 
-
 eml.project
 ~~~~~~~~~~~
 
@@ -629,7 +626,6 @@ eml.project
 	</bean>	
 
 	
-
 
 
 
@@ -649,7 +645,6 @@ eml.southBoundCoord
 
 
 
-
 eml.northBoundCoord
 ~~~~~~~~~~~~~~~~~~~
 
@@ -663,7 +658,6 @@ eml.northBoundCoord
 	</bean>
 
 	
-
 
 
 
@@ -683,7 +677,6 @@ eml.westBoundCoord
 
 
 
-
 eml.eastBoundCoord
 ~~~~~~~~~~~~~~~~~~
 
@@ -700,7 +693,6 @@ eml.eastBoundCoord
 
 
 
-
 eml.site
 ~~~~~~~~
 
@@ -713,7 +705,6 @@ eml.site
 	</bean>
 	
 	
-
 
 
 
@@ -733,7 +724,6 @@ eml.beginDate
 
 
 
-
 eml.endDate
 ~~~~~~~~~~~
 
@@ -747,7 +737,6 @@ eml.endDate
 	</bean>
 	
 	
-
 
 
 
@@ -767,7 +756,6 @@ eml.pubDate
 
 
 
-
 eml.author
 ~~~~~~~~~~
 
@@ -778,7 +766,6 @@ eml.author
 	</bean>
 	
 	
-
 
 
 
@@ -797,7 +784,6 @@ eml.author_lname
 
 
 
-
 eml.authorGivenName
 ~~~~~~~~~~~~~~~~~~~
 
@@ -809,7 +795,6 @@ eml.authorGivenName
 	</bean>
 
 	
-
 
 
 
@@ -827,7 +812,6 @@ eml.authorSurName
 
 
 
-
 eml.authorGivenNameSort
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -842,7 +826,6 @@ eml.authorGivenNameSort
 
 
 
-
 eml.authorSurNameSort
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -854,7 +837,6 @@ eml.authorSurNameSort
 	</bean>
 	
 	
-
 
 
 
@@ -873,7 +855,6 @@ eml.investigator
 
 
 
-
 eml.origin
 ~~~~~~~~~~
 
@@ -884,7 +865,6 @@ eml.origin
 	</bean>
 	
 	
-
 
 
 
@@ -904,7 +884,6 @@ eml.contactOrganization
 
 
 
-
 eml.genus
 ~~~~~~~~~
 
@@ -918,7 +897,6 @@ eml.genus
 	</bean>
 
 	
-
 
 
 
@@ -938,7 +916,6 @@ eml.species
 
 
 
-
 eml.kingdom
 ~~~~~~~~~~~
 
@@ -952,7 +929,6 @@ eml.kingdom
 	</bean>
 
 	
-
 
 
 
@@ -972,7 +948,6 @@ eml.order
 
 
 
-
 eml.phylum
 ~~~~~~~~~~
 
@@ -989,7 +964,6 @@ eml.phylum
 
 
 
-
 eml.family
 ~~~~~~~~~~
 
@@ -1003,7 +977,6 @@ eml.family
 	</bean>
 
 	
-
 
 
 
@@ -1024,7 +997,6 @@ eml.class
 
 
 
-
 eml.scientificName
 ~~~~~~~~~~~~~~~~~~
 
@@ -1035,7 +1007,6 @@ eml.scientificName
 	</bean>
 	
 	
-
 
 
 
@@ -1055,7 +1026,6 @@ eml.attributeName
 
 
 
-
 eml.attributeLabel
 ~~~~~~~~~~~~~~~~~~
 
@@ -1069,7 +1039,6 @@ eml.attributeLabel
 	</bean>
 	
 	
-
 
 
 
@@ -1089,7 +1058,6 @@ eml.attributeDescription
 
 
 
-
 eml.attributeUnit
 ~~~~~~~~~~~~~~~~~
 
@@ -1106,7 +1074,6 @@ eml.attributeUnit
 
 
 
-
 eml.attributeText
 ~~~~~~~~~~~~~~~~~
 
@@ -1120,7 +1087,6 @@ eml.attributeText
 
 
 
-
 eml.fileID
 ~~~~~~~~~~
 
@@ -1131,7 +1097,6 @@ eml.fileID
 	</bean>
 	
 	
-
 
 
 
@@ -1157,7 +1122,6 @@ eml.fullText
 
 
 
-
 eml.geohash1
 ~~~~~~~~~~~~
 
@@ -1169,7 +1133,6 @@ eml.geohash1
 	</bean>
 	
 	
-
 
 
 
@@ -1187,7 +1150,6 @@ eml.geohash2
 
 
 
-
 eml.geohash3
 ~~~~~~~~~~~~
 
@@ -1199,7 +1161,6 @@ eml.geohash3
 	</bean>
 	
 		
-
 
 
 
@@ -1217,7 +1178,6 @@ eml.geohash4
 
 
 
-
 eml.geohash5
 ~~~~~~~~~~~~
 
@@ -1229,7 +1189,6 @@ eml.geohash5
 	</bean>
 	
 		
-
 
 
 
@@ -1247,7 +1206,6 @@ eml.geohash6
 
 
 
-
 eml.geohash7
 ~~~~~~~~~~~~
 
@@ -1259,7 +1217,6 @@ eml.geohash7
 	</bean>
 	
 		
-
 
 
 
@@ -1277,7 +1234,6 @@ eml.geohash8
 
 
 
-
 eml.geohash9
 ~~~~~~~~~~~~
 
@@ -1292,7 +1248,6 @@ eml.geohash9
 
 
 
-
 eml.isService
 ~~~~~~~~~~~~~
 
@@ -1304,7 +1259,6 @@ eml.isService
 	</bean>
 	
 	
-
 
 
 
@@ -1324,7 +1278,6 @@ eml.serviceTitle
 
 
 
-
 eml.serviceDescription
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1341,7 +1294,6 @@ eml.serviceDescription
 
 
 
-
 eml.serviceEndpoint
 ~~~~~~~~~~~~~~~~~~~
 
@@ -1354,7 +1306,6 @@ eml.serviceEndpoint
 	</bean>	
 	
 	
-
 
 
 

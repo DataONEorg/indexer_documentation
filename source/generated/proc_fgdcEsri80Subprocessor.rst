@@ -28,7 +28,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - Solr Field
     - Multi
     - Dedupe
-    - XPath
+    - Source
 
   * - :attr:`Index.abstract`
     - False
@@ -586,7 +586,6 @@ fgdc.abstract
 
 
 
-
 fgdc.beginDate
 ~~~~~~~~~~~~~~
 
@@ -600,7 +599,6 @@ fgdc.beginDate
 	</bean>
 	
 	
-
 
 
 
@@ -620,7 +618,6 @@ fgdc.contactOrganization
 
 
 
-
 fgdc.eastBoundCoord
 ~~~~~~~~~~~~~~~~~~~
 
@@ -634,7 +631,6 @@ fgdc.eastBoundCoord
 	</bean>
 	
 	
-
 
 
 
@@ -654,7 +650,6 @@ fgdc.westBoundCoord
 
 
 
-
 fgdc.northBoundCoord
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -668,7 +663,6 @@ fgdc.northBoundCoord
 	</bean>	
 	
 	
-
 
 
 
@@ -688,7 +682,6 @@ fgdc.southBoundCoord
 
 
 
-
 fgdc.edition
 ~~~~~~~~~~~~
 
@@ -701,7 +694,6 @@ fgdc.edition
 	</bean>	
 
 	
-
 
 
 
@@ -721,7 +713,6 @@ fgdc.endDate
 
 
 
-
 fgdc.gcmdKeyword
 ~~~~~~~~~~~~~~~~
 
@@ -734,7 +725,6 @@ fgdc.gcmdKeyword
 	</bean>
  	
 	
-
 
 
 
@@ -759,7 +749,6 @@ fgdc.keywords
 
 
 
-
 fgdc.geoform
 ~~~~~~~~~~~~
 
@@ -772,7 +761,6 @@ fgdc.geoform
 	</bean>	
 	
 	
-
 
 
 
@@ -791,7 +779,6 @@ fgdc.genus
 
 
 
-
 fgdc.kingdom
 ~~~~~~~~~~~~
 
@@ -804,7 +791,6 @@ fgdc.kingdom
 	</bean>	
 	
 	
-
 
 
 
@@ -823,7 +809,6 @@ fgdc.order
 
 
 
-
 fgdc.phylum
 ~~~~~~~~~~~
 
@@ -836,7 +821,6 @@ fgdc.phylum
 	</bean>
 	
 	
-
 
 
 
@@ -855,7 +839,6 @@ fgdc.species
 
 
 
-
 fgdc.family
 ~~~~~~~~~~~
 
@@ -868,7 +851,6 @@ fgdc.family
 	</bean>
 	
 	
-
 
 
 
@@ -887,7 +869,6 @@ fgdc.class
 
 
 
-
 fgdc.origin
 ~~~~~~~~~~~
 
@@ -903,7 +884,6 @@ fgdc.origin
 
 
 
-
 fgdc.scientificName
 ~~~~~~~~~~~~~~~~~~~
 
@@ -914,7 +894,6 @@ fgdc.scientificName
 	</bean>
 	
 	
-
 
 
 
@@ -933,7 +912,6 @@ fgdc.placeKey
 
 
 
-
 fgdc.pubDate
 ~~~~~~~~~~~~
 
@@ -947,7 +925,6 @@ fgdc.pubDate
 	</bean>
 	
 	
-
 
 
 
@@ -968,7 +945,6 @@ fgdc.purpose
 
 
 
-
 fgdc.title
 ~~~~~~~~~~
 
@@ -981,7 +957,6 @@ fgdc.title
 	</bean>
 
 	
-
 
 
 
@@ -1000,7 +975,6 @@ fgdc.web_url
 
 
 
-
 fgdc.fileID
 ~~~~~~~~~~~
 
@@ -1011,7 +985,6 @@ fgdc.fileID
 	</bean>
 	
 	
-
 
 
 
@@ -1032,7 +1005,6 @@ fgdc.fullText
 
 
 
-
 fgdc.presentationCat
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -1045,7 +1017,6 @@ fgdc.presentationCat
 	</bean>
 	
 	
-
 
 
 
@@ -1064,7 +1035,6 @@ fgdc.author
 
 
 
-
 fgdc.authorSurName
 ~~~~~~~~~~~~~~~~~~
 
@@ -1077,7 +1047,6 @@ fgdc.authorSurName
 	</bean>
 
 	
-
 
 
 
@@ -1096,7 +1065,6 @@ fgdc.authorSurNameSort
 
 
 
-
 fgdc.investigator
 ~~~~~~~~~~~~~~~~~
 
@@ -1112,7 +1080,6 @@ fgdc.investigator
 
 
 
-
 fgdc.site
 ~~~~~~~~~
 
@@ -1125,7 +1092,6 @@ fgdc.site
 	</bean>
 	
 	
-
 
 
 
@@ -1145,7 +1111,6 @@ fgdc.attributeName
 
 
 
-
 fgdc.attributeLabel
 ~~~~~~~~~~~~~~~~~~~
 
@@ -1159,7 +1124,6 @@ fgdc.attributeLabel
 	</bean>
 	
 	
-
 
 
 
@@ -1179,7 +1143,6 @@ fgdc.attributeDescription
 
 
 
-
 fgdc.attributeUnit
 ~~~~~~~~~~~~~~~~~~
 
@@ -1196,7 +1159,6 @@ fgdc.attributeUnit
 
 
 
-
 fgdc.attributeText
 ~~~~~~~~~~~~~~~~~~
 
@@ -1207,7 +1169,6 @@ fgdc.attributeText
 	</bean>
 	
 	
-
 
 
 
@@ -1225,7 +1186,6 @@ fgdc.geohash1
 
 
 
-
 fgdc.geohash2
 ~~~~~~~~~~~~~
 
@@ -1237,7 +1197,6 @@ fgdc.geohash2
 	</bean>
 	
 		
-
 
 
 
@@ -1255,7 +1214,6 @@ fgdc.geohash3
 
 
 
-
 fgdc.geohash4
 ~~~~~~~~~~~~~
 
@@ -1267,7 +1225,6 @@ fgdc.geohash4
 	</bean>
 	
 		
-
 
 
 
@@ -1285,7 +1242,6 @@ fgdc.geohash5
 
 
 
-
 fgdc.geohash6
 ~~~~~~~~~~~~~
 
@@ -1297,7 +1253,6 @@ fgdc.geohash6
 	</bean>
 	
 		
-
 
 
 
@@ -1315,7 +1270,6 @@ fgdc.geohash7
 
 
 
-
 fgdc.geohash8
 ~~~~~~~~~~~~~
 
@@ -1330,7 +1284,6 @@ fgdc.geohash8
 
 
 
-
 fgdc.geohash9
 ~~~~~~~~~~~~~
 
@@ -1342,7 +1295,6 @@ fgdc.geohash9
 	</bean>
 
 	
-
 
 
 
