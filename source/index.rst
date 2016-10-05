@@ -11,7 +11,7 @@ DataONE Content Indexer Documentation
    This documentation is under active development. Current release
    documentation for indexing is available in the `Architecture Documentation`_.
 
-Contents:
+Index Configuration:
 
 .. toctree::
    :maxdepth: 1
@@ -19,6 +19,13 @@ Contents:
 
    generated/solr_schema
    generated/namespaces
+
+Index Processors:
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
    generated/system_metadata
    generated/proc_*
 

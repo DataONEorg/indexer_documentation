@@ -132,14 +132,6 @@ def classnameLink(cname):
   return "`{0} <{1}>`_".format(res, url)
 
 
-def attrList(names, module="Index", delim=", "):
-  res = []
-  for name in names:
-    if name != '':
-      res.append(":attr:`{0}.{1}`".format(module, name))
-  return delim.join(res)
-
-
 def solrFieldDescription(field):
   try:
     res = SOLR_DESCRIPTIONS[field]
@@ -620,6 +612,7 @@ class IndexProcessorDocuments(object):
     self.documents = {}
     self.beans = []
     self.solr_fields = []
+    self.solr_dynfields = []
     self.parsers = []
 
 
@@ -718,6 +711,15 @@ class IndexProcessorDocuments(object):
            'multiValued':strToBool(getAttrib(field, 'multiValued', 'false')),
            }
       self.solr_fields.append(f)
+    fields = doctree.xpath("//dynamicField")
+    for field in fields:
+      f = {'name': getAttrib(field, 'name', ''),
+           'type': getAttrib(field, 'type', ''),
+           'indexed':strToBool(getAttrib(field, 'indexed', 'false')),
+           'stored':strToBool(getAttrib(field, 'stored', 'false')),
+           'multiValued':strToBool(getAttrib(field, 'multiValued', 'false')),
+           }
+      self.solr_dynfields.append(f)
 
 
   def loadContext(self, context_path):
@@ -725,6 +727,19 @@ class IndexProcessorDocuments(object):
     self.loadBeans(context_path)
     self.loadConverters(context_path)
     self.loadParsers(context_path)
+
+
+  def j_attrList(self, names, module="Index", delim=", "):
+    res = []
+    for name in names:
+      if name != '':
+        #todo: Need to do some funky escaping for RST links to work here
+        #for k in self.solr_dynfields:
+        #  if name.endswith(k['name'][1:]):
+        #    res.append(":attr:`{0}.{1}`".format(module, k['name']))
+        #    return delim.join(res)
+        res.append(":attr:`{0}.{1}`".format(module, name))
+    return delim.join(res)
 
 
   def j_getConverterInfo(self, bid):
@@ -776,7 +791,7 @@ class IndexProcessorDocuments(object):
     env.filters['U3'] = U3
     env.filters['wrapXPath'] = wrapXPath
     env.filters['classnameLink'] = classnameLink
-    env.filters['attrList'] = attrList
+    env.filters['attrList'] = self.j_attrList
     env.filters['solrFieldDescription'] = solrFieldDescription
     env.filters['svnRepoLink'] = svnRepoLink
     env.filters['getConverterInfo'] = self.j_getConverterInfo
@@ -797,7 +812,10 @@ class IndexProcessorDocuments(object):
 
     with codecs.open(templates['solr_schema.rst']['dest'], mode='wb', encoding='utf-8') as f_dest:
       sorted_solr_fields = sorted(self.solr_fields, key=lambda k: k['name'].lower())
-      f_dest.write( templates['solr_schema.rst']['template'].render(resolver=self, fields = sorted_solr_fields) )
+      sorted_dyn_fields = sorted(self.solr_dynfields, key=lambda k: k['name'].lower())
+      f_dest.write( templates['solr_schema.rst']['template'].render(resolver=self,
+                                                                    fields = sorted_solr_fields,
+                                                                    dynfields = sorted_dyn_fields) )
 
     with codecs.open(templates['namespaces.rst']['dest'], mode='wb', encoding='utf-8') as f_dest:
       namespaces = self.getClassInstances('org.dataone.cn.indexer.XMLNamespaceConfig')

@@ -22,6 +22,8 @@ documents.
    descriptions, the document source must be regenerated and committed to GitHub for
    the public facing documentation to be updated.
 
+Static Fields
+-------------
 
 .. list-table::
    :header-rows: 1
@@ -41,6 +43,26 @@ documents.
      - {{fld.name|solrFieldDescription}}
 {% endfor %}
 
+Dynamic Fields
+--------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 3, 2, 1, 1, 1, 10
+
+   * - Field
+     - Type
+     - MV
+     - Store
+     - Index
+     - Description
+{% for fld in dynfields %}   * - .. attribute:: {{fld.name}}
+     - {{fld.type}}
+     - {{fld.multiValued}}
+     - {{fld.stored}}
+     - {{fld.indexed}}
+     - {{fld.name|solrFieldDescription}}
+{% endfor %}
 
 .. _solr configuration file: {{"resources/index-solr-schema.xml"|svnRepoLink}}
 .. _YAML formatted text file: https://github.com/DataONEorg/indexer_documentation/blob/master/solr_field_descriptions.yaml

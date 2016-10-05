@@ -19,6 +19,8 @@ documents.
    descriptions, the document source must be regenerated and committed to GitHub for
    the public facing documentation to be updated.
 
+Static Fields
+-------------
 
 .. list-table::
    :header-rows: 1
@@ -889,6 +891,236 @@ documents.
      - True
      - List of subjects (groups and individuals) that have write permission on PID.
 
+
+Dynamic Fields
+--------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 3, 2, 1, 1, 1, 10
+
+   * - Field
+     - Type
+     - MV
+     - Store
+     - Index
+     - Description
+   * - .. attribute:: *_b
+     - boolean
+     - False
+     - True
+     - True
+     - 
+   * - .. attribute:: *_bm
+     - boolean
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: *_bs
+     - boolean
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: *_c
+     - currency
+     - False
+     - True
+     - True
+     - 
+   * - .. attribute:: *_coordinate
+     - tdouble
+     - False
+     - False
+     - True
+     - 
+   * - .. attribute:: *_d
+     - double
+     - False
+     - True
+     - True
+     - 
+   * - .. attribute:: *_dm
+     - tdouble
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: *_ds
+     - double
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: *_dt
+     - date
+     - False
+     - True
+     - True
+     - 
+   * - .. attribute:: *_dtm
+     - tdate
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: *_dts
+     - date
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: *_en
+     - text_en
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: *_f
+     - float
+     - False
+     - True
+     - True
+     - 
+   * - .. attribute:: *_fm
+     - tfloat
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: *_fs
+     - float
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: *_i
+     - int
+     - False
+     - True
+     - True
+     - 
+   * - .. attribute:: *_im
+     - tint
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: *_is
+     - int
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: *_l
+     - long
+     - False
+     - True
+     - True
+     - 
+   * - .. attribute:: *_lm
+     - tlong
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: *_ls
+     - long
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: *_p
+     - location
+     - False
+     - True
+     - True
+     - 
+   * - .. attribute:: *_s
+     - string
+     - False
+     - True
+     - True
+     - 
+   * - .. attribute:: *_sm
+     - string
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: *_ss
+     - string
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: *_t
+     - text_general
+     - False
+     - True
+     - True
+     - 
+   * - .. attribute:: *_td
+     - tdouble
+     - False
+     - True
+     - True
+     - 
+   * - .. attribute:: *_tdt
+     - tdate
+     - False
+     - True
+     - True
+     - 
+   * - .. attribute:: *_tf
+     - tfloat
+     - False
+     - True
+     - True
+     - 
+   * - .. attribute:: *_ti
+     - tint
+     - False
+     - True
+     - True
+     - 
+   * - .. attribute:: *_tl
+     - tlong
+     - False
+     - True
+     - True
+     - 
+   * - .. attribute:: *_tm
+     - text_general
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: *_txt
+     - text_general
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: attr_*
+     - text_general
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: ignored_*
+     - ignored
+     - True
+     - False
+     - False
+     - 
+   * - .. attribute:: random_*
+     - random
+     - False
+     - False
+     - False
+     - 
 
 
 .. _solr configuration file: https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/resources/index-solr-schema.xml
