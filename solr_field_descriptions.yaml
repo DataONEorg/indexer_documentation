@@ -199,7 +199,7 @@ titlestr: Copy from :attr:`~Index.title`
 topic: The most general subject area within which a parameter is categorized. Approved
   topics include "agriculture," "atmosphere," and "hydrosphere," among others.
 topicText: Copy from :attr:`~Index.topic`
-updateDate: Copy from :attr:`~Index.dateuploaded`
+updateDate: Copy from :attr:`~Index.dateUploaded`
 webUrl: Link to the investigator's  web-site.
 westBoundCoord: Western most longitude of the spatial extent, in decimal degrees,
   WGS84

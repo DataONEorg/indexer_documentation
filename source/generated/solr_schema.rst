@@ -871,7 +871,7 @@ Static Fields
      - False
      - True
      - True
-     - Copy from :attr:`~Index.dateuploaded`
+     - Copy from :attr:`~Index.dateUploaded`
    * - .. attribute:: webUrl
      - string
      - True
