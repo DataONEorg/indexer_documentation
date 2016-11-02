@@ -31,7 +31,11 @@ def loadIndexFieldDescriptions(fn_src):
   global SOLR_DESCRIPTIONS
   logging.info("Loading field descriptions from %s", fn_src)
   with codecs.open(fn_src, encoding='utf-8') as f:
-    SOLR_DESCRIPTIONS = yaml.load(f)
+    entries = f.readlines()
+    for entry in entries:
+      a,b = entry.split("=", 1)
+      SOLR_DESCRIPTIONS[a] = b
+    #SOLR_DESCRIPTIONS = yaml.load(f)
 
 
 def loadSubprocessorDescriptions(fn_src):
@@ -873,7 +877,7 @@ def main():
                       default=".",
                       help="Folder that will contain generate docs")
   parser.add_argument('-f', '--solrdescr',
-                      default="solr_field_descriptions.yaml",
+                      default="dataone-cn-solr/usr/share/dataone-cn-solr/debian/queryFieldDescriptions.properties",
                       help="YAML file of solr field: description")
   parser.add_argument('-pf', '--subprocdescr',
                       default="subprocessor_descriptions.yaml",

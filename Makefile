@@ -8,6 +8,7 @@ SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = build
 SOURCES       = https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor
+DESCRIPTIONS  = https://repository.dataone.org/software/cicore/trunk/cn-buildout/dataone-cn-solr
 
 # User-friendly check for sphinx-build
 ifeq ($(shell which $(SPHINXBUILD) >/dev/null 2>&1; echo $$?), 1)
@@ -49,10 +50,12 @@ distclean:
 .PHONY: initialize
 initialize:
 	svn co $(SOURCES) d1_cn_index_processor
+	svn co $(DESCRIPTIONS) dataone-cn-solr
 
 .PHONY: generate
 generate:
 	svn up d1_cn_index_processor
+	svn up dataone-cn-solr
 	python idxprocdoc.py -s d1_cn_index_processor/src/main/resources -d source/generated/
 
 .PHONY: html
