@@ -83,7 +83,7 @@ isDocumentedBy: Lists all PIDs that describe this object. Obtained by parsing al
   resource maps in which this object is referenced.
 isPublic: Set to True if the DataONE :term:`public user` is present in the list of
   subjects with readPermission on PID.
-isService:
+isService: Boolean indicating whether the document holds a service description.
 isSpatial: Set to "Y" for records that contain spatial information
 keyConcept: Terms drawn from a controlled vocabulary of concepts that are applicable
   to the content described by the metadata document.
@@ -162,13 +162,17 @@ sensor: Also called "instrument." A device that is used for collecting data for 
   data set.
 sensorText: Copy from :attr:`~Index.sensor`
 seriesId:
-serviceCoupling:
-serviceDescription:
-serviceEndpoint:
-serviceInput:
-serviceOutput:
-serviceTitle:
-serviceType:
+serviceCoupling: Whether the service is 'tightly' coupled to a set of data, or is a
+  general ('loosely' coupled) service. Values include "false", "tight", "loose".
+serviceDescription: Human readable description of the service.
+serviceEndpoint: A URL that indicates where to access the service.
+serviceInput: May refer to either an identifier of valid data for the service, or may be an input format.
+serviceOutput: The output format for the service
+serviceTitle: Human readable title for the service.
+serviceType: "The type of service being described (ex: WMS, HTTP, FTP). Ideally this should
+  be a controlled vocabulary, however the standard imposes no such restrictions and so
+  the field may contain variants for a single service type. The indexer will attempt to
+  normalize the values."
 site: The name or description of the physical location where the data were collected
 siteText: Copy from :attr:`~Index.site`
 size: The size of the object, in bytes.

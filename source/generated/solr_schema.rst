@@ -373,7 +373,7 @@ Static Fields
      - False
      - True
      - True
-     - 
+     - Boolean indicating whether the document holds a service description.
    * - .. attribute:: isSpatial
      - string
      - False
@@ -739,43 +739,43 @@ Static Fields
      - False
      - True
      - True
-     - 
+     - Whether the service is 'tightly' coupled to a set of data, or is a general ('loosely' coupled) service. Values include "false", "tight", "loose".
    * - .. attribute:: serviceDescription
      - text_general
      - False
      - True
      - True
-     - 
+     - Human readable description of the service.
    * - .. attribute:: serviceEndpoint
      - string
      - True
      - True
      - True
-     - 
+     - A URL that indicates where to access the service.
    * - .. attribute:: serviceInput
      - string
      - True
      - True
      - True
-     - 
+     - May refer to either an identifier of valid data for the service, or may be an input format.
    * - .. attribute:: serviceOutput
      - string
      - True
      - True
      - True
-     - 
+     - The output format for the service
    * - .. attribute:: serviceTitle
      - text_general
      - False
      - True
      - True
-     - 
+     - Human readable title for the service.
    * - .. attribute:: serviceType
      - string
      - True
      - True
      - True
-     - 
+     - The type of service being described (ex: WMS, HTTP, FTP). Ideally this should be a controlled vocabulary, however the standard imposes no such restrictions and so the field may contain variants for a single service type. The indexer will attempt to normalize the values.
    * - .. attribute:: site
      - string
      - True

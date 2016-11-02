@@ -447,7 +447,7 @@ class B_ScienceMetadataDocumentSubprocessor(B_Bean):
 
 
 #--
-class B_ResourceMapSubprocessor(B_Bean):
+class B_ResourceMapSubprocessor(B_ScienceMetadataDocumentSubprocessor):
 
   def __init__(self):
     super(B_ResourceMapSubprocessor, self).__init__()
