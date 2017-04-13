@@ -367,10 +367,9 @@ Note that these are in addition to the information extracted from :doc:`system_m
                 FROM <$GRAPH_NAME>
                 WHERE {
                     ?derived_data prov:wasDerivedFrom ?source_data .
-                    ?source_data cito:documentedBy ?source_metadata .
-                    ?source_metadata dcterms:identifier ?pidValue .
+                    ?source_data dcterms:identifier ?pidValue .
                     ?derived_data dcterms:identifier ?derivedDataPidValue .
-                }                
+                }
                 
             
 
@@ -912,10 +911,9 @@ prov20150115.hasDerivations
                 FROM <$GRAPH_NAME>
                 WHERE {
                     ?derived_data prov:wasDerivedFrom ?source_data .
-                    ?source_data cito:documentedBy ?source_metadata .
-                    ?source_metadata dcterms:identifier ?pidValue .
+                    ?source_data dcterms:identifier ?pidValue .
                     ?derived_data dcterms:identifier ?derivedDataPidValue .
-                }                
+                }
                 ]]>
             </value>
         </constructor-arg>
