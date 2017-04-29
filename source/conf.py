@@ -112,7 +112,9 @@ todo_include_todos = True
 import sphinx_rtd_theme
 html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-html_style = 'css/customize.css'
+
+# See the setup method at end of conf.py
+#html_style = 'css/customize.css'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
@@ -296,3 +298,7 @@ texinfo_documents = [
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'API':('https://releases.dataone.org/online/api-documentation-v2.0', None)}
+
+
+def setup(app):
+  app.add_stylesheet('css/customize.css')
