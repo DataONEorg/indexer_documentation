@@ -11,3 +11,7 @@ Make max width wider on wide displays
 .wy-table-responsive {
     overflow: visible !important;
 }
+
+.wy-nav-content {
+  max-width: 90% !important;
+}
