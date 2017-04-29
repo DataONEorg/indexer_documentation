@@ -1,0 +1,8 @@
+/**
+Make max width wider on wide displays
+*/
+@import url("theme.css")
+
+.wy-nav-content {
+  max-width: 90% !important;
+}
