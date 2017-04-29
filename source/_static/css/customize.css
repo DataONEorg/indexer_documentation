@@ -12,6 +12,9 @@ Make max width wider on wide displays
     overflow: visible !important;
 }
 
-.wy-nav-content {
-  max-width: 90% !important;
+@media screen and (min-width: 900px) {
+  .wy-nav-content {
+    max-width: 1200px !important;
+  }  
 }
+
