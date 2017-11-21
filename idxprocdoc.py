@@ -9,7 +9,7 @@ import os
 import codecs
 import yaml
 import re
-from urllib2 import urlopen
+from urllib.request import urlopen
 from lxml import etree
 from jinja2 import Environment, PackageLoader
 
@@ -92,13 +92,13 @@ def getAttrib(ele, name, default=None):
   return default
 
 def U1(s):
-  return u"=" * len(s)
+  return "=" * len(s)
 
 def U2(s):
-  return u"-" * len(s)
+  return "-" * len(s)
 
 def U3(s):
-  return u"~" * len(s)
+  return "~" * len(s)
 
 def wrapXPath(original, width=80, ind1=0, ind2=0, prefix=''):
   """ word wrapping function.
@@ -177,8 +177,8 @@ class B_Bean(object):
     lines = ["{0}:".format(self.__class__.__name__),
              ]
     for k in self.p:
-      lines.append(u"  {0} : {1}".format(k, self.p[k]))
-    return u"\n".join(lines)
+      lines.append("  {0} : {1}".format(k, self.p[k]))
+    return "\n".join(lines)
 
 
   def toText(self, resolver=None, indent=0):
@@ -223,7 +223,7 @@ class B_SolrField(B_BeanXPath):
       #query is something like "../../.."
       pele = ele.xpath("../../..")
       if len(pele) > 0:
-        self.p['bid'] = u"{0}.{1}".format(pele[0].attrib['id'], self.p['field_name'][0])
+        self.p['bid'] = "{0}.{1}".format(pele[0].attrib['id'], self.p['field_name'][0])
 
 
   def toText(self, resolver=None, indent=0):
@@ -266,7 +266,7 @@ class B_CommonRootSolrField(B_Bean):
       # query is something like "../../.."
       pele = ele.xpath("../../..")
       if len(pele) > 0:
-        self.p['bid'] = u"{0}.{1}".format(pele[0].attrib['id'], self.p['field_name'][0])
+        self.p['bid'] = "{0}.{1}".format(pele[0].attrib['id'], self.p['field_name'][0])
 
 
 
@@ -288,7 +288,7 @@ class B_ResolveSolrField(B_Bean):
       # query is something like "../../.."
       pele = ele.xpath("../../..")
       if len(pele) > 0:
-        self.p['bid'] = u"{0}.{1}".format(pele[0].attrib['id'], self.p['field_name'][0])
+        self.p['bid'] = "{0}.{1}".format(pele[0].attrib['id'], self.p['field_name'][0])
 
 
 #--
@@ -529,7 +529,7 @@ class B_SparqlField(B_Bean):
       #query is something like "../../.."
       pele = ele.xpath("../../..")
       if len(pele) > 0:
-        self.p['bid'] = u"{0}.{1}".format(pele[0].attrib['id'], self.p['field_name'][0])
+        self.p['bid'] = "{0}.{1}".format(pele[0].attrib['id'], self.p['field_name'][0])
 
 
 
@@ -747,7 +747,7 @@ class IndexProcessorDocuments(object):
 
 
   def j_getConverterInfo(self, bid):
-    print "looking up converter: %s" % bid
+    print("looking up converter: %s" % bid)
     bean = self.getBean(bid)
     if bean is None:
       return ''
@@ -832,7 +832,7 @@ class IndexProcessorDocuments(object):
       parsers = self.getClassInstances('org.dataone.cn.indexer.parser.ScienceMetadataDocumentSubprocessor')
     for parser in self.parsers:
       sysm_proc = self.getBean(parser.p['systemMetadataProcessor'])
-      print sysm_proc
+      print(sysm_proc)
       fields = {}
       for field in sysm_proc.p['fieldList']:
         fields[field] = self.getBean(field)
@@ -841,7 +841,7 @@ class IndexProcessorDocuments(object):
         f_dest.write(templates['system_metadata.rst']['template'].render(resolver=self, sp=sysm_proc, fields=fields))
       for subproc in parser.p['subprocessors']:
         subproc_instance = self.getBean(subproc)
-        if subproc_instance.p.has_key('fields'):
+        if 'fields' in subproc_instance.p:
           fields = {}
           for field in subproc_instance.p['fields']:
             fields[field] = self.getBean(field)
