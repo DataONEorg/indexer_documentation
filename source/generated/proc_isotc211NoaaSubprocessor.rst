@@ -101,15 +101,21 @@ Note that these are in addition to the information extracted from :doc:`system_m
     - True
     - ::
 
-        //gmd:CI_ResponsibleParty[gmd:role/gmd:CI_RoleCode/text() = 
-        "owner" or gmd:role/gmd:CI_RoleCode/text() = 
-        "originator" or gmd:role/gmd:CI_RoleCode/text() = 
+        //gmd:identificationInfo/gmd:MD_DataIdentification/
+        gmd:citation/gmd:CI_Citation/
+        gmd:citedResponsibleParty/gmd:CI_ResponsibleParty[
+        gmd:role/gmd:CI_RoleCode/text() = "owner" or 
+        gmd:role/gmd:CI_RoleCode/text() = "originator" or 
+        gmd:role/gmd:CI_RoleCode/text() = 
         "principalInvestigator" or gmd:role/gmd:CI_RoleCode/
         text() = "author"]/gmd:individualName/
         gco:CharacterString/text() | //
-        gmd:CI_ResponsibleParty[(gmd:role/gmd:CI_RoleCode/
-        text() = "owner" or gmd:role/gmd:CI_RoleCode/text() 
-        = "originator" or gmd:role/gmd:CI_RoleCode/text() = 
+        gmd:identificationInfo/gmd:MD_DataIdentification/
+        gmd:citation/gmd:CI_Citation/
+        gmd:citedResponsibleParty/gmd:CI_ResponsibleParty[
+        (gmd:role/gmd:CI_RoleCode/text() = "owner" or 
+        gmd:role/gmd:CI_RoleCode/text() = "originator" or 
+        gmd:role/gmd:CI_RoleCode/text() = 
         "principalInvestigator" or gmd:role/gmd:CI_RoleCode/
         text() = "author") and (not(gmd:individualName) or 
         gmd:individualName[@gco:nilReason = "missing"])]/
@@ -557,13 +563,7 @@ isotc.abstract
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.abstract" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="abstract"/>
-		<constructor-arg name="xpath" value="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:abstract/gco:CharacterString/text()"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.abstract" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="abstract"/>\n\t\t<constructor-arg name="xpath" value="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:abstract/gco:CharacterString/text()"/>\n\t</bean>\n\t\n\t\n'
 
 
 isotc.author
@@ -571,13 +571,7 @@ isotc.author
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.author" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="author"/>
-		<constructor-arg name="xpath" value="(//gmd:CI_ResponsibleParty/gmd:individualName/gco:CharacterString/text() | //gmd:CI_ResponsibleParty/gmd:individualName/gmx:Anchor/text())[1]"/>
-	</bean>
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.author" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="author"/>\n\t\t<constructor-arg name="xpath" value="(//gmd:CI_ResponsibleParty/gmd:individualName/gco:CharacterString/text() | //gmd:CI_ResponsibleParty/gmd:individualName/gmx:Anchor/text())[1]"/>\n\t</bean>\n\n\t\n'
 
 
 isotc.authorSurName
@@ -585,14 +579,7 @@ isotc.authorSurName
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.authorSurName" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="authorSurName"/>
-		<constructor-arg name="xpath" value="(//gmd:CI_ResponsibleParty/gmd:individualName/gco:CharacterString/text() | //gmd:CI_ResponsibleParty/gmd:individualName/gmx:Anchor/text())[1]"/>
-		<property name="multivalue" value="false"/>
-	</bean>
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.authorSurName" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="authorSurName"/>\n\t\t<constructor-arg name="xpath" value="(//gmd:CI_ResponsibleParty/gmd:individualName/gco:CharacterString/text() | //gmd:CI_ResponsibleParty/gmd:individualName/gmx:Anchor/text())[1]"/>\n\t\t<property name="multivalue" value="false"/>\n\t</bean>\n\n\t\n'
 
 
 isotc.authorSurNameSort
@@ -600,14 +587,7 @@ isotc.authorSurNameSort
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.authorSurNameSort" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="authorSurNameSort"/>
-		<constructor-arg name="xpath" value="(//gmd:CI_ResponsibleParty/gmd:individualName/gco:CharacterString/text() | //gmd:CI_ResponsibleParty/gmd:individualName/gmx:Anchor/text())[1]"/>
-		<property name="multivalue" value="false"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.authorSurNameSort" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="authorSurNameSort"/>\n\t\t<constructor-arg name="xpath" value="(//gmd:CI_ResponsibleParty/gmd:individualName/gco:CharacterString/text() | //gmd:CI_ResponsibleParty/gmd:individualName/gmx:Anchor/text())[1]"/>\n\t\t<property name="multivalue" value="false"/>\n\t</bean>\n\t\n\t\n'
 
 
 isotc.contactOrganization
@@ -615,13 +595,7 @@ isotc.contactOrganization
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.contactOrganization" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="contactOrganization"/>
-		<constructor-arg name="xpath" value="(//gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString/text())[1]"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.contactOrganization" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="contactOrganization"/>\n\t\t<constructor-arg name="xpath" value="(//gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString/text())[1]"/>\n\t</bean>\n\t\n\t\n'
 
 
 isotc.origin
@@ -629,15 +603,7 @@ isotc.origin
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.origin" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="origin"/>
-		<constructor-arg name="xpath" value="//gmd:CI_ResponsibleParty[gmd:role/gmd:CI_RoleCode/text() = &quot;owner&quot; or gmd:role/gmd:CI_RoleCode/text() = &quot;originator&quot; or gmd:role/gmd:CI_RoleCode/text() = &quot;principalInvestigator&quot; or gmd:role/gmd:CI_RoleCode/text() = &quot;author&quot;]/gmd:individualName/gco:CharacterString/text() | //gmd:CI_ResponsibleParty[(gmd:role/gmd:CI_RoleCode/text() = &quot;owner&quot; or gmd:role/gmd:CI_RoleCode/text() = &quot;originator&quot; or gmd:role/gmd:CI_RoleCode/text() = &quot;principalInvestigator&quot; or gmd:role/gmd:CI_RoleCode/text() = &quot;author&quot;) and (not(gmd:individualName) or gmd:individualName[@gco:nilReason = &quot;missing&quot;])]/gmd:organisationName/gco:CharacterString/text()"/>
-		<property name="multivalue" value="true"/>
-		<property name="dedupe" value="true"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.origin" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="origin"/>\n\t\t<constructor-arg name="xpath" value="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty[gmd:role/gmd:CI_RoleCode/text() = &quot;owner&quot; or gmd:role/gmd:CI_RoleCode/text() = &quot;originator&quot; or gmd:role/gmd:CI_RoleCode/text() = &quot;principalInvestigator&quot; or gmd:role/gmd:CI_RoleCode/text() = &quot;author&quot;]/gmd:individualName/gco:CharacterString/text() | //gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty[(gmd:role/gmd:CI_RoleCode/text() = &quot;owner&quot; or gmd:role/gmd:CI_RoleCode/text() = &quot;originator&quot; or gmd:role/gmd:CI_RoleCode/text() = &quot;principalInvestigator&quot; or gmd:role/gmd:CI_RoleCode/text() = &quot;author&quot;) and (not(gmd:individualName) or gmd:individualName[@gco:nilReason = &quot;missing&quot;])]/gmd:organisationName/gco:CharacterString/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\t\n\t\n'
 
 
 isotc.investigator
@@ -645,15 +611,7 @@ isotc.investigator
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.investigator" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="investigator"/>
-		<constructor-arg name="xpath" value="//gmd:CI_ResponsibleParty/gmd:individualName/gco:CharacterString/text() | //gmd:CI_ResponsibleParty/gmd:individualName/gmx:Anchor/text()"/>
-		<property name="multivalue" value="true"/>
-		<property name="dedupe" value="true"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.investigator" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="investigator"/>\n\t\t<constructor-arg name="xpath" value="//gmd:CI_ResponsibleParty/gmd:individualName/gco:CharacterString/text() | //gmd:CI_ResponsibleParty/gmd:individualName/gmx:Anchor/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\t\n\t\n'
 
 
 isotc.pubDate
@@ -661,14 +619,7 @@ isotc.pubDate
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.pubDate" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="pubDate"/>
-		<constructor-arg name="xpath" value="(//gmd:dateStamp/gco:Date/text() | //gmd:dateStamp/gco:DateTime/text())[1]"/>
-		<property name="converter" ref="dateConverter"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.pubDate" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="pubDate"/>\n\t\t<constructor-arg name="xpath" value="(//gmd:dateStamp/gco:Date/text() | //gmd:dateStamp/gco:DateTime/text())[1]"/>\n\t\t<property name="converter" ref="dateConverter"/>\n\t</bean>\n\t\n\t\n'
 
 
 isotc.beginDate
@@ -676,14 +627,7 @@ isotc.beginDate
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.beginDate" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="beginDate"/>
-		<constructor-arg name="xpath" value="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/*[local-name() = 'TimePeriod']/*[local-name() = 'beginPosition']/text()"/>
-		<property name="converter" ref="dateConverter"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.beginDate" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="beginDate"/>\n\t\t<constructor-arg name="xpath" value="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/*[local-name() = \'TimePeriod\']/*[local-name() = \'beginPosition\']/text()"/>\n\t\t<property name="converter" ref="dateConverter"/>\n\t</bean>\n\t\n\t\n'
 
 
 isotc.endDate
@@ -691,14 +635,7 @@ isotc.endDate
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.endDate" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="endDate"/>
-		<constructor-arg name="xpath" value="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/*[local-name() = 'TimePeriod']/*[local-name() = 'endPosition']/text()"/>
-		<property name="converter" ref="dateConverter"/>
-	</bean>	
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.endDate" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="endDate"/>\n\t\t<constructor-arg name="xpath" value="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/*[local-name() = \'TimePeriod\']/*[local-name() = \'endPosition\']/text()"/>\n\t\t<property name="converter" ref="dateConverter"/>\n\t</bean>\t\n\n\t\n'
 
 
 isotc.title
@@ -706,13 +643,7 @@ isotc.title
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.title" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="title"/>
-		<constructor-arg name="xpath" value="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title/gco:CharacterString/text() | //gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title/gmx:Anchor/text()"/>
-	</bean>		
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.title" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="title"/>\n\t\t<constructor-arg name="xpath" value="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title/gco:CharacterString/text() | //gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title/gmx:Anchor/text()"/>\n\t</bean>\t\t\n\t\n\t\n'
 
 
 isotc.keywords
@@ -720,14 +651,7 @@ isotc.keywords
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.keywords" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="keywords"/>
-		<constructor-arg name="xpath" value="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gmx:Anchor/text() | //gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString/text()"/>
-		<property name="multivalue" value="true"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.keywords" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="keywords"/>\n\t\t<constructor-arg name="xpath" value="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gmx:Anchor/text() | //gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword/gco:CharacterString/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\n\t\n\t\n'
 
 
 isotc.eastBoundCoord
@@ -735,13 +659,7 @@ isotc.eastBoundCoord
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.eastBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="eastBoundCoord"/>
-		<constructor-arg name="xpath" value="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:eastBoundLongitude/gco:Decimal/text()"/>
-	</bean>	
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.eastBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="eastBoundCoord"/>\n\t\t<constructor-arg name="xpath" value="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:eastBoundLongitude/gco:Decimal/text()"/>\n\t</bean>\t\n\t\n\t\n'
 
 
 isotc.westBoundCoord
@@ -749,13 +667,7 @@ isotc.westBoundCoord
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.westBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="westBoundCoord"/>
-		<constructor-arg name="xpath" value="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:westBoundLongitude/gco:Decimal/text()"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.westBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="westBoundCoord"/>\n\t\t<constructor-arg name="xpath" value="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:westBoundLongitude/gco:Decimal/text()"/>\n\t</bean>\n\t\n\t\n'
 
 
 isotc.southBoundCoord
@@ -763,13 +675,7 @@ isotc.southBoundCoord
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.southBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="southBoundCoord"/>
-		<constructor-arg name="xpath" value="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:southBoundLatitude/gco:Decimal/text()"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.southBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="southBoundCoord"/>\n\t\t<constructor-arg name="xpath" value="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:southBoundLatitude/gco:Decimal/text()"/>\n\t</bean>\n\t\n\t\n'
 
 
 isotc.northBoundCoord
@@ -777,13 +683,7 @@ isotc.northBoundCoord
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.northBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="northBoundCoord"/>
-		<constructor-arg name="xpath" value="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:northBoundLatitude/gco:Decimal/text()"/>
-	</bean>
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.northBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="northBoundCoord"/>\n\t\t<constructor-arg name="xpath" value="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:northBoundLatitude/gco:Decimal/text()"/>\n\t</bean>\n\n\t\n'
 
 
 isotc.geohash9
@@ -791,13 +691,7 @@ isotc.geohash9
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.geohash9" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="isotc.geohashRoot">
-		<constructor-arg name="name" value="geohash_9"/>
-		<property name="converter" ref="geohashConverter_9"/>
-	</bean>
-		
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.geohash9" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="isotc.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_9"/>\n\t\t<property name="converter" ref="geohashConverter_9"/>\n\t</bean>\n\t\t\n\t\n'
 
 
 isotc.geohash1
@@ -805,13 +699,7 @@ isotc.geohash1
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.geohash1" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="isotc.geohashRoot">
-		<constructor-arg name="name" value="geohash_1"/>
-		<property name="converter" ref="geohashConverter_1"/>
-	</bean>
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.geohash1" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="isotc.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_1"/>\n\t\t<property name="converter" ref="geohashConverter_1"/>\n\t</bean>\n\n\t\n'
 
 
 isotc.geohash2
@@ -819,13 +707,7 @@ isotc.geohash2
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.geohash2" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="isotc.geohashRoot">
-		<constructor-arg name="name" value="geohash_2"/>
-		<property name="converter" ref="geohashConverter_2"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.geohash2" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="isotc.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_2"/>\n\t\t<property name="converter" ref="geohashConverter_2"/>\n\t</bean>\n\t\n\t\n'
 
 
 isotc.geohash3
@@ -833,13 +715,7 @@ isotc.geohash3
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.geohash3" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="isotc.geohashRoot">
-		<constructor-arg name="name" value="geohash_3"/>
-		<property name="converter" ref="geohashConverter_3"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.geohash3" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="isotc.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_3"/>\n\t\t<property name="converter" ref="geohashConverter_3"/>\n\t</bean>\n\t\n\t\n'
 
 
 isotc.geohash4
@@ -847,13 +723,7 @@ isotc.geohash4
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.geohash4" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="isotc.geohashRoot">
-		<constructor-arg name="name" value="geohash_4"/>
-		<property name="converter" ref="geohashConverter_4"/>
-	</bean>
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.geohash4" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="isotc.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_4"/>\n\t\t<property name="converter" ref="geohashConverter_4"/>\n\t</bean>\n\n\t\n'
 
 
 isotc.geohash5
@@ -861,13 +731,7 @@ isotc.geohash5
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.geohash5" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="isotc.geohashRoot">
-		<constructor-arg name="name" value="geohash_5"/>
-		<property name="converter" ref="geohashConverter_5"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.geohash5" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="isotc.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_5"/>\n\t\t<property name="converter" ref="geohashConverter_5"/>\n\t</bean>\n\t\n\t\n'
 
 
 isotc.geohash6
@@ -875,13 +739,7 @@ isotc.geohash6
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.geohash6" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="isotc.geohashRoot">
-		<constructor-arg name="name" value="geohash_6"/>
-		<property name="converter" ref="geohashConverter_6"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.geohash6" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="isotc.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_6"/>\n\t\t<property name="converter" ref="geohashConverter_6"/>\n\t</bean>\n\t\n\t\n'
 
 
 isotc.geohash7
@@ -889,13 +747,7 @@ isotc.geohash7
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.geohash7" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="isotc.geohashRoot">
-		<constructor-arg name="name" value="geohash_7"/>
-		<property name="converter" ref="geohashConverter_7"/>
-	</bean>	
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.geohash7" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="isotc.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_7"/>\n\t\t<property name="converter" ref="geohashConverter_7"/>\n\t</bean>\t\n\n\t\n'
 
 
 isotc.geohash8
@@ -903,13 +755,7 @@ isotc.geohash8
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.geohash8" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="isotc.geohashRoot">
-		<constructor-arg name="name" value="geohash_8"/>
-		<property name="converter" ref="geohashConverter_8"/>
-	</bean>
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.geohash8" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="isotc.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_8"/>\n\t\t<property name="converter" ref="geohashConverter_8"/>\n\t</bean>\n\n\t\n'
 
 
 isotc.isService
@@ -917,13 +763,7 @@ isotc.isService
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.isService" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="isService"/>
-		<constructor-arg name="xpath" value="boolean(//srv:SV_ServiceIdentification or //gmd:distributionInfo/gmd:MD_Distribution)"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.isService" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="isService"/>\n\t\t<constructor-arg name="xpath" value="boolean(//srv:SV_ServiceIdentification or //gmd:distributionInfo/gmd:MD_Distribution)"/>\n\t</bean>\n\t\n\t\n'
 
 
 isotc.serviceCoupling
@@ -931,13 +771,7 @@ isotc.serviceCoupling
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.serviceCoupling" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="serviceCoupling"/>
-		<constructor-arg name="xpath" value="concat( substring('loose', 1 div boolean( //srv:SV_ServiceIdentification/srv:couplingType/srv:SV_CouplingType/@codeListValue = 'loose')),        substring('tight', 1 div boolean( //srv:SV_ServiceIdentification/srv:couplingType/srv:SV_CouplingType/@codeListValue = 'tight')),        substring('tight', 1 div boolean( //gmd:distributionInfo/gmd:MD_Distribution and not(//srv:SV_ServiceIdentification/srv:couplingType/srv:SV_CouplingType/@codeListValue))),        substring('',  1 div boolean( not(   //srv:SV_ServiceIdentification/srv:couplingType/srv:SV_CouplingType/@codeListValue)                  and not(   //gmd:distributionInfo/gmd:MD_Distribution))))"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.serviceCoupling" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="serviceCoupling"/>\n\t\t<constructor-arg name="xpath" value="concat( substring(\'loose\', 1 div boolean( //srv:SV_ServiceIdentification/srv:couplingType/srv:SV_CouplingType/@codeListValue = \'loose\')),        substring(\'tight\', 1 div boolean( //srv:SV_ServiceIdentification/srv:couplingType/srv:SV_CouplingType/@codeListValue = \'tight\')),        substring(\'tight\', 1 div boolean( //gmd:distributionInfo/gmd:MD_Distribution and not(//srv:SV_ServiceIdentification/srv:couplingType/srv:SV_CouplingType/@codeListValue))),        substring(\'\',  1 div boolean( not(   //srv:SV_ServiceIdentification/srv:couplingType/srv:SV_CouplingType/@codeListValue)                  and not(   //gmd:distributionInfo/gmd:MD_Distribution))))"/>\n\t</bean>\n\t\n\t\n'
 
 
 isotc.serviceTitle
@@ -945,15 +779,7 @@ isotc.serviceTitle
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.serviceTitle" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="serviceTitle"/>
-		<constructor-arg name="xpath" value="(//srv:SV_ServiceIdentification/gmd:citation/gmd:CI_Citation/gmd:title/gco:CharacterString | //gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorTransferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource/gmd:name/gco:CharacterString)/text()"/>
-		<property name="combineNodes" value="true"/>
-		<property name="combineDelimiter" value=":"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.serviceTitle" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="serviceTitle"/>\n\t\t<constructor-arg name="xpath" value="(//srv:SV_ServiceIdentification/gmd:citation/gmd:CI_Citation/gmd:title/gco:CharacterString | //gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorTransferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource/gmd:name/gco:CharacterString)/text()"/>\n\t\t<property name="combineNodes" value="true"/>\n\t\t<property name="combineDelimiter" value=":"/>\n\t</bean>\n\t\n\t\n'
 
 
 isotc.serviceDescription
@@ -961,15 +787,7 @@ isotc.serviceDescription
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.serviceDescription" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="serviceDescription"/>
-		<constructor-arg name="xpath" value="(//srv:SV_ServiceIdentification/gmd:abstract/gco:CharacterString | //gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorTransferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource/gmd:description/gco:CharacterString)/text()"/>
-		<property name="combineNodes" value="true"/>
-		<property name="combineDelimiter" value=":"/>
-	</bean>	
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.serviceDescription" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="serviceDescription"/>\n\t\t<constructor-arg name="xpath" value="(//srv:SV_ServiceIdentification/gmd:abstract/gco:CharacterString | //gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorTransferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource/gmd:description/gco:CharacterString)/text()"/>\n\t\t<property name="combineNodes" value="true"/>\n\t\t<property name="combineDelimiter" value=":"/>\n\t</bean>\t\n\t\n\t\n'
 
 
 isotc.serviceType
@@ -977,15 +795,7 @@ isotc.serviceType
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.serviceType" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="serviceType"/>
-		<constructor-arg name="xpath" value="//srv:SV_ServiceIdentification/srv:serviceType/gco:LocalName/text()"/>
-		<property name="multivalue" value="true"/>
-		<property name="converter" ref="serviceTypesConverter"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.serviceType" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="serviceType"/>\n\t\t<constructor-arg name="xpath" value="//srv:SV_ServiceIdentification/srv:serviceType/gco:LocalName/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="converter" ref="serviceTypesConverter"/>\n\t</bean>\n\t\n\t\n'
 
 
 isotc.serviceEndpoint
@@ -993,14 +803,7 @@ isotc.serviceEndpoint
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.serviceEndpoint" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="serviceEndpoint"/>
-		<constructor-arg name="xpath" value="//srv:SV_ServiceIdentification/srv:containsOperations/srv:SV_OperationMetadata/srv:connectPoint/gmd:CI_OnlineResource/gmd:linkage/gmd:URL/text()"/>
-		<property name="multivalue" value="true"/>
-	</bean>	
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.serviceEndpoint" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="serviceEndpoint"/>\n\t\t<constructor-arg name="xpath" value="//srv:SV_ServiceIdentification/srv:containsOperations/srv:SV_OperationMetadata/srv:connectPoint/gmd:CI_OnlineResource/gmd:linkage/gmd:URL/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\t\n\n\t\n'
 
 
 isotc.serviceInput
@@ -1008,14 +811,7 @@ isotc.serviceInput
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.serviceInput" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="serviceInput"/>
-		<constructor-arg name="xpath" value="//srv:SV_ServiceIdentification/srv:operatesOn/@xlink:href"/>
-		<property name="multivalue" value="true"/>
-	</bean>	
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.serviceInput" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="serviceInput"/>\n\t\t<constructor-arg name="xpath" value="//srv:SV_ServiceIdentification/srv:operatesOn/@xlink:href"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\t\n\n\t\n'
 
 
 isotc.serviceOutput
@@ -1023,14 +819,7 @@ isotc.serviceOutput
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.serviceOutput" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="serviceOutput"/>
-		<constructor-arg name="xpath" value="//srv:SV_ServiceIdentification/gmd:resourceFormat/@xlink:href"/>
-		<property name="multivalue" value="true"/>
-	</bean>	
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.serviceOutput" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="serviceOutput"/>\n\t\t<constructor-arg name="xpath" value="//srv:SV_ServiceIdentification/gmd:resourceFormat/@xlink:href"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\t\n\t\n\t\n'
 
 
 isotc.distribServiceType
@@ -1038,15 +827,7 @@ isotc.distribServiceType
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.distribServiceType" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="serviceType"/>
-		<constructor-arg name="xpath" value="//gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorTransferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString/text()"/>
-		<property name="multivalue" value="true"/>
-		<property name="converter" ref="serviceTypesConverter"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.distribServiceType" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="serviceType"/>\n\t\t<constructor-arg name="xpath" value="//gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorTransferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="converter" ref="serviceTypesConverter"/>\n\t</bean>\n\t\n\t\n'
 
 
 isotc.distribServiceEndpoint
@@ -1054,14 +835,7 @@ isotc.distribServiceEndpoint
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.distribServiceEndpoint" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="serviceEndpoint"/>
-		<constructor-arg name="xpath" value="//gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorTransferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource/gmd:linkage/gmd:URL/text() | //gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource/gmd:linkage/gmd:URL/text()"/>
-		<property name="multivalue" value="true"/>
-	</bean>	
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.distribServiceEndpoint" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="serviceEndpoint"/>\n\t\t<constructor-arg name="xpath" value="//gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorTransferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource/gmd:linkage/gmd:URL/text() | //gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource/gmd:linkage/gmd:URL/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\t\n\n\t\n'
 
 
 isotc.distribServiceInput
@@ -1069,14 +843,7 @@ isotc.distribServiceInput
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.distribServiceInput" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="serviceInput"/>
-		<constructor-arg name="xpath" value="//gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorTransferOptions/@xlink:href"/>
-		<property name="multivalue" value="true"/>
-	</bean>
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.distribServiceInput" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="serviceInput"/>\n\t\t<constructor-arg name="xpath" value="//gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorTransferOptions/@xlink:href"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\n\n\t\n'
 
 
 isotc.distribServiceOutput
@@ -1084,14 +851,7 @@ isotc.distribServiceOutput
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.distribServiceOutput" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="serviceOutput"/>
-		<constructor-arg name="xpath" value="//gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorFormat/gmd:MD_Format/gmd:version/gco:CharacterString/text()"/>
-		<property name="multivalue" value="true"/>
-	</bean>	
-	
-
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.distribServiceOutput" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="serviceOutput"/>\n\t\t<constructor-arg name="xpath" value="//gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorFormat/gmd:MD_Format/gmd:version/gco:CharacterString/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\t\n\t\n\n'
 
 
 isotc.fileID
@@ -1099,12 +859,7 @@ isotc.fileID
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.fileID" class="org.dataone.cn.indexer.parser.ResolveSolrField">
-		<constructor-arg name="name" value="fileID"/>
-	</bean>
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.fileID" class="org.dataone.cn.indexer.parser.ResolveSolrField">\n\t\t<constructor-arg name="name" value="fileID"/>\n\t</bean>\n\n\t\n'
 
 
 isotc.fullText
@@ -1112,13 +867,6 @@ isotc.fullText
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.fullText" class="org.dataone.cn.indexer.parser.FullTextSolrField">
-		<constructor-arg name="name" value="text"/>
-		<constructor-arg name="xpath" value="//*/text()"/>
-		<property name="combineNodes" value="true"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.fullText" class="org.dataone.cn.indexer.parser.FullTextSolrField">\n\t\t<constructor-arg name="name" value="text"/>\n\t\t<constructor-arg name="xpath" value="//*/text()"/>\n\t\t<property name="combineNodes" value="true"/>\n\t</bean>\n\t\n\t\n'
 
 

@@ -574,16 +574,7 @@ fgdc.abstract
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.abstract" class="org.dataone.cn.indexer.parser.MergeSolrField">
-	  <constructor-arg name="name" value="abstract"/>
-	  <constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/descript/abstract/descendant::text()"/>
-	  <constructor-arg name="delimiter" value=" "/>
-	  <property name="multivalue" value="false"/>
-	  <property name="dedupe" value="false"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.abstract" class="org.dataone.cn.indexer.parser.MergeSolrField">\n\t  <constructor-arg name="name" value="abstract"/>\n\t  <constructor-arg name="xpath" value="/*[local-name() = \'metadata\']/idinfo/descript/abstract/descendant::text()"/>\n\t  <constructor-arg name="delimiter" value=" "/>\n\t  <property name="multivalue" value="false"/>\n\t  <property name="dedupe" value="false"/>\n\t</bean>\n\t\n\t\n'
 
 
 fgdc.beginDate
@@ -591,15 +582,7 @@ fgdc.beginDate
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.beginDate" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="beginDate"/>
-		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/timeperd/timeinfo/rngdates/begdate/text()"/>
-		<property name="multivalue" value="false"/>
-		<property name="converter" ref="fgdcDateConverter"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.beginDate" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="beginDate"/>\n\t\t<constructor-arg name="xpath" value="/*[local-name() = \'metadata\']/idinfo/timeperd/timeinfo/rngdates/begdate/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t\t<property name="converter" ref="fgdcDateConverter"/>\n\t</bean>\n\t\n\t\n'
 
 
 fgdc.contactOrganization
@@ -607,15 +590,7 @@ fgdc.contactOrganization
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.contactOrganization" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="contactOrganization"/>
-		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/distinfo/distrib/cntinfo/cntperp/cntorg/text() | /*[local-name() = 'metadata']/distinfo/distrib/cntinfo/cntorgp/cntorg/text()"/>
-		<property name="multivalue" value="true"/>
-		<property name="dedupe" value="true"/>
-	</bean>	
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.contactOrganization" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="contactOrganization"/>\n\t\t<constructor-arg name="xpath" value="/*[local-name() = \'metadata\']/distinfo/distrib/cntinfo/cntperp/cntorg/text() | /*[local-name() = \'metadata\']/distinfo/distrib/cntinfo/cntorgp/cntorg/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\t\n\n\t\n'
 
 
 fgdc.eastBoundCoord
@@ -623,15 +598,7 @@ fgdc.eastBoundCoord
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.eastBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="eastBoundCoord"/>
-		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/spdom/bounding/eastbc/text()"/>
-		<property name="multivalue" value="false"/>
-		<property name="converter" ref="solrLongitudeConverter"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.eastBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="eastBoundCoord"/>\n\t\t<constructor-arg name="xpath" value="/*[local-name() = \'metadata\']/idinfo/spdom/bounding/eastbc/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t\t<property name="converter" ref="solrLongitudeConverter"/>\n\t</bean>\n\t\n\t\n'
 
 
 fgdc.westBoundCoord
@@ -639,15 +606,7 @@ fgdc.westBoundCoord
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.westBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="westBoundCoord"/>
-		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/spdom/bounding/westbc/text()"/>
-		<property name="multivalue" value="false"/>
-		<property name="converter" ref="solrLongitudeConverter"/>
-	</bean>		
-	
-		
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.westBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="westBoundCoord"/>\n\t\t<constructor-arg name="xpath" value="/*[local-name() = \'metadata\']/idinfo/spdom/bounding/westbc/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t\t<property name="converter" ref="solrLongitudeConverter"/>\n\t</bean>\t\t\n\t\n\t\t\n'
 
 
 fgdc.northBoundCoord
@@ -655,15 +614,7 @@ fgdc.northBoundCoord
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.northBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="northBoundCoord"/>
-		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/spdom/bounding/northbc/text()"/>
-		<property name="multivalue" value="false"/>
-		<property name="converter" ref="solrLongitudeConverter"/>
-	</bean>	
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.northBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="northBoundCoord"/>\n\t\t<constructor-arg name="xpath" value="/*[local-name() = \'metadata\']/idinfo/spdom/bounding/northbc/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t\t<property name="converter" ref="solrLongitudeConverter"/>\n\t</bean>\t\n\t\n\t\n'
 
 
 fgdc.southBoundCoord
@@ -671,15 +622,7 @@ fgdc.southBoundCoord
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.southBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="southBoundCoord"/>
-		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/spdom/bounding/southbc/text()"/>
-		<property name="multivalue" value="false"/>
-		<property name="converter" ref="solrLongitudeConverter"/>
-	</bean>	
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.southBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="southBoundCoord"/>\n\t\t<constructor-arg name="xpath" value="/*[local-name() = \'metadata\']/idinfo/spdom/bounding/southbc/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t\t<property name="converter" ref="solrLongitudeConverter"/>\n\t</bean>\t\n\t\n\t\n'
 
 
 fgdc.edition
@@ -687,14 +630,7 @@ fgdc.edition
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.edition" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="edition"/>
-		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/citeinfo/edition/text()"/>
-		<property name="multivalue" value="false"/>
-	</bean>	
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.edition" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="edition"/>\n\t\t<constructor-arg name="xpath" value="/*[local-name() = \'metadata\']/idinfo/citeinfo/edition/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t</bean>\t\n\n\t\n'
 
 
 fgdc.endDate
@@ -702,15 +638,7 @@ fgdc.endDate
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.endDate" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="endDate"/>
-		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/timeperd/timeinfo/rngdates/enddate/text()"/>
-		<property name="multivalue" value="false"/>
-		<property name="converter" ref="fgdcDateConverter"/>
-	</bean>
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.endDate" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="endDate"/>\n\t\t<constructor-arg name="xpath" value="/*[local-name() = \'metadata\']/idinfo/timeperd/timeinfo/rngdates/enddate/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t\t<property name="converter" ref="fgdcDateConverter"/>\n\t</bean>\n\n\t\n'
 
 
 fgdc.gcmdKeyword
@@ -718,14 +646,7 @@ fgdc.gcmdKeyword
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.gcmdKeyword" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="gcmdKeyword"/>
-		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/keywords/theme[themekt='GCMD Science Keywords']/themekey/text()"/>
-		<property name="multivalue" value="true"/>
-	</bean>
- 	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.gcmdKeyword" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="gcmdKeyword"/>\n\t\t<constructor-arg name="xpath" value="/*[local-name() = \'metadata\']/idinfo/keywords/theme[themekt=\'GCMD Science Keywords\']/themekey/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\n \t\n\t\n'
 
 
 fgdc.keywords
@@ -733,20 +654,7 @@ fgdc.keywords
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.keywords" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="keywords"/>
-		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/keywords/theme/themekey/text() | /*[local-name() = 'metadata']/idinfo/keywords/place/placekey/text()"/>
-		<property name="multivalue" value="true"/>
-		<property name="dedupe" value="true"/>
-		<property name="disallowedValues">
-			<list>
-				<value>none</value>
-			</list>
-		</property>
-	</bean>
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.keywords" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="keywords"/>\n\t\t<constructor-arg name="xpath" value="/*[local-name() = \'metadata\']/idinfo/keywords/theme/themekey/text() | /*[local-name() = \'metadata\']/idinfo/keywords/place/placekey/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t\t<property name="disallowedValues">\n\t\t\t<list>\n\t\t\t\t<value>none</value>\n\t\t\t</list>\n\t\t</property>\n\t</bean>\n\n\t\n'
 
 
 fgdc.geoform
@@ -754,14 +662,7 @@ fgdc.geoform
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geoform" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="geoform"/>
-		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/citation/citeinfo/geoform/text()"/>
-		<property name="multivalue" value="false"/>
-	</bean>	
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geoform" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="geoform"/>\n\t\t<constructor-arg name="xpath" value="/*[local-name() = \'metadata\']/idinfo/citation/citeinfo/geoform/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t</bean>\t\n\t\n\t\n'
 
 
 fgdc.genus
@@ -769,14 +670,7 @@ fgdc.genus
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.genus" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="genus"/>
-		<constructor-arg name="xpath" value="//taxoncl/taxonrv[../taxonrn=&quot;Genus&quot;]/text()"/>
-		<property name="multivalue" value="true"/>
-	</bean>		
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.genus" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="genus"/>\n\t\t<constructor-arg name="xpath" value="//taxoncl/taxonrv[../taxonrn=&quot;Genus&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\t\t\n\t\n\t\n'
 
 
 fgdc.kingdom
@@ -784,14 +678,7 @@ fgdc.kingdom
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.kingdom" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="kingdom"/>
-		<constructor-arg name="xpath" value="//taxoncl/taxonrv[../taxonrn=&quot;Kingdom&quot;]/text()"/>
-		<property name="multivalue" value="true"/>
-	</bean>	
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.kingdom" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="kingdom"/>\n\t\t<constructor-arg name="xpath" value="//taxoncl/taxonrv[../taxonrn=&quot;Kingdom&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\t\n\t\n\t\n'
 
 
 fgdc.order
@@ -799,14 +686,7 @@ fgdc.order
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.order" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="order"/>
-		<constructor-arg name="xpath" value="//taxoncl/taxonrv[../taxonrn=&quot;Order&quot;]/text()"/>
-		<property name="multivalue" value="true"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.order" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="order"/>\n\t\t<constructor-arg name="xpath" value="//taxoncl/taxonrv[../taxonrn=&quot;Order&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\n\t\n\t\n'
 
 
 fgdc.phylum
@@ -814,14 +694,7 @@ fgdc.phylum
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.phylum" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="phylum"/>
-		<constructor-arg name="xpath" value="//taxoncl/taxonrv[../taxonrn=&quot;Phylum&quot;]/text() | //taxoncl/taxonrv[../taxonrn=&quot;Division&quot;]/text()"/>
-		<property name="multivalue" value="true"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.phylum" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="phylum"/>\n\t\t<constructor-arg name="xpath" value="//taxoncl/taxonrv[../taxonrn=&quot;Phylum&quot;]/text() | //taxoncl/taxonrv[../taxonrn=&quot;Division&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\n\t\n\t\n'
 
 
 fgdc.species
@@ -829,14 +702,7 @@ fgdc.species
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.species" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="species"/>
-		<constructor-arg name="xpath" value="//taxoncl/taxonrv[../taxonrn=&quot;Species&quot;]/text()"/>
-		<property name="multivalue" value="true"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.species" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="species"/>\n\t\t<constructor-arg name="xpath" value="//taxoncl/taxonrv[../taxonrn=&quot;Species&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\n\t\n\t\n'
 
 
 fgdc.family
@@ -844,14 +710,7 @@ fgdc.family
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.family" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="family"/>
-		<constructor-arg name="xpath" value="//taxoncl/taxonrv[../taxonrn=&quot;Family&quot;]/text()"/>
-		<property name="multivalue" value="true"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.family" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="family"/>\n\t\t<constructor-arg name="xpath" value="//taxoncl/taxonrv[../taxonrn=&quot;Family&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\n\t\n\t\n'
 
 
 fgdc.class
@@ -859,14 +718,7 @@ fgdc.class
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.class" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="class"/>
-		<constructor-arg name="xpath" value="//taxoncl/taxonrv[../taxonrn=&quot;Class&quot;]/text()"/>
-		<property name="multivalue" value="true"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.class" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="class"/>\n\t\t<constructor-arg name="xpath" value="//taxoncl/taxonrv[../taxonrn=&quot;Class&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\n\t\n\t\n'
 
 
 fgdc.scientificName
@@ -874,12 +726,7 @@ fgdc.scientificName
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.scientificName" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="fgdc.scientificNameRoot">
-			<constructor-arg name="name" value="scientificName"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.scientificName" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="fgdc.scientificNameRoot">\n\t\t\t<constructor-arg name="name" value="scientificName"/>\n\t</bean>\n\t\n\t\n'
 
 
 fgdc.origin
@@ -887,14 +734,7 @@ fgdc.origin
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.origin" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="origin"/>
-		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/citation/citeinfo/origin/text()"/>
-		<property name="multivalue" value="true"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.origin" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="origin"/>\n\t\t<constructor-arg name="xpath" value="/*[local-name() = \'metadata\']/idinfo/citation/citeinfo/origin/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\n\t\n\t\n'
 
 
 fgdc.placeKey
@@ -902,14 +742,7 @@ fgdc.placeKey
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.placeKey" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="placeKey"/>
-		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/keywords/place/placekey/text()"/>
-		<property name="multivalue" value="true"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.placeKey" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="placeKey"/>\n\t\t<constructor-arg name="xpath" value="/*[local-name() = \'metadata\']/idinfo/keywords/place/placekey/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\n\t\n\t\n'
 
 
 fgdc.pubDate
@@ -917,15 +750,7 @@ fgdc.pubDate
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.pubDate" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="pubDate"/>
-		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/citation/citeinfo/pubdate/text()"/>
-		<property name="multivalue" value="false"/>
-		<property name="converter" ref="fgdcDateConverter"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.pubDate" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="pubDate"/>\n\t\t<constructor-arg name="xpath" value="/*[local-name() = \'metadata\']/idinfo/citation/citeinfo/pubdate/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t\t<property name="converter" ref="fgdcDateConverter"/>\n\t</bean>\n\t\n\t\n'
 
 
 fgdc.purpose
@@ -933,16 +758,7 @@ fgdc.purpose
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.purpose" class="org.dataone.cn.indexer.parser.MergeSolrField">
-	  <constructor-arg name="name" value="purpose"/>
-	  <constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/descript/purpose/descendant::text()"/>
-	  <constructor-arg name="delimiter" value=" "/>
-	  <property name="multivalue" value="false"/>
-	  <property name="dedupe" value="false"/>
-	</bean>
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.purpose" class="org.dataone.cn.indexer.parser.MergeSolrField">\n\t  <constructor-arg name="name" value="purpose"/>\n\t  <constructor-arg name="xpath" value="/*[local-name() = \'metadata\']/idinfo/descript/purpose/descendant::text()"/>\n\t  <constructor-arg name="delimiter" value=" "/>\n\t  <property name="multivalue" value="false"/>\n\t  <property name="dedupe" value="false"/>\n\t</bean>\n\n\t\n'
 
 
 fgdc.title
@@ -950,14 +766,7 @@ fgdc.title
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.title" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="title"/>
-		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/citation/citeinfo/title/text()"/>
-		<property name="multivalue" value="false"/>
-	</bean>
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.title" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="title"/>\n\t\t<constructor-arg name="xpath" value="/*[local-name() = \'metadata\']/idinfo/citation/citeinfo/title/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t</bean>\n\n\t\n'
 
 
 fgdc.web_url
@@ -965,14 +774,7 @@ fgdc.web_url
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.web_url" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="webUrl"/>
-		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/citation/citeinfo/onlink/text()"/>
-		<property name="multivalue" value="true"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.web_url" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="webUrl"/>\n\t\t<constructor-arg name="xpath" value="/*[local-name() = \'metadata\']/idinfo/citation/citeinfo/onlink/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\n\t\n\t\n'
 
 
 fgdc.fileID
@@ -980,12 +782,7 @@ fgdc.fileID
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.fileID" class="org.dataone.cn.indexer.parser.ResolveSolrField">
-		<constructor-arg name="name" value="fileID"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.fileID" class="org.dataone.cn.indexer.parser.ResolveSolrField">\n\t\t<constructor-arg name="name" value="fileID"/>\n\t</bean>\n\t\n\t\n'
 
 
 fgdc.fullText
@@ -993,16 +790,7 @@ fgdc.fullText
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.fullText" class="org.dataone.cn.indexer.parser.AggregateSolrField">
-		<property name="name" value="text"/>
-		<property name="solrFields">
-	   		<list>
-	       		<ref bean="fgdc.text"/>
-	      	</list>
-	  	</property>
-	</bean>
-
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.fullText" class="org.dataone.cn.indexer.parser.AggregateSolrField">\n\t\t<property name="name" value="text"/>\n\t\t<property name="solrFields">\n\t   \t\t<list>\n\t       \t\t<ref bean="fgdc.text"/>\n\t      \t</list>\n\t  \t</property>\n\t</bean>\n\n'
 
 
 fgdc.presentationCat
@@ -1010,14 +798,7 @@ fgdc.presentationCat
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.presentationCat" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="presentationCat"/>
-		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/citation/citeinfo/geoform/text()"/>
-		<property name="multivalue" value="false"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.presentationCat" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="presentationCat"/>\n\t\t<constructor-arg name="xpath" value="/*[local-name() = \'metadata\']/idinfo/citation/citeinfo/geoform/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t</bean>\n\t\n\t\n'
 
 
 fgdc.author
@@ -1025,14 +806,7 @@ fgdc.author
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.author" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="author"/>
-		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/citation/citeinfo/origin/text()"/>
-		<property name="multivalue" value="false"/>
-	</bean>
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.author" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="author"/>\n\t\t<constructor-arg name="xpath" value="/*[local-name() = \'metadata\']/idinfo/citation/citeinfo/origin/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t</bean>\n\n\t\n'
 
 
 fgdc.authorSurName
@@ -1040,14 +814,7 @@ fgdc.authorSurName
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.authorSurName" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="authorSurName"/>
-		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/citation/citeinfo/origin[1]/text()"/>
-		<property name="multivalue" value="false"/>
-	</bean>
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.authorSurName" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="authorSurName"/>\n\t\t<constructor-arg name="xpath" value="/*[local-name() = \'metadata\']/idinfo/citation/citeinfo/origin[1]/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t</bean>\n\n\t\n'
 
 
 fgdc.authorSurNameSort
@@ -1055,14 +822,7 @@ fgdc.authorSurNameSort
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.authorSurNameSort" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="authorSurNameSort"/>
-		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/citation/citeinfo/origin[1]/text()"/>
-		<property name="multivalue" value="false"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.authorSurNameSort" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="authorSurNameSort"/>\n\t\t<constructor-arg name="xpath" value="/*[local-name() = \'metadata\']/idinfo/citation/citeinfo/origin[1]/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t</bean>\n\t\n\t\n'
 
 
 fgdc.investigator
@@ -1070,14 +830,7 @@ fgdc.investigator
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.investigator" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="investigator"/>
-		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/citation/citeinfo/origin/text()"/>
-		<property name="multivalue" value="true"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.investigator" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="investigator"/>\n\t\t<constructor-arg name="xpath" value="/*[local-name() = \'metadata\']/idinfo/citation/citeinfo/origin/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\n\t\n\t\n'
 
 
 fgdc.site
@@ -1085,14 +838,7 @@ fgdc.site
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.site" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="site"/>
-		<constructor-arg name="xpath" value="/*[local-name() = 'metadata']/idinfo/spdom/descgeog/text()"/>
-		<property name="multivalue" value="true"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.site" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="site"/>\n\t\t<constructor-arg name="xpath" value="/*[local-name() = \'metadata\']/idinfo/spdom/descgeog/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\n\t\n\t\n'
 
 
 fgdc.attributeName
@@ -1100,15 +846,7 @@ fgdc.attributeName
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.attributeName" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="attributeName"/>
-		<constructor-arg name="xpath" value="//attr/attrlabl/text()"/>
-		<property name="multivalue" value="true"/>
-		<property name="dedupe" value="false"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.attributeName" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="attributeName"/>\n\t\t<constructor-arg name="xpath" value="//attr/attrlabl/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="false"/>\n\t</bean>\n\t\n\t\n'
 
 
 fgdc.attributeLabel
@@ -1116,15 +854,7 @@ fgdc.attributeLabel
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.attributeLabel" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="attributeLabel"/>
-		<constructor-arg name="xpath" value="//attr/attalias/text()"/>
-		<property name="multivalue" value="true"/>
-		<property name="dedupe" value="false"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.attributeLabel" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="attributeLabel"/>\n\t\t<constructor-arg name="xpath" value="//attr/attalias/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="false"/>\n\t</bean>\n\t\n\t\n'
 
 
 fgdc.attributeDescription
@@ -1132,15 +862,7 @@ fgdc.attributeDescription
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.attributeDescription" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="attributeDescription"/>
-		<constructor-arg name="xpath" value="//attr/attrdef/text()"/>
-		<property name="multivalue" value="true"/>
-		<property name="dedupe" value="false"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.attributeDescription" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="attributeDescription"/>\n\t\t<constructor-arg name="xpath" value="//attr/attrdef/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="false"/>\n\t</bean>\n\t\n\t\n'
 
 
 fgdc.attributeUnit
@@ -1148,15 +870,7 @@ fgdc.attributeUnit
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.attributeUnit" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="attributeUnit"/>
-		<constructor-arg name="xpath" value="//attr/attrdomv//attrunit/text() | //attr//attrdomv//edomv/text()"/>
-		<property name="multivalue" value="true"/>
-		<property name="dedupe" value="false"/>
-	</bean>
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.attributeUnit" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="attributeUnit"/>\n\t\t<constructor-arg name="xpath" value="//attr/attrdomv//attrunit/text() | //attr//attrdomv//edomv/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="false"/>\n\t</bean>\n\n\t\n'
 
 
 fgdc.attributeText
@@ -1164,12 +878,7 @@ fgdc.attributeText
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.attributeText" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="fgdc.attributeTextRoot">
-			<constructor-arg name="name" value="attribute"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.attributeText" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="fgdc.attributeTextRoot">\n\t\t\t<constructor-arg name="name" value="attribute"/>\n\t</bean>\n\t\n\t\n'
 
 
 fgdc.geohash1
@@ -1177,13 +886,7 @@ fgdc.geohash1
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash1" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">
-		<constructor-arg name="name" value="geohash_1"/>
-		<property name="converter" ref="geohashConverter_1"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash1" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_1"/>\n\t\t<property name="converter" ref="geohashConverter_1"/>\n\t</bean>\n\t\n\t\n'
 
 
 fgdc.geohash2
@@ -1191,13 +894,7 @@ fgdc.geohash2
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash2" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">
-		<constructor-arg name="name" value="geohash_2"/>
-		<property name="converter" ref="geohashConverter_2"/>
-	</bean>
-	
-		
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash2" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_2"/>\n\t\t<property name="converter" ref="geohashConverter_2"/>\n\t</bean>\n\t\n\t\t\n'
 
 
 fgdc.geohash3
@@ -1205,13 +902,7 @@ fgdc.geohash3
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash3" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">
-		<constructor-arg name="name" value="geohash_3"/>
-		<property name="converter" ref="geohashConverter_3"/>
-	</bean>
-	
-		
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash3" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_3"/>\n\t\t<property name="converter" ref="geohashConverter_3"/>\n\t</bean>\n\t\n\t\t\n'
 
 
 fgdc.geohash4
@@ -1219,13 +910,7 @@ fgdc.geohash4
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash4" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">
-		<constructor-arg name="name" value="geohash_4"/>
-		<property name="converter" ref="geohashConverter_4"/>
-	</bean>
-	
-		
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash4" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_4"/>\n\t\t<property name="converter" ref="geohashConverter_4"/>\n\t</bean>\n\t\n\t\t\n'
 
 
 fgdc.geohash5
@@ -1233,13 +918,7 @@ fgdc.geohash5
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash5" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">
-		<constructor-arg name="name" value="geohash_5"/>
-		<property name="converter" ref="geohashConverter_5"/>
-	</bean>
-	
-		
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash5" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_5"/>\n\t\t<property name="converter" ref="geohashConverter_5"/>\n\t</bean>\n\t\n\t\t\n'
 
 
 fgdc.geohash6
@@ -1247,13 +926,7 @@ fgdc.geohash6
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash6" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">
-		<constructor-arg name="name" value="geohash_6"/>
-		<property name="converter" ref="geohashConverter_6"/>
-	</bean>
-	
-		
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash6" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_6"/>\n\t\t<property name="converter" ref="geohashConverter_6"/>\n\t</bean>\n\t\n\t\t\n'
 
 
 fgdc.geohash7
@@ -1261,13 +934,7 @@ fgdc.geohash7
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash7" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">
-		<constructor-arg name="name" value="geohash_7"/>
-		<property name="converter" ref="geohashConverter_7"/>
-	</bean>
-	
-		
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash7" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_7"/>\n\t\t<property name="converter" ref="geohashConverter_7"/>\n\t</bean>\n\t\n\t\t\n'
 
 
 fgdc.geohash8
@@ -1275,13 +942,7 @@ fgdc.geohash8
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash8" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">
-		<constructor-arg name="name" value="geohash_8"/>
-		<property name="converter" ref="geohashConverter_8"/>
-	</bean>
-	
-		
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash8" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_8"/>\n\t\t<property name="converter" ref="geohashConverter_8"/>\n\t</bean>\n\t\n\t\t\n'
 
 
 fgdc.geohash9
@@ -1289,12 +950,6 @@ fgdc.geohash9
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash9" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">
-		<constructor-arg name="name" value="geohash_9"/>
-		<property name="converter" ref="geohashConverter_9"/>
-	</bean>
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fgdc.geohash9" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="fgdc.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_9"/>\n\t\t<property name="converter" ref="geohashConverter_9"/>\n\t</bean>\n\n\t\n'
 
 

@@ -236,13 +236,7 @@ dc.abstract
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.abstract" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="abstract"/>
-		<constructor-arg name="xpath" value="//*[local-name() = 'abstract'][1]/text()"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.abstract" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="abstract"/>\n\t\t<constructor-arg name="xpath" value="//*[local-name() = \'abstract\'][1]/text()"/>\n\t</bean>\n\t\n\t\n'
 
 
 dc.author
@@ -250,13 +244,7 @@ dc.author
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.author" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="author"/>
-		<constructor-arg name="xpath" value="//*[local-name() = 'creator'][1]/text()"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.author" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="author"/>\n\t\t<constructor-arg name="xpath" value="//*[local-name() = \'creator\'][1]/text()"/>\n\t</bean>\n\t\n\t\n'
 
 
 dc.authorSurName
@@ -264,14 +252,7 @@ dc.authorSurName
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.authorSurName" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="authorSurName"/>
-		<constructor-arg name="xpath" value="//*[local-name() = 'creator'][1]/text()"/>
-		<property name="multivalue" value="false"/>
-	</bean>
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.authorSurName" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="authorSurName"/>\n\t\t<constructor-arg name="xpath" value="//*[local-name() = \'creator\'][1]/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t</bean>\n\n\t\n'
 
 
 dc.authorSurNameSort
@@ -279,14 +260,7 @@ dc.authorSurNameSort
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.authorSurNameSort" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="authorSurNameSort"/>
-		<constructor-arg name="xpath" value="//*[local-name() = 'creator'][1]/text()"/>
-		<property name="multivalue" value="false"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.authorSurNameSort" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="authorSurNameSort"/>\n\t\t<constructor-arg name="xpath" value="//*[local-name() = \'creator\'][1]/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t</bean>\n\t\n\t\n'
 
 
 dc.contactOrganization
@@ -294,15 +268,7 @@ dc.contactOrganization
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.contactOrganization" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="contactOrganization"/>
-		<constructor-arg name="xpath" value="//*[local-name() = 'creator']/text()"/>
-		<property name="multivalue" value="true"/>
-		<property name="dedupe" value="true"/>
-	</bean>	
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.contactOrganization" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="contactOrganization"/>\n\t\t<constructor-arg name="xpath" value="//*[local-name() = \'creator\']/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\t\n\t\n\t\n'
 
 
 dc.investigator
@@ -310,15 +276,7 @@ dc.investigator
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.investigator" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="investigator"/>
-		<constructor-arg name="xpath" value="//*[local-name() = 'creator']/text()"/>
-		<property name="multivalue" value="true"/>
-		<property name="dedupe" value="true"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.investigator" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="investigator"/>\n\t\t<constructor-arg name="xpath" value="//*[local-name() = \'creator\']/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\t\n\t\n'
 
 
 dc.origin
@@ -326,15 +284,7 @@ dc.origin
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.origin" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="origin"/>
-		<constructor-arg name="xpath" value="//*[local-name() = 'creator']/text()"/>
-		<property name="multivalue" value="true"/>
-		<property name="dedupe" value="true"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.origin" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="origin"/>\n\t\t<constructor-arg name="xpath" value="//*[local-name() = \'creator\']/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\t\n\t\n'
 
 
 dc.pubDate
@@ -342,14 +292,7 @@ dc.pubDate
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.pubDate" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="pubDate"/>
-		<constructor-arg name="xpath" value="//*[local-name() = 'dateSubmitted']/text()"/>
-		<property name="converter" ref="dateConverter"/>
-	</bean>
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.pubDate" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="pubDate"/>\n\t\t<constructor-arg name="xpath" value="//*[local-name() = \'dateSubmitted\']/text()"/>\n\t\t<property name="converter" ref="dateConverter"/>\n\t</bean>\n\n\t\n'
 
 
 dc.title
@@ -357,13 +300,7 @@ dc.title
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.title" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="title"/>
-		<constructor-arg name="xpath" value="(//*[local-name() = 'title'][1]/text())[1]"/>
-	</bean>
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.title" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="title"/>\n\t\t<constructor-arg name="xpath" value="(//*[local-name() = \'title\'][1]/text())[1]"/>\n\t</bean>\n\n\t\n'
 
 
 dc.keywords
@@ -371,14 +308,7 @@ dc.keywords
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.keywords" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="keywords"/>
-		<constructor-arg name="xpath" value="//*[local-name() = 'subject']/text()"/>
-		<property name="multivalue" value="true"/>
-	</bean>
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.keywords" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="keywords"/>\n\t\t<constructor-arg name="xpath" value="//*[local-name() = \'subject\']/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\n\n\t\n'
 
 
 dc.beginDate
@@ -386,15 +316,7 @@ dc.beginDate
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.beginDate" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="beginDate"/>
-		<constructor-arg name="xpath" value="//*[local-name() = 'temporal'][not(@xsi:type='dcterms:Period') and not(@xsi:type='dc:Period') and not(@xsi:type='Period')]/text()"/>
-		<property name="multivalue" value="false"/>
-		<property name="converter" ref="dateConverter"/>
-	</bean>
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.beginDate" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="beginDate"/>\n\t\t<constructor-arg name="xpath" value="//*[local-name() = \'temporal\'][not(@xsi:type=\'dcterms:Period\') and not(@xsi:type=\'dc:Period\') and not(@xsi:type=\'Period\')]/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t\t<property name="converter" ref="dateConverter"/>\n\t</bean>\n\n\t\n'
 
 
 dc.endDate
@@ -402,15 +324,7 @@ dc.endDate
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.endDate" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="endDate"/>
-		<constructor-arg name="xpath" value="//*[local-name() = 'temporal'][not(@xsi:type='dcterms:Period') and not(@xsi:type='dc:Period') and not(@xsi:type='Period')]/text()"/>
-		<property name="multivalue" value="false"/>
-		<property name="converter" ref="dateConverter"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.endDate" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="endDate"/>\n\t\t<constructor-arg name="xpath" value="//*[local-name() = \'temporal\'][not(@xsi:type=\'dcterms:Period\') and not(@xsi:type=\'dc:Period\') and not(@xsi:type=\'Period\')]/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t\t<property name="converter" ref="dateConverter"/>\n\t</bean>\n\t\n\t\n'
 
 
 dc.site
@@ -418,15 +332,7 @@ dc.site
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.site" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="site"/>
-		<constructor-arg name="xpath" value="//*[local-name() = 'spatial'][not(@xsi:type = 'dcterms:Box') and not(@xsi:type = 'dc:Box') and not(@xsi:type = 'Box')]/text()"/>
-		<property name="multivalue" value="true"/>
-		<property name="dedupe" value="true"/>
-	</bean>	
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.site" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="site"/>\n\t\t<constructor-arg name="xpath" value="//*[local-name() = \'spatial\'][not(@xsi:type = \'dcterms:Box\') and not(@xsi:type = \'dc:Box\') and not(@xsi:type = \'Box\')]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\t\n\n\t\n'
 
 
 dc.boxSpatialBoundCoordinates
@@ -434,12 +340,7 @@ dc.boxSpatialBoundCoordinates
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.boxSpatialBoundCoordinates" class="org.dataone.cn.indexer.parser.DublinCoreSpatialBoxBoundingCoordinatesSolrField">
-		<constructor-arg name="xpath" value="//*[local-name() = 'spatial'][@xsi:type='dcterms:Box' or @xsi:type='dc:Box' or @xsi:type='Box'][1]/text()[1]"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.boxSpatialBoundCoordinates" class="org.dataone.cn.indexer.parser.DublinCoreSpatialBoxBoundingCoordinatesSolrField">\n\t\t<constructor-arg name="xpath" value="//*[local-name() = \'spatial\'][@xsi:type=\'dcterms:Box\' or @xsi:type=\'dc:Box\' or @xsi:type=\'Box\'][1]/text()[1]"/>\n\t</bean>\n\t\n\t\n'
 
 
 dc.boxSpatialGeohash
@@ -447,12 +348,7 @@ dc.boxSpatialGeohash
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.boxSpatialGeohash" class="org.dataone.cn.indexer.parser.DublinCoreSpatialBoxGeohashSolrField">
-		<constructor-arg name="xpath" value="//*[local-name() = 'spatial'][@xsi:type='dcterms:Box' or @xsi:type='dc:Box' or @xsi:type='Box'][1]/text()[1]"/>
-	</bean>
-
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.boxSpatialGeohash" class="org.dataone.cn.indexer.parser.DublinCoreSpatialBoxGeohashSolrField">\n\t\t<constructor-arg name="xpath" value="//*[local-name() = \'spatial\'][@xsi:type=\'dcterms:Box\' or @xsi:type=\'dc:Box\' or @xsi:type=\'Box\'][1]/text()[1]"/>\n\t</bean>\n\n\t\n'
 
 
 dc.fileID
@@ -460,12 +356,7 @@ dc.fileID
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.fileID" class="org.dataone.cn.indexer.parser.ResolveSolrField">
-		<constructor-arg name="name" value="fileID"/>
-	</bean>
-	
-	
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.fileID" class="org.dataone.cn.indexer.parser.ResolveSolrField">\n\t\t<constructor-arg name="name" value="fileID"/>\n\t</bean>\n\t\n\t\n'
 
 
 dc.fullText
@@ -473,12 +364,6 @@ dc.fullText
 
 .. code-block:: xml
 
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.fullText" class="org.dataone.cn.indexer.parser.FullTextSolrField">
-		<constructor-arg name="name" value="text"/>
-		<constructor-arg name="xpath" value="//*/text()"/>
-		<property name="combineNodes" value="true"/>
-	</bean>
-
-
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dc.fullText" class="org.dataone.cn.indexer.parser.FullTextSolrField">\n\t\t<constructor-arg name="name" value="text"/>\n\t\t<constructor-arg name="xpath" value="//*/text()"/>\n\t\t<property name="combineNodes" value="true"/>\n\t</bean>\n\n'
 
 
