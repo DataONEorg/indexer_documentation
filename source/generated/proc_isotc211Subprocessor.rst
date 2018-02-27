@@ -108,8 +108,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
         gmd:role/gmd:CI_RoleCode/text() = "originator" or 
         gmd:role/gmd:CI_RoleCode/text() = 
         "principalInvestigator" or gmd:role/gmd:CI_RoleCode/
-        text() = "author"]/gmd:individualName/
-        gco:CharacterString/text() | //
+        text() = "author"]/gmd:individualName/*/text() | //
         gmd:identificationInfo/gmd:MD_DataIdentification/
         gmd:citation/gmd:CI_Citation/
         gmd:citedResponsibleParty/gmd:CI_ResponsibleParty[
@@ -119,7 +118,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
         "principalInvestigator" or gmd:role/gmd:CI_RoleCode/
         text() = "author") and (not(gmd:individualName) or 
         gmd:individualName[@gco:nilReason = "missing"])]/
-        gmd:organisationName/gco:CharacterString/text()
+        gmd:organisationName/*/text()
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.origin`_
@@ -603,7 +602,7 @@ isotc.origin
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.origin" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="origin"/>\n\t\t<constructor-arg name="xpath" value="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty[gmd:role/gmd:CI_RoleCode/text() = &quot;owner&quot; or gmd:role/gmd:CI_RoleCode/text() = &quot;originator&quot; or gmd:role/gmd:CI_RoleCode/text() = &quot;principalInvestigator&quot; or gmd:role/gmd:CI_RoleCode/text() = &quot;author&quot;]/gmd:individualName/gco:CharacterString/text() | //gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty[(gmd:role/gmd:CI_RoleCode/text() = &quot;owner&quot; or gmd:role/gmd:CI_RoleCode/text() = &quot;originator&quot; or gmd:role/gmd:CI_RoleCode/text() = &quot;principalInvestigator&quot; or gmd:role/gmd:CI_RoleCode/text() = &quot;author&quot;) and (not(gmd:individualName) or gmd:individualName[@gco:nilReason = &quot;missing&quot;])]/gmd:organisationName/gco:CharacterString/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\t\n\t\n'
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.origin" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="origin"/>\n\t\t<constructor-arg name="xpath" value="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty[gmd:role/gmd:CI_RoleCode/text() = &quot;owner&quot; or gmd:role/gmd:CI_RoleCode/text() = &quot;originator&quot; or gmd:role/gmd:CI_RoleCode/text() = &quot;principalInvestigator&quot; or gmd:role/gmd:CI_RoleCode/text() = &quot;author&quot;]/gmd:individualName/*/text() | //gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty[(gmd:role/gmd:CI_RoleCode/text() = &quot;owner&quot; or gmd:role/gmd:CI_RoleCode/text() = &quot;originator&quot; or gmd:role/gmd:CI_RoleCode/text() = &quot;principalInvestigator&quot; or gmd:role/gmd:CI_RoleCode/text() = &quot;author&quot;) and (not(gmd:individualName) or gmd:individualName[@gco:nilReason = &quot;missing&quot;])]/gmd:organisationName/*/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\t\n\t\n'
 
 
 isotc.investigator
