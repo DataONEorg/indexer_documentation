@@ -1,7 +1,7 @@
-ISO TC-211
-==========
+isotc211PangaeaSubprocessor
+===========================
 
-Describes parser configuration for: isotc211Subprocessor
+Describes parser configuration for: isotc211PangaeaSubprocessor
 
 Format IDs Processed
 --------------------
@@ -9,8 +9,8 @@ Format IDs Processed
 This parser processes the following DataONE format IDs:
 
 
-  * | Geographic MetaData (GMD) Extensible Markup Language
-    | formatId: ``http://www.isotc211.org/2005/gmd``
+  * | PANGAEA Variant Geographic MetaData (GMD) Extensible Markup Language
+    | formatId: ``http://www.isotc211.org/2005/gmd-pangaea``
 
 
 A full list of DataONE format IDs can be found at https://cn.dataone.org/cn/v2/formats/
