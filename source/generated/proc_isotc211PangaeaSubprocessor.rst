@@ -138,8 +138,35 @@ Note that these are in addition to the information extracted from :doc:`system_m
     - False
     - ::
 
-        (//gmd:dateStamp/gco:Date/text() | //gmd:dateStamp/
-        gco:DateTime/text())[1]
+        if (//gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/
+        gmd:date/gmd:CI_Date/gmd:date[
+        following-sibling::gmd:dateType/gmd:CI_DateTypeCode/
+        text() = 'publication']/gco:Date/text())            
+             then //gmd:identificationInfo/*/gmd:citation/
+        gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date[
+        following-sibling::gmd:dateType/gmd:CI_DateTypeCode/
+        text() = 'publication']/gco:Date/text()           
+        else if (//gmd:identificationInfo/*/gmd:citation/
+        gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date[
+        following-sibling::gmd:dateType/gmd:CI_DateTypeCode/
+        text() = 'publication']/gco:DateTime/text())        
+                 then //gmd:identificationInfo/*/
+        gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/
+        gmd:date[following-sibling::gmd:dateType/
+        gmd:CI_DateTypeCode/text() = 'publication']/
+        gco:DateTime/text()            else if (//
+        gmd:identificationInfo/*/gmd:citation/
+        gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date/
+        gco:Date[1]/text())                 then //
+        gmd:identificationInfo/*/gmd:citation/
+        gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date/
+        gco:Date[1]/text()           else if (//
+        gmd:identificationInfo/*/gmd:citation/
+        gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date/
+        gco:DateTime[1]/text())                 then //
+        gmd:identificationInfo/*/gmd:citation/
+        gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date/
+        gco:DateTime[1]/text()           else ()
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.pubDate`_
@@ -363,21 +390,21 @@ Note that these are in addition to the information extracted from :doc:`system_m
     - False
     - ::
 
-        concat( substring('loose', 1 div boolean( //
+        concat( substring('loose', 1 div number(boolean( //
         srv:SV_ServiceIdentification/srv:couplingType/
-        srv:SV_CouplingType/@codeListValue = 'loose')),     
-           substring('tight', 1 div boolean( //
+        srv:SV_CouplingType/@codeListValue = 'loose'))),    
+            substring('tight', 1 div number(boolean( //
         srv:SV_ServiceIdentification/srv:couplingType/
-        srv:SV_CouplingType/@codeListValue = 'tight')),     
-           substring('tight', 1 div boolean( //
+        srv:SV_CouplingType/@codeListValue = 'tight'))),    
+            substring('tight', 1 div number(boolean( //
         gmd:distributionInfo/gmd:MD_Distribution and not(//
         srv:SV_ServiceIdentification/srv:couplingType/
-        srv:SV_CouplingType/@codeListValue))),        
-        substring('',  1 div boolean( not(   //
+        srv:SV_CouplingType/@codeListValue)))),        
+        substring('',  1 div number(boolean( not(   //
         srv:SV_ServiceIdentification/srv:couplingType/
         srv:SV_CouplingType/@codeListValue)                 
          and not(   //gmd:distributionInfo/
-        gmd:MD_Distribution))))
+        gmd:MD_Distribution)))))
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.serviceCoupling`_
@@ -613,7 +640,7 @@ isotc.pubDate
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.pubDate" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="pubDate"/>\n\t\t<constructor-arg name="xpath" value="(//gmd:dateStamp/gco:Date/text() | //gmd:dateStamp/gco:DateTime/text())[1]"/>\n\t\t<property name="converter" ref="dateConverter"/>\n\t</bean>\n\t\n\t\n'
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.pubDate" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="pubDate"/>\n\t\t<constructor-arg name="xpath" value="if (//gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date[following-sibling::gmd:dateType/gmd:CI_DateTypeCode/text() = \'publication\']/gco:Date/text())                 then //gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date[following-sibling::gmd:dateType/gmd:CI_DateTypeCode/text() = \'publication\']/gco:Date/text()           else if (//gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date[following-sibling::gmd:dateType/gmd:CI_DateTypeCode/text() = \'publication\']/gco:DateTime/text())                 then //gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date[following-sibling::gmd:dateType/gmd:CI_DateTypeCode/text() = \'publication\']/gco:DateTime/text()            else if (//gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date/gco:Date[1]/text())                 then //gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date/gco:Date[1]/text()           else if (//gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date/gco:DateTime[1]/text())                 then //gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date/gco:DateTime[1]/text()           else ()"/>\n\t\t<property name="converter" ref="dateConverter"/>\n\t</bean>\n\t\n\t\n'
 
 
 isotc.beginDate
@@ -765,7 +792,7 @@ isotc.serviceCoupling
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.serviceCoupling" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="serviceCoupling"/>\n\t\t<constructor-arg name="xpath" value="concat( substring(\'loose\', 1 div boolean( //srv:SV_ServiceIdentification/srv:couplingType/srv:SV_CouplingType/@codeListValue = \'loose\')),        substring(\'tight\', 1 div boolean( //srv:SV_ServiceIdentification/srv:couplingType/srv:SV_CouplingType/@codeListValue = \'tight\')),        substring(\'tight\', 1 div boolean( //gmd:distributionInfo/gmd:MD_Distribution and not(//srv:SV_ServiceIdentification/srv:couplingType/srv:SV_CouplingType/@codeListValue))),        substring(\'\',  1 div boolean( not(   //srv:SV_ServiceIdentification/srv:couplingType/srv:SV_CouplingType/@codeListValue)                  and not(   //gmd:distributionInfo/gmd:MD_Distribution))))"/>\n\t</bean>\n\t\n\t\n'
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="isotc.serviceCoupling" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="serviceCoupling"/>\n\t\t<constructor-arg name="xpath" value="concat( substring(\'loose\', 1 div number(boolean( //srv:SV_ServiceIdentification/srv:couplingType/srv:SV_CouplingType/@codeListValue = \'loose\'))),        substring(\'tight\', 1 div number(boolean( //srv:SV_ServiceIdentification/srv:couplingType/srv:SV_CouplingType/@codeListValue = \'tight\'))),        substring(\'tight\', 1 div number(boolean( //gmd:distributionInfo/gmd:MD_Distribution and not(//srv:SV_ServiceIdentification/srv:couplingType/srv:SV_CouplingType/@codeListValue)))),        substring(\'\',  1 div number(boolean( not(   //srv:SV_ServiceIdentification/srv:couplingType/srv:SV_CouplingType/@codeListValue)                  and not(   //gmd:distributionInfo/gmd:MD_Distribution)))))"/>\n\t</bean>\n\t\n\t\n'
 
 
 isotc.serviceTitle

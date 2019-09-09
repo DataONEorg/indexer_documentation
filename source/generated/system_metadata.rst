@@ -269,6 +269,17 @@ Fields
       | Configuration: `systemMetadata200Subprocessor.replicaMN`_
 
 
+  * - :attr:`Index.replicationStatus`
+    - True
+    - False
+    - ::
+
+        /d200:systemMetadata/replica/replicationStatus/text()
+
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `systemMetadata200Subprocessor.replicationStatus`_
+
+
   * - :attr:`Index.replicaVerifiedDate`
     - True
     - False
@@ -552,6 +563,15 @@ systemMetadata200Subprocessor.replicaMN
 .. code-block:: xml
 
    b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="replicaMN"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/replica/replicaMemberNode/text()"/>\n\t\t\t\t\t<property name="multivalue" value="true"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+
+
+
+systemMetadata200Subprocessor.replicationStatus
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n                    <constructor-arg name="name" value="replicationStatus"/>\n                    <constructor-arg name="xpath" value="/d200:systemMetadata/replica/replicationStatus/text()"/>\n                    <property name="multivalue" value="true"/>\n                </bean>\n\t\t\t\t\n'
 
 
 

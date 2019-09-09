@@ -277,7 +277,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
     - ::
 
         //taxonomicClassification/taxonRankValue[../taxonRankName=
-        "Genus"]/text()
+        "Genus" or ../taxonRankName="genus"]/text()
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.genus`_
@@ -289,7 +289,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
     - ::
 
         //taxonomicClassification/taxonRankValue[../taxonRankName=
-        "Species"]/text()
+        "Species" or ../taxonRankName="species"]/text()
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.species`_
@@ -301,7 +301,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
     - ::
 
         //taxonomicClassification/taxonRankValue[../taxonRankName=
-        "Kingdom"]/text()
+        "Kingdom" or ../taxonRankName="kingdom"]/text()
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.kingdom`_
@@ -313,7 +313,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
     - ::
 
         //taxonomicClassification/taxonRankValue[../taxonRankName=
-        "Order"]/text()
+        "Order" or ../taxonRankName="order"]/text()
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.order`_
@@ -325,8 +325,10 @@ Note that these are in addition to the information extracted from :doc:`system_m
     - ::
 
         //taxonomicClassification/taxonRankValue[../taxonRankName=
-        "Phylum"]/text() | //taxonomicClassification/
-        taxonRankValue[../taxonRankName="Division"]/text()
+        "Phylum" or ../taxonRankName="phylum"]/text() | //
+        taxonomicClassification/taxonRankValue[../
+        taxonRankName="Division" or ../taxonRankName=
+        "division"]/text()
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.phylum`_
@@ -338,7 +340,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
     - ::
 
         //taxonomicClassification/taxonRankValue[../taxonRankName=
-        "Family"]/text()
+        "Family" or ../taxonRankName="family"]/text()
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.family`_
@@ -350,7 +352,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
     - ::
 
         //taxonomicClassification/taxonRankValue[../taxonRankName=
-        "Class"]/text()
+        "Class" or ../taxonRankName="class"]/text()
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.class`_
@@ -739,7 +741,7 @@ eml.genus
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.genus" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="genus"/>\n\t\t<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Genus&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\n\t\n'
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.genus" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="genus"/>\n\t\t<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Genus&quot; or ../taxonRankName=&quot;genus&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\n\t\n'
 
 
 eml.species
@@ -747,7 +749,7 @@ eml.species
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.species" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="species"/>\n\t\t<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Species&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\n\t\n'
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.species" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="species"/>\n\t\t<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Species&quot; or ../taxonRankName=&quot;species&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\n\t\n'
 
 
 eml.kingdom
@@ -755,7 +757,7 @@ eml.kingdom
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.kingdom" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="kingdom"/>\n\t\t<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Kingdom&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\n\t\n'
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.kingdom" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="kingdom"/>\n\t\t<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Kingdom&quot; or ../taxonRankName=&quot;kingdom&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\n\t\n'
 
 
 eml.order
@@ -763,7 +765,7 @@ eml.order
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.order" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="order"/>\n\t\t<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Order&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\n\t\n'
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.order" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="order"/>\n\t\t<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Order&quot; or ../taxonRankName=&quot;order&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\n\t\n'
 
 
 eml.phylum
@@ -771,7 +773,7 @@ eml.phylum
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.phylum" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="phylum"/>\n\t\t<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Phylum&quot;]/text() | //taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Division&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\t\t\n\t\n'
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.phylum" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="phylum"/>\n\t\t<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Phylum&quot; or ../taxonRankName=&quot;phylum&quot;]/text() | //taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Division&quot; or ../taxonRankName=&quot;division&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\t\t\n\t\n'
 
 
 eml.family
@@ -779,7 +781,7 @@ eml.family
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.family" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="family"/>\n\t\t<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Family&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\n\t\n'
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.family" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="family"/>\n\t\t<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Family&quot; or ../taxonRankName=&quot;family&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\n\t\n'
 
 
 eml.class
@@ -787,7 +789,7 @@ eml.class
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.class" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="class"/>\n\t\t<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Class&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\t\n\t\n\t\n'
+   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.class" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="class"/>\n\t\t<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Class&quot; or ../taxonRankName=&quot;class&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\t\n\t\n\t\n'
 
 
 eml.scientificName
