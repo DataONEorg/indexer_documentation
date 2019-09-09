@@ -285,7 +285,13 @@ datacite.author
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.author" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="author"/>\n\t\t<constructor-arg name="xpath" value="(/datacite:resource/datacite:creators/datacite:creator[1]/datacite:creatorName[1]/text())[1]"/>\n\t</bean>\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.author" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="author"/>
+		<constructor-arg name="xpath" value="(/datacite:resource/datacite:creators/datacite:creator[1]/datacite:creatorName[1]/text())[1]"/>
+	</bean>
+
+	
+
 
 
 datacite.author_lname
@@ -293,7 +299,15 @@ datacite.author_lname
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.author_lname" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="authorLastName"/>\n\t\t<constructor-arg name="xpath" value="(/datacite:resource/datacite:creators/datacite:creator[1]/datacite:creatorName[1]/text())[1]"/>\n\t\t<property name="substringBefore" value="true"/>\n\t\t<property name="splitOnString" value=","/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.author_lname" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorLastName"/>
+		<constructor-arg name="xpath" value="(/datacite:resource/datacite:creators/datacite:creator[1]/datacite:creatorName[1]/text())[1]"/>
+		<property name="substringBefore" value="true"/>
+		<property name="splitOnString" value=","/>
+	</bean>
+	
+	
+
 
 
 datacite.authorSurName
@@ -301,7 +315,15 @@ datacite.authorSurName
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.authorSurName" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="authorSurName"/>\n\t\t<constructor-arg name="xpath" value="(/datacite:resource/datacite:creators/datacite:creator[1]/datacite:creatorName[1]/text())[1]"/>\n\t\t<property name="substringBefore" value="true"/>\n\t\t<property name="splitOnString" value=","/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.authorSurName" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorSurName"/>
+		<constructor-arg name="xpath" value="(/datacite:resource/datacite:creators/datacite:creator[1]/datacite:creatorName[1]/text())[1]"/>
+		<property name="substringBefore" value="true"/>
+		<property name="splitOnString" value=","/>
+	</bean>
+	
+	
+
 
 
 datacite.authorSurNameSort
@@ -309,7 +331,15 @@ datacite.authorSurNameSort
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.authorSurNameSort" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="authorSurNameSort"/>\n\t\t<constructor-arg name="xpath" value="(/datacite:resource/datacite:creators/datacite:creator[1]/datacite:creatorName[1]/text())[1]"/>\n\t\t<property name="substringBefore" value="true"/>\n\t\t<property name="splitOnString" value=","/>\n\t</bean>\t\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.authorSurNameSort" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorSurNameSort"/>
+		<constructor-arg name="xpath" value="(/datacite:resource/datacite:creators/datacite:creator[1]/datacite:creatorName[1]/text())[1]"/>
+		<property name="substringBefore" value="true"/>
+		<property name="splitOnString" value=","/>
+	</bean>	
+	
+	
+
 
 
 datacite.authorGivenName
@@ -317,7 +347,15 @@ datacite.authorGivenName
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.authorGivenName" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="authorGivenName"/>\n\t\t<constructor-arg name="xpath" value="(/datacite:resource/datacite:creators/datacite:creator[1]/datacite:creatorName[1]/text())[1]"/>\n\t\t<property name="substringAfter" value="true"/>\n\t\t<property name="splitOnString" value=","/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.authorGivenName" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorGivenName"/>
+		<constructor-arg name="xpath" value="(/datacite:resource/datacite:creators/datacite:creator[1]/datacite:creatorName[1]/text())[1]"/>
+		<property name="substringAfter" value="true"/>
+		<property name="splitOnString" value=","/>
+	</bean>
+	
+	
+
 
 
 datacite.authorGivenNameSort
@@ -325,7 +363,15 @@ datacite.authorGivenNameSort
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.authorGivenNameSort" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="authorGivenNameSort"/>\n\t\t<constructor-arg name="xpath" value="(/datacite:resource/datacite:creators/datacite:creator[1]/datacite:creatorName[1]/text())[1]"/>\n\t\t<property name="substringAfter" value="true"/>\n\t\t<property name="splitOnString" value=","/>\n\t</bean>\t\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.authorGivenNameSort" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorGivenNameSort"/>
+		<constructor-arg name="xpath" value="(/datacite:resource/datacite:creators/datacite:creator[1]/datacite:creatorName[1]/text())[1]"/>
+		<property name="substringAfter" value="true"/>
+		<property name="splitOnString" value=","/>
+	</bean>	
+	
+	
+
 
 
 datacite.abstract
@@ -333,7 +379,15 @@ datacite.abstract
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.abstract" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="abstract"/>\n\t\t<constructor-arg name="xpath" value="(/datacite:resource/datacite:descriptions/datacite:description[@descriptionType=\'Abstract\'][1]/text())[1]"/>\n\t\t<property name="multivalue" value="false"/>\n\t  \t<property name="dedupe" value="false"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.abstract" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="abstract"/>
+		<constructor-arg name="xpath" value="(/datacite:resource/datacite:descriptions/datacite:description[@descriptionType='Abstract'][1]/text())[1]"/>
+		<property name="multivalue" value="false"/>
+	  	<property name="dedupe" value="false"/>
+	</bean>
+	
+	
+
 
 
 datacite.title
@@ -341,7 +395,13 @@ datacite.title
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.title" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="title"/>\n\t\t<constructor-arg name="xpath" value="(/datacite:resource/datacite:titles/datacite:title[1]/text())[1]"/>\n\t</bean>\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.title" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="title"/>
+		<constructor-arg name="xpath" value="(/datacite:resource/datacite:titles/datacite:title[1]/text())[1]"/>
+	</bean>
+
+	
+
 
 
 datacite.pubDate
@@ -349,7 +409,14 @@ datacite.pubDate
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.pubDate" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="pubDate"/>\n\t\t<constructor-arg name="xpath" value="(/datacite:resource/datacite:publicationYear[1]/text())[1]"/>\n\t\t<property name="converter" ref="dateConverter"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.pubDate" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="pubDate"/>
+		<constructor-arg name="xpath" value="(/datacite:resource/datacite:publicationYear[1]/text())[1]"/>
+		<property name="converter" ref="dateConverter"/>
+	</bean>
+	
+	
+
 
 
 datacite.keywords
@@ -357,7 +424,15 @@ datacite.keywords
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.keywords" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="keywords"/>\n\t\t<constructor-arg name="xpath" value="/datacite:resource/datacite:subjects/datacite:subject/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.keywords" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="keywords"/>
+		<constructor-arg name="xpath" value="/datacite:resource/datacite:subjects/datacite:subject/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+
+	
+
 
 
 datacite.beginDate
@@ -365,7 +440,16 @@ datacite.beginDate
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.beginDate" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="beginDate"/>\n\t\t<constructor-arg name="xpath" value="(/datacite:resource/datacite:dates/datacite:date[@dateType=\'Collected\'][1]/text())[1]"/>\n\t\t<property name="substringBefore" value="true"/>\n\t\t<property name="splitOnString" value="/"/>\n\t\t<property name="converter" ref="dateConverter"/>\n\t</bean>\t\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.beginDate" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="beginDate"/>
+		<constructor-arg name="xpath" value="(/datacite:resource/datacite:dates/datacite:date[@dateType='Collected'][1]/text())[1]"/>
+		<property name="substringBefore" value="true"/>
+		<property name="splitOnString" value="/"/>
+		<property name="converter" ref="dateConverter"/>
+	</bean>	
+	
+	
+
 
 
 datacite.endDate
@@ -373,7 +457,16 @@ datacite.endDate
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.endDate" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="endDate"/>\n\t\t<constructor-arg name="xpath" value="(/datacite:resource/datacite:dates/datacite:date[@dateType=\'Collected\'][1]/text())[1]"/>\n\t\t<property name="substringAfter" value="true"/>\n\t\t<property name="splitOnString" value="/"/>\n\t\t<property name="converter" ref="dateConverter"/>\n\t</bean>\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.endDate" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="endDate"/>
+		<constructor-arg name="xpath" value="(/datacite:resource/datacite:dates/datacite:date[@dateType='Collected'][1]/text())[1]"/>
+		<property name="substringAfter" value="true"/>
+		<property name="splitOnString" value="/"/>
+		<property name="converter" ref="dateConverter"/>
+	</bean>
+
+	
+
 
 
 datacite.origin
@@ -381,7 +474,15 @@ datacite.origin
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.origin" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="origin"/>\n\t\t<constructor-arg name="xpath" value="/datacite:resource/datacite:creators/datacite:creator/datacite:creatorName/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.origin" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="origin"/>
+		<constructor-arg name="xpath" value="/datacite:resource/datacite:creators/datacite:creator/datacite:creatorName/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+	
+	
+
 
 
 datacite.investigator
@@ -389,7 +490,15 @@ datacite.investigator
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.investigator" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="investigator"/>\n\t\t<constructor-arg name="xpath" value="/datacite:resource/datacite:creators/datacite:creator/datacite:creatorName/text() | /datacite:resource/datacite:contributors/datacite:contributor[@contributorType=\'DataCollector\']/datacite:contributorName/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.investigator" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="investigator"/>
+		<constructor-arg name="xpath" value="/datacite:resource/datacite:creators/datacite:creator/datacite:creatorName/text() | /datacite:resource/datacite:contributors/datacite:contributor[@contributorType='DataCollector']/datacite:contributorName/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+	
+	
+
 
 
 datacite.contactOrganization
@@ -397,7 +506,15 @@ datacite.contactOrganization
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.contactOrganization" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="contactOrganization"/>\n\t\t<constructor-arg name="xpath" value="/datacite:resource/datacite:contributors/datacite:contributor[@contributorType=\'HostingInstitution\']/datacite:contributorName/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.contactOrganization" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="contactOrganization"/>
+		<constructor-arg name="xpath" value="/datacite:resource/datacite:contributors/datacite:contributor[@contributorType='HostingInstitution']/datacite:contributorName/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+	
+	
+
 
 
 datacite.site
@@ -405,7 +522,15 @@ datacite.site
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.site" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="site"/>\n\t\t<constructor-arg name="xpath" value="/datacite:resource/datacite:geoLocations/datacite:geoLocation/datacite:geoLocationPlace/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.site" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="site"/>
+		<constructor-arg name="xpath" value="/datacite:resource/datacite:geoLocations/datacite:geoLocation/datacite:geoLocationPlace/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+	
+	
+
 
 
 datacite.boxSpatialBoundCoordinates
@@ -413,7 +538,13 @@ datacite.boxSpatialBoundCoordinates
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.boxSpatialBoundCoordinates" class="org.dataone.cn.indexer.parser.DataCiteSpatialBoxBoundingCoordinatesSolrField">\n\t\t<property name="pointXPath" value="(/datacite:resource/datacite:geoLocations/datacite:geoLocation/datacite:geoLocationPoint[1]/text())[1]"/>\n\t\t<property name="boxXPath" value="(/datacite:resource/datacite:geoLocations/datacite:geoLocation/datacite:geoLocationBox[1]/text())[1]"/>\n\t</bean>\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.boxSpatialBoundCoordinates" class="org.dataone.cn.indexer.parser.DataCiteSpatialBoxBoundingCoordinatesSolrField">
+		<property name="pointXPath" value="(/datacite:resource/datacite:geoLocations/datacite:geoLocation/datacite:geoLocationPoint[1]/text())[1]"/>
+		<property name="boxXPath" value="(/datacite:resource/datacite:geoLocations/datacite:geoLocation/datacite:geoLocationBox[1]/text())[1]"/>
+	</bean>
+
+	
+
 
 
 datacite.boxSpatialGeohash
@@ -421,7 +552,13 @@ datacite.boxSpatialGeohash
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.boxSpatialGeohash" class="org.dataone.cn.indexer.parser.DataCiteSpatialBoxGeohashSolrField">\n\t\t<property name="pointXPath" value="(/datacite:resource/datacite:geoLocations/datacite:geoLocation/datacite:geoLocationPoint[1]/text())[1]"/>\n\t\t<property name="boxXPath" value="(/datacite:resource/datacite:geoLocations/datacite:geoLocation/datacite:geoLocationBox[1]/text())[1]"/>\n\t</bean>\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.boxSpatialGeohash" class="org.dataone.cn.indexer.parser.DataCiteSpatialBoxGeohashSolrField">
+		<property name="pointXPath" value="(/datacite:resource/datacite:geoLocations/datacite:geoLocation/datacite:geoLocationPoint[1]/text())[1]"/>
+		<property name="boxXPath" value="(/datacite:resource/datacite:geoLocations/datacite:geoLocation/datacite:geoLocationBox[1]/text())[1]"/>
+	</bean>
+
+	
+
 
 
 datacite.fileID
@@ -429,7 +566,12 @@ datacite.fileID
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.fileID" class="org.dataone.cn.indexer.parser.ResolveSolrField">\n\t\t<constructor-arg name="name" value="fileID"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.fileID" class="org.dataone.cn.indexer.parser.ResolveSolrField">
+		<constructor-arg name="name" value="fileID"/>
+	</bean>
+	
+	
+
 
 
 datacite.fullText
@@ -437,6 +579,12 @@ datacite.fullText
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.fullText" class="org.dataone.cn.indexer.parser.FullTextSolrField">\n\t\t<constructor-arg name="name" value="text"/>\n\t\t<constructor-arg name="xpath" value="//*/text()"/>\n\t\t<property name="combineNodes" value="true"/>\n\t</bean>\t\t\n\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="datacite.fullText" class="org.dataone.cn.indexer.parser.FullTextSolrField">
+		<constructor-arg name="name" value="text"/>
+		<constructor-arg name="xpath" value="//*/text()"/>
+		<property name="combineNodes" value="true"/>
+	</bean>		
+
+
 
 

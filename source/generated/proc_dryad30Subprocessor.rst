@@ -204,7 +204,13 @@ dryad.abstract
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.abstract" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="abstract"/>\n\t\t<constructor-arg name="xpath" value="//dcterms:description[1]/text()"/>\n\t</bean>\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.abstract" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="abstract"/>
+		<constructor-arg name="xpath" value="//dcterms:description[1]/text()"/>
+	</bean>
+
+	
+
 
 
 dryad.author
@@ -212,7 +218,13 @@ dryad.author
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.author" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="author"/>\n\t\t<constructor-arg name="xpath" value="//dcterms:creator[1]/text()"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.author" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="author"/>
+		<constructor-arg name="xpath" value="//dcterms:creator[1]/text()"/>
+	</bean>
+	
+	
+
 
 
 dryad.authorSurName
@@ -220,7 +232,15 @@ dryad.authorSurName
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.authorSurName" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="authorSurName"/>\n\t\t<constructor-arg name="xpath" value="//dcterms:creator[1]/text()"/>\n\t\t<property name="substringBefore" value="true"/>\n\t\t<property name="splitOnString" value=","/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.authorSurName" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorSurName"/>
+		<constructor-arg name="xpath" value="//dcterms:creator[1]/text()"/>
+		<property name="substringBefore" value="true"/>
+		<property name="splitOnString" value=","/>
+	</bean>
+	
+	
+
 
 
 dryad.authorSurNameSort
@@ -228,7 +248,15 @@ dryad.authorSurNameSort
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.authorSurNameSort" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="authorSurNameSort"/>\n\t\t<constructor-arg name="xpath" value="//dcterms:creator[1]/text()"/>\n\t\t<property name="substringBefore" value="true"/>\n\t\t<property name="splitOnString" value=","/>\n\t</bean>\t\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.authorSurNameSort" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorSurNameSort"/>
+		<constructor-arg name="xpath" value="//dcterms:creator[1]/text()"/>
+		<property name="substringBefore" value="true"/>
+		<property name="splitOnString" value=","/>
+	</bean>	
+	
+	
+
 
 
 dryad.authorGivenName
@@ -236,7 +264,15 @@ dryad.authorGivenName
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.authorGivenName" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="authorGivenName"/>\n\t\t<constructor-arg name="xpath" value="//dcterms:creator[1]/text()"/>\n\t\t<property name="substringAfter" value="true"/>\n\t\t<property name="splitOnString" value=","/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.authorGivenName" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorGivenName"/>
+		<constructor-arg name="xpath" value="//dcterms:creator[1]/text()"/>
+		<property name="substringAfter" value="true"/>
+		<property name="splitOnString" value=","/>
+	</bean>
+	
+	
+
 
 
 dryad.authorGivenNameSort
@@ -244,7 +280,15 @@ dryad.authorGivenNameSort
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.authorGivenNameSort" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="authorGivenNameSort"/>\n\t\t<constructor-arg name="xpath" value="//dcterms:creator[1]/text()"/>\n\t\t<property name="substringAfter" value="true"/>\n\t\t<property name="splitOnString" value=","/>\n\t</bean>\t\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.authorGivenNameSort" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorGivenNameSort"/>
+		<constructor-arg name="xpath" value="//dcterms:creator[1]/text()"/>
+		<property name="substringAfter" value="true"/>
+		<property name="splitOnString" value=","/>
+	</bean>	
+	
+	
+
 
 
 dryad.investigator
@@ -252,7 +296,15 @@ dryad.investigator
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.investigator" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="investigator"/>\n\t\t<constructor-arg name="xpath" value="//dcterms:creator/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.investigator" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="investigator"/>
+		<constructor-arg name="xpath" value="//dcterms:creator/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+	
+	
+
 
 
 dryad.keywords
@@ -260,7 +312,14 @@ dryad.keywords
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.keywords" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="keywords"/>\n\t\t<constructor-arg name="xpath" value="//dcterms:subject/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.keywords" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="keywords"/>
+		<constructor-arg name="xpath" value="//dcterms:subject/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+	
+	
+
 
 
 dryad.origin
@@ -268,7 +327,15 @@ dryad.origin
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.origin" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="origin"/>\n\t\t<constructor-arg name="xpath" value="//dcterms:creator/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.origin" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="origin"/>
+		<constructor-arg name="xpath" value="//dcterms:creator/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+	
+	
+
 
 
 dryad.pubDate
@@ -276,7 +343,14 @@ dryad.pubDate
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.pubDate" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="pubDate"/>\n\t\t<constructor-arg name="xpath" value="//dcterms:dateSubmitted/text()"/>\n\t\t<property name="converter" ref="dateConverter"/>\n\t</bean>\n\t\n \t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.pubDate" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="pubDate"/>
+		<constructor-arg name="xpath" value="//dcterms:dateSubmitted/text()"/>
+		<property name="converter" ref="dateConverter"/>
+	</bean>
+	
+ 	
+
 
 
 dryad.site
@@ -284,7 +358,14 @@ dryad.site
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.site" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="site"/>\n\t\t<constructor-arg name="xpath" value="//dcterms:spatial/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\n\t\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.site" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="site"/>
+		<constructor-arg name="xpath" value="//dcterms:spatial/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+		
+	
+
 
 
 dryad.title
@@ -292,7 +373,13 @@ dryad.title
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.title" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="title"/>\n\t\t<constructor-arg name="xpath" value="//dcterms:title[1]/text()"/>\n\t</bean>\n \n \t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.title" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="title"/>
+		<constructor-arg name="xpath" value="//dcterms:title[1]/text()"/>
+	</bean>
+ 
+ 	
+
 
 
 dryad.scientificName
@@ -300,7 +387,14 @@ dryad.scientificName
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.scientificName" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="scientificName"/>\n\t\t<constructor-arg name="xpath" value="//dwc:scientificName/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.scientificName" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="scientificName"/>
+		<constructor-arg name="xpath" value="//dwc:scientificName/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+
+	
+
 
 
 dryad.fileID
@@ -308,7 +402,12 @@ dryad.fileID
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.fileID" class="org.dataone.cn.indexer.parser.ResolveSolrField">\n\t\t<constructor-arg name="name" value="fileID"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.fileID" class="org.dataone.cn.indexer.parser.ResolveSolrField">
+		<constructor-arg name="name" value="fileID"/>
+	</bean>
+	
+	
+
 
 
 dryad.fullText
@@ -316,6 +415,13 @@ dryad.fullText
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.fullText" class="org.dataone.cn.indexer.parser.FullTextSolrField">\n\t\t<constructor-arg name="name" value="text"/>\n\t\t<constructor-arg name="xpath" value="//*/text()"/>\n\t\t<property name="combineNodes" value="true"/>\n\t</bean>\n\t\n\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dryad.fullText" class="org.dataone.cn.indexer.parser.FullTextSolrField">
+		<constructor-arg name="name" value="text"/>
+		<constructor-arg name="xpath" value="//*/text()"/>
+		<property name="combineNodes" value="true"/>
+	</bean>
+	
+
+
 
 

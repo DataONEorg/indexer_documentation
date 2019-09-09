@@ -112,7 +112,27 @@ annotation.expansion
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" id="annotation.expansion" class="org.dataone.cn.indexer.annotation.SparqlField">\n\t\t<constructor-arg name="name" value="sem_annotation"/>\n\t\t<constructor-arg name="query">\n\t\t\t<value>\n\t\t\t\t<![CDATA[\n\t\t\t\tPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\t\t\t\tPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> \n\t\t\t\tPREFIX owl: <http://www.w3.org/2002/07/owl#> \n\t\t\t\t\n\t\t\t\tSELECT ?sem_annotation\n\t\t\t\tWHERE { \n\t\t\t\t\t\t<$CONCEPT_URI> rdfs:subClassOf+ ?sem_annotation .\n\t\t\t\t \t} \n\t\t\t\t ]]>\n\t\t\t</value>\n\t\t</constructor-arg>\n\t\t<!--property name="multivalue" value="false" /-->\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" id="annotation.expansion" class="org.dataone.cn.indexer.annotation.SparqlField">
+		<constructor-arg name="name" value="sem_annotation"/>
+		<constructor-arg name="query">
+			<value>
+				<![CDATA[
+				PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+				PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+				PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+				
+				SELECT ?sem_annotation
+				WHERE { 
+						<$CONCEPT_URI> rdfs:subClassOf+ ?sem_annotation .
+				 	} 
+				 ]]>
+			</value>
+		</constructor-arg>
+		<!--property name="multivalue" value="false" /-->
+	</bean>
+	
+	
+
 
 
 annotation.bioportal.expansion
@@ -120,7 +140,25 @@ annotation.bioportal.expansion
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" id="annotation.bioportal.expansion" class="org.dataone.cn.indexer.annotation.SparqlField">\n\t\t<constructor-arg name="name" value="sem_annotation_bioportal_sm"/>\n\t\t<constructor-arg name="query">\n\t\t\t<value>\n\t\t\t\t<![CDATA[\n\t\t\t\tPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\t\t\t\tPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> \n\t\t\t\tPREFIX owl: <http://www.w3.org/2002/07/owl#> \n\t\t\t\t\n\t\t\t\tSELECT ?sem_annotation_bioportal_sm\n\t\t\t\tWHERE { \n\t\t\t\t\t\t<$CONCEPT_URI> rdfs:subClassOf+ ?sem_annotation_bioportal_sm .\n\t\t\t\t \t} \n\t\t\t\t ]]>\n\t\t\t</value>\n\t\t</constructor-arg>\n\t</bean>\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" id="annotation.bioportal.expansion" class="org.dataone.cn.indexer.annotation.SparqlField">
+		<constructor-arg name="name" value="sem_annotation_bioportal_sm"/>
+		<constructor-arg name="query">
+			<value>
+				<![CDATA[
+				PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+				PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+				PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+				
+				SELECT ?sem_annotation_bioportal_sm
+				WHERE { 
+						<$CONCEPT_URI> rdfs:subClassOf+ ?sem_annotation_bioportal_sm .
+				 	} 
+				 ]]>
+			</value>
+		</constructor-arg>
+	</bean>
+	
+
 
 
 annotation.esor.expansion
@@ -128,7 +166,25 @@ annotation.esor.expansion
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" id="annotation.esor.expansion" class="org.dataone.cn.indexer.annotation.SparqlField">\n\t\t<constructor-arg name="name" value="sem_annotation_esor_sm"/>\n\t\t<constructor-arg name="query">\n\t\t\t<value>\n\t\t\t\t<![CDATA[\n\t\t\t\tPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\t\t\t\tPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> \n\t\t\t\tPREFIX owl: <http://www.w3.org/2002/07/owl#> \n\t\t\t\t\n\t\t\t\tSELECT ?sem_annotation_esor_sm\n\t\t\t\tWHERE { \n\t\t\t\t\t\t<$CONCEPT_URI> rdfs:subClassOf+ ?sem_annotation_esor_sm .\n\t\t\t\t \t} \n\t\t\t\t ]]>\n\t\t\t</value>\n\t\t</constructor-arg>\n\t</bean>\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" id="annotation.esor.expansion" class="org.dataone.cn.indexer.annotation.SparqlField">
+		<constructor-arg name="name" value="sem_annotation_esor_sm"/>
+		<constructor-arg name="query">
+			<value>
+				<![CDATA[
+				PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+				PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+				PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+				
+				SELECT ?sem_annotation_esor_sm
+				WHERE { 
+						<$CONCEPT_URI> rdfs:subClassOf+ ?sem_annotation_esor_sm .
+				 	} 
+				 ]]>
+			</value>
+		</constructor-arg>
+	</bean>
+	
+
 
 
 annotation.cosine.expansion
@@ -136,6 +192,25 @@ annotation.cosine.expansion
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" id="annotation.cosine.expansion" class="org.dataone.cn.indexer.annotation.SparqlField">\n\t\t<constructor-arg name="name" value="sem_annotation_cosine_sm"/>\n\t\t<constructor-arg name="query">\n\t\t\t<value>\n\t\t\t\t<![CDATA[\n\t\t\t\tPREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> \n\t\t\t\tPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> \n\t\t\t\tPREFIX owl: <http://www.w3.org/2002/07/owl#> \n\t\t\t\t\n\t\t\t\tSELECT ?sem_annotation_cosine_sm\n\t\t\t\tWHERE { \n\t\t\t\t\t\t<$CONCEPT_URI> rdfs:subClassOf+ ?sem_annotation_cosine_sm .\n\t\t\t\t \t} \n\t\t\t\t ]]>\n\t\t\t</value>\n\t\t</constructor-arg>\n\t</bean>\n\n\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" id="annotation.cosine.expansion" class="org.dataone.cn.indexer.annotation.SparqlField">
+		<constructor-arg name="name" value="sem_annotation_cosine_sm"/>
+		<constructor-arg name="query">
+			<value>
+				<![CDATA[
+				PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+				PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+				PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+				
+				SELECT ?sem_annotation_cosine_sm
+				WHERE { 
+						<$CONCEPT_URI> rdfs:subClassOf+ ?sem_annotation_cosine_sm .
+				 	} 
+				 ]]>
+			</value>
+		</constructor-arg>
+	</bean>
+
+
+
 
 

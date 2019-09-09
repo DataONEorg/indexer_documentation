@@ -573,7 +573,16 @@ eml.abstract
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.abstract" class="org.dataone.cn.indexer.parser.MergeSolrField">\n\t  <constructor-arg name="name" value="abstract"/>\n\t  <constructor-arg name="xpath" value="//dataset/abstract/descendant::text()"/>\n\t  <constructor-arg name="delimiter" value=" "/>\n\t  <property name="multivalue" value="false"/>\n\t  <property name="dedupe" value="false"/>\n\t</bean>\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.abstract" class="org.dataone.cn.indexer.parser.MergeSolrField">
+	  <constructor-arg name="name" value="abstract"/>
+	  <constructor-arg name="xpath" value="//dataset/abstract/descendant::text()"/>
+	  <constructor-arg name="delimiter" value=" "/>
+	  <property name="multivalue" value="false"/>
+	  <property name="dedupe" value="false"/>
+	</bean>
+
+	
+
 
 
 eml.keywords
@@ -581,7 +590,15 @@ eml.keywords
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.keywords" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="keywords"/>\n\t\t<constructor-arg name="xpath" value="//dataset/keywordSet/keyword/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.keywords" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="keywords"/>
+		<constructor-arg name="xpath" value="//dataset/keywordSet/keyword/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+
+	
+
 
 
 eml.title
@@ -589,7 +606,14 @@ eml.title
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.title" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="title"/>\n\t\t<constructor-arg name="xpath" value="//dataset/title/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.title" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="title"/>
+		<constructor-arg name="xpath" value="//dataset/title/text()"/>
+		<property name="multivalue" value="false"/>
+	</bean>
+	
+	
+
 
 
 eml.project
@@ -597,7 +621,14 @@ eml.project
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.project" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="project"/>\n\t\t<constructor-arg name="xpath" value="//dataset/project/title/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t</bean>\t\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.project" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="project"/>
+		<constructor-arg name="xpath" value="//dataset/project/title/text()"/>
+		<property name="multivalue" value="false"/>
+	</bean>	
+
+	
+
 
 
 eml.southBoundCoord
@@ -605,7 +636,15 @@ eml.southBoundCoord
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.southBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="southBoundCoord"/>\n\t\t<constructor-arg name="xpath" value="//dataset/coverage/geographicCoverage/boundingCoordinates/southBoundingCoordinate/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t\t<property name="converter" ref="solrLatitudeConverter"/>\n\t</bean>\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.southBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="southBoundCoord"/>
+		<constructor-arg name="xpath" value="//dataset/coverage/geographicCoverage/boundingCoordinates/southBoundingCoordinate/text()"/>
+		<property name="multivalue" value="false"/>
+		<property name="converter" ref="solrLatitudeConverter"/>
+	</bean>
+
+	
+
 
 
 eml.northBoundCoord
@@ -613,7 +652,15 @@ eml.northBoundCoord
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.northBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="northBoundCoord"/>\n\t\t<constructor-arg name="xpath" value="//dataset/coverage/geographicCoverage/boundingCoordinates/northBoundingCoordinate/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t\t<property name="converter" ref="solrLatitudeConverter"/>\n\t</bean>\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.northBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="northBoundCoord"/>
+		<constructor-arg name="xpath" value="//dataset/coverage/geographicCoverage/boundingCoordinates/northBoundingCoordinate/text()"/>
+		<property name="multivalue" value="false"/>
+		<property name="converter" ref="solrLatitudeConverter"/>
+	</bean>
+
+	
+
 
 
 eml.westBoundCoord
@@ -621,7 +668,15 @@ eml.westBoundCoord
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.westBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="westBoundCoord"/>\n\t\t<constructor-arg name="xpath" value="//dataset/coverage/geographicCoverage/boundingCoordinates/westBoundingCoordinate/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t\t<property name="converter" ref="solrLongitudeConverter"/>\n\t</bean>\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.westBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="westBoundCoord"/>
+		<constructor-arg name="xpath" value="//dataset/coverage/geographicCoverage/boundingCoordinates/westBoundingCoordinate/text()"/>
+		<property name="multivalue" value="false"/>
+		<property name="converter" ref="solrLongitudeConverter"/>
+	</bean>
+
+	
+
 
 
 eml.eastBoundCoord
@@ -629,7 +684,15 @@ eml.eastBoundCoord
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.eastBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="eastBoundCoord"/>\n\t\t<constructor-arg name="xpath" value="//dataset/coverage/geographicCoverage/boundingCoordinates/eastBoundingCoordinate/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t\t<property name="converter" ref="solrLongitudeConverter"/>\n\t</bean>\n\t\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.eastBoundCoord" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="eastBoundCoord"/>
+		<constructor-arg name="xpath" value="//dataset/coverage/geographicCoverage/boundingCoordinates/eastBoundingCoordinate/text()"/>
+		<property name="multivalue" value="false"/>
+		<property name="converter" ref="solrLongitudeConverter"/>
+	</bean>
+		
+	
+
 
 
 eml.site
@@ -637,7 +700,14 @@ eml.site
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.site" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="site"/>\n\t\t<constructor-arg name="xpath" value="//dataset/coverage/geographicCoverage/geographicDescription/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.site" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="site"/>
+		<constructor-arg name="xpath" value="//dataset/coverage/geographicCoverage/geographicDescription/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+	
+	
+
 
 
 eml.beginDate
@@ -645,7 +715,15 @@ eml.beginDate
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.beginDate" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="beginDate"/>\n\t\t<constructor-arg name="xpath" value="//dataset/coverage/temporalCoverage/rangeOfDates/beginDate/calendarDate/text() | //dataset/coverage/temporalCoverage/singleDateTime/calendarDate/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t\t<property name="converter" ref="dateConverter"/>\n\t</bean>\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.beginDate" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="beginDate"/>
+		<constructor-arg name="xpath" value="//dataset/coverage/temporalCoverage/rangeOfDates/beginDate/calendarDate/text() | //dataset/coverage/temporalCoverage/singleDateTime/calendarDate/text()"/>
+		<property name="multivalue" value="false"/>
+		<property name="converter" ref="dateConverter"/>
+	</bean>
+
+	
+
 
 
 eml.endDate
@@ -653,7 +731,15 @@ eml.endDate
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.endDate" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="endDate"/>\n\t\t<constructor-arg name="xpath" value="//dataset/coverage/temporalCoverage/rangeOfDates/endDate/calendarDate/text() | //dataset/coverage/temporalCoverage/singleDateTime/calendarDate/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t\t<property name="converter" ref="dateConverter"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.endDate" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="endDate"/>
+		<constructor-arg name="xpath" value="//dataset/coverage/temporalCoverage/rangeOfDates/endDate/calendarDate/text() | //dataset/coverage/temporalCoverage/singleDateTime/calendarDate/text()"/>
+		<property name="multivalue" value="false"/>
+		<property name="converter" ref="dateConverter"/>
+	</bean>
+	
+	
+
 
 
 eml.pubDate
@@ -661,7 +747,15 @@ eml.pubDate
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.pubDate" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="pubDate"/>\n\t\t<constructor-arg name="xpath" value="//dataset/pubDate/text()"/>\n\t\t<property name="multivalue" value="false"/>\n\t\t<property name="converter" ref="dateConverter"/>\n\t</bean>\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.pubDate" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="pubDate"/>
+		<constructor-arg name="xpath" value="//dataset/pubDate/text()"/>
+		<property name="multivalue" value="false"/>
+		<property name="converter" ref="dateConverter"/>
+	</bean>
+
+	
+
 
 
 eml.author
@@ -669,7 +763,12 @@ eml.author
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.author" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="eml.authorNameRoot">\n\t\t\t<constructor-arg name="name" value="author"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.author" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="false" p:root-ref="eml.authorNameRoot">
+			<constructor-arg name="name" value="author"/>
+	</bean>
+	
+	
+
 
 
 eml.author_lname
@@ -677,7 +776,14 @@ eml.author_lname
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.author_lname" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="authorLastName"/>\n\t\t<constructor-arg name="xpath" value="//dataset/creator/individualName/surName/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.author_lname" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorLastName"/>
+		<constructor-arg name="xpath" value="//dataset/creator/individualName/surName/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+	
+	
+
 
 
 eml.authorGivenName
@@ -685,7 +791,13 @@ eml.authorGivenName
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.authorGivenName" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="authorGivenName"/>\n\t\t<constructor-arg name="xpath" value="//dataset/creator[1]/individualName[1]/givenName/text()"/>\n\t</bean>\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.authorGivenName" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorGivenName"/>
+		<constructor-arg name="xpath" value="//dataset/creator[1]/individualName[1]/givenName/text()"/>
+	</bean>
+
+	
+
 
 
 eml.authorSurName
@@ -693,7 +805,13 @@ eml.authorSurName
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.authorSurName" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="authorSurName"/>\n\t\t<constructor-arg name="xpath" value="//dataset/creator[1]/individualName[1]/surName/text()"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.authorSurName" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorSurName"/>
+		<constructor-arg name="xpath" value="//dataset/creator[1]/individualName[1]/surName/text()"/>
+	</bean>
+	
+	
+
 
 
 eml.authorGivenNameSort
@@ -701,7 +819,13 @@ eml.authorGivenNameSort
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.authorGivenNameSort" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="authorGivenNameSort"/>\n\t\t<constructor-arg name="xpath" value="//dataset/creator[1]/individualName[1]/givenName/text()"/>\n\t</bean>\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.authorGivenNameSort" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorGivenNameSort"/>
+		<constructor-arg name="xpath" value="//dataset/creator[1]/individualName[1]/givenName/text()"/>
+	</bean>
+
+	
+
 
 
 eml.authorSurNameSort
@@ -709,7 +833,13 @@ eml.authorSurNameSort
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.authorSurNameSort" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="authorSurNameSort"/>\n\t\t<constructor-arg name="xpath" value="//dataset/creator[1]/individualName[1]/surName/text()"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.authorSurNameSort" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorSurNameSort"/>
+		<constructor-arg name="xpath" value="//dataset/creator[1]/individualName[1]/surName/text()"/>
+	</bean>
+	
+	
+
 
 
 eml.investigator
@@ -717,7 +847,14 @@ eml.investigator
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.investigator" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="investigator"/>\n\t\t<constructor-arg name="xpath" value="//dataset/creator/individualName/surName/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.investigator" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="investigator"/>
+		<constructor-arg name="xpath" value="//dataset/creator/individualName/surName/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+	
+	
+
 
 
 eml.origin
@@ -725,7 +862,12 @@ eml.origin
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.origin" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.originRoot">\n\t\t<constructor-arg name="name" value="origin"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.origin" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.originRoot">
+		<constructor-arg name="name" value="origin"/>
+	</bean>
+	
+	
+
 
 
 eml.contactOrganization
@@ -733,7 +875,15 @@ eml.contactOrganization
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.contactOrganization" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="contactOrganization"/>\n\t\t<constructor-arg name="xpath" value="//dataset/creator/organizationName/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.contactOrganization" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="contactOrganization"/>
+		<constructor-arg name="xpath" value="//dataset/creator/organizationName/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+	
+	
+
 
 
 eml.genus
@@ -741,7 +891,15 @@ eml.genus
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.genus" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="genus"/>\n\t\t<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Genus&quot; or ../taxonRankName=&quot;genus&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.genus" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="genus"/>
+		<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Genus&quot; or ../taxonRankName=&quot;genus&quot;]/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+
+	
+
 
 
 eml.species
@@ -749,7 +907,15 @@ eml.species
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.species" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="species"/>\n\t\t<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Species&quot; or ../taxonRankName=&quot;species&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.species" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="species"/>
+		<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Species&quot; or ../taxonRankName=&quot;species&quot;]/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+
+	
+
 
 
 eml.kingdom
@@ -757,7 +923,15 @@ eml.kingdom
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.kingdom" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="kingdom"/>\n\t\t<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Kingdom&quot; or ../taxonRankName=&quot;kingdom&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.kingdom" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="kingdom"/>
+		<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Kingdom&quot; or ../taxonRankName=&quot;kingdom&quot;]/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+
+	
+
 
 
 eml.order
@@ -765,7 +939,15 @@ eml.order
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.order" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="order"/>\n\t\t<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Order&quot; or ../taxonRankName=&quot;order&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.order" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="order"/>
+		<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Order&quot; or ../taxonRankName=&quot;order&quot;]/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+
+	
+
 
 
 eml.phylum
@@ -773,7 +955,15 @@ eml.phylum
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.phylum" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="phylum"/>\n\t\t<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Phylum&quot; or ../taxonRankName=&quot;phylum&quot;]/text() | //taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Division&quot; or ../taxonRankName=&quot;division&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\t\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.phylum" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="phylum"/>
+		<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Phylum&quot; or ../taxonRankName=&quot;phylum&quot;]/text() | //taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Division&quot; or ../taxonRankName=&quot;division&quot;]/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+		
+	
+
 
 
 eml.family
@@ -781,7 +971,15 @@ eml.family
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.family" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="family"/>\n\t\t<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Family&quot; or ../taxonRankName=&quot;family&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.family" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="family"/>
+		<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Family&quot; or ../taxonRankName=&quot;family&quot;]/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+
+	
+
 
 
 eml.class
@@ -789,7 +987,16 @@ eml.class
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.class" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="class"/>\n\t\t<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Class&quot; or ../taxonRankName=&quot;class&quot;]/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="true"/>\n\t</bean>\n\t\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.class" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="class"/>
+		<constructor-arg name="xpath" value="//taxonomicClassification/taxonRankValue[../taxonRankName=&quot;Class&quot; or ../taxonRankName=&quot;class&quot;]/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="true"/>
+	</bean>
+	
+	
+	
+
 
 
 eml.scientificName
@@ -797,7 +1004,12 @@ eml.scientificName
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.scientificName" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.scientificNameRoot">\n\t\t\t<constructor-arg name="name" value="scientificName"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.scientificName" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.scientificNameRoot">
+			<constructor-arg name="name" value="scientificName"/>
+	</bean>
+	
+	
+
 
 
 eml.attributeName
@@ -805,7 +1017,15 @@ eml.attributeName
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.attributeName" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="attributeName"/>\n\t\t<constructor-arg name="xpath" value="//dataTable/attributeList/attribute/attributeName/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="false"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.attributeName" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="attributeName"/>
+		<constructor-arg name="xpath" value="//dataTable/attributeList/attribute/attributeName/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="false"/>
+	</bean>
+	
+	
+
 
 
 eml.attributeLabel
@@ -813,7 +1033,15 @@ eml.attributeLabel
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.attributeLabel" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="attributeLabel"/>\n\t\t<constructor-arg name="xpath" value="//dataTable/attributeList/attribute/attributeLabel/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="false"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.attributeLabel" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="attributeLabel"/>
+		<constructor-arg name="xpath" value="//dataTable/attributeList/attribute/attributeLabel/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="false"/>
+	</bean>
+	
+	
+
 
 
 eml.attributeDescription
@@ -821,7 +1049,15 @@ eml.attributeDescription
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.attributeDescription" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="attributeDescription"/>\n\t\t<constructor-arg name="xpath" value="//dataTable/attributeList/attribute/attributeDefinition/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="false"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.attributeDescription" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="attributeDescription"/>
+		<constructor-arg name="xpath" value="//dataTable/attributeList/attribute/attributeDefinition/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="false"/>
+	</bean>
+	
+	
+
 
 
 eml.attributeUnit
@@ -829,7 +1065,15 @@ eml.attributeUnit
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.attributeUnit" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="attributeUnit"/>\n\t\t<constructor-arg name="xpath" value="//dataTable//standardUnit/text() | //dataTable//customUnit/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t\t<property name="dedupe" value="false"/>\n\t</bean>\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.attributeUnit" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="attributeUnit"/>
+		<constructor-arg name="xpath" value="//dataTable//standardUnit/text() | //dataTable//customUnit/text()"/>
+		<property name="multivalue" value="true"/>
+		<property name="dedupe" value="false"/>
+	</bean>
+
+	
+
 
 
 eml.attributeText
@@ -837,7 +1081,12 @@ eml.attributeText
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.attributeText" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.attributeTextRoot">\n\t\t\t<constructor-arg name="name" value="attribute"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.attributeText" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.attributeTextRoot">
+			<constructor-arg name="name" value="attribute"/>
+	</bean>
+	
+	
+
 
 
 eml.fileID
@@ -845,7 +1094,12 @@ eml.fileID
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.fileID" class="org.dataone.cn.indexer.parser.ResolveSolrField">\n\t\t<constructor-arg name="name" value="fileID"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.fileID" class="org.dataone.cn.indexer.parser.ResolveSolrField">
+		<constructor-arg name="name" value="fileID"/>
+	</bean>
+	
+	
+
 
 
 eml.fullText
@@ -853,7 +1107,21 @@ eml.fullText
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.fullText" class="org.dataone.cn.indexer.parser.AggregateSolrField">\n\t\t<property name="name" value="text"/>\n\t\t<property name="solrFields">\n\t   \t\t<list>\n\t       \t\t<ref bean="eml.text"/>\n\t       \t\t<ref bean="eml.attributeName.noDupe"/>\n\t       \t\t<ref bean="eml.attributeLabel.noDupe"/>\n\t       \t\t<ref bean="eml.attributeDescription.noDupe"/>\n\t       \t\t<ref bean="eml.attributeUnit.noDupe"/>\n\t      \t</list>\n\t  \t</property>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.fullText" class="org.dataone.cn.indexer.parser.AggregateSolrField">
+		<property name="name" value="text"/>
+		<property name="solrFields">
+	   		<list>
+	       		<ref bean="eml.text"/>
+	       		<ref bean="eml.attributeName.noDupe"/>
+	       		<ref bean="eml.attributeLabel.noDupe"/>
+	       		<ref bean="eml.attributeDescription.noDupe"/>
+	       		<ref bean="eml.attributeUnit.noDupe"/>
+	      	</list>
+	  	</property>
+	</bean>
+	
+	
+
 
 
 eml.geohash1
@@ -861,7 +1129,13 @@ eml.geohash1
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash1" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_1"/>\n\t\t<property name="converter" ref="geohashConverter_1"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash1" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">
+		<constructor-arg name="name" value="geohash_1"/>
+		<property name="converter" ref="geohashConverter_1"/>
+	</bean>
+	
+	
+
 
 
 eml.geohash2
@@ -869,7 +1143,13 @@ eml.geohash2
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash2" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_2"/>\n\t\t<property name="converter" ref="geohashConverter_2"/>\n\t</bean>\n\t\n\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash2" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">
+		<constructor-arg name="name" value="geohash_2"/>
+		<property name="converter" ref="geohashConverter_2"/>
+	</bean>
+	
+		
+
 
 
 eml.geohash3
@@ -877,7 +1157,13 @@ eml.geohash3
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash3" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_3"/>\n\t\t<property name="converter" ref="geohashConverter_3"/>\n\t</bean>\n\t\n\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash3" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">
+		<constructor-arg name="name" value="geohash_3"/>
+		<property name="converter" ref="geohashConverter_3"/>
+	</bean>
+	
+		
+
 
 
 eml.geohash4
@@ -885,7 +1171,13 @@ eml.geohash4
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash4" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_4"/>\n\t\t<property name="converter" ref="geohashConverter_4"/>\n\t</bean>\n\t\n\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash4" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">
+		<constructor-arg name="name" value="geohash_4"/>
+		<property name="converter" ref="geohashConverter_4"/>
+	</bean>
+	
+		
+
 
 
 eml.geohash5
@@ -893,7 +1185,13 @@ eml.geohash5
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash5" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_5"/>\n\t\t<property name="converter" ref="geohashConverter_5"/>\n\t</bean>\n\t\n\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash5" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">
+		<constructor-arg name="name" value="geohash_5"/>
+		<property name="converter" ref="geohashConverter_5"/>
+	</bean>
+	
+		
+
 
 
 eml.geohash6
@@ -901,7 +1199,13 @@ eml.geohash6
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash6" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_6"/>\n\t\t<property name="converter" ref="geohashConverter_6"/>\n\t</bean>\n\t\n\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash6" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">
+		<constructor-arg name="name" value="geohash_6"/>
+		<property name="converter" ref="geohashConverter_6"/>
+	</bean>
+	
+		
+
 
 
 eml.geohash7
@@ -909,7 +1213,13 @@ eml.geohash7
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash7" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_7"/>\n\t\t<property name="converter" ref="geohashConverter_7"/>\n\t</bean>\n\t\n\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash7" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">
+		<constructor-arg name="name" value="geohash_7"/>
+		<property name="converter" ref="geohashConverter_7"/>
+	</bean>
+	
+		
+
 
 
 eml.geohash8
@@ -917,7 +1227,13 @@ eml.geohash8
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash8" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_8"/>\n\t\t<property name="converter" ref="geohashConverter_8"/>\n\t</bean>\n\t\n\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash8" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">
+		<constructor-arg name="name" value="geohash_8"/>
+		<property name="converter" ref="geohashConverter_8"/>
+	</bean>
+	
+		
+
 
 
 eml.geohash9
@@ -925,7 +1241,13 @@ eml.geohash9
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash9" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">\n\t\t<constructor-arg name="name" value="geohash_9"/>\n\t\t<property name="converter" ref="geohashConverter_9"/>\n\t</bean>\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.geohash9" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="eml.geohashRoot">
+		<constructor-arg name="name" value="geohash_9"/>
+		<property name="converter" ref="geohashConverter_9"/>
+	</bean>
+
+	
+
 
 
 eml.isService
@@ -933,7 +1255,13 @@ eml.isService
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.isService" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="isService"/>\n\t\t<constructor-arg name="xpath" value="boolean(//software/implementation/distribution/online/url)"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.isService" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="isService"/>
+		<constructor-arg name="xpath" value="boolean(//software/implementation/distribution/online/url)"/>
+	</bean>
+	
+	
+
 
 
 eml.serviceTitle
@@ -941,7 +1269,15 @@ eml.serviceTitle
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.serviceTitle" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="serviceTitle"/>\n\t\t<constructor-arg name="xpath" value="//software/title//text()[normalize-space()]"/>\n\t\t<property name="combineNodes" value="true"/>\n\t\t<property name="combineDelimiter" value=":"/>\n\t</bean>\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.serviceTitle" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="serviceTitle"/>
+		<constructor-arg name="xpath" value="//software/title//text()[normalize-space()]"/>
+		<property name="combineNodes" value="true"/>
+		<property name="combineDelimiter" value=":"/>
+	</bean>
+	
+	
+
 
 
 eml.serviceDescription
@@ -949,7 +1285,15 @@ eml.serviceDescription
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.serviceDescription" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="serviceDescription"/>\n\t\t<constructor-arg name="xpath" value="//software/abstract//text()[normalize-space()]"/>\n\t\t<property name="combineNodes" value="true"/>\n\t\t<property name="combineDelimiter" value=":"/>\n\t</bean>\t\n\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.serviceDescription" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="serviceDescription"/>
+		<constructor-arg name="xpath" value="//software/abstract//text()[normalize-space()]"/>
+		<property name="combineNodes" value="true"/>
+		<property name="combineDelimiter" value=":"/>
+	</bean>	
+
+	
+
 
 
 eml.serviceEndpoint
@@ -957,6 +1301,13 @@ eml.serviceEndpoint
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.serviceEndpoint" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t<constructor-arg name="name" value="serviceEndpoint"/>\n\t\t<constructor-arg name="xpath" value="//software/implementation/distribution/online/url/text()"/>\n\t\t<property name="multivalue" value="true"/>\n\t</bean>\t\n\t\n\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.serviceEndpoint" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="serviceEndpoint"/>
+		<constructor-arg name="xpath" value="//software/implementation/distribution/online/url/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>	
+	
+	
+
 
 

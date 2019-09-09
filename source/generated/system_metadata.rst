@@ -364,7 +364,12 @@ systemMetadata200Subprocessor.id
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="id"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/identifier/text()"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="id"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/identifier/text()"/>
+				</bean>
+				
+
 
 
 
@@ -373,7 +378,12 @@ systemMetadata200Subprocessor.seriesId
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="seriesId"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/seriesId/text()"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="seriesId"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/seriesId/text()"/>
+				</bean>
+				
+
 
 
 
@@ -382,7 +392,12 @@ systemMetadata200Subprocessor.fileName
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="fileName"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/fileName/text()"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="fileName"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/fileName/text()"/>
+				</bean>
+				
+
 
 
 
@@ -391,7 +406,12 @@ systemMetadata200Subprocessor.mediaType
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="mediaType"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/mediaType/@name"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="mediaType"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/mediaType/@name"/>
+				</bean>
+				
+
 
 
 
@@ -400,7 +420,11 @@ systemMetadata200Subprocessor.mediaTypeProperty
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="mediaTypePropertyListRoot">\n\t\t\t\t\t\t<constructor-arg name="name" value="mediaTypeProperty"/>\n\t\t\t\t</bean>\t\t\t\t\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.CommonRootSolrField" p:multivalue="true" p:root-ref="mediaTypePropertyListRoot">
+						<constructor-arg name="name" value="mediaTypeProperty"/>
+				</bean>				
+				
+
 
 
 
@@ -409,7 +433,12 @@ systemMetadata200Subprocessor.formatId
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="formatId"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/formatId/text()"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="formatId"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/formatId/text()"/>
+				</bean>
+				
+
 
 
 
@@ -418,7 +447,13 @@ systemMetadata200Subprocessor.formatType
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="formatType"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/formatId/text()"/>\n\t\t\t\t\t<property name="converter" ref="formatIdToFormatTypeConverter"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="formatType"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/formatId/text()"/>
+					<property name="converter" ref="formatIdToFormatTypeConverter"/>
+				</bean>
+				
+
 
 
 
@@ -427,7 +462,12 @@ systemMetadata200Subprocessor.size
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="size"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/size/text()"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="size"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/size/text()"/>
+				</bean>
+				
+
 
 
 
@@ -436,7 +476,12 @@ systemMetadata200Subprocessor.checksum
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="checksum"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/checksum/text()"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="checksum"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/checksum/text()"/>
+				</bean>
+				
+
 
 
 
@@ -445,7 +490,12 @@ systemMetadata200Subprocessor.submitter
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="submitter"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/submitter/text()"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="submitter"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/submitter/text()"/>
+				</bean>
+				
+
 
 
 
@@ -454,7 +504,12 @@ systemMetadata200Subprocessor.checksumAlgorithm
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="checksumAlgorithm"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/checksum/@algorithm"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="checksumAlgorithm"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/checksum/@algorithm"/>
+				</bean>
+				
+
 
 
 
@@ -463,7 +518,12 @@ systemMetadata200Subprocessor.rightsHolder
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="rightsHolder"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/rightsHolder/text()"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="rightsHolder"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/rightsHolder/text()"/>
+				</bean>
+				
+
 
 
 
@@ -472,7 +532,12 @@ systemMetadata200Subprocessor.replicationAllowed
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="replicationAllowed"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/replicationPolicy/@replicationAllowed"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="replicationAllowed"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/replicationPolicy/@replicationAllowed"/>
+				</bean>
+				
+
 
 
 
@@ -481,7 +546,12 @@ systemMetadata200Subprocessor.numberReplicas
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="numberReplicas"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/replicationPolicy/@numberReplicas"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="numberReplicas"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/replicationPolicy/@numberReplicas"/>
+				</bean>
+				
+
 
 
 
@@ -490,7 +560,13 @@ systemMetadata200Subprocessor.preferredReplicationMN
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="preferredReplicationMN"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/replicationPolicy/preferredMemberNode/text()"/>\n\t\t\t\t\t<property name="multivalue" value="true"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="preferredReplicationMN"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/replicationPolicy/preferredMemberNode/text()"/>
+					<property name="multivalue" value="true"/>
+				</bean>
+				
+
 
 
 
@@ -499,7 +575,13 @@ systemMetadata200Subprocessor.blockedReplicationMN
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="blockedReplicationMN"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/replicationPolicy/blockedMemberNode/text()"/>\n\t\t\t\t\t<property name="multivalue" value="true"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="blockedReplicationMN"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/replicationPolicy/blockedMemberNode/text()"/>
+					<property name="multivalue" value="true"/>
+				</bean>
+				
+
 
 
 
@@ -508,7 +590,12 @@ systemMetadata200Subprocessor.obsoletes
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="obsoletes"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/obsoletes/text()"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="obsoletes"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/obsoletes/text()"/>
+				</bean>
+				
+
 
 
 
@@ -517,7 +604,12 @@ systemMetadata200Subprocessor.obsoletedBy
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="obsoletedBy"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/obsoletedBy/text()"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="obsoletedBy"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/obsoletedBy/text()"/>
+				</bean>
+				
+
 
 
 
@@ -526,7 +618,13 @@ systemMetadata200Subprocessor.dateUploaded
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="dateUploaded"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/dateUploaded/text()"/>\n\t\t\t\t\t<property name="converter" ref="dateConverter"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="dateUploaded"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/dateUploaded/text()"/>
+					<property name="converter" ref="dateConverter"/>
+				</bean>
+				
+
 
 
 
@@ -535,7 +633,13 @@ systemMetadata200Subprocessor.dateModified
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="dateModified"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/dateSysMetadataModified/text()"/>\n\t\t\t\t\t<property name="converter" ref="dateConverter"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="dateModified"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/dateSysMetadataModified/text()"/>
+					<property name="converter" ref="dateConverter"/>
+				</bean>
+				
+
 
 
 
@@ -544,7 +648,12 @@ systemMetadata200Subprocessor.datasource
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="datasource"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/originMemberNode/text()"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="datasource"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/originMemberNode/text()"/>
+				</bean>
+				
+
 
 
 
@@ -553,7 +662,12 @@ systemMetadata200Subprocessor.authoritativeMN
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="authoritativeMN"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/authoritativeMemberNode/text()"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="authoritativeMN"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/authoritativeMemberNode/text()"/>
+				</bean>
+				
+
 
 
 
@@ -562,7 +676,13 @@ systemMetadata200Subprocessor.replicaMN
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="replicaMN"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/replica/replicaMemberNode/text()"/>\n\t\t\t\t\t<property name="multivalue" value="true"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="replicaMN"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/replica/replicaMemberNode/text()"/>
+					<property name="multivalue" value="true"/>
+				</bean>
+				
+
 
 
 
@@ -571,7 +691,13 @@ systemMetadata200Subprocessor.replicationStatus
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n                    <constructor-arg name="name" value="replicationStatus"/>\n                    <constructor-arg name="xpath" value="/d200:systemMetadata/replica/replicationStatus/text()"/>\n                    <property name="multivalue" value="true"/>\n                </bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+                    <constructor-arg name="name" value="replicationStatus"/>
+                    <constructor-arg name="xpath" value="/d200:systemMetadata/replica/replicationStatus/text()"/>
+                    <property name="multivalue" value="true"/>
+                </bean>
+				
+
 
 
 
@@ -580,7 +706,14 @@ systemMetadata200Subprocessor.replicaVerifiedDate
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="replicaVerifiedDate"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/replica/replicaVerified/text()"/>\n\t\t\t\t\t<property name="multivalue" value="true"/>\n\t\t\t\t\t<property name="converter" ref="dateConverter"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="replicaVerifiedDate"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/replica/replicaVerified/text()"/>
+					<property name="multivalue" value="true"/>
+					<property name="converter" ref="dateConverter"/>
+				</bean>
+				
+
 
 
 
@@ -589,7 +722,14 @@ systemMetadata200Subprocessor.readPermission
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="readPermission"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/accessPolicy/allow[permission= \'read\']/subject/text()"/>\n\t\t\t\t\t<property name="multivalue" value="true"/>\n\t\t\t\t\t<property name="dedupe" value="true"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="readPermission"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/accessPolicy/allow[permission= 'read']/subject/text()"/>
+					<property name="multivalue" value="true"/>
+					<property name="dedupe" value="true"/>
+				</bean>
+				
+
 
 
 
@@ -598,7 +738,14 @@ systemMetadata200Subprocessor.writePermission
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="writePermission"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/accessPolicy/allow[permission= \'write\']/subject/text()"/>\n\t\t\t\t\t<property name="multivalue" value="true"/>\n\t\t\t\t\t<property name="dedupe" value="true"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="writePermission"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/accessPolicy/allow[permission= 'write']/subject/text()"/>
+					<property name="multivalue" value="true"/>
+					<property name="dedupe" value="true"/>
+				</bean>
+				
+
 
 
 
@@ -607,7 +754,14 @@ systemMetadata200Subprocessor.changePermission
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="changePermission"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="/d200:systemMetadata/accessPolicy/allow[permission= \'changePermission\']/subject/text()"/>\n\t\t\t\t\t<property name="multivalue" value="true"/>\n\t\t\t\t\t<property name="dedupe" value="true"/>\n\t\t\t\t</bean>\n\t\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="changePermission"/>
+					<constructor-arg name="xpath" value="/d200:systemMetadata/accessPolicy/allow[permission= 'changePermission']/subject/text()"/>
+					<property name="multivalue" value="true"/>
+					<property name="dedupe" value="true"/>
+				</bean>
+				
+
 
 
 
@@ -616,7 +770,13 @@ systemMetadata200Subprocessor.isPublic
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">\n\t\t\t\t\t<constructor-arg name="name" value="isPublic"/>\n\t\t\t\t\t<constructor-arg name="xpath" value="(//accessPolicy/allow[permission= \'read\']/subject[text()=\'public\']/text() | //accessPolicy/allow[permission= \'write\']/subject[text()=\'public\']/text() | //accessPolicy/allow[permission= \'changePermission\']/subject[text()=\'public\']/text() | //rightsHolder[text()=\'public\']/text())[1]"/>\n\t\t\t\t\t<property name="converter" ref="booleanPublicConverter"/>\n\t\t\t\t</bean>\n\t\t        \n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.SolrField">
+					<constructor-arg name="name" value="isPublic"/>
+					<constructor-arg name="xpath" value="(//accessPolicy/allow[permission= 'read']/subject[text()='public']/text() | //accessPolicy/allow[permission= 'write']/subject[text()='public']/text() | //accessPolicy/allow[permission= 'changePermission']/subject[text()='public']/text() | //rightsHolder[text()='public']/text())[1]"/>
+					<property name="converter" ref="booleanPublicConverter"/>
+				</bean>
+		        
+
 
 
 
@@ -625,7 +785,11 @@ systemMetadata200Subprocessor.fileID
 
 .. code-block:: xml
 
-   b'<bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.ResolveSolrField">\n\t\t\t\t\t<constructor-arg name="name" value="dataUrl"/>\n\t\t        </bean>\n\t\t\t\n'
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="org.dataone.cn.indexer.parser.ResolveSolrField">
+					<constructor-arg name="name" value="dataUrl"/>
+		        </bean>
+			
+
 
 
 
