@@ -170,7 +170,7 @@ class B_Bean(object):
     '''
     self.p['cname'] = getAttrib(ele, "class", '')
     self.p['bid'] = getAttrib(ele, "id", '')
-    self.p['xml'] = etree.tostring(ele, pretty_print=True)
+    self.p['xml'] = etree.tostring(ele, pretty_print=True).decode()
 
 
   def __repr__(self):
@@ -182,7 +182,7 @@ class B_Bean(object):
 
 
   def toText(self, resolver=None, indent=0):
-    return repr(self)
+    return str(self)
 
 
 #--
