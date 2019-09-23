@@ -6,12 +6,18 @@
 DataONE Content Indexer Documentation
 =====================================
 
-.. Note::
+These documents are generated from the configuration information contained in the projects
+``dataone-cn-solr`` amd ``d1_cn_index_processor`` which provide configuration for the solr
+index and metadata parsers respectively.
 
-   This documentation is under active development. Current release
-   documentation for indexing is available in the `Architecture Documentation`_.
+================================ =============================
+Date Generated                   |today|
+Document Version                 |release|
+dataone-cn-solr version          DATAONE-CN-SOLR_v2.3.5
+d1_cn_index_processor version    D1_CN_INDEX_PROCESSOR_v2.3.11
+================================ =============================
 
-Index Configuration:
+**Index Configuration**
 
 .. toctree::
    :maxdepth: 1
@@ -20,7 +26,7 @@ Index Configuration:
    generated/solr_schema
    generated/namespaces
 
-Index Processors:
+**Index Processors**
 
 .. toctree::
    :maxdepth: 1
@@ -30,8 +36,7 @@ Index Processors:
    generated/proc_*
 
 
-Indices and tables
-==================
+**Indices and tables**
 
 * :ref:`genindex`
 * :ref:`modindex`
