@@ -60,7 +60,7 @@ initialize:
 generate:
 	svn up d1_cn_index_processor
 	svn up dataone-cn-solr
-	python idxprocdoc.py -s d1_cn_index_processor/src/main/resources -d source/generated/
+	python idxprocdoc.py -s d1_cn_index_processor/src/main/resources -d source/generated/ -b "https://cn-stage.test.dataone.org/cn/v2/formats"
 
 .PHONY: html
 html:

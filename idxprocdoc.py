@@ -911,6 +911,9 @@ def main():
   parser.add_argument('-pf', '--subprocdescr',
                       default="subprocessor_descriptions.yaml",
                       help="YAML file of subprocessor descriptions")
+  parser.add_argument('-b', '--formatsurl',
+                      default="https://cn.dataone.org/cn/v2/formats/",
+                      help="Location to retrieve format list")
 
 
   args = parser.parse_args()
@@ -921,7 +924,7 @@ def main():
                       format="%(asctime)s %(levelname)s %(message)s")
   loadIndexFieldDescriptions(args.solrdescr)
   loadSubprocessorDescriptions(args.subprocdescr)
-  loadFormatIds()
+  loadFormatIds(args.formatsurl)
   beans = IndexProcessorDocuments()
   beans.loadContext( args.source )
 
