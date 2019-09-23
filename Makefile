@@ -7,8 +7,11 @@ SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = build
-SOURCES       = https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor
-DESCRIPTIONS  = https://repository.dataone.org/software/cicore/trunk/cn-buildout/dataone-cn-solr
+REPOSITORY    = https://repository.dataone.org/software/cicore
+INDEX_PROCESSOR_VERSION = tags/D1_CN_INDEX_PROCESSOR_v2.3.11
+CN_SOLR_VERSION = tags/DATAONE-CN-SOLR_v2.3.5
+SOURCES       = $(REPOSITORY)/$(INDEX_PROCESSOR_VERSION)
+DESCRIPTIONS  = $(REPOSITORY)/$(CN_SOLR_VERSION)
 
 # User-friendly check for sphinx-build
 ifeq ($(shell which $(SPHINXBUILD) >/dev/null 2>&1; echo $$?), 1)
@@ -44,8 +47,9 @@ clean:
 distclean:
 	rm -rf $(BUILDDIR)/*
 	rm -rf d1_cn_index_processor
+	rm -rf dataone-cn-solr
 	rm -rf source/generated
-	rm *.pyc
+	rm -f *.pyc
 
 .PHONY: initialize
 initialize:
