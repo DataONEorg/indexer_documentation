@@ -1,5 +1,5 @@
-dublinCoreOAISubprocessor
-=========================
+Dublin Core OAI Subprocessor
+============================
 
 Describes parser configuration for: dublinCoreOAISubprocessor
 

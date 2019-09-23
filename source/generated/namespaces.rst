@@ -19,6 +19,8 @@ A compilation of XML namespaces and their abbrievations used by the Index Parser
       - eml://ecoinformatics.org/eml-2.1.0
     * - eml211
       - eml://ecoinformatics.org/eml-2.1.1
+    * - eml220
+      - https://eml.ecoinformatics.org/eml-2.2.0
     * - cito
       - http://purl.org/spar/cito/
     * - dc

@@ -64,7 +64,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
 
   * - :attr:`Index.project`
-    - False
+    - True
     - False
     - ::
 
@@ -624,7 +624,7 @@ eml.project
    <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.project" class="org.dataone.cn.indexer.parser.SolrField">
 		<constructor-arg name="name" value="project"/>
 		<constructor-arg name="xpath" value="//dataset/project/title/text()"/>
-		<property name="multivalue" value="false"/>
+		<property name="multivalue" value="true"/>
 	</bean>	
 
 	

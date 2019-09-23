@@ -1,4 +1,4 @@
-isotc211PangaeaSubprocessor
+ISO TC-211, PANGAEA Variant
 ===========================
 
 Describes parser configuration for: isotc211PangaeaSubprocessor

@@ -1,7 +1,7 @@
-Ecological Markup Language, v2.0.0
+Ecological Markup Language, v2.2.0
 ==================================
 
-Describes parser configuration for: eml200Subprocessor
+Describes parser configuration for: eml220Subprocessor
 
 Format IDs Processed
 --------------------
@@ -9,8 +9,8 @@ Format IDs Processed
 This parser processes the following DataONE format IDs:
 
 
-  * | Ecological Metadata Language, version 2.0.0
-    | formatId: ``eml://ecoinformatics.org/eml-2.0.0``
+  * | Ecological Metadata Language, version 2.2.0
+    | formatId: ``https://eml.ecoinformatics.org/eml-2.2.0``
 
 
 A full list of DataONE format IDs can be found at https://cn.dataone.org/cn/v2/formats/
@@ -72,6 +72,61 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.project`_
+
+
+  * - :attr:`Index.funding`
+    - True
+    - False
+    - ::
+
+        //dataset/project/funding/descendant::text()
+
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.funding`_
+
+
+  * - :attr:`Index.funderName`
+    - True
+    - False
+    - ::
+
+        //dataset/project/award/funderName/text()
+
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.funderName`_
+
+
+  * - :attr:`Index.funderIdentifier`
+    - True
+    - False
+    - ::
+
+        //dataset/project/award/funderIdentifier/text()
+
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.funderIdentifier`_
+
+
+  * - :attr:`Index.awardNumber`
+    - True
+    - False
+    - ::
+
+        //dataset/project/award/awardNumber/text()
+
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.awardNumber`_
+
+
+  * - :attr:`Index.awardTitle`
+    - True
+    - False
+    - ::
+
+        //dataset/project/award/title/text()
+
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.awardTitle`_
 
 
   * - :attr:`Index.southBoundCoord`
@@ -186,17 +241,6 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `eml.author`_
 
 
-  * - :attr:`Index.authorLastName`
-    - True
-    - False
-    - ::
-
-        //dataset/creator/individualName/surName/text()
-
-      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
-      | Configuration: `eml.author_lname`_
-
-
   * - :attr:`Index.authorGivenName`
     - False
     - False
@@ -239,6 +283,17 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.authorSurNameSort`_
+
+
+  * - :attr:`Index.authorLastName`
+    - True
+    - False
+    - ::
+
+        //dataset/creator/individualName/surName/text()
+
+      | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
+      | Configuration: `eml.author_lname`_
 
 
   * - :attr:`Index.investigator`
@@ -631,6 +686,82 @@ eml.project
 
 
 
+eml.funding
+~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.funding" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="funding"/>
+		<constructor-arg name="xpath" value="//dataset/project/funding/descendant::text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+	
+	
+
+
+
+eml.funderName
+~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.funderName" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="funderName"/>
+		<constructor-arg name="xpath" value="//dataset/project/award/funderName/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+	
+	
+
+
+
+eml.funderIdentifier
+~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.funderIdentifier" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="funderIdentifier"/>
+		<constructor-arg name="xpath" value="//dataset/project/award/funderIdentifier/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+	
+	
+
+
+
+eml.awardNumber
+~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.awardNumber" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="awardNumber"/>
+		<constructor-arg name="xpath" value="//dataset/project/award/awardNumber/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+	
+	
+
+
+
+eml.awardTitle
+~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.awardTitle" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="awardTitle"/>
+		<constructor-arg name="xpath" value="//dataset/project/award/title/text()"/>
+		<property name="multivalue" value="true"/>
+	</bean>
+
+	
+	
+
+
+
 eml.southBoundCoord
 ~~~~~~~~~~~~~~~~~~~
 
@@ -771,21 +902,6 @@ eml.author
 
 
 
-eml.author_lname
-~~~~~~~~~~~~~~~~
-
-.. code-block:: xml
-
-   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.author_lname" class="org.dataone.cn.indexer.parser.SolrField">
-		<constructor-arg name="name" value="authorLastName"/>
-		<constructor-arg name="xpath" value="//dataset/creator/individualName/surName/text()"/>
-		<property name="multivalue" value="true"/>
-	</bean>
-	
-	
-
-
-
 eml.authorGivenName
 ~~~~~~~~~~~~~~~~~~~
 
@@ -836,6 +952,21 @@ eml.authorSurNameSort
    <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.authorSurNameSort" class="org.dataone.cn.indexer.parser.SolrField">
 		<constructor-arg name="name" value="authorSurNameSort"/>
 		<constructor-arg name="xpath" value="//dataset/creator[1]/individualName[1]/surName/text()"/>
+	</bean>
+	
+	
+
+
+
+eml.author_lname
+~~~~~~~~~~~~~~~~
+
+.. code-block:: xml
+
+   <bean xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="eml.author_lname" class="org.dataone.cn.indexer.parser.SolrField">
+		<constructor-arg name="name" value="authorLastName"/>
+		<constructor-arg name="xpath" value="//dataset/creator/individualName/surName/text()"/>
+		<property name="multivalue" value="true"/>
 	</bean>
 	
 	

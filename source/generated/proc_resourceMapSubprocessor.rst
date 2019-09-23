@@ -1,5 +1,5 @@
-resourceMapSubprocessor
-=======================
+OAI-ORE processor
+=================
 
 Describes parser configuration for: resourceMapSubprocessor
 

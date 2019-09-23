@@ -135,6 +135,30 @@ Static Fields
      - True
      - The sur name of the primary author/PI case normalized for sorting. 
 
+   * - .. attribute:: awardNumber
+     - string
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: awardNumber
+     - string
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: awardTitle
+     - string
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: awardTitle
+     - string
+     - True
+     - True
+     - True
+     - 
    * - .. attribute:: beginDate
      - tdate
      - False
@@ -296,6 +320,54 @@ Static Fields
      - True
      - The format type of the record - DATA, METADATA, RESOURCE.
 
+   * - .. attribute:: funderIdentifier
+     - string
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: funderIdentifier
+     - string
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: funderName
+     - string
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: funderName
+     - string
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: funding
+     - string
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: funding
+     - string
+     - True
+     - True
+     - True
+     - 
+   * - .. attribute:: fundingText
+     - text_general
+     - True
+     - False
+     - True
+     - 
+   * - .. attribute:: fundingText
+     - text_general
+     - True
+     - False
+     - True
+     - 
    * - .. attribute:: gcmdKeyword
      - text_general
      - True
