@@ -391,7 +391,7 @@ class B_BaseXPathDocumentSubprocessor( B_Bean ):
     fields = ele.xpath("b:property[@name='fieldList']/b:list/b:bean", namespaces=NAMESPACES)
     for field in fields:
       res = container.beanLoaderFactory(field)
-      self._L.info("BID = %s", str(res.p['bid']))
+      self._L.debug("BID = %s", str(res.p['bid']))
       self.p['fieldList'].append(res.p['bid'])
 
 
@@ -436,6 +436,17 @@ class B_ScienceMetadataDocumentSubprocessor(B_Bean):
     fields = ele.xpath("b:property[@name='fieldList']/b:list/b:ref", namespaces=NAMESPACES)
     for field in fields:
       self.p['fields'].append(field.attrib['bean'])
+    # Fields defined directly in subprocessor config
+    beans = ele.xpath("b:property[@name='fieldList']/b:list/b:bean", namespaces=NAMESPACES)
+    counter = 0
+    for bean in beans:
+      bid = bean.attrib.get("id", f"{self.p['bid']}.bean{counter}")
+      bean.attrib["id"] = bid
+      # bean is defined in the subprocessor, need to add it to the list of beans
+      logging.info("Loading bean: %s", str(bean))
+      instance = container.beanLoaderFactory(bean)
+      self.p['fields'].append(bid)
+      counter += 1
 
 
   def toText(self, resolver=None, indent=0):
@@ -531,9 +542,6 @@ class B_SparqlField(B_Bean):
       if len(pele) > 0:
         self.p['bid'] = "{0}.{1}".format(pele[0].attrib['id'], self.p['field_name'][0])
 
-
-
-
 #--
 class B_RdfXmlSubprocessor(B_ScienceMetadataDocumentSubprocessor):
   pass
@@ -541,6 +549,11 @@ class B_RdfXmlSubprocessor(B_ScienceMetadataDocumentSubprocessor):
 #    super(B_RdfXmlSubprocessor, self).__init__()
 #    self.p['matchDocuments'] = []
 #    self.p['fields'] = []
+
+
+#--
+class B_EmlAnnotationSubprocessor(B_ScienceMetadataDocumentSubprocessor):
+  pass
 
 
 
@@ -599,6 +612,15 @@ class B_MemberNodeServiceRegistrationTypeDocumentService(B_Bean):
   pass
 
 
+#--
+class B_OntologyModelService(B_Bean):
+  pass
+
+
+#--
+class B_HashMap(B_Bean):
+  pass
+
 #=======================================================================================================================
 
 class IndexProcessorDocument(object):
@@ -632,13 +654,15 @@ class IndexProcessorDocuments(object):
     for bean in self.beans:
       if bean.p['cname'] == class_name:
         res.append(bean)
+      else:
+        self._L.debug("No bean for class name: %s", class_name)
     return res
 
 
   def beanLoaderFactory(self, bean):
     cname = bean.attrib["class"]
     class_name = "B_{0}".format(cname.split(".")[-1])
-    logging.info("Loading: %s", class_name)
+    self._L.debug("Loading: %s", class_name)
     try:
       instance = globals()[class_name]()
       instance.load(bean, self)
@@ -647,7 +671,7 @@ class IndexProcessorDocuments(object):
     except KeyError as e:
       pass
 
-    logging.error("Unknown class name: %s", class_name)
+    self._L.error("Unknown class name: %s", class_name)
     raise ValueError("No handler for class: {0}".format(cname))
     return None
 
@@ -675,6 +699,7 @@ class IndexProcessorDocuments(object):
     for document in documents:
       fname = os.path.basename(document.attrib['resource'])
       if not fname.startswith("classpath:"):
+        self._L.info("Loading bean: %s", fname)
         self.load( os.path.join(context_path, fname))
 
 
@@ -694,11 +719,13 @@ class IndexProcessorDocuments(object):
     documents = parser_context.xpath("//b:bean[@id='solrIndexService']", namespaces=NAMESPACES)
     for document in documents:
       doc_parser = self.beanLoaderFactory( document )
+      #print(f"*** {doc_parser}")
       self.parsers.append(doc_parser)
     #now the namespaces
     documents = parser_context.xpath("//b:bean[@id='xmlNamespaceConfig']", namespaces=NAMESPACES)
     for document in documents:
       nsc = self.beanLoaderFactory( document )
+      #print(f"**** {nsc}")
       self.beans.append( nsc )
 
 
@@ -747,7 +774,7 @@ class IndexProcessorDocuments(object):
 
 
   def j_getConverterInfo(self, bid):
-    print("looking up converter: %s" % bid)
+    self._L.debug("looking up converter: %s" % bid)
     bean = self.getBean(bid)
     if bean is None:
       return ''
@@ -830,9 +857,10 @@ class IndexProcessorDocuments(object):
     fn_dest = os.path.join(dest_folder, t_name)
     with codecs.open( fn_dest, mode='wb', encoding='utf-8') as f_dest:
       parsers = self.getClassInstances('org.dataone.cn.indexer.parser.ScienceMetadataDocumentSubprocessor')
+    print(f"NUM PARSERS = {len(self.parsers)}")
     for parser in self.parsers:
       sysm_proc = self.getBean(parser.p['systemMetadataProcessor'])
-      print(sysm_proc)
+      #rint(sysm_proc)
       fields = {}
       for field in sysm_proc.p['fieldList']:
         fields[field] = self.getBean(field)
@@ -840,9 +868,10 @@ class IndexProcessorDocuments(object):
       with codecs.open(dest, mode='wb', encoding='utf-8') as f_dest:
         f_dest.write(templates['system_metadata.rst']['template'].render(resolver=self, sp=sysm_proc, fields=fields))
       for subproc in parser.p['subprocessors']:
+        logging.info("Generating text for subprocessor: %s", subproc)
         subproc_instance = self.getBean(subproc)
+        fields = {}
         if 'fields' in subproc_instance.p:
-          fields = {}
           for field in subproc_instance.p['fields']:
             fields[field] = self.getBean(field)
           dest = os.path.join(dest_folder, "proc_" + subproc + ".rst")
