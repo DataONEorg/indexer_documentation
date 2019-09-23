@@ -1,209 +1,150 @@
-###
-# This YAML file is used to add descriptions to the solr fields in the indexer_documentation
-# Fields are alphabetically sorted when rendered in the documentation.
-# When editing, please be sure that correct YAML syntax is used.
-# After editing, it is necessary to regenerate sources, for example::
-#   make generate html
-###
-LTERSite: Data provider organization  identifier, for sources within the LTER network.
-abstract: The full text of the abstract as provided in the science metadata document.
-attribute:
-attributeDescription:
-attributeLabel:
-attributeName:
-attributeUnit:
-author: Principle Investigator (PI) / Author as listed in the metadata document.
-authorGivenName:
-authorGivenNameSort:
-authorLastName: The LAST name(s) of the author(s)
-authorSurName:
-authorSurNameSort:
-authoritativeMN: The node Id of the authoritative Member Node for the object.
-beginDate: The starting date of the temporal range of the content described by the
-  metadata document.
-blockedReplicationMN: A multi-valued field that contains the node Ids of member nodes
-  that are blocked from holding replicas of this object.
-changePermission: List of subjects (groups and individuals) that have change permission
-  on PID.
-checksum: The checksum for the object
-checksumAlgorithm: Algorithm used for generating the object checksum
-class: Taxonomic class name(s)
-contactOrganization: Name of the organization to contact for more information about
-  the dataset
-contactOrganizationText: Copy from :attr:`~Index.contactOrganization`
-dataUrl: The URL that can be used to resolve the location of the object given its
-  PID.
-datasource: The node Id of the member node that originally contributed the content.
-datePublished:
-dateModified: The date and time when the object system metadata was last updated.
-dateUploaded: The date and time when the object was uploaded to the Member Node.
-decade: The latest decade that is covered by the dataset, expressed in the form "1999-2009"
-documents: Lists all PIDs that this object describes. Obtained by parsing all resource
-  maps in which this object is referenced. Not set for data or resource map objects.
-eastBoundCoord: Eastern most longitude of the spatial extent, in decimal degrees,
-  WGS84
-edition: The version or edition number of the item described.
-endDate: The ending date of the temporal range of the content described by the metadata
-  document.
-family: Taxonomic family name(s)
-fileID: Contains the :func:`CNRead.resolve` URL for the object ONLY if the object
-  is a science metadata object.
-fileName:
-formatId: The format identifier indicating the type of content this record refers
-  to.
-formatType:
-fullText: Full text of the metadata record, used to support full text searches
-gcmdKeyword: Keywords drawn from the GCMD controlled vocabulary
-genus: Taxonomic genus name(s)
-geoform: The name of the general form in which the item's geospatial data is presented
-geohash_1: An encoded string that represents the geographic coordinates of the centroid
-  of a spatial extent. This can be used for searching and plotting.
-geohash_2: An encoded string that represents the geographic coordinates of the centroid
-  of a spatial extent. This can be used for searching and plotting.
-geohash_3: An encoded string that represents the geographic coordinates of the centroid
-  of a spatial extent. This can be used for searching and plotting.
-geohash_4: An encoded string that represents the geographic coordinates of the centroid
-  of a spatial extent. This can be used for searching and plotting.
-geohash_5: An encoded string that represents the geographic coordinates of the centroid
-  of a spatial extent. This can be used for searching and plotting.
-geohash_6: An encoded string that represents the geographic coordinates of the centroid
-  of a spatial extent. This can be used for searching and plotting.
-geohash_7: An encoded string that represents the geographic coordinates of the centroid
-  of a spatial extent. This can be used for searching and plotting.
-geohash_8: An encoded string that represents the geographic coordinates of the centroid
-  of a spatial extent. This can be used for searching and plotting.
-geohash_9: An encoded string that represents the geographic coordinates of the centroid
-  of a spatial extent. This can be used for searching and plotting.
-id: The identifier of the object being indexed.
-identifier: Copy from :attr:`~Index.id`
-investigator: Name of the investigator(s) responsible for developing the dataset and
-  associated content.
-investigatorText: Copy from :attr:`~Index.investigator`
-isDocumentedBy: Lists all PIDs that describe this object. Obtained by parsing all
-  resource maps in which this object is referenced.
-isPublic: Set to True if the DataONE :term:`public user` is present in the list of
-  subjects with readPermission on PID.
-isService: Boolean indicating whether the document holds a service description.
-isSpatial: Set to "Y" for records that contain spatial information
-keyConcept: Terms drawn from a controlled vocabulary of concepts that are applicable
-  to the content described by the metadata document.
-keywords: Keywords recorded in the science metadata document. These may be controlled
-  by the generator of the metadata or by the metadata standard of the document, but
-  are effectively uncontrolled within the  DataONE context.
-keywordsText: Copy from :attr:`~Index.keywords`
-kingdom: Taxonomic kingdom(s)
-mediaType:
-mediaTypeProperty:
-namedLocation: The name of the location(s) relevant to the content described by the
-  metadata document.
-noBoundingBox: Set to "Y" if there is no bounding box information available (i.e.,
-  the east, west, north, south most coordinates)
-northBoundCoord: Northern most latitude of the spatial extent, in decimal degrees,
-  WGS84
-numberReplicas: Requested number of replicas for the object
-obsoletedBy:
-obsoletes: If set, indicates the object that this record obsoletes.
-ogcUrl: URL for Open Geospatial Web service if available.
-order: Taxonomic order name(s)
-origin: Investigator or Investigator organization name.
-originText: Copy from :attr:`~Index.origin`
-originator: Investigator or Investigator organization name. Derived by normalizing
-  origin.
-originatorText: Copy from :attr:`~Index.originator`
-parameter: A characteristic, or variable, that is measured or derived as part of data-collection
-  activities.
-parameterText: Copy from :attr:`~Index.parameter`
-phylum: Taxonomic phylum (or division) name(s)
-placeKey: A place name keyword, assigned by the metadata creator. It is one keyword
-  from the thesaurus named in <placekt>
-preferredReplicationMN: A list of member node identifiers that are preferred replication
-  targets for this object.
-presentationCat: Type of data being preserved (maps, text, etc.)
-project: The authorized name of a research effort for which data is collected. This
-  name is often reduced to a convenient abbreviation or acronym. All investigators
-  involved in a project should use a common, agreed-upon name.
-projectText: Copy from :attr:`~Index.project`
-prov_generated:
-prov_generatedByExecution:
-prov_generatedByProgram:
-prov_generatedByUser:
-prov_hasDerivations:
-prov_hasSources:
-prov_instanceOfClass:
-prov_used:
-prov_usedByExecution:
-prov_usedByProgram:
-prov_usedByUser:
-prov_wasDerivedFrom:
-prov_wasExecutedByExecution:
-prov_wasExecutedByUser:
-prov_wasInformedBy:
-pubDate: Publication date for the dataset (this may or may not be coincident with
-  when the content is added to DataONE).
-purpose: The "Purpose" describes the "why" aspects of the data set (For example, why
-  was the data set created?).
-readPermission: List of subjects (groups and individuals) that have read permission
-  on PID.
-relatedOrganizations: Organizations that played an indirect role in the development
-  of the data set and metadata that should be cited or mentioned as contributing to
-  the development of the data or metadata.
-replicaMN: One or more node Ids holding copies of the object.
-replicationAllowed: True if this object can be replicated.
-replicaVerifiedDate:
-resourceMap: List of resource map PIDs that reference this PID.
-rightsHolder: The :term:`Subject` that acts as the rights holder for the object.
-scientificName: Taxonomic scientific name(s) at the most precise level available for
-  the organisms of relevance to the dataset
-sem_annotated_by:
-sem_annotates:
-sem_annotation:
-sem_comment:
-sensor: Also called "instrument." A device that is used for collecting data for a
-  data set.
-sensorText: Copy from :attr:`~Index.sensor`
-seriesId:
-serviceCoupling: Whether the service is 'tightly' coupled to a set of data, or is a
-  general ('loosely' coupled) service. Values include "false", "tight", "loose".
-serviceDescription: Human readable description of the service.
-serviceEndpoint: A URL that indicates where to access the service.
-serviceInput: May refer to either an identifier of valid data for the service, or may be an input format.
-serviceOutput: The output format for the service
-serviceTitle: Human readable title for the service.
-serviceType: "The type of service being described (ex: WMS, HTTP, FTP). Ideally this should
-  be a controlled vocabulary, however the standard imposes no such restrictions and so
-  the field may contain variants for a single service type. The indexer will attempt to
-  normalize the values."
-site: The name or description of the physical location where the data were collected
-siteText: Copy from :attr:`~Index.site`
-size: The size of the object, in bytes.
-sku: Copy from :attr:`~Index.id`
-source: Also called "platform." The mechanism used to support the sensor or instrument
-  that gathers data
-sourceText: Copy from :attr:`~Index.source`
-southBoundCoord: Southern most latitude of the spatial extent, in decimal degrees,
-  WGS84
-species: Taxonomic species name(s)
-submitter: The :term:`Subject` name of the original submitter of the content to DataONE.
-term: A secondary subject area within which parameters can be categorized. Approved
-  terms include "agricultural chemicals" and "atmospheric chemistry," among many others.
-  When entering a term in the LandVal Metadata Editor, users should select a standard
-  expression from the pick list for terms if at all possible.
-termText: Copy from :attr:`~Index.term`
-text: contactOrganization, datasource, decade, features, fileID, fullText, gcmdKeyword,
-  geoform, id, includes, investigator, keywords, LTERSite, manu, name, origin, originator,
-  parameter, placeKey, presentationCat, project, purpose, sensor, site, source, term,
-  title, topic
-title: Title of the dataset as recorded in the science metadata.
-titleText: Copy from :attr:`~Index.title`
-titlestr: Copy from :attr:`~Index.title`
-topic: The most general subject area within which a parameter is categorized. Approved
-  topics include "agriculture," "atmosphere," and "hydrosphere," among others.
-topicText: Copy from :attr:`~Index.topic`
-updateDate: Copy from :attr:`~Index.dateUploaded`
-webUrl: Link to the investigator's  web-site.
-westBoundCoord: Western most longitude of the spatial extent, in decimal degrees,
-  WGS84
-writePermission: List of subjects (groups and individuals) that have write permission
-  on PID.
-_root_: Used internally by Solr index.
-_version_: Used internally bu Solr index.
+_root_: ""
+_version_: ""
+abstract: "The full text of the abstract as provided in the science metadata document."
+attribute: "Multi-valued field containing the text from attributeName, attributeLabel, attributeDescription, attributeUnit fields into a single searchable text field."
+attributeDescription: "Multi-valued field containing the attribute descriptive text."
+attributeLabel: "Multi-valued field containing secondary attribute name information."
+attributeName: "Multi-valued field containing the main attribute name information."
+attributeUnit: "Multi-valued field containing the attribute unit information."
+author: "Principle Investigator (PI) / Author as listed in the metadata document."
+authorGivenName: "The given name of the primary author/PI."
+authorGivenNameSort: "The given name of the primary author/PI case normalized for sorting."
+authoritativeMN: "The node Id of the authoritative Member Node for the object."
+authorLastName: "The LAST name(s) of the author(s)"
+authorSurName: "The sur name of the primary author/PI."
+authorSurNameSort: "The sur name of the primary author/PI case normalized for sorting."
+awardNumber: ""
+awardTitle: ""
+beginDate: "The starting date of the temporal range of the content described by the metadata document."
+blockedReplicationMN: "A multi-valued field that contains the node Ids of member nodes that are blocked from holding replicas of this object."
+changePermission: "List of subjects (groups and individuals) that have change permission on PID."
+checksum: "The checksum for the object"
+checksumAlgorithm: "Algorithm used for generating the object checksum"
+class: "Taxonomic class name(s)"
+contactOrganization: "Name of the organization to contact for more information about the dataset"
+contactOrganizationText: "Copy from contactOrganization"
+datasource: "The node Id of the member node that originally contributed the content."
+dataUrl: "The URL that can be used to resolve the location of the object given its PID."
+dateModified: "The date and time when the object system metadata was last updated."
+datePublished: "Publication date for the dataset (this may or may not be coincident with when the content is added to DataONE)."
+dateUploaded: "The date and time when the object was uploaded to the Member Node."
+decade: "The latest decade that is covered by the dataset, expressed in the form "1999-2009""
+documents: "Lists all PIDs that this object describes. Obtained by parsing all resource maps in which this object is referenced. Not set for data or resource map objects."
+eastBoundCoord: "Eastern most longitude of the spatial extent, in decimal degrees, WGS84"
+edition: "The version or edition number of the item described."
+endDate: "The ending date of the temporal range of the content described by the metadata document."
+family: "Taxonomic family name(s)"
+fileID: "Contains the `CNRead.resolve` URL for the object ONLY if the object is a science metadata object."
+fileName: "The file name for the object, specified in system metadata field with the same name."
+formatId: "The format identifier indicating the type of content this record refers to."
+formatType: "The format type of the record - DATA, METADATA, RESOURCE."
+funderIdentifier: ""
+funderName: ""
+funding: ""
+fundingText: ""
+gcmdKeyword: "Keywords drawn from the GCMD controlled vocabulary"
+genus: "Taxonomic genus name(s)"
+geoform: "The name of the general form in which the item's geospatial data is presented"
+geohash_1: "An encoded string that represents the geographic coordinates of the centroid of a spatial extent. This can be used for searching and plotting."
+geohash_2: "An encoded string that represents the geographic coordinates of the centroid of a spatial extent. This can be used for searching and plotting."
+geohash_3: "An encoded string that represents the geographic coordinates of the centroid of a spatial extent. This can be used for searching and plotting."
+geohash_4: "An encoded string that represents the geographic coordinates of the centroid of a spatial extent. This can be used for searching and plotting."
+geohash_5: "An encoded string that represents the geographic coordinates of the centroid of a spatial extent. This can be used for searching and plotting."
+geohash_6: "An encoded string that represents the geographic coordinates of the centroid of a spatial extent. This can be used for searching and plotting."
+geohash_7: "An encoded string that represents the geographic coordinates of the centroid of a spatial extent. This can be used for searching and plotting."
+geohash_8: "An encoded string that represents the geographic coordinates of the centroid of a spatial extent. This can be used for searching and plotting."
+geohash_9: "An encoded string that represents the geographic coordinates of the centroid of a spatial extent. This can be used for searching and plotting."
+id: "The identifier of the object being indexed."
+identifier: "Copy id"
+investigator: "Name of the investigator(s) responsible for developing the dataset and associated content."
+investigatorText: "Copy from investigator."
+isDocumentedBy: "Lists all PIDs that describe this object. Obtained by parsing all resource maps in which this object is referenced."
+isPublic: "Set to True if the DataONE `public user` is present in the list of subjects with readPermission on PID."
+isService: "Set to true if document is a member node service description document.  Use to filter search results for to exclude or include member node services."
+isSpatial: "Set to "Y" for records that contain spatial information"
+keyConcept: "Terms drawn from a controlled vocabulary of concepts that are applicable to the content described by the metadata document."
+keywords: "Keywords recorded in the science metadata document. These may be controlled by the generator of the metadata or by the metadata standard of the document, but are effectively uncontrolled within the  DataONE context."
+keywordsText: "Copy from keywords"
+kingdom: "Taxonomic kingdom(s)"
+LTERSite: "Data provider organization  identifier, for sources within the LTER network."
+mediaType: "The name attribute of the media type element in system metadata.  Indicates media type of the object."
+mediaTypeProperty: "A list of properties describing the media type in system metadata.  The value is a concatenation of the property elements name attribute and the value of the property element."
+namedLocation: "The name of the location(s) relevant to the content described by the metadata document."
+noBoundingBox: "Set to "Y" if there is no bounding box information available (i.e., the east, west, north, south most coordinates)"
+northBoundCoord: "Northern most latitude of the spatial extent, in decimal degrees, WGS84"
+numberReplicas: "Requested number of replicas for the object"
+obsoletedBy: "If set, indicates the object that replaces this record."
+obsoletes: "If set, indicates the object that this record obsoletes."
+ogcUrl: "URL for Open Geospatial Web service if available."
+order: "Taxonomic order name(s)"
+origin: "Investigator or Investigator organization name."
+originator: "Investigator or Investigator organization name. Derived by normalizing origin."
+originatorText: ""
+originText: "Copy from origin"
+parameter: "A characteristic, or variable, that is measured or derived as part of data-collection activities."
+parameterText: "Copy from parameter"
+phylum: "Taxonomic phylum (or division) name(s)"
+placeKey: "A place name keyword, assigned by the metadata creator. It is one keyword from the thesaurus named in &lt;placekt&gt;"
+preferredReplicationMN: "A list of member node identifiers that are preferred replication targets for this object."
+presentationCat: "Type of data being preserved (maps, text, etc.)"
+project: "The authorized name of a research effort for which data is collected. This name is often reduced to a convenient abbreviation or acronym. All investigators involved in a project should use a common, agreed-upon name."
+projectText: "Copy from project"
+prov_generated: "A multi-valued field containing the identifiers of data objects that this program  generated based on the PROV wasGeneratedBy, qualifiedAssociation, and hadPlan properties."
+prov_generatedByExecution: "A multi-valued field containing the identifiers of the executions that this data object was generated by based on the PROV wasGeneratedBy property."
+prov_generatedByProgram: "A multi-valued field containing the identifiers of the programs that this data object was generated by based on the PROV wasGeneratedBy, qualifiedAssociation, and hadPlan properties."
+prov_generatedByUser: "A multi-valued field containing the identifiers of the users that this data object was generated by based on the PROV wasGeneratedBy, qualifiedAssociation, and agent properties."
+prov_hasDerivations: "A multi-valued field containing the identifiers of the data objects that were derivations of the source data object described by this metadata object, based on the PROV wasDerivedBy property."
+prov_hasSources: "A multi-valued field containing the identifiers of the data objects that were sources to the derived data object described by this metadata object, based on the PROV wasDerivedBy property."
+prov_instanceOfClass: "A multi-valued field containing the identifiers of the semantic classes that this object is an instance of, based on the PROV, ProvONE, and other ontologies."
+prov_used: "A multi-valued field containing the identifiers of data objects that this program used based on the PROV used, qualifiedAssociation, and hadPlan properties."
+prov_usedByExecution: "A multi-valued field containing the identifiers of the executions that used this data object based on the PROV used property."
+prov_usedByProgram: "A multi-valued field containing the identifiers of the programs that used this data object based on the PROV used, qualifiedAssociation, and hadPlan properties."
+prov_usedByUser: "A multi-valued field containing the identifiers of the users that used this data object based on the PROV used, qualifiedAssociation, and agent properties."
+prov_wasDerivedFrom: "A multi-valued field containing the identifiers of data objects that this data object was derived from based on the PROV wasDerivedBy property."
+prov_wasExecutedByExecution: "A multi-valued field containing the identifiers of the executions that used this program based on the PROV qualifiedAssociation, and hadPlan properties."
+prov_wasExecutedByUser: "A multi-valued field containing the identifiers of the users that executed this program based on the PROV qualifiedAssociation, hadPlan, and agent properties."
+prov_wasInformedBy: "A multi-valued field containing the identifiers of executions that this execution was informed by based on the PROV wasInformedBy property."
+pubDate: "Publication date for the dataset (this may or may not be coincident with when the content is added to DataONE)."
+purpose: "The "Purpose" describes the "why" aspects of the data set (For example, why was the data set created?)."
+readPermission: "List of subjects (groups and individuals) that have read permission on PID."
+relatedOrganizations: ""
+replicaMN: "One or more node Ids holding copies of the object."
+replicationAllowed: "True if this object can be replicated."
+replicationStatus: ""
+replicaVerifiedDate: ""
+resourceMap: "List of resource map PIDs that reference this PID."
+rightsHolder: "The `Subject` that acts as the rights holder for the object."
+scientificName: "Taxonomic scientific name(s) at the most precise level available for the organisms of relevance to the dataset"
+sem_annotated_by: ""
+sem_annotates: ""
+sem_annotation: ""
+sem_comment: ""
+sensor: "Also called "instrument." A device that is used for collecting data for a data set."
+sensorText: "Copy from sensor."
+seriesId: "The seriesId is an optional, unique Unicode string that identifies an object revision chain."
+serviceCoupling: "Either 'tight', 'mixed', or 'loose'.  Tight coupled service work only on the data described by this metadata document.  Loose coupling means service works on any data.  Mixed coupling means service works on data described by this metadata document but may work on other data."
+serviceDescription: "A human readable description of the member node service to assist discovery and to evaluate applicability."
+serviceEndpoint: "A URL that indicates how to access the member node service."
+serviceInput: "Aspect of the service that accepts a digital entity.  Either a list of DataONE formatIds Urls or pid RESOLVE Urls that the member node service operates on.  A pid RESOLVE url indicates a 'tight' coupled service - while a list of formatIds indicates a loose coupled service."
+serviceOutput: "Aspect of the service that provides a digital entity resulting from operation of the service.  A listing of DataONE formatId which this member node service produces."
+serviceTitle: "A brief, human readable descriptive title for the member node service."
+serviceType: "The type of service being provided by the member node."
+site: "The name or description of the physical location where the data were collected"
+siteText: "Copy from site."
+size: "The size of the object, in bytes."
+source: "Also called "platform." The mechanism used to support the sensor or instrument that gathers data"
+sourceText: "Copy from source."
+southBoundCoord: "Southern most latitude of the spatial extent, in decimal degrees, WGS84"
+species: "Taxonomic species name(s)"
+submitter: "The `Subject` name of the original submitter of the content to DataONE."
+term: "A secondary subject area within which parameters can be categorized. Approved terms include "agricultural chemicals" and "atmospheric chemistry," among many others. When entering a term in the LandVal Metadata Editor, users should select a standard expression from the pick list for terms if at all possible."
+termText: "Copy from term."
+text: "Full text of the metadata record, used to support full text searches"
+title: "Title of the dataset as recorded in the science metadata."
+titlestr: "Copy from title."
+topic: "The most general subject area within which a parameter is categorized. Approved topics include "agriculture," "atmosphere," and "hydrosphere," among others."
+topicText: "Copy from topic."
+updateDate: "Copy from dateuploaded."
+webUrl: "Link to the investigator's  web-site."
+westBoundCoord: "Western most longitude of the spatial extent, in decimal degrees, WGS84"
+writePermission: "List of subjects (groups and individuals) that have write permission on PID."

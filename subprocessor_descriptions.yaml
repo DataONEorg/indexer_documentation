@@ -3,10 +3,19 @@
 # Ideally, this information should be contained in the beans, and may be in the future,
 # but for now, here it is.
 #
-# Each entry is keyed by the bean id of the subprocssor.
+# Each entry is keyed by the bean id of the subprocessor.
 #
 # Each entry may contain .rst formatting.
 ###
+
+annotationDeleteSubprocessor:
+  name: Delete annotation processor
+  description:
+
+annotatorSubprocessor:
+  name: Semantic Annotation from JSON
+  description:
+
 datacite3Subprocessor:
   name: DataCite 3
   description: Used to extract indexed information from the DataCite formats.
@@ -23,6 +32,10 @@ dublinCoreExtendedSubprocessor:
   name: Dublin Core, Extended
   description:
 
+dublinCoreOAISubprocessor:
+  name: Dublin Core OAI Subprocessor
+  description:
+
 eml200Subprocessor:
   name: Ecological Markup Language, v2.0.0
   description:
@@ -37,6 +50,14 @@ eml210Subprocessor:
 
 eml211Subprocessor:
   name: Ecological Markup Language, v2.1.1
+  description:
+
+eml220Subprocessor:
+  name: Ecological Markup Language, v2.2.0
+  description:
+
+emlAnnotationSubprocessor:
+  name: Ecological Markup Language Annotations
   description:
 
 fgdcEsri80Subprocessor:
@@ -59,6 +80,10 @@ isotc211NoaaSubprocessor:
   name: ISO TC-211, NOAA Variant
   description:
 
+isotc211PangaeaSubprocessor:
+  name: ISO TC-211, PANGAEA Variant
+  description:
+
 isotc211Subprocessor:
   name: ISO TC-211
   description:
@@ -71,10 +96,31 @@ qualifiedDublicCoreSubprocessor:
   name: Dublin Core, Qualified
   description:
 
-annotatorSubprocessor:
-  name: Semantic Annotation from JSON
+rdfXmlSubprocessor:
+  name: RDF XML processor
   description:
 
 prov20150115RdfXmlSubprocessor:
   name: Provenance
   description:
+
+reprocessResourceMapSubprocessor:
+  name: OAI-ORE re-process
+  description:
+
+resourceMapDeleteSubprocessor:
+  name: OAI-ORE delete processor
+  description:
+
+resourceMapSubprocessor:
+  name: OAI-ORE processor
+  description:
+
+systemMetadata100Subprocessor:
+  name: System Metadata
+  description:
+
+systemMetadata200Subprocessor:
+  name: System Metadata Version 2.0
+  description:
+
