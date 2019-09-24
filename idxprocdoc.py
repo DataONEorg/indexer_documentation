@@ -1053,7 +1053,7 @@ class IndexProcessorDocuments(object):
             for c in range(0, len(field_format_matrix["colmeta"])):
                 v = " "
                 if field in sysmeta_fields:
-                    v = "X"
+                    v = "S"
                 else:
                     # lookup field for each format Id
                     formatId = field_format_matrix["colmeta"][c]
@@ -1062,7 +1062,7 @@ class IndexProcessorDocuments(object):
                 row.append(v)
             field_format_matrix["rc"].append(row)
         # generate the CSV
-        header = ["Field", ]
+        header = ["Field \ FormatId", ]
         c = 1
         for hv in field_format_matrix["colmeta"]:
             header.append(f'"{c}"')
@@ -1079,7 +1079,7 @@ class IndexProcessorDocuments(object):
         with codecs.open(dest, mode="wb", encoding="utf-8") as f_dest:
             f_dest.write(
                 templates["fid_field_cross.rst"]["template"].render(
-                    resolver=self, csvheader=csv_header, csvrows=csv_rows
+                    resolver=self, csvheader=csv_header, csvrows=csv_rows, ffmatrix=field_format_matrix
                 )
             )
 
