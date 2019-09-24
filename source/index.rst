@@ -32,8 +32,10 @@ d1_cn_index_processor version    D1_CN_INDEX_PROCESSOR_v2.3.11
    :maxdepth: 1
    :glob:
 
+   generated/field_format
    generated/system_metadata
    generated/proc_*
+
 
 
 **Indices and tables**
