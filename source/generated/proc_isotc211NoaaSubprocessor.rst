@@ -295,7 +295,20 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_9`
     - False
     - 
-    - 
+    - ::
+
+        //gmd:identificationInfo/gmd:MD_DataIdentification/
+        gmd:extent/gmd:EX_Extent/gmd:geographicElement/
+        gmd:EX_GeographicBoundingBox ->{{[
+        northBoundingCoordinate] [southBoundingCoordinate] [
+        eastBoundingCoordinate] [westBoundingCoordinate]}}; 
+        northBoundingCoordinate = gmd:northBoundLatitude/
+        gco:Decimal/text(); southBoundingCoordinate = 
+        gmd:southBoundLatitude/gco:Decimal/text(); 
+        eastBoundingCoordinate = gmd:eastBoundLongitude/
+        gco:Decimal/text(); westBoundingCoordinate = 
+        gmd:westBoundLongitude/gco:Decimal/text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash9`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
@@ -304,7 +317,20 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_1`
     - False
     - 
-    - 
+    - ::
+
+        //gmd:identificationInfo/gmd:MD_DataIdentification/
+        gmd:extent/gmd:EX_Extent/gmd:geographicElement/
+        gmd:EX_GeographicBoundingBox ->{{[
+        northBoundingCoordinate] [southBoundingCoordinate] [
+        eastBoundingCoordinate] [westBoundingCoordinate]}}; 
+        northBoundingCoordinate = gmd:northBoundLatitude/
+        gco:Decimal/text(); southBoundingCoordinate = 
+        gmd:southBoundLatitude/gco:Decimal/text(); 
+        eastBoundingCoordinate = gmd:eastBoundLongitude/
+        gco:Decimal/text(); westBoundingCoordinate = 
+        gmd:westBoundLongitude/gco:Decimal/text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash1`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
@@ -313,7 +339,20 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_2`
     - False
     - 
-    - 
+    - ::
+
+        //gmd:identificationInfo/gmd:MD_DataIdentification/
+        gmd:extent/gmd:EX_Extent/gmd:geographicElement/
+        gmd:EX_GeographicBoundingBox ->{{[
+        northBoundingCoordinate] [southBoundingCoordinate] [
+        eastBoundingCoordinate] [westBoundingCoordinate]}}; 
+        northBoundingCoordinate = gmd:northBoundLatitude/
+        gco:Decimal/text(); southBoundingCoordinate = 
+        gmd:southBoundLatitude/gco:Decimal/text(); 
+        eastBoundingCoordinate = gmd:eastBoundLongitude/
+        gco:Decimal/text(); westBoundingCoordinate = 
+        gmd:westBoundLongitude/gco:Decimal/text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash2`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
@@ -322,7 +361,20 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_3`
     - False
     - 
-    - 
+    - ::
+
+        //gmd:identificationInfo/gmd:MD_DataIdentification/
+        gmd:extent/gmd:EX_Extent/gmd:geographicElement/
+        gmd:EX_GeographicBoundingBox ->{{[
+        northBoundingCoordinate] [southBoundingCoordinate] [
+        eastBoundingCoordinate] [westBoundingCoordinate]}}; 
+        northBoundingCoordinate = gmd:northBoundLatitude/
+        gco:Decimal/text(); southBoundingCoordinate = 
+        gmd:southBoundLatitude/gco:Decimal/text(); 
+        eastBoundingCoordinate = gmd:eastBoundLongitude/
+        gco:Decimal/text(); westBoundingCoordinate = 
+        gmd:westBoundLongitude/gco:Decimal/text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash3`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
@@ -331,7 +383,20 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_4`
     - False
     - 
-    - 
+    - ::
+
+        //gmd:identificationInfo/gmd:MD_DataIdentification/
+        gmd:extent/gmd:EX_Extent/gmd:geographicElement/
+        gmd:EX_GeographicBoundingBox ->{{[
+        northBoundingCoordinate] [southBoundingCoordinate] [
+        eastBoundingCoordinate] [westBoundingCoordinate]}}; 
+        northBoundingCoordinate = gmd:northBoundLatitude/
+        gco:Decimal/text(); southBoundingCoordinate = 
+        gmd:southBoundLatitude/gco:Decimal/text(); 
+        eastBoundingCoordinate = gmd:eastBoundLongitude/
+        gco:Decimal/text(); westBoundingCoordinate = 
+        gmd:westBoundLongitude/gco:Decimal/text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash4`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
@@ -340,7 +405,20 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_5`
     - False
     - 
-    - 
+    - ::
+
+        //gmd:identificationInfo/gmd:MD_DataIdentification/
+        gmd:extent/gmd:EX_Extent/gmd:geographicElement/
+        gmd:EX_GeographicBoundingBox ->{{[
+        northBoundingCoordinate] [southBoundingCoordinate] [
+        eastBoundingCoordinate] [westBoundingCoordinate]}}; 
+        northBoundingCoordinate = gmd:northBoundLatitude/
+        gco:Decimal/text(); southBoundingCoordinate = 
+        gmd:southBoundLatitude/gco:Decimal/text(); 
+        eastBoundingCoordinate = gmd:eastBoundLongitude/
+        gco:Decimal/text(); westBoundingCoordinate = 
+        gmd:westBoundLongitude/gco:Decimal/text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash5`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
@@ -349,7 +427,20 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_6`
     - False
     - 
-    - 
+    - ::
+
+        //gmd:identificationInfo/gmd:MD_DataIdentification/
+        gmd:extent/gmd:EX_Extent/gmd:geographicElement/
+        gmd:EX_GeographicBoundingBox ->{{[
+        northBoundingCoordinate] [southBoundingCoordinate] [
+        eastBoundingCoordinate] [westBoundingCoordinate]}}; 
+        northBoundingCoordinate = gmd:northBoundLatitude/
+        gco:Decimal/text(); southBoundingCoordinate = 
+        gmd:southBoundLatitude/gco:Decimal/text(); 
+        eastBoundingCoordinate = gmd:eastBoundLongitude/
+        gco:Decimal/text(); westBoundingCoordinate = 
+        gmd:westBoundLongitude/gco:Decimal/text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash6`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
@@ -358,7 +449,20 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_7`
     - False
     - 
-    - 
+    - ::
+
+        //gmd:identificationInfo/gmd:MD_DataIdentification/
+        gmd:extent/gmd:EX_Extent/gmd:geographicElement/
+        gmd:EX_GeographicBoundingBox ->{{[
+        northBoundingCoordinate] [southBoundingCoordinate] [
+        eastBoundingCoordinate] [westBoundingCoordinate]}}; 
+        northBoundingCoordinate = gmd:northBoundLatitude/
+        gco:Decimal/text(); southBoundingCoordinate = 
+        gmd:southBoundLatitude/gco:Decimal/text(); 
+        eastBoundingCoordinate = gmd:eastBoundLongitude/
+        gco:Decimal/text(); westBoundingCoordinate = 
+        gmd:westBoundLongitude/gco:Decimal/text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash7`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
@@ -367,7 +471,20 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_8`
     - False
     - 
-    - 
+    - ::
+
+        //gmd:identificationInfo/gmd:MD_DataIdentification/
+        gmd:extent/gmd:EX_Extent/gmd:geographicElement/
+        gmd:EX_GeographicBoundingBox ->{{[
+        northBoundingCoordinate] [southBoundingCoordinate] [
+        eastBoundingCoordinate] [westBoundingCoordinate]}}; 
+        northBoundingCoordinate = gmd:northBoundLatitude/
+        gco:Decimal/text(); southBoundingCoordinate = 
+        gmd:southBoundLatitude/gco:Decimal/text(); 
+        eastBoundingCoordinate = gmd:eastBoundLongitude/
+        gco:Decimal/text(); westBoundingCoordinate = 
+        gmd:westBoundLongitude/gco:Decimal/text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash8`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_

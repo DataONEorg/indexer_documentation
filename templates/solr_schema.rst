@@ -18,7 +18,8 @@ documents.
 .. note:: For Editors
 
    Definitions are drawn from the `solr configuration file`_ and descriptions for each
-   field are contained in a separate `YAML formatted text file`_. After editing
+   field are contained in a separate properties file
+   (``dataone-cn-solr/usr/share/dataone-cn-solr/debian/queryFieldDescriptions.properties``). After editing
    descriptions, the document source must be regenerated and committed to GitHub for
    the public facing documentation to be updated.
 
@@ -65,4 +66,3 @@ Dynamic Fields
 {% endfor %}
 
 .. _solr configuration file: {{"resources/index-solr-schema.xml"|svnRepoLink}}
-.. _YAML formatted text file: https://github.com/DataONEorg/indexer_documentation/blob/master/solr_field_descriptions.yaml

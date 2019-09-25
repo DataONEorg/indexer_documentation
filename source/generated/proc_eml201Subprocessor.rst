@@ -181,7 +181,12 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.author`
     - False
     - 
-    - 
+    - ::
+
+        //dataset/creator/individualName ->{{[givenName] [surName]
+        }}; givenName = givenName/text(); surName = surName/
+        text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.author`_
 
@@ -255,7 +260,14 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.origin`
     - False
     - 
-    - 
+    - ::
+
+        //dataset/creator ->{{[individualName]||[organizationName]
+        }}; organizationName = organizationName/text()
+        individualName ->{{[givenName] [surName]}}; 
+        givenName = givenName/text(); surName = surName/
+        text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.origin`_
 
@@ -361,7 +373,13 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.scientificName`
     - False
     - 
-    - 
+    - ::
+
+        //taxonomicClassification[../taxonRankName="Genus" or ../
+        taxonRankName="genus"] ->{{[genus] [species]}}; 
+        genus = ../taxonRankValue/text(); species = 
+        taxonRankValue/text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.scientificName`_
 
@@ -415,7 +433,16 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.attribute`
     - False
     - 
-    - 
+    - ::
+
+        //dataTable/attributeList/attribute ->{{[attributeName] [
+        attributeLabel] [attributeDescription] [
+        attributeUnit]}}; attributeName = attributeName/
+        text(); attributeLabel = attributeLabel/text(); 
+        attributeDescription = attributeDefinition/text(); 
+        attributeUnit = .//standardUnit/text() | .//
+        customUnit/text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.attributeText`_
 
@@ -441,7 +468,19 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_1`
     - False
     - 
-    - 
+    - ::
+
+        //dataset/coverage/geographicCoverage/boundingCoordinates 
+        ->{{[northBoundingCoordinate] [
+        southBoundingCoordinate] [eastBoundingCoordinate] [
+        westBoundingCoordinate]}}; northBoundingCoordinate =
+         northBoundingCoordinate/text(); 
+        southBoundingCoordinate = southBoundingCoordinate/
+        text(); eastBoundingCoordinate = 
+        eastBoundingCoordinate/text(); 
+        westBoundingCoordinate = westBoundingCoordinate/
+        text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.geohash1`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
@@ -450,7 +489,19 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_2`
     - False
     - 
-    - 
+    - ::
+
+        //dataset/coverage/geographicCoverage/boundingCoordinates 
+        ->{{[northBoundingCoordinate] [
+        southBoundingCoordinate] [eastBoundingCoordinate] [
+        westBoundingCoordinate]}}; northBoundingCoordinate =
+         northBoundingCoordinate/text(); 
+        southBoundingCoordinate = southBoundingCoordinate/
+        text(); eastBoundingCoordinate = 
+        eastBoundingCoordinate/text(); 
+        westBoundingCoordinate = westBoundingCoordinate/
+        text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.geohash2`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
@@ -459,7 +510,19 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_3`
     - False
     - 
-    - 
+    - ::
+
+        //dataset/coverage/geographicCoverage/boundingCoordinates 
+        ->{{[northBoundingCoordinate] [
+        southBoundingCoordinate] [eastBoundingCoordinate] [
+        westBoundingCoordinate]}}; northBoundingCoordinate =
+         northBoundingCoordinate/text(); 
+        southBoundingCoordinate = southBoundingCoordinate/
+        text(); eastBoundingCoordinate = 
+        eastBoundingCoordinate/text(); 
+        westBoundingCoordinate = westBoundingCoordinate/
+        text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.geohash3`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
@@ -468,7 +531,19 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_4`
     - False
     - 
-    - 
+    - ::
+
+        //dataset/coverage/geographicCoverage/boundingCoordinates 
+        ->{{[northBoundingCoordinate] [
+        southBoundingCoordinate] [eastBoundingCoordinate] [
+        westBoundingCoordinate]}}; northBoundingCoordinate =
+         northBoundingCoordinate/text(); 
+        southBoundingCoordinate = southBoundingCoordinate/
+        text(); eastBoundingCoordinate = 
+        eastBoundingCoordinate/text(); 
+        westBoundingCoordinate = westBoundingCoordinate/
+        text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.geohash4`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
@@ -477,7 +552,19 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_5`
     - False
     - 
-    - 
+    - ::
+
+        //dataset/coverage/geographicCoverage/boundingCoordinates 
+        ->{{[northBoundingCoordinate] [
+        southBoundingCoordinate] [eastBoundingCoordinate] [
+        westBoundingCoordinate]}}; northBoundingCoordinate =
+         northBoundingCoordinate/text(); 
+        southBoundingCoordinate = southBoundingCoordinate/
+        text(); eastBoundingCoordinate = 
+        eastBoundingCoordinate/text(); 
+        westBoundingCoordinate = westBoundingCoordinate/
+        text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.geohash5`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
@@ -486,7 +573,19 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_6`
     - False
     - 
-    - 
+    - ::
+
+        //dataset/coverage/geographicCoverage/boundingCoordinates 
+        ->{{[northBoundingCoordinate] [
+        southBoundingCoordinate] [eastBoundingCoordinate] [
+        westBoundingCoordinate]}}; northBoundingCoordinate =
+         northBoundingCoordinate/text(); 
+        southBoundingCoordinate = southBoundingCoordinate/
+        text(); eastBoundingCoordinate = 
+        eastBoundingCoordinate/text(); 
+        westBoundingCoordinate = westBoundingCoordinate/
+        text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.geohash6`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
@@ -495,7 +594,19 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_7`
     - False
     - 
-    - 
+    - ::
+
+        //dataset/coverage/geographicCoverage/boundingCoordinates 
+        ->{{[northBoundingCoordinate] [
+        southBoundingCoordinate] [eastBoundingCoordinate] [
+        westBoundingCoordinate]}}; northBoundingCoordinate =
+         northBoundingCoordinate/text(); 
+        southBoundingCoordinate = southBoundingCoordinate/
+        text(); eastBoundingCoordinate = 
+        eastBoundingCoordinate/text(); 
+        westBoundingCoordinate = westBoundingCoordinate/
+        text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.geohash7`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
@@ -504,7 +615,19 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_8`
     - False
     - 
-    - 
+    - ::
+
+        //dataset/coverage/geographicCoverage/boundingCoordinates 
+        ->{{[northBoundingCoordinate] [
+        southBoundingCoordinate] [eastBoundingCoordinate] [
+        westBoundingCoordinate]}}; northBoundingCoordinate =
+         northBoundingCoordinate/text(); 
+        southBoundingCoordinate = southBoundingCoordinate/
+        text(); eastBoundingCoordinate = 
+        eastBoundingCoordinate/text(); 
+        westBoundingCoordinate = westBoundingCoordinate/
+        text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.geohash8`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
@@ -513,7 +636,19 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_9`
     - False
     - 
-    - 
+    - ::
+
+        //dataset/coverage/geographicCoverage/boundingCoordinates 
+        ->{{[northBoundingCoordinate] [
+        southBoundingCoordinate] [eastBoundingCoordinate] [
+        westBoundingCoordinate]}}; northBoundingCoordinate =
+         northBoundingCoordinate/text(); 
+        southBoundingCoordinate = southBoundingCoordinate/
+        text(); eastBoundingCoordinate = 
+        eastBoundingCoordinate/text(); 
+        westBoundingCoordinate = westBoundingCoordinate/
+        text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.geohash9`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_

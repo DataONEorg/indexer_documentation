@@ -61,7 +61,13 @@ Fields
   * - :attr:`Index.mediaTypeProperty`
     - False
     - 
-    - 
+    - ::
+
+        /d200:systemMetadata/mediaType/property ->{{[
+        mediaTypePropertyName] [mediaTypePropertyValue]}}; 
+        mediaTypePropertyName = @name; 
+        mediaTypePropertyValue = text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `systemMetadata200Subprocessor.mediaTypeProperty`_
 

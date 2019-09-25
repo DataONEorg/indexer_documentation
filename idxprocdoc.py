@@ -57,6 +57,10 @@ def loadFormatIds(url="https://cn.dataone.org/cn/v2/formats/"):
         FORMAT_IDS[formatid] = {"description": descr, "type": ftype}
 
 
+#========================
+# Various filters for Jinja templates
+#========================
+
 def strToBool(s):
     s = s.lower().strip()
     if s == "0":
@@ -166,10 +170,15 @@ class B_Bean(object):
 
     def load(self, ele, container):
         """
-    Load the properties of this bean
-    :param ele:
-    :return:
-    """
+        Load the bean properties from the bean configuration XML
+
+        Args:
+            ele: etree element instance for bean
+            container: instance of IndexProcessorDocuments
+
+        Returns:
+            None
+        """
         self.p["cname"] = getAttrib(ele, "class", "")
         self.p["bid"] = getAttrib(ele, "id", "")
         self.p["xml"] = etree.tostring(ele, pretty_print=True).decode()
@@ -192,9 +201,7 @@ class B_BeanXPath(B_Bean):
 
     def load(self, ele, container):
         super(B_BeanXPath, self).load(ele, container)
-        self.p["xpath"] = ele.xpath(
-            "b:constructor-arg[@name='xpath']/@value", namespaces=NAMESPACES
-        )
+        self.p["xpath"] = xpstrval(ele,"b:constructor-arg[@name='xpath']/@value")
 
 
 # --
@@ -213,7 +220,6 @@ class B_SolrField(B_BeanXPath):
         self.p["multivalue"] = xpboolval(ele, "b:property[@name='multivalue']/@value")
         self.p["dedupe"] = xpboolval(ele, "b:property[@name='dedupe']/@value")
         self.p["converter"] = xpstrval(ele, "b:property[@name='converter']/@ref")
-        self.p["xpath"] = xpstrval(ele, "b:constructor-arg[@name='xpath']/@value")
         if self.p["bid"] == "":
             # If there's no ID, then it is an anonymous bean contained by some parent
             # query is something like "../../.."
@@ -239,12 +245,28 @@ class B_SolrField(B_BeanXPath):
 class B_RootElement(B_Bean):
     def load(self, ele, container):
         super(B_RootElement, self).load(ele, container)
+        a = "{" + NAMESPACES['p'] + "}xPath"
+        self.p["xpath"] = ele.attrib.get(a)
+        a = "{" + NAMESPACES['p'] + "}template"
+        self.p["template"] = ele.attrib.get(a)
+        self.p["leaves"] = []
+        self.p["subroots"] = []
+        bls = ele.xpath("b:property[@name='leafs']/b:list/b:ref", namespaces=NAMESPACES)
+        for bl in bls:
+            self.p["leaves"].append(bl.attrib.get("bean"))
+        bls = ele.xpath("b:property[@name='subRoots']/b:list/b:ref", namespaces=NAMESPACES)
+        for bl in bls:
+            self.p["subroots"].append(bl.attrib.get("bean"))
 
 
 # --
 class B_LeafElement(B_Bean):
     def load(self, ele, container):
         super(B_LeafElement, self).load(ele, container)
+        a = "{" + NAMESPACES['p'] + "}xPath"
+        self.p["xpath"] = ele.attrib.get(a)
+        a = "{" + NAMESPACES['p'] + "}name"
+        self.p["template_name"] = ele.attrib.get(a)
 
 
 # --
@@ -263,6 +285,26 @@ class B_CommonRootSolrField(B_Bean):
                 self.p["bid"] = "{0}.{1}".format(
                     pele[0].attrib["id"], self.p["field_name"][0]
                 )
+
+
+    def toText(self, resolver=None, indent=0):
+        """
+        Need to handle the root-ref entry.
+        Args:
+            resolver:
+            indent:
+
+        Returns:
+
+        """
+        res = super(B_CommonRootSolrField, self).toText(resolver=resolver, indent=indent)
+        if resolver is None:
+            return res
+        bean = resolver.getBean(self.p.get("root-ref"))
+        if not bean is None:
+            res += "\n"
+            res += bean.toText(resolver=resolver, indent=indent)
+        return res
 
 
 # --
@@ -349,6 +391,79 @@ class B_DataCiteSpatialBoxBoundingCoordinatesSolrField(B_SolrField):
 class B_DataCiteSpatialBoxGeohashSolrField(B_SolrField):
     def load(self, ele, container):
         super(B_DataCiteSpatialBoxGeohashSolrField, self).load(ele, container)
+
+
+# --
+class B_XMLNamespace(B_Bean):
+    def __init__(self):
+        super(B_XMLNamespace, self).__init__()
+
+    def load(self, ele, container):
+        super(B_XMLNamespace, self).load(ele, container)
+        self.p["namespace"] = xpstrval(
+            ele, "b:constructor-arg[@name='namespace']/@value", ""
+        )
+        self.p["prefix"] = xpstrval(ele, "b:constructor-arg[@name='prefix']/@value", "")
+
+
+# --
+class B_XMLNamespaceConfig(B_Bean):
+    def __init__(self):
+        super(B_XMLNamespaceConfig, self).__init__()
+
+    def load(self, ele, container):
+        super(B_XMLNamespaceConfig, self).load(ele, container)
+        self.p["namespaces"] = []
+        namespaces = ele.xpath(
+            "b:constructor-arg[@name='namespaceList']/b:list/b:bean",
+            namespaces=NAMESPACES,
+        )
+        for ns in namespaces:
+            # cname = ns.attrib["class"]
+            entry = container.beanLoaderFactory(ns)
+            self.p["namespaces"].append(entry)
+
+
+# --
+class B_BaseDocumentDeleteSubprocessor(B_Bean):
+    pass
+
+
+# --
+class B_BaseReprocessSubprocessor(B_Bean):
+    pass
+
+
+# --
+class B_SparqlField(B_Bean):
+    def __init__(self):
+        super(B_SparqlField, self).__init__()
+        self.p["field_name"] = []
+        self.p["converter"] = ""
+        self.p["query"] = ""
+        self.p["multivalue"] = False
+        self.p["dedupe"] = False
+
+    def load(self, ele, container):
+        super(B_SparqlField, self).load(ele, container)
+        self.p["field_name"] = [xpstrval(ele, "b:constructor-arg[@name='name']/@value")]
+        self.p["multivalue"] = xpboolval(ele, "b:property[@name='multivalue']/@value")
+        self.p["dedupe"] = xpboolval(ele, "b:property[@name='dedupe']/@value")
+        self.p["converter"] = xpstrval(ele, "b:property[@name='converter']/@ref")
+        query = ele.xpath(
+            "b:constructor-arg[@name='query']/b:value", namespaces=NAMESPACES
+        )
+        if len(query) > 0:
+            self.p["query"] = query[0].text
+        if self.p["bid"] == "":
+            # If there's no ID, then it is an anonymous bean contained by some parent
+            # query is something like "../../.."
+            pele = ele.xpath("../../..")
+            if len(pele) > 0:
+                self.p["bid"] = "{0}.{1}".format(
+                    pele[0].attrib["id"], self.p["field_name"][0]
+                )
+
 
 
 # --
@@ -476,89 +591,16 @@ class B_ScienceMetadataDocumentSubprocessor(B_Bean):
 
 
 # --
+class B_AnnotatorSubprocessor(B_ScienceMetadataDocumentSubprocessor):
+    pass
+
+# --
 class B_ResourceMapSubprocessor(B_ScienceMetadataDocumentSubprocessor):
     def __init__(self):
         super(B_ResourceMapSubprocessor, self).__init__()
 
     def load(self, ele, container):
         super(B_ResourceMapSubprocessor, self).load(ele, container)
-
-
-# --
-class B_XMLNamespace(B_Bean):
-    def __init__(self):
-        super(B_XMLNamespace, self).__init__()
-
-    def load(self, ele, container):
-        super(B_XMLNamespace, self).load(ele, container)
-        self.p["namespace"] = xpstrval(
-            ele, "b:constructor-arg[@name='namespace']/@value", ""
-        )
-        self.p["prefix"] = xpstrval(ele, "b:constructor-arg[@name='prefix']/@value", "")
-
-
-# --
-class B_XMLNamespaceConfig(B_Bean):
-    def __init__(self):
-        super(B_XMLNamespaceConfig, self).__init__()
-
-    def load(self, ele, container):
-        super(B_XMLNamespaceConfig, self).load(ele, container)
-        self.p["namespaces"] = []
-        namespaces = ele.xpath(
-            "b:constructor-arg[@name='namespaceList']/b:list/b:bean",
-            namespaces=NAMESPACES,
-        )
-        for ns in namespaces:
-            # cname = ns.attrib["class"]
-            entry = container.beanLoaderFactory(ns)
-            self.p["namespaces"].append(entry)
-
-
-# --
-class B_BaseDocumentDeleteSubprocessor(B_Bean):
-    pass
-
-
-# --
-class B_AnnotatorSubprocessor(B_ScienceMetadataDocumentSubprocessor):
-    pass
-
-
-# --
-class B_BaseReprocessSubprocessor(B_Bean):
-    pass
-
-
-# --
-class B_SparqlField(B_Bean):
-    def __init__(self):
-        super(B_SparqlField, self).__init__()
-        self.p["field_name"] = []
-        self.p["converter"] = ""
-        self.p["query"] = ""
-        self.p["multivalue"] = False
-        self.p["dedupe"] = False
-
-    def load(self, ele, container):
-        super(B_SparqlField, self).load(ele, container)
-        self.p["field_name"] = [xpstrval(ele, "b:constructor-arg[@name='name']/@value")]
-        self.p["multivalue"] = xpboolval(ele, "b:property[@name='multivalue']/@value")
-        self.p["dedupe"] = xpboolval(ele, "b:property[@name='dedupe']/@value")
-        self.p["converter"] = xpstrval(ele, "b:property[@name='converter']/@ref")
-        query = ele.xpath(
-            "b:constructor-arg[@name='query']/b:value", namespaces=NAMESPACES
-        )
-        if len(query) > 0:
-            self.p["query"] = query[0].text
-        if self.p["bid"] == "":
-            # If there's no ID, then it is an anonymous bean contained by some parent
-            # query is something like "../../.."
-            pele = ele.xpath("../../..")
-            if len(pele) > 0:
-                self.p["bid"] = "{0}.{1}".format(
-                    pele[0].attrib["id"], self.p["field_name"][0]
-                )
 
 
 # --
@@ -641,8 +683,8 @@ class B_OntologyModelService(B_Bean):
 
 
 # --
-class B_HashMap(B_Bean):
-    pass
+#class B_HashMap(B_Bean):
+#    pass
 
 
 # =======================================================================================================================
@@ -690,11 +732,18 @@ class IndexProcessorDocuments(object):
             self.beans.append(instance)
             return instance
         except KeyError as e:
-            pass
+            # try dynamically creating the class
+            self._L.warning("Dynamically generating class for bean: %s", cname)
+            _class = type(class_name, (B_Bean, ), {})
+            instance = _class()
+            instance.load(bean, self)
+            self.beans.append(instance)
+            return instance
 
         self._L.error("Unknown class name: %s", class_name)
         raise ValueError("No handler for class: {0}".format(cname))
         return None
+
 
     def load(self, fname):
         """
@@ -776,11 +825,45 @@ class IndexProcessorDocuments(object):
             }
             self.solr_dynfields.append(f)
 
+    def resolveBeanReferences(self):
+        """
+        For each bean, check for root-ref and inherit the properties thereof.
+        Returns:
+
+        """
+        def _handleRef(ref):
+            ref_bean = self.getBean(ref)
+            if ref_bean is None:
+                return ""
+            xp = ref_bean.p.get("xpath", "")
+            if not xp == "":
+                template = ref_bean.p.get("template", None)
+                if not template is None:
+                    xp += " ->{{" + template + "}}"
+                for leaf in ref_bean.p.get("leaves", []):
+                    l_bean = self.getBean(leaf)
+                    xp += "; " + l_bean.p.get("template_name") + " = " + l_bean.p.get("xpath")
+                for sub in ref_bean.p.get("subroots", []):
+                    xp += _handleRef(sub)
+            return xp
+
+        for bean in self.beans:
+            root_ref = bean.p.get("root-ref", None)
+            if root_ref is not None:
+                xp = _handleRef(root_ref)
+                try:
+                    bean.p["xpath"] += " AND " + xp
+                except KeyError as e:
+                    bean.p["xpath"] = xp
+
+
     def loadContext(self, context_path):
         self.loadSolrSchemaFields(context_path)
         self.loadBeans(context_path)
         self.loadConverters(context_path)
         self.loadParsers(context_path)
+        self.resolveBeanReferences()
+
 
     def j_attrList(self, names, module="Index", delim=", "):
         res = []
@@ -814,7 +897,7 @@ class IndexProcessorDocuments(object):
         try:
             res = SUBPROCESSOR_INFO[subproc_id]["name"]
         except KeyError as e:
-            self._L.warn("No description available for subprocessor: %s", subproc_id)
+            self._L.warning("No description available for subprocessor: %s", subproc_id)
         return res + "\n" + "=" * len(res)
 
     def j_sparqlTrim(self, sparql):
@@ -1113,7 +1196,7 @@ def main():
         "-f",
         "--solrdescr",
         default="dataone-cn-solr/usr/share/dataone-cn-solr/debian/queryFieldDescriptions.properties",
-        help="YAML file of solr field: description",
+        help="Properties file with query field descriptions",
     )
     parser.add_argument(
         "-pf",

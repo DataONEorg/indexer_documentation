@@ -263,7 +263,12 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.scientificName`
     - False
     - 
-    - 
+    - ::
+
+        //taxoncl/taxonrv[../taxonrn="Genus"] ->{{[genus] [species]
+        }}; genus = ../taxonrv/text(); species = taxonrv/
+        text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `fgdc.scientificName`_
 
@@ -478,7 +483,15 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.attribute`
     - False
     - 
-    - 
+    - ::
+
+        //attr ->{{[attributeName] [attributeLabel] [
+        attributeDescription] [attributeUnit]}}; 
+        attributeName = attrlabl/text(); attributeLabel = 
+        attalias/text(); attributeDescription = attrdef/
+        text(); attributeUnit = attrdomv//attrunit/text() | 
+        .//attrdomv//edomv/text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `fgdc.attributeText`_
 
@@ -486,7 +499,16 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_1`
     - False
     - 
-    - 
+    - ::
+
+        /*[local-name() = 'metadata']/idinfo/spdom/bounding ->{{[
+        northBoundingCoordinate] [southBoundingCoordinate] [
+        eastBoundingCoordinate] [westBoundingCoordinate]}}; 
+        northBoundingCoordinate = northbc/text(); 
+        southBoundingCoordinate = southbc/text(); 
+        eastBoundingCoordinate = eastbc/text(); 
+        westBoundingCoordinate = westbc/text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `fgdc.geohash1`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
@@ -495,7 +517,16 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_2`
     - False
     - 
-    - 
+    - ::
+
+        /*[local-name() = 'metadata']/idinfo/spdom/bounding ->{{[
+        northBoundingCoordinate] [southBoundingCoordinate] [
+        eastBoundingCoordinate] [westBoundingCoordinate]}}; 
+        northBoundingCoordinate = northbc/text(); 
+        southBoundingCoordinate = southbc/text(); 
+        eastBoundingCoordinate = eastbc/text(); 
+        westBoundingCoordinate = westbc/text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `fgdc.geohash2`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
@@ -504,7 +535,16 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_3`
     - False
     - 
-    - 
+    - ::
+
+        /*[local-name() = 'metadata']/idinfo/spdom/bounding ->{{[
+        northBoundingCoordinate] [southBoundingCoordinate] [
+        eastBoundingCoordinate] [westBoundingCoordinate]}}; 
+        northBoundingCoordinate = northbc/text(); 
+        southBoundingCoordinate = southbc/text(); 
+        eastBoundingCoordinate = eastbc/text(); 
+        westBoundingCoordinate = westbc/text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `fgdc.geohash3`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
@@ -513,7 +553,16 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_4`
     - False
     - 
-    - 
+    - ::
+
+        /*[local-name() = 'metadata']/idinfo/spdom/bounding ->{{[
+        northBoundingCoordinate] [southBoundingCoordinate] [
+        eastBoundingCoordinate] [westBoundingCoordinate]}}; 
+        northBoundingCoordinate = northbc/text(); 
+        southBoundingCoordinate = southbc/text(); 
+        eastBoundingCoordinate = eastbc/text(); 
+        westBoundingCoordinate = westbc/text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `fgdc.geohash4`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
@@ -522,7 +571,16 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_5`
     - False
     - 
-    - 
+    - ::
+
+        /*[local-name() = 'metadata']/idinfo/spdom/bounding ->{{[
+        northBoundingCoordinate] [southBoundingCoordinate] [
+        eastBoundingCoordinate] [westBoundingCoordinate]}}; 
+        northBoundingCoordinate = northbc/text(); 
+        southBoundingCoordinate = southbc/text(); 
+        eastBoundingCoordinate = eastbc/text(); 
+        westBoundingCoordinate = westbc/text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `fgdc.geohash5`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
@@ -531,7 +589,16 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_6`
     - False
     - 
-    - 
+    - ::
+
+        /*[local-name() = 'metadata']/idinfo/spdom/bounding ->{{[
+        northBoundingCoordinate] [southBoundingCoordinate] [
+        eastBoundingCoordinate] [westBoundingCoordinate]}}; 
+        northBoundingCoordinate = northbc/text(); 
+        southBoundingCoordinate = southbc/text(); 
+        eastBoundingCoordinate = eastbc/text(); 
+        westBoundingCoordinate = westbc/text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `fgdc.geohash6`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
@@ -540,7 +607,16 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_7`
     - False
     - 
-    - 
+    - ::
+
+        /*[local-name() = 'metadata']/idinfo/spdom/bounding ->{{[
+        northBoundingCoordinate] [southBoundingCoordinate] [
+        eastBoundingCoordinate] [westBoundingCoordinate]}}; 
+        northBoundingCoordinate = northbc/text(); 
+        southBoundingCoordinate = southbc/text(); 
+        eastBoundingCoordinate = eastbc/text(); 
+        westBoundingCoordinate = westbc/text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `fgdc.geohash7`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
@@ -549,7 +625,16 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_8`
     - False
     - 
-    - 
+    - ::
+
+        /*[local-name() = 'metadata']/idinfo/spdom/bounding ->{{[
+        northBoundingCoordinate] [southBoundingCoordinate] [
+        eastBoundingCoordinate] [westBoundingCoordinate]}}; 
+        northBoundingCoordinate = northbc/text(); 
+        southBoundingCoordinate = southbc/text(); 
+        eastBoundingCoordinate = eastbc/text(); 
+        westBoundingCoordinate = westbc/text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `fgdc.geohash8`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
@@ -558,7 +643,16 @@ Note that these are in addition to the information extracted from :doc:`system_m
   * - :attr:`Index.geohash_9`
     - False
     - 
-    - 
+    - ::
+
+        /*[local-name() = 'metadata']/idinfo/spdom/bounding ->{{[
+        northBoundingCoordinate] [southBoundingCoordinate] [
+        eastBoundingCoordinate] [westBoundingCoordinate]}}; 
+        northBoundingCoordinate = northbc/text(); 
+        southBoundingCoordinate = southbc/text(); 
+        eastBoundingCoordinate = eastbc/text(); 
+        westBoundingCoordinate = westbc/text()
+
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `fgdc.geohash9`_
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
