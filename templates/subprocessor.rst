@@ -41,6 +41,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 {% else %}{% endif %}
       | Processor: {{fields[fld].p['cname']|classnameLink}}
       | Configuration: `{{fld}}`_
+{% if 'notes' in fields[fld].p %}      | Notes: {{fields[fld].p['notes']}}{% endif %}
 {% if fields[fld].p['converter'] != '' %}      | Converter: {{fields[fld].p['converter']|getConverterInfo|classnameLink }}
 {% endif %}
 {% endfor %}

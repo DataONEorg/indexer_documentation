@@ -41,6 +41,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `eml.abstract`_
 
 
+
   * - :attr:`Index.keywords`
     - True
     - True
@@ -50,6 +51,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.keywords`_
+
 
 
   * - :attr:`Index.title`
@@ -63,6 +65,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `eml.title`_
 
 
+
   * - :attr:`Index.project`
     - True
     - False
@@ -72,6 +75,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.project`_
+
 
 
   * - :attr:`Index.funding`
@@ -85,6 +89,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `eml.funding`_
 
 
+
   * - :attr:`Index.funderName`
     - True
     - False
@@ -94,6 +99,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.funderName`_
+
 
 
   * - :attr:`Index.funderIdentifier`
@@ -107,6 +113,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `eml.funderIdentifier`_
 
 
+
   * - :attr:`Index.awardNumber`
     - True
     - False
@@ -116,6 +123,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.awardNumber`_
+
 
 
   * - :attr:`Index.awardTitle`
@@ -129,6 +137,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `eml.awardTitle`_
 
 
+
   * - :attr:`Index.southBoundCoord`
     - False
     - False
@@ -139,6 +148,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.southBoundCoord`_
+
       | Converter: `SolrLatitudeConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrLatitudeConverter.java>`_
 
 
@@ -152,6 +162,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.northBoundCoord`_
+
       | Converter: `SolrLatitudeConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrLatitudeConverter.java>`_
 
 
@@ -165,6 +176,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.westBoundCoord`_
+
       | Converter: `SolrLongitudeConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrLongitudeConverter.java>`_
 
 
@@ -178,6 +190,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.eastBoundCoord`_
+
       | Converter: `SolrLongitudeConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrLongitudeConverter.java>`_
 
 
@@ -193,6 +206,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `eml.site`_
 
 
+
   * - :attr:`Index.beginDate`
     - False
     - False
@@ -204,6 +218,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.beginDate`_
+
       | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
 
 
@@ -218,6 +233,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.endDate`_
+
       | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
 
 
@@ -230,6 +246,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.pubDate`_
+
       | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
 
 
@@ -244,6 +261,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.author`_
+      | Notes: This bean uses a template populated from additional sources. See configuration for more details.
 
 
   * - :attr:`Index.authorGivenName`
@@ -257,6 +275,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `eml.authorGivenName`_
 
 
+
   * - :attr:`Index.authorSurName`
     - False
     - False
@@ -266,6 +285,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.authorSurName`_
+
 
 
   * - :attr:`Index.authorGivenNameSort`
@@ -279,6 +299,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `eml.authorGivenNameSort`_
 
 
+
   * - :attr:`Index.authorSurNameSort`
     - False
     - False
@@ -288,6 +309,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.authorSurNameSort`_
+
 
 
   * - :attr:`Index.authorLastName`
@@ -301,6 +323,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `eml.author_lname`_
 
 
+
   * - :attr:`Index.investigator`
     - True
     - False
@@ -310,6 +333,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.investigator`_
+
 
 
   * - :attr:`Index.origin`
@@ -325,6 +349,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.origin`_
+      | Notes: This bean uses a template populated from additional sources. See configuration for more details.
 
 
   * - :attr:`Index.contactOrganization`
@@ -336,6 +361,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.contactOrganization`_
+
 
 
   * - :attr:`Index.genus`
@@ -350,6 +376,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `eml.genus`_
 
 
+
   * - :attr:`Index.species`
     - True
     - True
@@ -360,6 +387,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.species`_
+
 
 
   * - :attr:`Index.kingdom`
@@ -374,6 +402,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `eml.kingdom`_
 
 
+
   * - :attr:`Index.order`
     - True
     - True
@@ -384,6 +413,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.order`_
+
 
 
   * - :attr:`Index.phylum`
@@ -401,6 +431,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `eml.phylum`_
 
 
+
   * - :attr:`Index.family`
     - True
     - True
@@ -411,6 +442,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.family`_
+
 
 
   * - :attr:`Index.class`
@@ -425,6 +457,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `eml.class`_
 
 
+
   * - :attr:`Index.scientificName`
     - False
     - 
@@ -437,6 +470,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.scientificName`_
+      | Notes: This bean uses a template populated from additional sources. See configuration for more details.
 
 
   * - :attr:`Index.attributeName`
@@ -450,6 +484,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `eml.attributeName`_
 
 
+
   * - :attr:`Index.attributeLabel`
     - True
     - False
@@ -459,6 +494,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.attributeLabel`_
+
 
 
   * - :attr:`Index.attributeDescription`
@@ -473,6 +509,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `eml.attributeDescription`_
 
 
+
   * - :attr:`Index.attributeUnit`
     - True
     - False
@@ -483,6 +520,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.attributeUnit`_
+
 
 
   * - :attr:`Index.attribute`
@@ -500,6 +538,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.attributeText`_
+      | Notes: This bean uses a template populated from additional sources. See configuration for more details.
 
 
   * - :attr:`Index.fileID`
@@ -508,6 +547,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
     - 
       | Processor: `ResolveSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/ResolveSolrField.java>`_
       | Configuration: `eml.fileID`_
+      | Notes: SolrField which configures the resolve url for the document being processed.
       | Converter: 
 
 
@@ -517,6 +557,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
     - 
       | Processor: `AggregateSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/AggregateSolrField.java>`_
       | Configuration: `eml.fullText`_
+
       | Converter: 
 
 
@@ -538,6 +579,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.geohash1`_
+      | Notes: This bean uses a template populated from additional sources. See configuration for more details.
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
 
 
@@ -559,6 +601,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.geohash2`_
+      | Notes: This bean uses a template populated from additional sources. See configuration for more details.
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
 
 
@@ -580,6 +623,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.geohash3`_
+      | Notes: This bean uses a template populated from additional sources. See configuration for more details.
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
 
 
@@ -601,6 +645,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.geohash4`_
+      | Notes: This bean uses a template populated from additional sources. See configuration for more details.
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
 
 
@@ -622,6 +667,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.geohash5`_
+      | Notes: This bean uses a template populated from additional sources. See configuration for more details.
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
 
 
@@ -643,6 +689,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.geohash6`_
+      | Notes: This bean uses a template populated from additional sources. See configuration for more details.
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
 
 
@@ -664,6 +711,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.geohash7`_
+      | Notes: This bean uses a template populated from additional sources. See configuration for more details.
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
 
 
@@ -685,6 +733,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.geohash8`_
+      | Notes: This bean uses a template populated from additional sources. See configuration for more details.
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
 
 
@@ -706,6 +755,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `eml.geohash9`_
+      | Notes: This bean uses a template populated from additional sources. See configuration for more details.
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
 
 
@@ -720,6 +770,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `eml.isService`_
 
 
+
   * - :attr:`Index.serviceTitle`
     - False
     - False
@@ -729,6 +780,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.serviceTitle`_
+
 
 
   * - :attr:`Index.serviceDescription`
@@ -742,6 +794,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `eml.serviceDescription`_
 
 
+
   * - :attr:`Index.serviceEndpoint`
     - True
     - False
@@ -751,6 +804,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `eml.serviceEndpoint`_
+
 
 
 

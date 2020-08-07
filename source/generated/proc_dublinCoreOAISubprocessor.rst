@@ -41,6 +41,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `dc.description`_
 
 
+
   * - :attr:`Index.originator`
     - True
     - True
@@ -52,6 +53,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `dc.publisher`_
 
 
+
   * - :attr:`Index.pubDate`
     - False
     - False
@@ -61,6 +63,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.date`_
+
       | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
 
 
@@ -75,6 +78,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `dc.contributor`_
 
 
+
   * - :attr:`Index.author`
     - False
     - False
@@ -84,6 +88,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.author`_
+
 
 
   * - :attr:`Index.authorSurName`
@@ -97,6 +102,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `dc.authorSurName`_
 
 
+
   * - :attr:`Index.authorSurNameSort`
     - False
     - False
@@ -106,6 +112,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.authorSurNameSort`_
+
 
 
   * - :attr:`Index.contactOrganization`
@@ -119,6 +126,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `dc.contactOrganization`_
 
 
+
   * - :attr:`Index.investigator`
     - True
     - True
@@ -128,6 +136,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.investigator`_
+
 
 
   * - :attr:`Index.origin`
@@ -141,6 +150,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `dc.origin`_
 
 
+
   * - :attr:`Index.title`
     - False
     - False
@@ -150,6 +160,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.title`_
+
 
 
   * - :attr:`Index.keywords`
@@ -163,6 +174,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `dc.keywords`_
 
 
+
   * - :attr:`Index.serviceEndpoint`
     - True
     - False
@@ -174,6 +186,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `dc:relation`_
 
 
+
   * - :attr:`Index.text`
     - False
     - False
@@ -183,6 +196,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `FullTextSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/FullTextSolrField.java>`_
       | Configuration: `dc.fullText`_
+
 
 
 

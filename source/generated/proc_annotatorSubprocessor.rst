@@ -48,6 +48,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `annotation.expansion`_
 
 
+
   * - :attr:`Index.sem_annotation_bioportal_sm`
     - False
     - False
@@ -64,6 +65,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SparqlField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/annotation/SparqlField.java>`_
       | Configuration: `annotation.bioportal.expansion`_
+
 
 
   * - :attr:`Index.sem_annotation_esor_sm`
@@ -84,6 +86,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `annotation.esor.expansion`_
 
 
+
   * - :attr:`Index.sem_annotation_cosine_sm`
     - False
     - False
@@ -100,6 +103,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SparqlField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/annotation/SparqlField.java>`_
       | Configuration: `annotation.cosine.expansion`_
+
 
 
 

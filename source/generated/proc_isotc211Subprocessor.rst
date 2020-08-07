@@ -42,6 +42,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `isotc.abstract`_
 
 
+
   * - :attr:`Index.author`
     - False
     - False
@@ -54,6 +55,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.author`_
+
 
 
   * - :attr:`Index.authorSurName`
@@ -70,6 +72,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `isotc.authorSurName`_
 
 
+
   * - :attr:`Index.authorSurNameSort`
     - False
     - False
@@ -84,6 +87,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `isotc.authorSurNameSort`_
 
 
+
   * - :attr:`Index.contactOrganization`
     - False
     - False
@@ -94,6 +98,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.contactOrganization`_
+
 
 
   * - :attr:`Index.origin`
@@ -119,6 +124,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `isotc.origin`_
 
 
+
   * - :attr:`Index.investigator`
     - True
     - True
@@ -131,6 +137,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.investigator`_
+
 
 
   * - :attr:`Index.pubDate`
@@ -170,6 +177,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.pubDate`_
+
       | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
 
 
@@ -186,6 +194,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.beginDate`_
+
       | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
 
 
@@ -201,6 +210,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.endDate`_
+
       | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
 
 
@@ -220,6 +230,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `isotc.title`_
 
 
+
   * - :attr:`Index.keywords`
     - True
     - False
@@ -236,6 +247,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `isotc.keywords`_
 
 
+
   * - :attr:`Index.eastBoundCoord`
     - False
     - False
@@ -248,6 +260,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.eastBoundCoord`_
+
 
 
   * - :attr:`Index.westBoundCoord`
@@ -264,6 +277,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `isotc.westBoundCoord`_
 
 
+
   * - :attr:`Index.southBoundCoord`
     - False
     - False
@@ -278,6 +292,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `isotc.southBoundCoord`_
 
 
+
   * - :attr:`Index.northBoundCoord`
     - False
     - False
@@ -290,6 +305,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.northBoundCoord`_
+
 
 
   * - :attr:`Index.geohash_9`
@@ -311,6 +327,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash9`_
+      | Notes: This bean uses a template populated from additional sources. See configuration for more details.
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
 
 
@@ -333,6 +350,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash1`_
+      | Notes: This bean uses a template populated from additional sources. See configuration for more details.
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
 
 
@@ -355,6 +373,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash2`_
+      | Notes: This bean uses a template populated from additional sources. See configuration for more details.
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
 
 
@@ -377,6 +396,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash3`_
+      | Notes: This bean uses a template populated from additional sources. See configuration for more details.
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
 
 
@@ -399,6 +419,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash4`_
+      | Notes: This bean uses a template populated from additional sources. See configuration for more details.
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
 
 
@@ -421,6 +442,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash5`_
+      | Notes: This bean uses a template populated from additional sources. See configuration for more details.
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
 
 
@@ -443,6 +465,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash6`_
+      | Notes: This bean uses a template populated from additional sources. See configuration for more details.
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
 
 
@@ -465,6 +488,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash7`_
+      | Notes: This bean uses a template populated from additional sources. See configuration for more details.
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
 
 
@@ -487,6 +511,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `CommonRootSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/CommonRootSolrField.java>`_
       | Configuration: `isotc.geohash8`_
+      | Notes: This bean uses a template populated from additional sources. See configuration for more details.
       | Converter: `GeohashConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/GeohashConverter.java>`_
 
 
@@ -500,6 +525,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.isService`_
+
 
 
   * - :attr:`Index.serviceCoupling`
@@ -527,6 +553,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `isotc.serviceCoupling`_
 
 
+
   * - :attr:`Index.serviceTitle`
     - False
     - False
@@ -543,6 +570,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.serviceTitle`_
+
 
 
   * - :attr:`Index.serviceDescription`
@@ -562,6 +590,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `isotc.serviceDescription`_
 
 
+
   * - :attr:`Index.serviceType`
     - True
     - False
@@ -572,6 +601,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.serviceType`_
+
       | Converter: `MemberNodeServiceRegistrationTypeConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/MemberNodeServiceRegistrationTypeConverter.java>`_
 
 
@@ -588,6 +618,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `isotc.serviceEndpoint`_
 
 
+
   * - :attr:`Index.serviceInput`
     - True
     - False
@@ -597,6 +628,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.serviceInput`_
+
 
 
   * - :attr:`Index.serviceOutput`
@@ -609,6 +641,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.serviceOutput`_
+
 
 
   * - :attr:`Index.serviceType`
@@ -624,6 +657,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.distribServiceType`_
+
       | Converter: `MemberNodeServiceRegistrationTypeConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/MemberNodeServiceRegistrationTypeConverter.java>`_
 
 
@@ -645,6 +679,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `isotc.distribServiceEndpoint`_
 
 
+
   * - :attr:`Index.serviceInput`
     - True
     - False
@@ -656,6 +691,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `isotc.distribServiceInput`_
+
 
 
   * - :attr:`Index.serviceOutput`
@@ -671,12 +707,14 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `isotc.distribServiceOutput`_
 
 
+
   * - :attr:`Index.fileID`
     - 
     - 
     - 
       | Processor: `ResolveSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/ResolveSolrField.java>`_
       | Configuration: `isotc.fileID`_
+      | Notes: SolrField which configures the resolve url for the document being processed.
       | Converter: 
 
 
@@ -689,6 +727,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `FullTextSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/FullTextSolrField.java>`_
       | Configuration: `isotc.fullText`_
+
 
 
 

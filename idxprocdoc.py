@@ -318,6 +318,7 @@ class B_ResolveSolrField(B_Bean):
 
     def load(self, ele, container):
         super(B_ResolveSolrField, self).load(ele, container)
+        self.p["notes"] = "SolrField which configures the resolve url for the document being processed."
         self.p["field_name"] = ["fileID"]
         if self.p["bid"] == "":
             # If there's no ID, then it is an anonymous bean contained by some parent
@@ -855,6 +856,7 @@ class IndexProcessorDocuments(object):
                     bean.p["xpath"] += " AND " + xp
                 except KeyError as e:
                     bean.p["xpath"] = xp
+                bean.p["notes"] = "This bean uses a template populated from additional sources. See configuration for more details."
 
 
     def loadContext(self, context_path):

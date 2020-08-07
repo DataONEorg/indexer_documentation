@@ -45,6 +45,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `datacite.author`_
 
 
+
   * - :attr:`Index.authorLastName`
     - False
     - False
@@ -55,6 +56,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `datacite.author_lname`_
+
 
 
   * - :attr:`Index.authorSurName`
@@ -69,6 +71,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `datacite.authorSurName`_
 
 
+
   * - :attr:`Index.authorSurNameSort`
     - False
     - False
@@ -79,6 +82,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `datacite.authorSurNameSort`_
+
 
 
   * - :attr:`Index.authorGivenName`
@@ -93,6 +97,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `datacite.authorGivenName`_
 
 
+
   * - :attr:`Index.authorGivenNameSort`
     - False
     - False
@@ -103,6 +108,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `datacite.authorGivenNameSort`_
+
 
 
   * - :attr:`Index.abstract`
@@ -118,6 +124,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `datacite.abstract`_
 
 
+
   * - :attr:`Index.title`
     - False
     - False
@@ -130,6 +137,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `datacite.title`_
 
 
+
   * - :attr:`Index.pubDate`
     - False
     - False
@@ -139,6 +147,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `datacite.pubDate`_
+
       | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
 
 
@@ -153,6 +162,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `datacite.keywords`_
 
 
+
   * - :attr:`Index.beginDate`
     - False
     - False
@@ -163,6 +173,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `datacite.beginDate`_
+
       | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
 
 
@@ -176,6 +187,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `datacite.endDate`_
+
       | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
 
 
@@ -189,6 +201,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `datacite.origin`_
+
 
 
   * - :attr:`Index.investigator`
@@ -206,6 +219,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `datacite.investigator`_
 
 
+
   * - :attr:`Index.contactOrganization`
     - True
     - True
@@ -218,6 +232,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `datacite.contactOrganization`_
+
 
 
   * - :attr:`Index.site`
@@ -233,6 +248,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `datacite.site`_
 
 
+
   * - 
     - False
     - False
@@ -242,6 +258,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `DataCiteSpatialBoxBoundingCoordinatesSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/DataCiteSpatialBoxBoundingCoordinatesSolrField.java>`_
       | Configuration: `datacite.boxSpatialBoundCoordinates`_
+
 
 
   * - 
@@ -255,12 +272,14 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `datacite.boxSpatialGeohash`_
 
 
+
   * - :attr:`Index.fileID`
     - 
     - 
     - 
       | Processor: `ResolveSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/ResolveSolrField.java>`_
       | Configuration: `datacite.fileID`_
+      | Notes: SolrField which configures the resolve url for the document being processed.
       | Converter: 
 
 
@@ -273,6 +292,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `FullTextSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/FullTextSolrField.java>`_
       | Configuration: `datacite.fullText`_
+
 
 
 

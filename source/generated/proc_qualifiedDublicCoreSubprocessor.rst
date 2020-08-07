@@ -41,6 +41,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `dc.abstract`_
 
 
+
   * - :attr:`Index.author`
     - False
     - False
@@ -50,6 +51,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.author`_
+
 
 
   * - :attr:`Index.authorSurName`
@@ -63,6 +65,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `dc.authorSurName`_
 
 
+
   * - :attr:`Index.authorSurNameSort`
     - False
     - False
@@ -72,6 +75,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.authorSurNameSort`_
+
 
 
   * - :attr:`Index.contactOrganization`
@@ -85,6 +89,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `dc.contactOrganization`_
 
 
+
   * - :attr:`Index.investigator`
     - True
     - True
@@ -94,6 +99,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.investigator`_
+
 
 
   * - :attr:`Index.origin`
@@ -107,6 +113,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `dc.origin`_
 
 
+
   * - :attr:`Index.pubDate`
     - False
     - False
@@ -116,6 +123,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.pubDate`_
+
       | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
 
 
@@ -130,6 +138,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `dc.title`_
 
 
+
   * - :attr:`Index.keywords`
     - True
     - False
@@ -139,6 +148,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.keywords`_
+
 
 
   * - :attr:`Index.beginDate`
@@ -152,6 +162,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.beginDate`_
+
       | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
 
 
@@ -166,6 +177,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dc.endDate`_
+
       | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
 
 
@@ -182,6 +194,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `dc.site`_
 
 
+
   * - :attr:`Index.northBoundCoord`, :attr:`Index.southBoundCoord`, :attr:`Index.eastBoundCoord`, :attr:`Index.westBoundCoord`
     - False
     - False
@@ -192,6 +205,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `DublinCoreSpatialBoxBoundingCoordinatesSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/DublinCoreSpatialBoxBoundingCoordinatesSolrField.java>`_
       | Configuration: `dc.boxSpatialBoundCoordinates`_
+
 
 
   * - :attr:`Index.geohash_1`, :attr:`Index.geohash_2`, :attr:`Index.geohash_3`, :attr:`Index.geohash_4`, :attr:`Index.geohash_5`, :attr:`Index.geohash_6`, :attr:`Index.geohash_7`, :attr:`Index.geohash_8`, :attr:`Index.geohash_9`
@@ -206,12 +220,14 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `dc.boxSpatialGeohash`_
 
 
+
   * - :attr:`Index.fileID`
     - 
     - 
     - 
       | Processor: `ResolveSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/ResolveSolrField.java>`_
       | Configuration: `dc.fileID`_
+      | Notes: SolrField which configures the resolve url for the document being processed.
       | Converter: 
 
 
@@ -224,6 +240,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `FullTextSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/FullTextSolrField.java>`_
       | Configuration: `dc.fullText`_
+
 
 
 

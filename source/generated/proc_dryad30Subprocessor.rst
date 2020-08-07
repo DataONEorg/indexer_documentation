@@ -41,6 +41,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `dryad.abstract`_
 
 
+
   * - :attr:`Index.author`
     - False
     - False
@@ -50,6 +51,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dryad.author`_
+
 
 
   * - :attr:`Index.authorSurName`
@@ -63,6 +65,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `dryad.authorSurName`_
 
 
+
   * - :attr:`Index.authorSurNameSort`
     - False
     - False
@@ -72,6 +75,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dryad.authorSurNameSort`_
+
 
 
   * - :attr:`Index.authorGivenName`
@@ -85,6 +89,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `dryad.authorGivenName`_
 
 
+
   * - :attr:`Index.authorGivenNameSort`
     - False
     - False
@@ -94,6 +99,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dryad.authorGivenNameSort`_
+
 
 
   * - :attr:`Index.investigator`
@@ -107,6 +113,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `dryad.investigator`_
 
 
+
   * - :attr:`Index.keywords`
     - True
     - False
@@ -116,6 +123,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dryad.keywords`_
+
 
 
   * - :attr:`Index.origin`
@@ -129,6 +137,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `dryad.origin`_
 
 
+
   * - :attr:`Index.pubDate`
     - False
     - False
@@ -138,6 +147,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dryad.pubDate`_
+
       | Converter: `SolrDateConverter <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/convert/SolrDateConverter.java>`_
 
 
@@ -152,6 +162,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `dryad.site`_
 
 
+
   * - :attr:`Index.title`
     - False
     - False
@@ -161,6 +172,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/SolrField.java>`_
       | Configuration: `dryad.title`_
+
 
 
   * - :attr:`Index.scientificName`
@@ -174,12 +186,14 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `dryad.scientificName`_
 
 
+
   * - :attr:`Index.fileID`
     - 
     - 
     - 
       | Processor: `ResolveSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/ResolveSolrField.java>`_
       | Configuration: `dryad.fileID`_
+      | Notes: SolrField which configures the resolve url for the document being processed.
       | Converter: 
 
 
@@ -192,6 +206,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `FullTextSolrField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/parser/FullTextSolrField.java>`_
       | Configuration: `dryad.fullText`_
+
 
 
 

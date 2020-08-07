@@ -56,6 +56,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `prov20150115.wasDerivedFrom`_
 
 
+
   * - :attr:`Index.prov_wasInformedBy`
     - False
     - False
@@ -77,6 +78,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SparqlField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/annotation/SparqlField.java>`_
       | Configuration: `prov20150115.wasInformedBy`_
+
 
 
   * - :attr:`Index.prov_used`
@@ -104,6 +106,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `prov20150115.used`_
 
 
+
   * - :attr:`Index.prov_generated`
     - False
     - False
@@ -127,6 +130,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SparqlField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/annotation/SparqlField.java>`_
       | Configuration: `prov20150115.generated`_
+
 
 
   * - :attr:`Index.prov_generatedByProgram`
@@ -153,6 +157,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `prov20150115.generatedByProgram`_
 
 
+
   * - :attr:`Index.prov_generatedByExecution`
     - False
     - False
@@ -173,6 +178,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SparqlField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/annotation/SparqlField.java>`_
       | Configuration: `prov20150115.generatedByExecution`_
+
 
 
   * - :attr:`Index.prov_generatedByUser`
@@ -196,6 +202,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SparqlField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/annotation/SparqlField.java>`_
       | Configuration: `prov20150115.generatedByUser`_
+
 
 
   * - :attr:`Index.prov_usedByProgram`
@@ -222,6 +229,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `prov20150115.usedByProgram`_
 
 
+
   * - :attr:`Index.prov_usedByExecution`
     - False
     - False
@@ -242,6 +250,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SparqlField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/annotation/SparqlField.java>`_
       | Configuration: `prov20150115.usedByExecution`_
+
 
 
   * - :attr:`Index.prov_usedByUser`
@@ -267,6 +276,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `prov20150115.usedByUser`_
 
 
+
   * - :attr:`Index.prov_wasExecutedByExecution`
     - False
     - False
@@ -288,6 +298,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SparqlField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/annotation/SparqlField.java>`_
       | Configuration: `prov20150115.wasExecutedByExecution`_
+
 
 
   * - :attr:`Index.prov_wasExecutedByUser`
@@ -313,6 +324,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `prov20150115.wasExecutedByUser`_
 
 
+
   * - :attr:`Index.prov_instanceOfClass`
     - False
     - False
@@ -334,6 +346,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
       | Configuration: `prov20150115.instanceOfClass`_
 
 
+
   * - :attr:`Index.prov_hasDerivations`
     - False
     - False
@@ -353,6 +366,7 @@ Note that these are in addition to the information extracted from :doc:`system_m
 
       | Processor: `SparqlField <https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_index_processor/src/main/java/org/dataone/cn/indexer/annotation/SparqlField.java>`_
       | Configuration: `prov20150115.hasDerivations`_
+
 
 
 
